@@ -140,89 +140,65 @@ function LeadForm({ lang }: { lang: "en" | "nl" }) {
   return (
     "use client";
 
-<form
-  onSubmit={async (e) => {
-    e.preventDefault(); // Prevent full page reload
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-    const payload = Object.fromEntries(formData.entries());
-
-    try {
-      const res = await fetch("/api/lead", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-
-      if (res.ok) {
-        form.reset();
-        alert("✅ Thank you! Your request has been sent successfully.");
-      } else {
-        alert("❌ Something went wrong. Please try again later.");
-      }
-    } catch (err) {
-      alert("⚠️ Network error. Please try again.");
-    }
-  }}
+<div
   className="rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm"
+  data-form="hireassist"
 >
   <div className="grid sm:grid-cols-2 gap-4">
     <div>
       <label className="text-sm">{t.form.first}</label>
-      <input
-        name="firstName"
-        required
-        className="mt-1 w-full border border-neutral-300 rounded-xl px-3 py-2"
-        placeholder="Amit"
-      />
+      <input name="firstName" required className="mt-1 w-full border border-neutral-300 rounded-xl px-3 py-2" placeholder="Amit" />
     </div>
     <div>
       <label className="text-sm">{t.form.last}</label>
-      <input
-        name="lastName"
-        required
-        className="mt-1 w-full border border-neutral-300 rounded-xl px-3 py-2"
-        placeholder="Mohan"
-      />
+      <input name="lastName" required className="mt-1 w-full border border-neutral-300 rounded-xl px-3 py-2" placeholder="Mohan" />
     </div>
     <div className="sm:col-span-2">
       <label className="text-sm">{t.form.email}</label>
-      <input
-        name="email"
-        type="email"
-        required
-        className="mt-1 w-full border border-neutral-300 rounded-xl px-3 py-2"
-        placeholder="you@company.com"
-      />
+      <input name="email" type="email" required className="mt-1 w-full border border-neutral-300 rounded-xl px-3 py-2" placeholder="you@company.com" />
     </div>
     <div className="sm:col-span-2">
       <label className="text-sm">{t.form.company}</label>
-      <input
-        name="company"
-        className="mt-1 w-full border border-neutral-300 rounded-xl px-3 py-2"
-        placeholder="Company BV"
-      />
+      <input name="company" className="mt-1 w-full border border-neutral-300 rounded-xl px-3 py-2" placeholder="Company BV" />
     </div>
     <div className="sm:col-span-2">
       <label className="text-sm">{t.form.need}</label>
-      <textarea
-        name="need"
-        className="mt-1 w-full border border-neutral-300 rounded-xl px-3 py-2 min-h-[100px]"
-        placeholder={t.form.needPh}
-      />
+      <textarea name="need" className="mt-1 w-full border border-neutral-300 rounded-xl px-3 py-2 min-h-[100px]" placeholder={t.form.needPh} />
     </div>
   </div>
 
-  {/* ✅ Explicit submit type */}
   <button
-    type="submit"
+    type="button"
+    onClick={async (e) => {
+      const root = e.currentTarget.closest('[data-form="hireassist"]') as HTMLElement;
+      const inputs = root.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('input[name], textarea[name]');
+      const payload: Record<string, string> = {};
+      inputs.forEach(el => { payload[el.name] = el.value; });
+
+      try {
+        const res = await fetch("/api/lead", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+        if (res.ok) {
+          inputs.forEach(el => (el.value = ""));
+          alert("✅ Thank you! Your request has been sent successfully.");
+        } else {
+          alert("❌ Something went wrong. Please try again later.");
+        }
+      } catch {
+        alert("⚠️ Network error. Please try again.");
+      }
+    }}
     className="mt-4 w-full px-4 py-3 rounded-xl bg-black text-white text-sm font-medium hover:bg-neutral-800"
   >
     {t.cta.requestDemo}
   </button>
 
   <p className="mt-3 text-xs text-neutral-500">{t.form.gdpr}</p>
-</form>
+</div>
+
 
 
   );
@@ -282,7 +258,7 @@ function MiniMatchDemo({ lang }: { lang: "en" | "nl" }) {
 const tx = {
   en: {
     nav: { how: "How it works", features: "Features", pricing: "Pricing", contact: "Contact" },
-    cta: { hireNow: "Hire now", tryDemo: "Try AI demo", talk: "Talk to us", getStarted: "Get started", requestDemo: "Request a demo" },
+    cta: { hireNow: "Hire now", tryDemo: "Try AI demo", talk: "Talk to us", getStarted: "Get started", requestDemo: "Request a Demo" },
     hero: {
       title: "Human + AI recruiting for niche roles in Europe",
       subtitle: "We combine smart automation with expert screening to fill roles faster — without big-agency fees.",
