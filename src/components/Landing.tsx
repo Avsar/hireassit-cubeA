@@ -138,9 +138,11 @@ export default function Landing() {
 function LeadForm({ lang }: { lang: "en" | "nl" }) {
   const t = tx[lang];
   return (
-    <form
+    "use client";
+
+<form
   onSubmit={async (e) => {
-    e.preventDefault(); // stop the full page reload
+    e.preventDefault(); // Prevent full page reload
     const form = e.currentTarget;
     const formData = new FormData(form);
     const payload = Object.fromEntries(formData.entries());
@@ -211,11 +213,17 @@ function LeadForm({ lang }: { lang: "en" | "nl" }) {
     </div>
   </div>
 
-  <button className="mt-4 w-full px-4 py-3 rounded-xl bg-black text-white text-sm font-medium hover:bg-neutral-800">
+  {/* ✅ Explicit submit type */}
+  <button
+    type="submit"
+    className="mt-4 w-full px-4 py-3 rounded-xl bg-black text-white text-sm font-medium hover:bg-neutral-800"
+  >
     {t.cta.requestDemo}
   </button>
+
   <p className="mt-3 text-xs text-neutral-500">{t.form.gdpr}</p>
 </form>
+
 
   );
 }
