@@ -9,10 +9,10 @@ export default function Landing() {
     <div className="min-h-screen bg-neutral-50 text-neutral-900">
       <header className="sticky top-0 z-40 backdrop-blur bg-white/80 border-b border-neutral-200">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-          <div className="flex items-center gap-2">
+          <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="flex items-center gap-2">
             <div className="h-8 w-8 rounded-2xl bg-black text-white font-bold grid place-items-center">AI</div>
             <div className="font-semibold tracking-tight">HireAssist by CubeA</div>
-          </div>
+          </a>
           <nav className="hidden md:flex items-center gap-6 text-sm">
             <a href="#how" className="hover:text-black">{t.nav.how}</a>
             <a href="#features" className="hover:text-black">{t.nav.features}</a>
@@ -138,8 +138,6 @@ export default function Landing() {
 function LeadForm({ lang }: { lang: "en" | "nl" }) {
   const t = tx[lang];
   return (
-    "use client";
-
 <div
   className="rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm"
   data-form="hireassist"
