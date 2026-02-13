@@ -14,6 +14,7 @@ export default function Landing() {
             <div className="font-semibold tracking-tight">HireAssist by CubeA</div>
           </a>
           <nav className="hidden md:flex items-center gap-6 text-sm">
+            <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="hover:text-black">{t.nav.home}</a>
             <a href="#how" className="hover:text-black">{t.nav.how}</a>
             <a href="#features" className="hover:text-black">{t.nav.features}</a>
             <a href="#pricing" className="hover:text-black">{t.nav.pricing}</a>
@@ -255,7 +256,7 @@ function MiniMatchDemo({ lang }: { lang: "en" | "nl" }) {
 
 const tx = {
   en: {
-    nav: { how: "How it works", features: "Features", pricing: "Pricing", contact: "Contact" },
+    nav: { home: "Home", how: "How it works", features: "Features", pricing: "Pricing", contact: "Contact" },
     cta: { hireNow: "Hire now", tryDemo: "Try AI demo", talk: "Talk to us", getStarted: "Get started", requestDemo: "Request a Demo" },
     hero: {
       title: "Human + AI recruiting for niche roles in Europe",
@@ -318,7 +319,7 @@ const tx = {
     footer: { rights: "All rights reserved.", privacy: "Privacy", terms: "Terms", impressum: "Impressum" },
   },
   nl: {
-    nav: { how: "Werkwijze", features: "Functies", pricing: "Prijzen", contact: "Contact" },
+    nav: { home: "Home", how: "Werkwijze", features: "Functies", pricing: "Prijzen", contact: "Contact" },
     cta: { hireNow: "Start met werven", tryDemo: "Probeer AI-demo", talk: "Plan een gesprek", getStarted: "Aan de slag", requestDemo: "Vraag een demo aan" },
     hero: {
       title: "Human + AI-werving voor niche rollen in Europa",
