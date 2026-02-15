@@ -8,3 +8,11 @@ export const metadata = {
 export default function HireAssistAlphaPage() {
   return <HireAssistAlpha />;
 }
+export default function Page() {
+  return (
+    <main style={{ padding: 40 }}>
+      <h1>HireAssist Alpha</h1>
+      <p>Routing works.</p>
+    </main>
+  );
+}

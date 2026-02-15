@@ -18,6 +18,7 @@ export default function Landing() {
             <a href="#features" className="hover:text-black">{t.nav.features}</a>
             <a href="#pricing" className="hover:text-black">{t.nav.pricing}</a>
             <a href="#contact" className="hover:text-black">{t.nav.contact}</a>
+            <a href="/tools/hireassist-alpha" className="text-blue-600 hover:text-blue-800 font-medium">{t.nav.hireassist}</a>
           </nav>
           <div className="flex items-center gap-2">
             <button onClick={() => setLang(lang === "en" ? "nl" : "en")} className="px-3 py-1.5 rounded-xl border border-neutral-300 text-xs hover:bg-neutral-100">
@@ -257,7 +258,7 @@ function MiniMatchDemo({ lang }: { lang: "en" | "nl" }) {
 
 const tx = {
   en: {
-    nav: { how: "How it works", features: "Features", pricing: "Pricing", contact: "Contact" },
+    nav: { how: "How it works", features: "Features", pricing: "Pricing", contact: "Contact", hireassist: "HireAssist Alpha" },
     cta: { hireNow: "Hire now", tryDemo: "Try AI demo", talk: "Talk to us", getStarted: "Get started", requestDemo: "Request a Demo" },
     hero: {
       title: "Human + AI recruiting for niche roles in Europe",
@@ -320,7 +321,7 @@ const tx = {
     footer: { rights: "All rights reserved.", privacy: "Privacy", terms: "Terms", impressum: "Impressum" },
   },
   nl: {
-    nav: { how: "Werkwijze", features: "Functies", pricing: "Prijzen", contact: "Contact" },
+    nav: { how: "Werkwijze", features: "Functies", pricing: "Prijzen", contact: "Contact", hireassist: "HireAssist Alpha" },
     cta: { hireNow: "Start met werven", tryDemo: "Probeer AI-demo", talk: "Plan een gesprek", getStarted: "Aan de slag", requestDemo: "Vraag een demo aan" },
     hero: {
       title: "Human + AI-werving voor niche rollen in Europa",
