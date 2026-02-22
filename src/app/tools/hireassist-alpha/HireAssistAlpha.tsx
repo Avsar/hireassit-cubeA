@@ -9,7 +9,7 @@ export default function HireAssistAlpha() {
   useEffect(() => {
     if (!BACKEND_URL) { setStatus("offline"); return; }
     const base = new URL(BACKEND_URL).origin;
-    fetch(`${base}/health`, { mode: "cors" })
+    fetch(`${base}/ping`, { mode: "cors" })
       .then((r) => setStatus(r.ok ? "online" : "offline"))
       .catch(() => setStatus("offline"));
   }, []);
