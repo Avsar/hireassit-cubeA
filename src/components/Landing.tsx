@@ -34,10 +34,10 @@ export default function Landing() {
               Blog
             </a>
             <a
-              href="/tools/hireassist-alpha"
+              href="/tools/ai-match"
               className="text-blue-600 hover:text-blue-800 font-medium"
             >
-              {t.nav.hireassist}
+              AI Match
             </a>
           </nav>
 
@@ -96,11 +96,11 @@ export default function Landing() {
               Blog
             </a>
             <a
-              href="/tools/hireassist-alpha"
+              href="/tools/ai-match"
               onClick={() => setMobileOpen(false)}
               className="py-2 text-blue-600 hover:text-blue-800 font-medium"
             >
-              {t.nav.hireassist}
+              AI Match
             </a>
             <a
               href="#contact"
@@ -114,8 +114,8 @@ export default function Landing() {
       </header>
 
       <section className="relative overflow-hidden">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 grid lg:grid-cols-2 gap-10 items-center">
-          <div>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+          <div className="max-w-2xl">
             <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight">
               {t.hero.title}
             </h1>
@@ -123,7 +123,7 @@ export default function Landing() {
 
             <div className="mt-6 flex flex-col sm:flex-row gap-3">
               <a
-                href="#demo"
+                href="/tools/ai-match"
                 className="px-4 py-3 rounded-xl bg-black text-white text-sm font-medium hover:bg-neutral-800"
               >
                 {t.cta.tryDemo}
@@ -141,10 +141,6 @@ export default function Landing() {
               <li>{t.hero.points[1]}</li>
               <li>{t.hero.points[2]}</li>
             </ul>
-          </div>
-
-          <div className="bg-white rounded-3xl shadow-sm border border-neutral-200 p-6">
-            <MiniMatchDemo lang={lang} />
           </div>
         </div>
       </section>
@@ -317,95 +313,12 @@ function LeadForm({ lang }: { lang: "en" | "nl" }) {
   );
 }
 
-function MiniMatchDemo({ lang }: { lang: "en" | "nl" }) {
-  const t = tx[lang];
-  const [jd, setJd] = useState("");
-  const [cv, setCv] = useState("");
-  const [score, setScore] = useState<number | null>(null);
-  const [highlights, setHighlights] = useState<string[]>([]);
-
-  async function simpleMatch() {
-    try {
-      const res = await fetch("/api/match", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ jd, cv }),
-      });
-
-      const data = await res.json();
-      if (typeof data?.score === "number") {
-        setScore(Math.max(0, Math.min(100, data.score)));
-        setHighlights(Array.isArray(data.highlights) ? data.highlights.slice(0, 10) : []);
-      } else {
-        setScore(0);
-        setHighlights([]);
-      }
-    } catch {
-      setScore(0);
-      setHighlights([]);
-    }
-  }
-
-  return (
-    <div id="demo">
-      <h3 className="text-lg font-semibold">{t.demo.title}</h3>
-      <p className="mt-1 text-sm text-neutral-600">{t.demo.desc}</p>
-
-      <div className="mt-4 grid md:grid-cols-2 gap-4">
-        <textarea
-          value={jd}
-          onChange={(e) => setJd(e.target.value)}
-          placeholder={t.demo.jdPh}
-          className="min-h-[160px] w-full rounded-xl border border-neutral-300 px-3 py-2"
-        />
-        <textarea
-          value={cv}
-          onChange={(e) => setCv(e.target.value)}
-          placeholder={t.demo.cvPh}
-          className="min-h-[160px] w-full rounded-xl border border-neutral-300 px-3 py-2"
-        />
-      </div>
-
-      <button
-        onClick={simpleMatch}
-        className="mt-3 px-3 py-2 rounded-xl bg-black text-white text-sm hover:bg-neutral-800"
-      >
-        {t.demo.matchBtn}
-      </button>
-
-      {score !== null && (
-        <div className="mt-4 rounded-2xl border border-neutral-200 p-4 bg-neutral-50">
-          <div className="text-sm text-neutral-700">
-            {t.demo.score}: <span className="font-semibold">{score}%</span>
-          </div>
-
-          {highlights.length > 0 && (
-            <div className="mt-2 text-xs text-neutral-600">
-              {t.demo.overlap}: {highlights.join(", ")}
-            </div>
-          )}
-
-          <div className="mt-3 h-2 w-full bg-neutral-200 rounded-full overflow-hidden">
-            <div
-              className="h-2 bg-black"
-              style={{ width: `${Math.min(100, Math.max(0, score || 0))}%` }}
-            />
-          </div>
-
-          <p className="mt-2 text-xs text-neutral-500">{t.demo.note}</p>
-        </div>
-      )}
-    </div>
-  );
-}
-
 const tx = {
   en: {
     nav: {
       how: "How it works",
       features: "Features",
       contact: "Contact",
-      hireassist: "HireAssist Alpha",
     },
     cta: {
       hireNow: "Hire now",
@@ -444,7 +357,7 @@ const tx = {
     },
     contact: {
       title: "Tell us what you need",
-      desc: "Share your role and we’ll reply with a shortlist and a plan.",
+      desc: "Share your role and we'll reply with a shortlist and a plan.",
       points: [
         "Typical response within one business day",
         "No commitment — just a conversation",
@@ -460,20 +373,10 @@ const tx = {
       needPh: "E.g., 2x Senior Data Engineer in Eindhoven, English-only, onsite 3 days.",
       gdpr: "By submitting, you agree to our privacy policy and consent to being contacted about your request.",
     },
-    demo: {
-      title: "AI Match (Keyword Demo)",
-      desc: "Paste a job spec and a CV to see a quick, on-device overlap score. The production system uses a much smarter model.",
-      jdPh: "Paste Job Description here…",
-      cvPh: "Paste Candidate CV here…",
-      matchBtn: "Score match",
-      score: "Match score",
-      overlap: "Keyword overlap",
-      note: "Demo only. Real engine uses embeddings and semantic matching.",
-    },
     footer: { rights: "All rights reserved.", privacy: "Privacy", terms: "Terms", impressum: "Impressum" },
   },
   nl: {
-    nav: { how: "Werkwijze", features: "Functies", contact: "Contact", hireassist: "HireAssist Alpha" },
+    nav: { how: "Werkwijze", features: "Functies", contact: "Contact" },
     cta: { hireNow: "Start met werven", tryDemo: "Probeer AI-demo", talk: "Plan een gesprek", requestDemo: "Vraag een demo aan" },
     hero: {
       title: "Human + AI-werving voor niche rollen in Europa",
@@ -516,16 +419,6 @@ const tx = {
       need: "Welke rol(len) wil je invullen?",
       needPh: "Bijv. 2× Senior Data Engineer in Eindhoven, Engels-only, 3 dagen onsite.",
       gdpr: "Door te verzenden ga je akkoord met ons privacybeleid en geef je toestemming om contact op te nemen.",
-    },
-    demo: {
-      title: "AI-match (Keyword-demo)",
-      desc: "Plak een vacature en een CV voor een snelle overlap-score. De productieversie gebruikt een slimmer model.",
-      jdPh: "Plak hier de vacature…",
-      cvPh: "Plak hier het CV…",
-      matchBtn: "Score match",
-      score: "Match-score",
-      overlap: "Keyword-overlap",
-      note: "Demo. In productie gebruiken we embeddings en semantische matching.",
     },
     footer: { rights: "Alle rechten voorbehouden.", privacy: "Privacy", terms: "Voorwaarden", impressum: "Impressum" },
   },
