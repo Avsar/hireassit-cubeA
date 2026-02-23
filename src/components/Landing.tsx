@@ -30,6 +30,9 @@ export default function Landing() {
                 {l.label}
               </a>
             ))}
+            <a href="/blog" className="hover:text-black">
+              Blog
+            </a>
             <a
               href="/tools/hireassist-alpha"
               className="text-blue-600 hover:text-blue-800 font-medium"
@@ -85,6 +88,13 @@ export default function Landing() {
                 {l.label}
               </a>
             ))}
+            <a
+              href="/blog"
+              onClick={() => setMobileOpen(false)}
+              className="py-2 hover:text-black"
+            >
+              Blog
+            </a>
             <a
               href="/tools/hireassist-alpha"
               onClick={() => setMobileOpen(false)}
