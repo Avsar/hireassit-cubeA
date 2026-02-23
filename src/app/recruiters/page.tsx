@@ -1,10 +1,148 @@
-import RecruiterLanding from "../../components/RecruiterLanding";
+import React from "react";
 
 export const metadata = {
-  title: "For Recruiters — HireAssist by CubeA",
-  description: "Human + AI recruiting for niche tech roles in Europe. AI-ranked shortlists, personal screening, no big-agency fees.",
+  title: "Recruiter Toolkit — HireAssist by CubeA",
+  description: "AI-powered tools to move faster at every stage of hiring.",
 };
 
-export default function Page() {
-  return <RecruiterLanding />;
+const tools = [
+  {
+    icon: "⚡",
+    title: "AI Match",
+    desc: "Score CV vs job description instantly",
+    href: "/tools/ai-match",
+    cta: "Open tool",
+    available: true,
+  },
+  {
+    icon: "✏️",
+    title: "JD Writer",
+    desc: "Generate a clean job description",
+    href: "/tools/jd-writer",
+    cta: "Try it",
+    available: false,
+  },
+  {
+    icon: "💬",
+    title: "Outreach Generator",
+    desc: "Write personalized candidate messages",
+    href: "/tools/outreach-generator",
+    cta: "Try it",
+    available: false,
+  },
+  {
+    icon: "🎙️",
+    title: "Interview Questions",
+    desc: "Generate competency-based questions",
+    href: "/tools/interview-questions",
+    cta: "Try it",
+    available: false,
+  },
+];
+
+export default function RecruitersPage() {
+  return (
+    <div className="min-h-screen bg-neutral-50 text-neutral-900 flex flex-col">
+      <header className="sticky top-0 z-40 backdrop-blur bg-white/80 border-b border-neutral-200">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+          <a href="/" className="flex items-center gap-2">
+            <div className="h-8 w-8 rounded-2xl bg-black text-white font-bold grid place-items-center text-sm">
+              AI
+            </div>
+            <div className="font-semibold tracking-tight">HireAssist by CubeA</div>
+          </a>
+
+          <nav className="hidden md:flex items-center gap-6 text-sm">
+            <a href="/blog" className="text-neutral-600 hover:text-black">Blog</a>
+            <a href="#" className="text-neutral-600 hover:text-black">For recruiters</a>
+            <a href="/jobseekers" className="text-neutral-600 hover:text-black">For job seekers</a>
+            <a
+              href="/recruiters-landing#contact"
+              className="px-3 py-2 rounded-xl bg-black text-white text-sm hover:bg-neutral-800"
+            >
+              Talk to us
+            </a>
+          </nav>
+        </div>
+      </header>
+
+      <main className="flex-1">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-16">
+          {/* Page header */}
+          <div className="mb-10">
+            <a
+              href="/"
+              className="inline-flex items-center gap-1 text-sm text-neutral-500 hover:text-neutral-800 mb-6"
+            >
+              &larr; Home
+            </a>
+            <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
+              Recruiter Toolkit
+            </h1>
+            <p className="mt-2 text-neutral-600 max-w-xl">
+              AI-powered tools to move faster at every stage of hiring — from writing the JD to sending the offer.
+            </p>
+          </div>
+
+          {/* Tool grid */}
+          <div className="grid sm:grid-cols-2 gap-5">
+            {tools.map((tool) =>
+              tool.available ? (
+                <a
+                  key={tool.title}
+                  href={tool.href}
+                  className="group flex flex-col gap-4 rounded-2xl border-2 border-neutral-200 bg-white p-6 hover:border-black hover:shadow-md transition-all"
+                >
+                  <div className="flex items-start justify-between">
+                    <div className="h-12 w-12 rounded-xl bg-black text-white grid place-items-center text-xl select-none">
+                      {tool.icon}
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h2 className="font-semibold text-lg">{tool.title}</h2>
+                    <p className="mt-1 text-sm text-neutral-600">{tool.desc}</p>
+                  </div>
+                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-black group-hover:underline">
+                    {tool.cta} &rarr;
+                  </span>
+                </a>
+              ) : (
+                <div
+                  key={tool.title}
+                  className="relative flex flex-col gap-4 rounded-2xl border-2 border-dashed border-neutral-200 bg-neutral-50 p-6"
+                >
+                  <span className="absolute top-4 right-4 px-2 py-0.5 rounded-full bg-neutral-200 text-xs font-medium text-neutral-500">
+                    Coming soon
+                  </span>
+                  <div className="flex items-start">
+                    <div className="h-12 w-12 rounded-xl bg-neutral-200 text-neutral-400 grid place-items-center text-xl select-none">
+                      {tool.icon}
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h2 className="font-semibold text-lg text-neutral-500">{tool.title}</h2>
+                    <p className="mt-1 text-sm text-neutral-400">{tool.desc}</p>
+                  </div>
+                  <span className="text-sm text-neutral-400 cursor-default select-none">
+                    {tool.cta} &rarr;
+                  </span>
+                </div>
+              )
+            )}
+          </div>
+        </div>
+      </main>
+
+      <footer className="border-t border-neutral-200 bg-white mt-auto">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 text-sm text-neutral-600 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div>&copy; {new Date().getFullYear()} CubeA. All rights reserved.</div>
+          <div className="flex gap-6">
+            <a href="/privacy" className="hover:text-neutral-900">Privacy</a>
+            <a href="/terms" className="hover:text-neutral-900">Terms</a>
+            <a href="/impressum" className="hover:text-neutral-900">Impressum</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
 }
