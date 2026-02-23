@@ -10,7 +10,7 @@ const tools = [
     icon: "🔎",
     title: "Browse Jobs",
     desc: "Find hidden jobs from company career pages",
-    href: "https://hireassist-backend-production.up.railway.app/ui#",
+    href: "https://hireassist-backend-production.up.railway.app/ui",
     cta: "Browse jobs",
     available: true,
     external: true,
