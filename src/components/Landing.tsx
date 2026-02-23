@@ -4,7 +4,15 @@ import React, { useMemo, useState } from "react";
 
 export default function Landing() {
   const [lang, setLang] = useState<"en" | "nl">("en");
+  const [mobileOpen, setMobileOpen] = useState(false);
   const t = useMemo(() => tx[lang], [lang]);
+
+  const navLinks = [
+    { href: "#how", label: t.nav.how },
+    { href: "#features", label: t.nav.features },
+    { href: "#pricing", label: t.nav.pricing },
+    { href: "#contact", label: t.nav.contact },
+  ];
 
   return (
     <div className="min-h-screen bg-neutral-50 text-neutral-900">
@@ -18,18 +26,11 @@ export default function Landing() {
           </div>
 
           <nav className="hidden md:flex items-center gap-6 text-sm">
-            <a href="#how" className="hover:text-black">
-              {t.nav.how}
-            </a>
-            <a href="#features" className="hover:text-black">
-              {t.nav.features}
-            </a>
-            <a href="#pricing" className="hover:text-black">
-              {t.nav.pricing}
-            </a>
-            <a href="#contact" className="hover:text-black">
-              {t.nav.contact}
-            </a>
+            {navLinks.map((l) => (
+              <a key={l.href} href={l.href} className="hover:text-black">
+                {l.label}
+              </a>
+            ))}
             <a
               href="/tools/hireassist-alpha"
               className="text-blue-600 hover:text-blue-800 font-medium"
@@ -52,8 +53,55 @@ export default function Landing() {
             >
               {t.cta.hireNow}
             </a>
+
+            {/* Hamburger — mobile only */}
+            <button
+              onClick={() => setMobileOpen((o) => !o)}
+              className="md:hidden p-2 rounded-lg hover:bg-neutral-100"
+              aria-label="Toggle navigation"
+            >
+              {mobileOpen ? (
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
+            </button>
           </div>
         </div>
+
+        {/* Mobile nav drawer */}
+        {mobileOpen && (
+          <div className="md:hidden border-t border-neutral-200 bg-white px-4 py-3 flex flex-col gap-1 text-sm">
+            {navLinks.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setMobileOpen(false)}
+                className="py-2 hover:text-black"
+              >
+                {l.label}
+              </a>
+            ))}
+            <a
+              href="/tools/hireassist-alpha"
+              onClick={() => setMobileOpen(false)}
+              className="py-2 text-blue-600 hover:text-blue-800 font-medium"
+            >
+              {t.nav.hireassist}
+            </a>
+            <a
+              href="#contact"
+              onClick={() => setMobileOpen(false)}
+              className="mt-2 inline-flex justify-center px-4 py-2 rounded-xl bg-black text-white hover:bg-neutral-800"
+            >
+              {t.cta.hireNow}
+            </a>
+          </div>
+        )}
       </header>
 
       <section className="relative overflow-hidden">
@@ -175,13 +223,8 @@ export default function Landing() {
             <h2 className="text-2xl font-bold tracking-tight">{t.contact.title}</h2>
             <p className="mt-2 text-neutral-700">{t.contact.desc}</p>
             <ul className="mt-6 text-sm text-neutral-700 space-y-2 list-disc pl-5">
-              <li>📅 Calendly embed supported – paste your link in the anchor below.</li>
-              <li>📧 Route form submissions to Formspree / Make.com → Airtable/Sheets.</li>
-              <li>💬 Add Crisp/Intercom for chat widget.</li>
+              {t.contact.points.map((p, i) => <li key={i}>{p}</li>)}
             </ul>
-            <a href="#" className="inline-flex mt-4 text-sm underline">
-              {t.contact.calendar}
-            </a>
           </div>
 
           <LeadForm lang={lang} />
@@ -197,13 +240,13 @@ export default function Landing() {
             </div>
           </div>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-neutral-900">
+            <a href="/privacy" className="hover:text-neutral-900">
               {t.footer.privacy}
             </a>
-            <a href="#" className="hover:text-neutral-900">
+            <a href="/terms" className="hover:text-neutral-900">
               {t.footer.terms}
             </a>
-            <a href="#" className="hover:text-neutral-900">
+            <a href="/impressum" className="hover:text-neutral-900">
               {t.footer.impressum}
             </a>
           </div>
@@ -444,7 +487,15 @@ const tx = {
         { name: "Hire per placement", price: "10–18%", cycle: "of salary", features: ["Human screening", "Interview scheduling", "Replacement guarantee"], hot: false },
       ],
     },
-    contact: { title: "Tell us what you need", desc: "Share your role and we’ll reply with a shortlist and a plan.", calendar: "→ Or pick a time on our calendar" },
+    contact: {
+      title: "Tell us what you need",
+      desc: "Share your role and we’ll reply with a shortlist and a plan.",
+      points: [
+        "Typical response within one business day",
+        "No commitment — just a conversation",
+        "English and Dutch speaking team",
+      ],
+    },
     form: {
       first: "First name",
       last: "Last name",
@@ -502,7 +553,15 @@ const tx = {
         { name: "Per plaatsing", price: "10–18%", cycle: "van salaris", features: ["Menselijke screening", "Interviewplanning", "Vervangingsgarantie"], hot: false },
       ],
     },
-    contact: { title: "Vertel ons wat je nodig hebt", desc: "Deel je rol en we sturen een shortlist en plan terug.", calendar: "→ Of kies direct een tijd in onze agenda" },
+    contact: {
+      title: "Vertel ons wat je nodig hebt",
+      desc: "Deel je rol en we sturen een shortlist en plan terug.",
+      points: [
+        "Reactie binnen één werkdag",
+        "Geen verplichtingen — gewoon een gesprek",
+        "Nederlandstalig en Engelstalig team",
+      ],
+    },
     form: {
       first: "Voornaam",
       last: "Achternaam",
