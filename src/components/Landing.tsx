@@ -10,7 +10,6 @@ export default function Landing() {
   const navLinks = [
     { href: "#how", label: t.nav.how },
     { href: "#features", label: t.nav.features },
-    { href: "#pricing", label: t.nav.pricing },
     { href: "#contact", label: t.nav.contact },
   ];
 
@@ -168,49 +167,6 @@ export default function Landing() {
               <div key={i} className="rounded-2xl border border-neutral-200 p-6 bg-white">
                 <h3 className="font-semibold">{f.title}</h3>
                 <p className="mt-2 text-sm text-neutral-700">{f.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="pricing" className="bg-neutral-100/60 border-y border-neutral-200">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-          <h2 className="text-2xl font-bold tracking-tight">{t.pricing.title}</h2>
-          <div className="mt-8 grid md:grid-cols-3 gap-6">
-            {t.pricing.plans.map((p, i) => (
-              <div
-                key={i}
-                className={`rounded-2xl border p-6 ${
-                  p.hot ? "border-black bg-white" : "border-neutral-200 bg-white"
-                }`}
-              >
-                <div className="flex items-baseline justify-between">
-                  <h3 className="font-semibold">{p.name}</h3>
-                  {p.hot && (
-                    <span className="text-xs px-2 py-1 rounded-lg bg-black text-white">
-                      {t.pricing.popular}
-                    </span>
-                  )}
-                </div>
-
-                <div className="mt-2 text-3xl font-bold">
-                  €{p.price}
-                  <span className="text-sm font-normal text-neutral-500">/{p.cycle}</span>
-                </div>
-
-                <ul className="mt-4 text-sm text-neutral-700 space-y-2 list-disc pl-5">
-                  {p.features.map((x, j) => (
-                    <li key={j}>{x}</li>
-                  ))}
-                </ul>
-
-                <a
-                  href="#contact"
-                  className="mt-6 inline-flex px-4 py-2 rounded-xl bg-black text-white text-sm hover:bg-neutral-800"
-                >
-                  {t.cta.getStarted}
-                </a>
               </div>
             ))}
           </div>
@@ -438,7 +394,6 @@ const tx = {
     nav: {
       how: "How it works",
       features: "Features",
-      pricing: "Pricing",
       contact: "Contact",
       hireassist: "HireAssist Alpha",
     },
@@ -446,7 +401,6 @@ const tx = {
       hireNow: "Hire now",
       tryDemo: "Try AI demo",
       talk: "Talk to us",
-      getStarted: "Get started",
       requestDemo: "Request a Demo",
     },
     hero: {
@@ -456,7 +410,7 @@ const tx = {
       points: [
         "AI-ranked shortlists within days",
         "Personal screening and culture fit checks",
-        "Flexible pricing: per hire or subscription",
+        "No big-agency fees — pay only for results",
       ],
     },
     how: {
@@ -476,15 +430,6 @@ const tx = {
         { title: "Calendars & chat", desc: "Calendly embeds and website chat for quick scheduling." },
         { title: "GDPR-ready", desc: "Consent capture and data-retention controls." },
         { title: "Multilingual", desc: "English + Dutch UI and candidate comms." },
-      ],
-    },
-    pricing: {
-      title: "Simple pricing",
-      popular: "Most popular",
-      plans: [
-        { name: "Starter", price: 0, cycle: "setup", features: ["Website + intake form", "AI demo widget", "Email support"], hot: false },
-        { name: "Growth", price: 299, cycle: "month", features: ["AI shortlists (monthly)", "Outreach automation", "ATS/Airtable sync"], hot: true },
-        { name: "Hire per placement", price: "10–18%", cycle: "of salary", features: ["Human screening", "Interview scheduling", "Replacement guarantee"], hot: false },
       ],
     },
     contact: {
@@ -518,12 +463,12 @@ const tx = {
     footer: { rights: "All rights reserved.", privacy: "Privacy", terms: "Terms", impressum: "Impressum" },
   },
   nl: {
-    nav: { how: "Werkwijze", features: "Functies", pricing: "Prijzen", contact: "Contact", hireassist: "HireAssist Alpha" },
-    cta: { hireNow: "Start met werven", tryDemo: "Probeer AI-demo", talk: "Plan een gesprek", getStarted: "Aan de slag", requestDemo: "Vraag een demo aan" },
+    nav: { how: "Werkwijze", features: "Functies", contact: "Contact", hireassist: "HireAssist Alpha" },
+    cta: { hireNow: "Start met werven", tryDemo: "Probeer AI-demo", talk: "Plan een gesprek", requestDemo: "Vraag een demo aan" },
     hero: {
       title: "Human + AI-werving voor niche rollen in Europa",
       subtitle: "Slimme automatisering met persoonlijke screening. Sneller invullen – zonder big-agency tarieven.",
-      points: ["AI-shortlist binnen dagen", "Persoonlijke screening & cultuur-fit", "Flexibele prijzen: per hire of abonnement"],
+      points: ["AI-shortlist binnen dagen", "Persoonlijke screening & cultuur-fit", "Geen bureau-tarieven — betaal voor resultaat"],
     },
     how: {
       title: "Zo werkt HireAssist",
@@ -542,15 +487,6 @@ const tx = {
         { title: "Agenda & chat", desc: "Calendly-embeds en websitechat voor snel plannen." },
         { title: "AVG-proof", desc: "Toestemming vastleggen en bewaartermijnen." },
         { title: "Meertalig", desc: "Engels + Nederlands UI en candidate comms." },
-      ],
-    },
-    pricing: {
-      title: "Eenvoudige prijzen",
-      popular: "Populair",
-      plans: [
-        { name: "Starter", price: 0, cycle: "setup", features: ["Website + intakeformulier", "AI-demo-widget", "E-mail support"], hot: false },
-        { name: "Groeiplan", price: 299, cycle: "maand", features: ["Maandelijkse AI-shortlists", "Outreach-automatisering", "ATS/Airtable-sync"], hot: true },
-        { name: "Per plaatsing", price: "10–18%", cycle: "van salaris", features: ["Menselijke screening", "Interviewplanning", "Vervangingsgarantie"], hot: false },
       ],
     },
     contact: {
