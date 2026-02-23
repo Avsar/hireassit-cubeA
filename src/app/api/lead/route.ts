@@ -2,13 +2,7 @@ import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
   try {
-    const data = await req.formData();
-    const payload: Record<string, any> = {};
-
-    // Avoid for...of over entries() to keep TS happy on Vercel
-    data.forEach((value, key) => {
-      payload[key] = value as string;
-    });
+    const payload = await req.json();
 
     const url = process.env.LEAD_WEBHOOK_URL;
     if (!url) {
