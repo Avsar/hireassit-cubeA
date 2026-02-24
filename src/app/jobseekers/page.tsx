@@ -21,7 +21,7 @@ const tools = [
     desc: "Get AI feedback on your CV",
     href: "/tools/cv-reviewer",
     cta: "Try it",
-    available: false,
+    available: true,
     external: false,
   },
   {
