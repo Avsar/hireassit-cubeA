@@ -132,21 +132,18 @@ export default function Landing() {
             {/* Job seeker card */}
             <a
               href="/jobseekers"
-              className="group relative flex flex-col gap-5 rounded-3xl border-2 border-dashed border-neutral-200 bg-neutral-50 p-8 hover:border-neutral-400 transition-all"
+              className="group flex flex-col gap-5 rounded-3xl border-2 border-neutral-200 bg-white p-8 hover:border-black hover:shadow-lg transition-all"
             >
-              <span className="absolute top-4 right-4 px-2.5 py-1 rounded-full bg-neutral-200 text-xs font-medium text-neutral-600">
-                {t.paths.seeker.badge}
-              </span>
-              <div className="h-14 w-14 rounded-2xl bg-neutral-200 text-neutral-500 grid place-items-center text-2xl select-none">
+              <div className="h-14 w-14 rounded-2xl bg-black text-white grid place-items-center text-2xl select-none">
                 🔍
               </div>
               <div className="flex-1">
-                <h2 className="text-xl font-bold text-neutral-700">{t.paths.seeker.title}</h2>
-                <p className="mt-2 text-sm text-neutral-500 leading-relaxed">
+                <h2 className="text-xl font-bold">{t.paths.seeker.title}</h2>
+                <p className="mt-2 text-sm text-neutral-600 leading-relaxed">
                   {t.paths.seeker.desc}
                 </p>
               </div>
-              <span className="inline-flex items-center gap-1 text-sm font-medium text-neutral-500 group-hover:text-neutral-700 group-hover:underline">
+              <span className="inline-flex items-center gap-1 text-sm font-semibold text-black group-hover:underline">
                 {t.paths.seeker.cta} &rarr;
               </span>
             </a>
@@ -189,8 +186,7 @@ const tx = {
       seeker: {
         title: "I'm looking for a job",
         desc: "Find your next role in Dutch tech with personalised AI-powered matches.",
-        cta: "Join the waitlist",
-        badge: "Coming soon",
+        cta: "Get started",
       },
     },
     footer: { rights: "All rights reserved.", privacy: "Privacy", terms: "Terms", impressum: "Impressum" },
@@ -210,8 +206,7 @@ const tx = {
       seeker: {
         title: "Ik zoek een baan",
         desc: "Vind je volgende rol in de Nederlandse tech met gepersonaliseerde AI-matches.",
-        cta: "Schrijf je in",
-        badge: "Binnenkort",
+        cta: "Aan de slag",
       },
     },
     footer: { rights: "Alle rechten voorbehouden.", privacy: "Privacy", terms: "Voorwaarden", impressum: "Impressum" },
