@@ -101,6 +101,19 @@ export default function CVReviewResult({ result }: Props) {
           Ready to find your next role?
         </a>
       </div>
+
+      {/* Recruiter pitch */}
+      <div className="text-center pb-2">
+        <p className="text-sm text-neutral-500">
+          Want a human eye on your CV too?{" "}
+          <a
+            href="/recruiters#contact"
+            className="text-neutral-700 underline underline-offset-2 hover:text-black transition-colors"
+          >
+            Our recruiter offers free 15-min CV calls for candidates in the Netherlands.
+          </a>
+        </p>
+      </div>
     </div>
   );
 }
