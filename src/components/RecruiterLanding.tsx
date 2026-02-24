@@ -39,6 +39,9 @@ export default function RecruiterLanding() {
             <a href="/tools/hireassist-alpha" className="text-blue-600 hover:text-blue-800 font-medium">
               HireAssist Alpha
             </a>
+            <a href="/tools/cv-reviewer" className="text-blue-600 hover:text-blue-800 font-medium">
+              CV Reviewer
+            </a>
           </nav>
 
           <div className="flex items-center gap-2">
@@ -94,6 +97,9 @@ export default function RecruiterLanding() {
             </a>
             <a href="/tools/hireassist-alpha" onClick={() => setMobileOpen(false)} className="py-2 text-blue-600 hover:text-blue-800 font-medium">
               HireAssist Alpha
+            </a>
+            <a href="/tools/cv-reviewer" onClick={() => setMobileOpen(false)} className="py-2 text-blue-600 hover:text-blue-800 font-medium">
+              CV Reviewer
             </a>
             <a
               href="#contact"
