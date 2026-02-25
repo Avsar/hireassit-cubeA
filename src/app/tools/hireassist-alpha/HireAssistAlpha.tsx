@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import CubeALogo from "@/components/CubeALogo";
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_HIREASSIST_UI_URL ?? "";
 
@@ -24,8 +25,7 @@ export default function HireAssistAlpha() {
       <header className="sticky top-0 z-40 backdrop-blur bg-white/80 border-b border-neutral-200">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
           <a href="/" className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-2xl bg-black text-white font-bold grid place-items-center text-sm">AI</div>
-            <div className="font-semibold tracking-tight">HireAssist by CubeA</div>
+            <CubeALogo />
           </a>
           <nav className="flex items-center gap-4 sm:gap-6 text-sm">
             <a href="/" className="hover:text-black">Home</a>

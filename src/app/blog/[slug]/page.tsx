@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getAllPosts, getPostBySlug } from "@/lib/posts";
+import CubeALogo from "@/components/CubeALogo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -38,10 +39,7 @@ export default function BlogPostPage({ params }: Props) {
       <header className="sticky top-0 z-40 backdrop-blur bg-white/80 border-b border-neutral-200">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-2xl bg-black text-white font-bold grid place-items-center text-sm">
-              AI
-            </div>
-            <div className="font-semibold tracking-tight">HireAssist by CubeA</div>
+            <CubeALogo />
           </Link>
           <nav className="flex items-center gap-6 text-sm">
             <Link href="/#how" className="text-neutral-600 hover:text-black">
@@ -95,7 +93,7 @@ export default function BlogPostPage({ params }: Props) {
       <footer className="border-t border-neutral-200 bg-white mt-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 text-sm text-neutral-600 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div>
-            <div className="font-semibold text-neutral-900">HireAssist by CubeA</div>
+            <CubeALogo iconSize={24} />
             <div className="mt-1">© {new Date().getFullYear()} CubeA. All rights reserved.</div>
           </div>
           <div className="flex gap-6">

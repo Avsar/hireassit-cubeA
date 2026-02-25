@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
+import CubeALogo from "./CubeALogo";
 
 export default function Landing() {
   const [lang, setLang] = useState<"en" | "nl">("en");
@@ -18,10 +19,7 @@ export default function Landing() {
       <header className="sticky top-0 z-40 backdrop-blur bg-white/80 border-b border-neutral-200">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-2xl bg-black text-white font-bold grid place-items-center">
-              AI
-            </div>
-            <div className="font-semibold tracking-tight">HireAssist by CubeA</div>
+            <CubeALogo />
           </div>
 
           <nav className="hidden md:flex items-center gap-6 text-sm">
@@ -154,7 +152,7 @@ export default function Landing() {
       <footer className="border-t border-neutral-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 text-sm text-neutral-600 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div>
-            <div className="font-semibold text-neutral-900">HireAssist by CubeA</div>
+            <CubeALogo iconSize={24} />
             <div className="mt-1">
               &copy; {new Date().getFullYear()} CubeA. {t.footer.rights}
             </div>
