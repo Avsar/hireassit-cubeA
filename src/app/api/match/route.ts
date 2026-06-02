@@ -51,8 +51,8 @@ export async function POST(req: Request) {
   const s = Math.round(cos(vJD, vCV) * 100);
 
   // Highlights without Set/for..of
-  const jdTokens = tok(jd || []);
-  const cvTokens = tok(cv || []);
+  const jdTokens = tok(jd || "");
+  const cvTokens = tok(cv || "");
   const jdSeen: Record<string, true> = {};
   for (let i = 0; i < jdTokens.length; i++) jdSeen[jdTokens[i]] = true;
 
