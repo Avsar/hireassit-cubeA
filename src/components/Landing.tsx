@@ -34,8 +34,8 @@ export default function Landing() {
             <a href="/tools/ai-match" className="text-blue-600 hover:text-blue-800 font-medium">
               AI Match
             </a>
-            <a href="/tools/hireassist-alpha" className="text-blue-600 hover:text-blue-800 font-medium">
-              HireAssist Alpha
+            <a href="/jobs" className="text-blue-600 hover:text-blue-800 font-medium">
+              Jobs
             </a>
             <a href="/tools/cv-reviewer" className="text-blue-600 hover:text-blue-800 font-medium">
               CV Reviewer
@@ -86,8 +86,8 @@ export default function Landing() {
             <a href="/tools/ai-match" onClick={() => setMobileOpen(false)} className="py-2 text-blue-600 hover:text-blue-800 font-medium">
               AI Match
             </a>
-            <a href="/tools/hireassist-alpha" onClick={() => setMobileOpen(false)} className="py-2 text-blue-600 hover:text-blue-800 font-medium">
-              HireAssist Alpha
+            <a href="/jobs" onClick={() => setMobileOpen(false)} className="py-2 text-blue-600 hover:text-blue-800 font-medium">
+              Jobs
             </a>
             <a href="/tools/cv-reviewer" onClick={() => setMobileOpen(false)} className="py-2 text-blue-600 hover:text-blue-800 font-medium">
               CV Reviewer
