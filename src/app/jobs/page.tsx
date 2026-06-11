@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import { fetchJobs } from "@/lib/hireassist";
 import JobCard from "@/components/jobs/JobCard";
 import JobFilters from "@/components/jobs/JobFilters";
+import AlertSignup from "@/components/jobs/AlertSignup";
 
 export const metadata: Metadata = {
   title: "Tech Jobs in the Netherlands — incl. hidden jobs not on LinkedIn | CubeA",
@@ -77,8 +78,20 @@ export default async function JobsPage({
       </section>
 
       <div className="mx-auto max-w-5xl px-4 py-8 space-y-6">
+        <div className="flex items-center justify-between">
+          <Suspense>
+            <JobFilters />
+          </Suspense>
+        </div>
+
+        <div className="flex justify-end -mt-3">
+          <Link href="/jobs/saved" className="text-sm text-blue-600 hover:underline">
+            ★ Saved jobs
+          </Link>
+        </div>
+
         <Suspense>
-          <JobFilters />
+          <AlertSignup />
         </Suspense>
 
         {data.jobs.length === 0 ? (

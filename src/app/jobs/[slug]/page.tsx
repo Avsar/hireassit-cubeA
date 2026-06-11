@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { fetchJobDetail, idFromSlug, timeAgo } from "@/lib/hireassist";
+import SaveButton from "@/components/jobs/SaveButton";
 
 export const revalidate = 3600;
 
@@ -156,7 +157,7 @@ export default async function JobDetailPage({ params }: Props) {
                   {job.description}
                 </div>
               )}
-              <div className="mt-8 flex items-center gap-3">
+              <div className="mt-8 flex flex-wrap items-center gap-3">
                 <a
                   href={job.apply_url}
                   target="_blank"
@@ -165,6 +166,13 @@ export default async function JobDetailPage({ params }: Props) {
                 >
                   Apply on company site →
                 </a>
+                <SaveButton
+                  id={job.id}
+                  slug={job.slug}
+                  title={job.title}
+                  company={job.company}
+                  city={job.city}
+                />
                 <span className="text-xs text-neutral-400">
                   You apply directly with {job.company}. No middlemen.
                 </span>
