@@ -3,7 +3,7 @@ import { fetchCompanies } from "@/lib/hireassist";
 import CompanyDirectory from "@/components/CompanyDirectory";
 
 export const metadata: Metadata = {
-  title: "Dutch Tech Companies Hiring Now \u2014 700+ profiles | CubeA",
+  title: "Dutch Tech Companies Hiring Now — 700+ profiles | CubeA",
   description:
     "Browse 700+ Dutch companies with open vacancies, including small companies whose jobs never reach LinkedIn.",
 };
@@ -31,8 +31,8 @@ export default async function CompaniesPage() {
         <div className="mx-auto max-w-5xl px-4 py-12">
           <h1 className="font-[Sora] text-3xl font-bold">Companies hiring in the Netherlands</h1>
           <p className="mt-2 text-blue-100">
-            {companies.length.toLocaleString("en-US")} companies \u00b7{" "}
-            {totalJobs.toLocaleString("en-US")} open positions \u2014 crawled daily,
+            {companies.length.toLocaleString("en-US")} companies ·{" "}
+            {totalJobs.toLocaleString("en-US")} open positions — crawled daily,
             straight from the source.
           </p>
         </div>
