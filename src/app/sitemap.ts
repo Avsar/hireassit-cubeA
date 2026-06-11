@@ -3,7 +3,9 @@ import { fetchSitemapJobs } from "@/lib/hireassist";
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://cubea.nl";
 
-export const revalidate = 86400; // regenerate daily
+// Render on request (cached 24h via the fetch below) instead of at build time --
+// a slow/unreachable backend during a Vercel build must never fail the deploy.
+export const dynamic = "force-dynamic";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticPages: MetadataRoute.Sitemap = [

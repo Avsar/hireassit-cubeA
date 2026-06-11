@@ -66,6 +66,7 @@ export async function fetchJobs(query: JobsQuery = {}): Promise<JobsResponse> {
 
   const res = await fetch(`${API_BASE}/jobs?${params}`, {
     next: { revalidate: 600 },
+    signal: AbortSignal.timeout(20000),
   });
   if (!res.ok) throw new Error(`Jobs API error: ${res.status}`);
   return res.json();
@@ -74,6 +75,7 @@ export async function fetchJobs(query: JobsQuery = {}): Promise<JobsResponse> {
 export async function fetchJobDetail(id: number): Promise<JobDetail | null> {
   const res = await fetch(`${API_BASE}/jobs/${id}`, {
     next: { revalidate: 3600 },
+    signal: AbortSignal.timeout(20000),
   });
   if (res.status === 404) return null;
   if (!res.ok) throw new Error(`Job detail API error: ${res.status}`);
@@ -85,6 +87,7 @@ export async function fetchSitemapJobs(): Promise<
 > {
   const res = await fetch(`${API_BASE}/meta/sitemap-jobs`, {
     next: { revalidate: 86400 },
+    signal: AbortSignal.timeout(25000),
   });
   if (!res.ok) return [];
   const data = await res.json();
