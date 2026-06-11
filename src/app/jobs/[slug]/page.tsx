@@ -1,8 +1,9 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { fetchJobDetail, idFromSlug, timeAgo } from "@/lib/hireassist";
+import { CITY_PAGES, fetchJobDetail, fetchJobs, idFromSlug, timeAgo } from "@/lib/hireassist";
 import SaveButton from "@/components/jobs/SaveButton";
+import JobCard from "@/components/jobs/JobCard";
 
 export const revalidate = 3600;
 
@@ -17,6 +18,15 @@ async function getJob(slug: string) {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  // City landing pages: /jobs/eindhoven, /jobs/amsterdam, ...
+  const cityName = !idFromSlug(params.slug) ? CITY_PAGES[params.slug] : undefined;
+  if (cityName) {
+    return {
+      title: `Tech Jobs in ${cityName} — incl. hidden gems | CubeA`,
+      description: `Open positions in ${cityName}, crawled daily from company career pages and job boards — including hidden jobs that never reach LinkedIn.`,
+      alternates: { canonical: `/jobs/${params.slug}` },
+    };
+  }
   const job = await getJob(params.slug);
   if (!job) return { title: "Job not found | CubeA" };
   const loc = job.city || "Netherlands";
@@ -31,7 +41,66 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+async function CityLandingPage({ cityName }: { cityName: string }) {
+  let data;
+  try {
+    data = await fetchJobs({ city: cityName, per_page: 50 });
+  } catch {
+    data = null;
+  }
+
+  return (
+    <main className="min-h-screen bg-neutral-50">
+      <section className="bg-gradient-to-br from-blue-700 to-blue-500 text-white">
+        <div className="mx-auto max-w-5xl px-4 py-12">
+          <h1 className="text-3xl font-bold">Tech jobs in {cityName}</h1>
+          <p className="mt-2 text-blue-100">
+            {data ? `${data.count.toLocaleString("en-US")} open positions` : "Open positions"} in{" "}
+            {cityName} — crawled daily from company career pages, including
+            hidden jobs that never reach LinkedIn.
+          </p>
+        </div>
+      </section>
+      <div className="mx-auto max-w-5xl px-4 py-8 space-y-6">
+        <div className="flex gap-4 text-sm">
+          <Link href="/jobs" className="text-blue-600 hover:underline">← All jobs</Link>
+          <Link href={`/jobs?city=${encodeURIComponent(cityName)}&hidden=true`} className="text-fuchsia-600 hover:underline">
+            💎 Hidden gems in {cityName}
+          </Link>
+        </div>
+        {!data || data.jobs.length === 0 ? (
+          <p className="py-16 text-center text-neutral-500">
+            No jobs listed in {cityName} right now —{" "}
+            <Link href="/jobs" className="text-blue-600 underline">browse all jobs</Link>.
+          </p>
+        ) : (
+          <div className="grid gap-3">
+            {data.jobs.map((job) => (
+              <JobCard key={job.id} job={job} />
+            ))}
+          </div>
+        )}
+        {data && data.count > 50 && (
+          <div className="text-center">
+            <Link
+              href={`/jobs?city=${encodeURIComponent(cityName)}`}
+              className="inline-block rounded-xl bg-blue-600 px-6 py-3 text-white font-medium hover:bg-blue-700"
+            >
+              See all {data.count.toLocaleString("en-US")} jobs in {cityName} →
+            </Link>
+          </div>
+        )}
+      </div>
+    </main>
+  );
+}
+
 export default async function JobDetailPage({ params }: Props) {
+  const cityName = !idFromSlug(params.slug) ? CITY_PAGES[params.slug] : undefined;
+  if (cityName) {
+    return <CityLandingPage cityName={cityName} />;
+  }
+
   const job = await getJob(params.slug);
   if (!job) notFound();
 

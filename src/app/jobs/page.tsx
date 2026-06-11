@@ -84,8 +84,16 @@ export default async function JobsPage({
           </Suspense>
         </div>
 
-        <div className="flex justify-end -mt-3">
-          <Link href="/jobs/saved" className="text-sm text-blue-600 hover:underline">
+        <div className="flex justify-between -mt-3 text-sm">
+          <div className="flex gap-4">
+            <Link href="/hidden-gems" className="text-fuchsia-600 hover:underline">
+              💎 Hidden gems
+            </Link>
+            <Link href="/companies" className="text-blue-600 hover:underline">
+              Companies
+            </Link>
+          </div>
+          <Link href="/jobs/saved" className="text-blue-600 hover:underline">
             ★ Saved jobs
           </Link>
         </div>

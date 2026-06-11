@@ -100,6 +100,102 @@ export function idFromSlug(slug: string): number | null {
   return m ? parseInt(m[1], 10) : null;
 }
 
+// ---------------------------------------------------------------------------
+// Companies + hidden gems
+// ---------------------------------------------------------------------------
+
+export interface CompanySummary {
+  name: string;
+  slug: string;
+  active_jobs: number;
+  hidden_gems: number;
+  new_this_week: number;
+  main_city: string;
+}
+
+export interface CompanyDetail {
+  name: string;
+  slug: string;
+  active_jobs: number;
+  hidden_gems: number;
+  hidden_share: number;
+  cities: string[];
+  history: { stat_date: string; active_jobs: number; new_jobs: number }[];
+  jobs: {
+    id: number;
+    slug: string;
+    title: string;
+    city: string;
+    country: string;
+    location_raw: string;
+    job_type: string;
+    tech_tags: string;
+    hidden_tier: number;
+    first_seen_at: string;
+  }[];
+}
+
+export interface HiddenSummary {
+  hidden_gems: number;
+  low_visibility: number;
+  total_active: number;
+  top_companies: { name: string; slug: string; hidden_gems: number }[];
+  recent_gems: { id: number; title: string; company: string; city: string; slug: string }[];
+}
+
+export async function fetchCompanies(): Promise<CompanySummary[]> {
+  const res = await fetch(`${API_BASE}/companies`, {
+    next: { revalidate: 3600 },
+    signal: AbortSignal.timeout(20000),
+  });
+  if (!res.ok) throw new Error(`Companies API error: ${res.status}`);
+  const data = await res.json();
+  return data.companies || [];
+}
+
+export async function fetchCompanyDetail(slug: string): Promise<CompanyDetail | null> {
+  const res = await fetch(`${API_BASE}/companies/${slug}`, {
+    next: { revalidate: 3600 },
+    signal: AbortSignal.timeout(20000),
+  });
+  if (res.status === 404) return null;
+  if (!res.ok) throw new Error(`Company API error: ${res.status}`);
+  return res.json();
+}
+
+export async function fetchHiddenSummary(): Promise<HiddenSummary | null> {
+  try {
+    const res = await fetch(`${API_BASE}/stats/hidden-summary`, {
+      next: { revalidate: 1800 },
+      signal: AbortSignal.timeout(20000),
+    });
+    if (!res.ok) return null;
+    return res.json();
+  } catch {
+    return null; // backend unreachable must never fail a build/render
+  }
+}
+
+// City landing pages served under /jobs/[slug] for slugs without a job id.
+export const CITY_PAGES: Record<string, string> = {
+  amsterdam: "Amsterdam",
+  rotterdam: "Rotterdam",
+  "den-haag": "Den Haag",
+  utrecht: "Utrecht",
+  eindhoven: "Eindhoven",
+  groningen: "Groningen",
+  delft: "Delft",
+  haarlem: "Haarlem",
+  leiden: "Leiden",
+  nijmegen: "Nijmegen",
+  tilburg: "Tilburg",
+  breda: "Breda",
+  arnhem: "Arnhem",
+  maastricht: "Maastricht",
+  amersfoort: "Amersfoort",
+  hilversum: "Hilversum",
+};
+
 export function timeAgo(iso: string): string {
   if (!iso) return "";
   const then = new Date(iso).getTime();
