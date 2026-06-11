@@ -98,6 +98,7 @@ export default async function CompanyPage({ params }: Props) {
             <Link
               key={j.id}
               href={`/jobs/${j.slug}`}
+              target="_blank"
               className="flex items-center justify-between gap-3 rounded-xl border border-neutral-200 bg-white px-4 py-3 hover:border-blue-300"
             >
               <div className="min-w-0">

@@ -64,7 +64,7 @@ export default async function JobsPage({
 
   return (
     <main className="min-h-screen bg-neutral-50">
-      <section className="bg-gradient-to-br from-blue-700 to-blue-500 text-white">
+      <section className="bg-blue-600 text-white">
         <div className="mx-auto max-w-5xl px-4 py-12">
           <h1 className="text-3xl font-bold">
             Find jobs nobody else shows you
@@ -82,20 +82,6 @@ export default async function JobsPage({
           <Suspense>
             <JobFilters />
           </Suspense>
-        </div>
-
-        <div className="flex justify-between -mt-3 text-sm">
-          <div className="flex gap-4">
-            <Link href="/hidden-gems" className="text-fuchsia-600 hover:underline">
-              💎 Hidden gems
-            </Link>
-            <Link href="/companies" className="text-blue-600 hover:underline">
-              Companies
-            </Link>
-          </div>
-          <Link href="/jobs/saved" className="text-blue-600 hover:underline">
-            ★ Saved jobs
-          </Link>
         </div>
 
         <Suspense>

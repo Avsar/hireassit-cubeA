@@ -27,7 +27,7 @@ export default async function CompaniesPage() {
 
   return (
     <main className="min-h-screen bg-neutral-50">
-      <section className="bg-gradient-to-br from-blue-700 to-blue-500 text-white">
+      <section className="bg-blue-600 text-white">
         <div className="mx-auto max-w-5xl px-4 py-12">
           <h1 className="text-3xl font-bold">Companies hiring in the Netherlands</h1>
           <p className="mt-2 text-blue-100">

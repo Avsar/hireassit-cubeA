@@ -51,7 +51,7 @@ async function CityLandingPage({ cityName }: { cityName: string }) {
 
   return (
     <main className="min-h-screen bg-neutral-50">
-      <section className="bg-gradient-to-br from-blue-700 to-blue-500 text-white">
+      <section className="bg-blue-600 text-white">
         <div className="mx-auto max-w-5xl px-4 py-12">
           <h1 className="text-3xl font-bold">Tech jobs in {cityName}</h1>
           <p className="mt-2 text-blue-100">
@@ -260,6 +260,7 @@ export default async function JobDetailPage({ params }: Props) {
                 <Link
                   key={r.id}
                   href={`/jobs/${r.slug}`}
+                  target="_blank"
                   className="rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm hover:border-blue-300"
                 >
                   <span className="font-medium">{r.title}</span>

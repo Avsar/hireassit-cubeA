@@ -8,6 +8,7 @@ export default function JobCard({ job }: { job: Job }) {
   return (
     <Link
       href={`/jobs/${job.slug}`}
+      target="_blank"
       className="block rounded-2xl border border-neutral-200 bg-white p-5 hover:border-blue-300 hover:shadow-sm transition"
     >
       <div className="flex items-start justify-between gap-3">

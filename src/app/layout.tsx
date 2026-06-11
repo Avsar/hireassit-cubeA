@@ -3,10 +3,17 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "HireAssist by CubeA — Human + AI Recruiting",
-  description: "Human-in-the-loop recruiting powered by AI. Faster shortlists, better hires.",
+  title: "CubeA — Dutch tech jobs, including the hidden ones",
+  description:
+    "Search 13,000+ jobs from 1,000+ Dutch companies, crawled daily from their own career pages — including hidden gems that never reach LinkedIn or Indeed.",
   metadataBase: new URL("https://cubea.nl"),
-  openGraph: { title: "HireAssist by CubeA", type: "website", url: "https://cubea.nl" },
+  openGraph: {
+    title: "CubeA — Dutch tech jobs, including the hidden ones",
+    description:
+      "13,000+ jobs from 1,000+ Dutch companies — including hidden gems that never reach LinkedIn.",
+    type: "website",
+    url: "https://cubea.nl",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

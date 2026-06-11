@@ -15,7 +15,7 @@ export default async function HiddenGemsPage() {
 
   return (
     <main className="min-h-screen bg-neutral-50">
-      <section className="bg-gradient-to-br from-fuchsia-700 to-purple-600 text-white">
+      <section className="bg-fuchsia-700 text-white">
         <div className="mx-auto max-w-4xl px-4 py-16 text-center">
           <h1 className="text-4xl font-bold">💎 Hidden job gems</h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-fuchsia-100">
@@ -85,6 +85,7 @@ export default async function HiddenGemsPage() {
                 <Link
                   key={j.id}
                   href={`/jobs/${j.slug}`}
+                  target="_blank"
                   className="flex items-center justify-between gap-3 rounded-xl border border-neutral-200 bg-white px-4 py-3 hover:border-fuchsia-300"
                 >
                   <div className="min-w-0">
