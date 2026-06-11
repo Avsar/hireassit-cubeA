@@ -28,74 +28,90 @@ export default function JobFilters() {
     router.push(`/jobs?${next.toString()}`);
   }
 
+  const toggle = (active: boolean, activeCls: string, idleCls: string) =>
+    `w-full rounded-xl border px-3.5 py-2 text-left text-sm transition ${active ? activeCls : idleCls}`;
+
   return (
-    <div className="space-y-3">
+    <div className="space-y-4">
       <form
         onSubmit={(e) => {
           e.preventDefault();
           apply({ q });
         }}
-        className="flex gap-2"
+        className="space-y-2"
       >
+        <label className="text-xs font-semibold uppercase tracking-wide text-neutral-400">
+          Search
+        </label>
         <input
           type="text"
           value={q}
           onChange={(e) => setQ(e.target.value)}
-          placeholder="Job title or keyword…"
-          className="flex-1 rounded-xl border border-neutral-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          placeholder="Title, skill, keyword…"
+          className="w-full rounded-xl border border-neutral-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
-        <select
-          value={city}
-          onChange={(e) => apply({ city: e.target.value || null })}
-          className="rounded-xl border border-neutral-300 px-3 py-2.5 text-sm bg-white"
-        >
-          <option value="">All cities</option>
-          {CITIES.map((c) => (
-            <option key={c} value={c}>
-              {c}
-            </option>
-          ))}
-        </select>
         <button
           type="submit"
-          className="rounded-xl bg-blue-600 text-white px-5 py-2.5 text-sm font-medium hover:bg-blue-700"
+          className="w-full rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-blue-700"
         >
           Search
         </button>
       </form>
 
-      <div className="flex flex-wrap gap-2 text-sm">
+      <div className="space-y-2">
+        <label className="text-xs font-semibold uppercase tracking-wide text-neutral-400">
+          City
+        </label>
+        <select
+          value={city}
+          onChange={(e) => apply({ city: e.target.value || null })}
+          className="w-full rounded-xl border border-neutral-300 bg-white px-3 py-2.5 text-sm"
+        >
+          <option value="">All cities</option>
+          {CITIES.map((c) => (
+            <option key={c} value={c}>{c}</option>
+          ))}
+        </select>
+      </div>
+
+      <div className="space-y-2">
+        <label className="text-xs font-semibold uppercase tracking-wide text-neutral-400">
+          Show me
+        </label>
         <button
           onClick={() => apply({ hidden: hidden ? null : "true" })}
-          className={`rounded-full border px-3.5 py-1.5 transition ${
-            hidden
-              ? "bg-fuchsia-600 border-fuchsia-600 text-white"
-              : "border-fuchsia-300 text-fuchsia-700 hover:bg-fuchsia-50"
-          }`}
+          className={toggle(hidden,
+            "border-fuchsia-600 bg-fuchsia-600 text-white",
+            "border-fuchsia-200 text-fuchsia-700 hover:bg-fuchsia-50")}
         >
-          💎 Hidden gems
+          💎 Hidden gems only
         </button>
         <button
           onClick={() => apply({ english_only: englishOnly ? null : "true" })}
-          className={`rounded-full border px-3.5 py-1.5 transition ${
-            englishOnly
-              ? "bg-blue-600 border-blue-600 text-white"
-              : "border-neutral-300 text-neutral-600 hover:bg-neutral-50"
-          }`}
+          className={toggle(englishOnly,
+            "border-blue-600 bg-blue-600 text-white",
+            "border-neutral-200 text-neutral-600 hover:bg-neutral-50")}
         >
-          English only
+          English-language jobs
         </button>
         <button
           onClick={() => apply({ new_today_only: newToday ? null : "true" })}
-          className={`rounded-full border px-3.5 py-1.5 transition ${
-            newToday
-              ? "bg-emerald-600 border-emerald-600 text-white"
-              : "border-neutral-300 text-neutral-600 hover:bg-neutral-50"
-          }`}
+          className={toggle(newToday,
+            "border-emerald-600 bg-emerald-600 text-white",
+            "border-neutral-200 text-neutral-600 hover:bg-neutral-50")}
         >
           New today
         </button>
       </div>
+
+      {(q || city || hidden || englishOnly || newToday) && (
+        <button
+          onClick={() => router.push("/jobs")}
+          className="w-full text-center text-xs text-neutral-400 hover:text-neutral-600"
+        >
+          Reset all filters
+        </button>
+      )}
     </div>
   );
 }

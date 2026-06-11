@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Job, timeAgo } from "@/lib/hireassist";
+import { Job, logoColor, timeAgo } from "@/lib/hireassist";
 
 export default function JobCard({ job }: { job: Job }) {
   const techTags = (job.tech_tags || "").split("|").filter(Boolean).slice(0, 4);
@@ -13,7 +13,7 @@ export default function JobCard({ job }: { job: Job }) {
     >
       <div className="flex items-start justify-between gap-3">
         <div className="flex items-center gap-3 min-w-0">
-          <div className="h-10 w-10 shrink-0 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-semibold">
+          <div className={`h-10 w-10 shrink-0 rounded-full text-white flex items-center justify-center text-sm font-semibold ${logoColor(job.company)}`}>
             {job.company.slice(0, 2).toUpperCase()}
           </div>
           <div className="min-w-0">

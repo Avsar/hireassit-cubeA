@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { CITY_PAGES, fetchJobDetail, fetchJobs, idFromSlug, timeAgo } from "@/lib/hireassist";
+import { CITY_PAGES, fetchJobDetail, fetchJobs, idFromSlug, logoColor, timeAgo } from "@/lib/hireassist";
 import SaveButton from "@/components/jobs/SaveButton";
 import JobCard from "@/components/jobs/JobCard";
 
@@ -136,6 +136,12 @@ export default async function JobDetailPage({ params }: Props) {
       }
     : null;
 
+  const companySlug = job.company
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 80);
+
   return (
     <main className="min-h-screen bg-neutral-50">
       {jsonLd && (
@@ -145,117 +151,140 @@ export default async function JobDetailPage({ params }: Props) {
         />
       )}
 
-      <div className="mx-auto max-w-3xl px-4 py-10">
+      <div className="mx-auto max-w-5xl px-4 py-8">
         <Link href="/jobs" className="text-sm text-blue-600 hover:underline">
           ← All jobs
         </Link>
 
-        <div className="mt-4 rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8">
-          <div className="flex items-center gap-3">
-            <div className="h-12 w-12 rounded-full bg-blue-600 text-white flex items-center justify-center font-semibold">
-              {job.company.slice(0, 2).toUpperCase()}
+        <div className="mt-4 grid gap-6 lg:grid-cols-[1fr,320px]">
+          {/* MAIN COLUMN */}
+          <article className="min-w-0 rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8">
+            <div className="flex items-center gap-3">
+              <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full font-semibold text-white ${logoColor(job.company)}`}>
+                {job.company.slice(0, 2).toUpperCase()}
+              </div>
+              <div className="min-w-0">
+                <Link href={`/companies/${companySlug}`} className="text-sm text-neutral-500 hover:text-blue-700">
+                  {job.company}
+                </Link>
+                <h1 className="font-[Sora] text-2xl font-bold text-neutral-900">{job.title}</h1>
+              </div>
             </div>
-            <div>
-              <div className="text-neutral-500 text-sm">{job.company}</div>
-              <h1 className="text-2xl font-bold text-neutral-900">{job.title}</h1>
-            </div>
-          </div>
 
-          <div className="mt-4 flex flex-wrap gap-2 text-sm">
             {job.hidden_tier >= 2 && (
-              <span className="rounded-full bg-fuchsia-50 border border-fuchsia-200 text-fuchsia-700 px-3 py-1 font-medium">
-                💎 Hidden gem — scraped directly from the company, rarely on job boards
-              </span>
+              <p className="mt-4 rounded-xl border border-fuchsia-200 bg-fuchsia-50 px-4 py-2.5 text-sm text-fuchsia-700">
+                💎 <strong>Hidden gem</strong> — scraped directly from the company&apos;s
+                website. Jobs like this rarely appear on LinkedIn or Indeed.
+              </p>
             )}
             {job.hidden_tier === 1 && (
-              <span className="rounded-full bg-amber-50 border border-amber-200 text-amber-700 px-3 py-1">
-                Low visibility — small company, rarely posts on big boards
-              </span>
+              <p className="mt-4 rounded-xl border border-amber-200 bg-amber-50 px-4 py-2.5 text-sm text-amber-700">
+                Low visibility — this company rarely posts on big job boards.
+              </p>
             )}
-          </div>
 
-          <dl className="mt-5 grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm">
-            <div>
-              <dt className="text-neutral-400">Location</dt>
-              <dd className="font-medium">{job.city || job.location_raw || "Netherlands"}</dd>
-            </div>
-            {job.job_type && (
-              <div>
-                <dt className="text-neutral-400">Type</dt>
-                <dd className="font-medium">{job.job_type}</dd>
+            {!isActive ? (
+              <div className="mt-6 rounded-xl border border-neutral-200 bg-neutral-100 p-4 text-sm text-neutral-600">
+                This position is no longer listed by the company.{" "}
+                <Link href={`/companies/${companySlug}`} className="text-blue-600 underline">
+                  See other jobs at {job.company}
+                </Link>
+              </div>
+            ) : job.description ? (
+              <div className="mt-6 whitespace-pre-line border-t border-neutral-100 pt-6 text-[15px] leading-relaxed text-neutral-700">
+                {job.description}
+              </div>
+            ) : (
+              <p className="mt-6 border-t border-neutral-100 pt-6 text-sm text-neutral-500">
+                The company hosts the full description on their own site — use
+                the apply button to read it there.
+              </p>
+            )}
+
+            {techTags.length > 0 && (
+              <div className="mt-6 flex flex-wrap gap-2">
+                {techTags.map((t) => (
+                  <span key={t} className="rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs text-blue-700">
+                    {t}
+                  </span>
+                ))}
               </div>
             )}
-            {job.department && (
-              <div>
-                <dt className="text-neutral-400">Department</dt>
-                <dd className="font-medium">{job.department}</dd>
-              </div>
-            )}
-            {posted && (
-              <div>
-                <dt className="text-neutral-400">Posted</dt>
-                <dd className="font-medium">{posted}</dd>
-              </div>
-            )}
-          </dl>
+          </article>
 
-          {techTags.length > 0 && (
-            <div className="mt-4 flex flex-wrap gap-2">
-              {techTags.map((t) => (
-                <span
-                  key={t}
-                  className="rounded-full bg-blue-50 border border-blue-200 text-blue-700 px-3 py-1 text-xs"
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
-          )}
+          {/* STICKY APPLY CARD */}
+          <aside className="lg:sticky lg:top-20 lg:self-start">
+            <div className="rounded-2xl border border-neutral-200 bg-white p-5">
+              {isActive ? (
+                <>
+                  <a
+                    href={job.apply_url}
+                    target="_blank"
+                    rel="noopener nofollow"
+                    className="block w-full rounded-xl bg-blue-600 px-6 py-3 text-center font-semibold text-white hover:bg-blue-700"
+                  >
+                    Apply on company site →
+                  </a>
+                  <div className="mt-2">
+                    <SaveButton
+                      id={job.id}
+                      slug={job.slug}
+                      title={job.title}
+                      company={job.company}
+                      city={job.city}
+                    />
+                  </div>
+                  <p className="mt-3 text-center text-xs text-neutral-400">
+                    You apply directly with {job.company}. No middlemen.
+                  </p>
+                </>
+              ) : (
+                <p className="text-center text-sm text-neutral-500">
+                  This position has closed.
+                </p>
+              )}
 
-          {!isActive ? (
-            <div className="mt-6 rounded-xl bg-neutral-100 border border-neutral-200 p-4 text-sm text-neutral-600">
-              This position is no longer listed by the company.{" "}
-              <Link href={`/jobs?company=${encodeURIComponent(job.company)}`} className="text-blue-600 underline">
-                See other jobs at {job.company}
+              <dl className="mt-5 space-y-3 border-t border-neutral-100 pt-5 text-sm">
+                <div className="flex justify-between gap-3">
+                  <dt className="text-neutral-400">Location</dt>
+                  <dd className="text-right font-medium">{job.city || job.location_raw.slice(0, 30) || "Netherlands"}</dd>
+                </div>
+                {job.job_type && (
+                  <div className="flex justify-between gap-3">
+                    <dt className="text-neutral-400">Type</dt>
+                    <dd className="text-right font-medium">{job.job_type}</dd>
+                  </div>
+                )}
+                {job.department && (
+                  <div className="flex justify-between gap-3">
+                    <dt className="text-neutral-400">Department</dt>
+                    <dd className="text-right font-medium">{job.department}</dd>
+                  </div>
+                )}
+                {posted && (
+                  <div className="flex justify-between gap-3">
+                    <dt className="text-neutral-400">Posted</dt>
+                    <dd className="text-right font-medium">{posted}</dd>
+                  </div>
+                )}
+              </dl>
+
+              <Link
+                href={`/companies/${companySlug}`}
+                className="mt-5 block rounded-xl border border-neutral-200 px-4 py-2.5 text-center text-sm text-neutral-600 hover:border-blue-300 hover:text-blue-700"
+              >
+                All jobs at {job.company}
               </Link>
             </div>
-          ) : (
-            <>
-              {job.description && (
-                <div className="mt-6 border-t border-neutral-100 pt-6 text-[15px] leading-relaxed text-neutral-700 whitespace-pre-line">
-                  {job.description}
-                </div>
-              )}
-              <div className="mt-8 flex flex-wrap items-center gap-3">
-                <a
-                  href={job.apply_url}
-                  target="_blank"
-                  rel="noopener nofollow"
-                  className="rounded-xl bg-blue-600 text-white px-6 py-3 font-medium hover:bg-blue-700"
-                >
-                  Apply on company site →
-                </a>
-                <SaveButton
-                  id={job.id}
-                  slug={job.slug}
-                  title={job.title}
-                  company={job.company}
-                  city={job.city}
-                />
-                <span className="text-xs text-neutral-400">
-                  You apply directly with {job.company}. No middlemen.
-                </span>
-              </div>
-            </>
-          )}
+          </aside>
         </div>
 
         {job.related.length > 0 && (
           <section className="mt-8">
-            <h2 className="text-sm font-semibold text-neutral-500 uppercase tracking-wide">
+            <h2 className="text-sm font-semibold uppercase tracking-wide text-neutral-500">
               More at {job.company}
             </h2>
-            <div className="mt-3 grid gap-2">
+            <div className="mt-3 grid gap-2 sm:grid-cols-2">
               {job.related.map((r) => (
                 <Link
                   key={r.id}

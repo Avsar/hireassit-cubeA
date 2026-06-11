@@ -49,8 +49,22 @@ export interface JobsQuery {
   hidden?: boolean;
   english_only?: boolean;
   new_today_only?: boolean;
+  sort?: string;
   page?: number;
   per_page?: number;
+}
+
+// Deterministic pastel for company "logo" initials — same company always
+// gets the same color, so the brand feels intentional rather than random.
+const LOGO_COLORS = [
+  "bg-blue-600", "bg-indigo-600", "bg-violet-600", "bg-cyan-700",
+  "bg-teal-600", "bg-emerald-600", "bg-rose-600", "bg-amber-600",
+];
+
+export function logoColor(name: string): string {
+  let h = 0;
+  for (let i = 0; i < name.length; i++) h = (h * 31 + name.charCodeAt(i)) >>> 0;
+  return LOGO_COLORS[h % LOGO_COLORS.length];
 }
 
 export async function fetchJobs(query: JobsQuery = {}): Promise<JobsResponse> {
@@ -61,6 +75,7 @@ export async function fetchJobs(query: JobsQuery = {}): Promise<JobsResponse> {
   if (query.hidden) params.set("hidden", "true");
   if (query.english_only) params.set("english_only", "true");
   if (query.new_today_only) params.set("new_today_only", "true");
+  if (query.sort) params.set("sort", query.sort);
   params.set("page", String(query.page || 1));
   params.set("per_page", String(query.per_page || 25));
 

@@ -37,13 +37,14 @@ export default async function JobsPage({
       hidden: searchParams.hidden === "true",
       english_only: searchParams.english_only === "true",
       new_today_only: searchParams.new_today_only === "true",
+      sort: "newest",
       page,
       per_page: 25,
     });
   } catch {
     return (
       <main className="mx-auto max-w-3xl px-4 py-20 text-center">
-        <h1 className="text-2xl font-bold">Job search is briefly unavailable</h1>
+        <h1 className="font-[Sora] text-2xl font-bold">Job search is briefly unavailable</h1>
         <p className="mt-2 text-neutral-500">
           Our job index is waking up — please refresh in a few seconds.
         </p>
@@ -62,70 +63,90 @@ export default async function JobsPage({
     return qs ? `/jobs?${qs}` : "/jobs";
   };
 
+  const activeFilters = [
+    searchParams.q && `“${searchParams.q}”`,
+    searchParams.city,
+    searchParams.hidden === "true" && "💎 hidden gems",
+    searchParams.new_today_only === "true" && "new today",
+  ].filter(Boolean);
+
   return (
     <main className="min-h-screen bg-neutral-50">
-      <section className="bg-blue-600 text-white">
-        <div className="mx-auto max-w-5xl px-4 py-12">
-          <h1 className="text-3xl font-bold">
-            Find jobs nobody else shows you
-          </h1>
-          <p className="mt-2 text-blue-100">
-            {data.count.toLocaleString("en-US")} jobs from Dutch companies —
-            including hidden gems scraped straight from career pages, never
-            posted on LinkedIn.
-          </p>
-        </div>
-      </section>
+      <div className="mx-auto max-w-6xl px-4 py-8">
+        <div className="grid gap-8 lg:grid-cols-[260px,1fr]">
+          {/* FILTER RAIL */}
+          <aside className="lg:sticky lg:top-20 lg:self-start">
+            <div className="rounded-2xl border border-neutral-200 bg-white p-5">
+              <Suspense>
+                <JobFilters />
+              </Suspense>
+            </div>
+          </aside>
 
-      <div className="mx-auto max-w-5xl px-4 py-8 space-y-6">
-        <div className="flex items-center justify-between">
-          <Suspense>
-            <JobFilters />
-          </Suspense>
-        </div>
+          {/* RESULTS */}
+          <div className="min-w-0 space-y-4">
+            <div className="flex flex-wrap items-baseline justify-between gap-2">
+              <h1 className="font-[Sora] text-xl font-bold">
+                {data.count.toLocaleString("en-US")}{" "}
+                {activeFilters.length > 0 ? "matching jobs" : "jobs in the Netherlands"}
+              </h1>
+              {activeFilters.length > 0 && (
+                <span className="text-sm text-neutral-400">
+                  {activeFilters.join(" · ")}
+                </span>
+              )}
+            </div>
 
-        <Suspense>
-          <AlertSignup />
-        </Suspense>
+            <Suspense>
+              <AlertSignup />
+            </Suspense>
 
-        {data.jobs.length === 0 ? (
-          <p className="py-16 text-center text-neutral-500">
-            No jobs match these filters.{" "}
-            <Link href="/jobs" className="text-blue-600 underline">
-              Reset filters
-            </Link>
-          </p>
-        ) : (
-          <div className="grid gap-3">
-            {data.jobs.map((job) => (
-              <JobCard key={job.id} job={job} />
-            ))}
+            {data.jobs.length === 0 ? (
+              <div className="rounded-2xl border border-neutral-200 bg-white py-16 text-center">
+                <p className="font-[Sora] font-semibold text-neutral-700">
+                  No jobs match these filters
+                </p>
+                <p className="mt-1 text-sm text-neutral-500">
+                  Try a broader search, or{" "}
+                  <Link href="/jobs" className="text-blue-600 underline">
+                    reset the filters
+                  </Link>
+                  .
+                </p>
+              </div>
+            ) : (
+              <div className="grid gap-3">
+                {data.jobs.map((job) => (
+                  <JobCard key={job.id} job={job} />
+                ))}
+              </div>
+            )}
+
+            {data.pages > 1 && (
+              <nav className="flex items-center justify-center gap-2 pt-4 text-sm">
+                {page > 1 && (
+                  <Link
+                    href={pageUrl(page - 1)}
+                    className="rounded-lg border border-neutral-300 px-3 py-1.5 hover:bg-white"
+                  >
+                    ← Previous
+                  </Link>
+                )}
+                <span className="px-3 text-neutral-500">
+                  Page {page} of {data.pages}
+                </span>
+                {page < data.pages && (
+                  <Link
+                    href={pageUrl(page + 1)}
+                    className="rounded-lg border border-neutral-300 px-3 py-1.5 hover:bg-white"
+                  >
+                    Next →
+                  </Link>
+                )}
+              </nav>
+            )}
           </div>
-        )}
-
-        {data.pages > 1 && (
-          <nav className="flex items-center justify-center gap-2 pt-4 text-sm">
-            {page > 1 && (
-              <Link
-                href={pageUrl(page - 1)}
-                className="rounded-lg border border-neutral-300 px-3 py-1.5 hover:bg-white"
-              >
-                ← Previous
-              </Link>
-            )}
-            <span className="px-3 text-neutral-500">
-              Page {page} of {data.pages}
-            </span>
-            {page < data.pages && (
-              <Link
-                href={pageUrl(page + 1)}
-                className="rounded-lg border border-neutral-300 px-3 py-1.5 hover:bg-white"
-              >
-                Next →
-              </Link>
-            )}
-          </nav>
-        )}
+        </div>
       </div>
     </main>
   );

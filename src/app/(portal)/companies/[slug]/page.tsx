@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { fetchCompanyDetail, timeAgo } from "@/lib/hireassist";
+import { fetchCompanyDetail, logoColor, timeAgo } from "@/lib/hireassist";
 
 export const revalidate = 3600;
 
@@ -55,7 +55,7 @@ export default async function CompanyPage({ params }: Props) {
 
         <div className="mt-4 rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8">
           <div className="flex items-center gap-4">
-            <div className="h-14 w-14 rounded-full bg-blue-600 text-white flex items-center justify-center text-lg font-semibold">
+            <div className={`h-14 w-14 rounded-full text-white flex items-center justify-center text-lg font-semibold ${logoColor(co.name)}`}>
               {co.name.slice(0, 2).toUpperCase()}
             </div>
             <div>
