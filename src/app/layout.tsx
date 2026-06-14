@@ -13,6 +13,15 @@ export const metadata: Metadata = {
       "13,000+ jobs from 1,000+ Dutch companies — including hidden gems that never reach LinkedIn.",
     type: "website",
     url: "https://cubea.nl",
+    siteName: "CubeA",
+    images: ["/og.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CubeA — Dutch tech jobs, including the hidden ones",
+    description:
+      "13,000+ jobs from 1,000+ Dutch companies — including hidden gems that never reach LinkedIn.",
+    images: ["/og.png"],
   },
 };
 
