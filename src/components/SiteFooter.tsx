@@ -60,6 +60,7 @@ export default function SiteFooter() {
         <div>
           <div className="text-sm font-semibold text-neutral-900">CubeA</div>
           <ul className="mt-3 space-y-2 text-sm text-neutral-500">
+            <li><Link href="/about" className="hover:text-blue-700">About</Link></li>
             <li><Link href="/recruiters" className="hover:text-blue-700">For employers</Link></li>
             <li><Link href="/blog" className="hover:text-blue-700">Blog</Link></li>
             <li><Link href="/privacy" className="hover:text-blue-700">Privacy</Link></li>
