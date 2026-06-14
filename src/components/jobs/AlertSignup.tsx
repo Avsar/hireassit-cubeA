@@ -3,6 +3,7 @@
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import Link from "next/link";
+import { track } from "@/lib/analytics";
 
 export default function AlertSignup() {
   const params = useSearchParams();
@@ -40,6 +41,14 @@ export default function AlertSignup() {
       const data = await res.json();
       setMessage(data.message || "");
       setState(data.ok ? "done" : "error");
+      if (data.ok) {
+        track("sign_up", {
+          method: "job_alert",
+          city: city || undefined,
+          query: q || undefined,
+          hidden_gems: hidden,
+        });
+      }
     } catch {
       setMessage("Something went wrong. Please try again.");
       setState("error");

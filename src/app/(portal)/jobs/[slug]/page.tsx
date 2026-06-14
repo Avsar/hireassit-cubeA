@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { CITY_PAGES, ROLE_PAGES, type RolePage, fetchJobDetail, fetchJobs, idFromSlug, logoColor, timeAgo } from "@/lib/hireassist";
 import SaveButton from "@/components/jobs/SaveButton";
 import JobCard from "@/components/jobs/JobCard";
+import ApplyButton from "@/components/ApplyButton";
 
 export const revalidate = 3600;
 
@@ -432,14 +433,16 @@ export default async function JobDetailPage({ params }: Props) {
             <div className="rounded-2xl border border-neutral-200 bg-white p-5">
               {isActive ? (
                 <>
-                  <a
-                    href={job.apply_url}
-                    target="_blank"
-                    rel="noopener nofollow"
+                  <ApplyButton
+                    applyUrl={job.apply_url}
+                    jobId={job.id}
+                    company={job.company}
+                    title={job.title}
+                    hiddenTier={job.hidden_tier}
                     className="block w-full rounded-xl bg-blue-600 px-6 py-3 text-center font-semibold text-white hover:bg-blue-700"
                   >
                     Apply on company site →
-                  </a>
+                  </ApplyButton>
                   <div className="mt-2">
                     <SaveButton
                       id={job.id}
