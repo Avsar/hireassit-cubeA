@@ -11,8 +11,38 @@ const HOME_CITIES = [
 export default async function HomePage() {
   const data = await fetchHiddenSummary();
 
+  const homeJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        name: "CubeA",
+        url: "https://cubea.nl",
+        description:
+          "CubeA surfaces Dutch tech jobs crawled directly from 1,000+ company career pages — including hidden roles that never reach LinkedIn or Indeed.",
+      },
+      {
+        "@type": "WebSite",
+        name: "CubeA",
+        url: "https://cubea.nl",
+        potentialAction: {
+          "@type": "SearchAction",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: "https://cubea.nl/jobs?q={search_term_string}",
+          },
+          "query-input": "required name=search_term_string",
+        },
+      },
+    ],
+  };
+
   return (
     <main className="min-h-screen bg-neutral-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
+      />
       {/* HERO — search first */}
       <section className="border-b border-neutral-200 bg-white">
         <div className="mx-auto max-w-3xl px-4 py-20 text-center">
