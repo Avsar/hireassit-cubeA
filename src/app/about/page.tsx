@@ -70,10 +70,10 @@ export default function AboutPage() {
 
           <h2>The company we almost never found</h2>
           <p>
-            The turning point was a company in Eindhoven &mdash; Wolfpack. A place she&apos;d have
-            loved to work, doing exactly the kind of work she wanted. And she only found it because
-            her outreach happened to lead her there. It wasn&apos;t sitting on LinkedIn waiting to be
-            discovered. If she&apos;d relied on the boards alone, she&apos;d have walked right past
+            The turning point was a company in Eindhoven she&apos;d never heard of. A place
+            she&apos;d have loved to work, doing exactly the kind of work she wanted. And she only
+            found it because her outreach happened to lead her there &mdash; it wasn&apos;t on the
+            job boards at all. If she&apos;d relied on those alone, she&apos;d have walked right past
             it.
           </p>
           <p>
@@ -92,8 +92,8 @@ export default function AboutPage() {
             So we started building the answer. CubeA crawls company career pages directly &mdash;
             over a thousand of them across the Netherlands, every day &mdash; and pulls the roles
             into one place, including the &ldquo;hidden gems&rdquo; that never reach LinkedIn or
-            Indeed. The jobs like the one at Wolfpack. The ones you&apos;d only find if you happened
-            to knock on the right door.
+            Indeed. The jobs like the one she found in Eindhoven. The ones you&apos;d only find if
+            you happened to knock on the right door.
           </p>
           <p>
             She eventually landed a great role. But the five months it took, and the company she
