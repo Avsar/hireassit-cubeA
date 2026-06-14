@@ -211,6 +211,54 @@ export const CITY_PAGES: Record<string, string> = {
   hilversum: "Hilversum",
 };
 
+// Role landing pages served under /jobs/[slug] for slugs without a job id.
+// `query` is matched against the job TITLE (backend `q` = LOWER(title) LIKE %q%),
+// so each keyword must be a substring that reliably appears in that role's titles.
+export interface RolePage {
+  label: string; // short label, e.g. "Software Engineer"
+  query: string; // title-search keyword passed to the jobs API
+  blurb: string; // one-line description used in hub copy + meta description
+}
+
+export const ROLE_PAGES: Record<string, RolePage> = {
+  "software-engineer": {
+    label: "Software Engineer",
+    query: "engineer",
+    blurb:
+      "Software, backend, frontend and platform engineering roles at Dutch companies — including openings that never reach LinkedIn.",
+  },
+  developer: {
+    label: "Developer",
+    query: "developer",
+    blurb:
+      "Developer roles across web, mobile and full-stack at Dutch tech companies, crawled daily straight from their career pages.",
+  },
+  data: {
+    label: "Data",
+    query: "data",
+    blurb:
+      "Data engineering, data science and analytics roles at Dutch companies — including hidden jobs posted only on company websites.",
+  },
+  "product-manager": {
+    label: "Product Manager",
+    query: "product manager",
+    blurb:
+      "Product management and product owner roles at Dutch tech companies, sourced directly from the companies that are hiring.",
+  },
+  devops: {
+    label: "DevOps & Cloud",
+    query: "devops",
+    blurb:
+      "DevOps, SRE, platform and cloud engineering roles at Dutch companies — many never listed on the big job boards.",
+  },
+  security: {
+    label: "Security",
+    query: "security",
+    blurb:
+      "Cybersecurity, security engineering and infosec roles at Dutch companies, crawled daily from company career pages.",
+  },
+};
+
 export function timeAgo(iso: string): string {
   if (!iso) return "";
   const then = new Date(iso).getTime();

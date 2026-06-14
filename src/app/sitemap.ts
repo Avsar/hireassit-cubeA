@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import { CITY_PAGES, fetchCompanies, fetchSitemapJobs } from "@/lib/hireassist";
+import { CITY_PAGES, ROLE_PAGES, fetchCompanies, fetchSitemapJobs } from "@/lib/hireassist";
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://cubea.nl";
 
@@ -20,6 +20,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ];
 
   const cityPages: MetadataRoute.Sitemap = Object.keys(CITY_PAGES).map((slug) => ({
+    url: `${SITE}/jobs/${slug}`,
+    changeFrequency: "daily" as const,
+    priority: 0.8,
+  }));
+
+  const rolePages: MetadataRoute.Sitemap = Object.keys(ROLE_PAGES).map((slug) => ({
     url: `${SITE}/jobs/${slug}`,
     changeFrequency: "daily" as const,
     priority: 0.8,
@@ -50,5 +56,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // same resilience as jobs
   }
 
-  return [...staticPages, ...cityPages, ...companyPages, ...jobPages];
+  return [...staticPages, ...cityPages, ...rolePages, ...companyPages, ...jobPages];
 }

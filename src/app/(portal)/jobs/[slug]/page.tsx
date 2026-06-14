@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { CITY_PAGES, fetchJobDetail, fetchJobs, idFromSlug, logoColor, timeAgo } from "@/lib/hireassist";
+import { CITY_PAGES, ROLE_PAGES, type RolePage, fetchJobDetail, fetchJobs, idFromSlug, logoColor, timeAgo } from "@/lib/hireassist";
 import SaveButton from "@/components/jobs/SaveButton";
 import JobCard from "@/components/jobs/JobCard";
 
@@ -70,8 +70,10 @@ async function getJob(slug: string) {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const isHub = !idFromSlug(params.slug);
+
   // City landing pages: /jobs/eindhoven, /jobs/amsterdam, ...
-  const cityName = !idFromSlug(params.slug) ? CITY_PAGES[params.slug] : undefined;
+  const cityName = isHub ? CITY_PAGES[params.slug] : undefined;
   if (cityName) {
     return {
       title: `Tech Jobs in ${cityName} — incl. hidden gems | CubeA`,
@@ -79,6 +81,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       alternates: { canonical: `/jobs/${params.slug}` },
     };
   }
+
+  // Role landing pages: /jobs/software-engineer, /jobs/data, ...
+  const role = isHub ? ROLE_PAGES[params.slug] : undefined;
+  if (role) {
+    return {
+      title: `${role.label} Jobs in the Netherlands — incl. hidden gems | CubeA`,
+      description: role.blurb,
+      alternates: { canonical: `/jobs/${params.slug}` },
+    };
+  }
+
   const job = await getJob(params.slug);
   if (!job) return { title: "Job not found | CubeA" };
   const loc = job.city || "Netherlands";
@@ -93,7 +106,133 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-async function CityLandingPage({ cityName }: { cityName: string }) {
+// --- Shared hub-page building blocks -------------------------------------
+
+const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://cubea.nl";
+
+// Breadcrumb nav + matching BreadcrumbList JSON-LD (Jobs › {label}).
+function HubBreadcrumb({ label, slug }: { label: string; slug: string }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Jobs", item: `${SITE}/jobs` },
+      { "@type": "ListItem", position: 2, name: label, item: `${SITE}/jobs/${slug}` },
+    ],
+  };
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <nav className="text-sm text-neutral-500">
+        <Link href="/jobs" className="hover:text-blue-700">Jobs</Link>
+        <span className="mx-2">/</span>
+        <span className="text-neutral-700">{label}</span>
+      </nav>
+    </>
+  );
+}
+
+// Chip links to every role hub (optionally excluding the current one).
+function BrowseByRole({ exclude }: { exclude?: string }) {
+  const roles = Object.entries(ROLE_PAGES).filter(([slug]) => slug !== exclude);
+  return (
+    <div>
+      <h2 className="text-sm font-semibold text-neutral-900">Browse by role</h2>
+      <div className="mt-3 flex flex-wrap gap-2">
+        {roles.map(([slug, role]) => (
+          <Link
+            key={slug}
+            href={`/jobs/${slug}`}
+            className="rounded-full border border-neutral-200 bg-white px-3 py-1.5 text-sm text-neutral-700 hover:border-blue-300 hover:text-blue-700"
+          >
+            {role.label}
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// Chip links to every city hub (optionally excluding the current one).
+function BrowseByCity({ exclude }: { exclude?: string }) {
+  const cities = Object.entries(CITY_PAGES).filter(([, name]) => name !== exclude);
+  return (
+    <div>
+      <h2 className="text-sm font-semibold text-neutral-900">Browse by city</h2>
+      <div className="mt-3 flex flex-wrap gap-2">
+        {cities.map(([slug, name]) => (
+          <Link
+            key={slug}
+            href={`/jobs/${slug}`}
+            className="rounded-full border border-neutral-200 bg-white px-3 py-1.5 text-sm text-neutral-700 hover:border-blue-300 hover:text-blue-700"
+          >
+            {name}
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+async function RoleLandingPage({ slug, role }: { slug: string; role: RolePage }) {
+  let data;
+  try {
+    data = await fetchJobs({ q: role.query, per_page: 50 });
+  } catch {
+    data = null;
+  }
+
+  return (
+    <main className="min-h-screen bg-neutral-50">
+      <section className="bg-blue-600 text-white">
+        <div className="mx-auto max-w-5xl px-4 py-12">
+          <h1 className="text-3xl font-bold">{role.label} jobs in the Netherlands</h1>
+          <p className="mt-2 max-w-2xl text-blue-100">
+            {data ? `${data.count.toLocaleString("en-US")} open ${role.label.toLowerCase()} positions` : `Open ${role.label.toLowerCase()} positions`}{" "}
+            — {role.blurb}
+          </p>
+        </div>
+      </section>
+      <div className="mx-auto max-w-5xl px-4 py-8 space-y-8">
+        <HubBreadcrumb label={`${role.label} jobs`} slug={slug} />
+
+        {!data || data.jobs.length === 0 ? (
+          <p className="py-16 text-center text-neutral-500">
+            No {role.label.toLowerCase()} jobs listed right now —{" "}
+            <Link href="/jobs" className="text-blue-600 underline">browse all jobs</Link>.
+          </p>
+        ) : (
+          <div className="grid gap-3">
+            {data.jobs.map((job) => (
+              <JobCard key={job.id} job={job} />
+            ))}
+          </div>
+        )}
+
+        {data && data.count > 50 && (
+          <div className="text-center">
+            <Link
+              href={`/jobs?q=${encodeURIComponent(role.query)}`}
+              className="inline-block rounded-xl bg-blue-600 px-6 py-3 font-medium text-white hover:bg-blue-700"
+            >
+              See all {data.count.toLocaleString("en-US")} {role.label.toLowerCase()} jobs →
+            </Link>
+          </div>
+        )}
+
+        <div className="grid gap-8 border-t border-neutral-200 pt-8 sm:grid-cols-2">
+          <BrowseByCity />
+          <BrowseByRole exclude={slug} />
+        </div>
+      </div>
+    </main>
+  );
+}
+
+async function CityLandingPage({ slug, cityName }: { slug: string; cityName: string }) {
   let data;
   try {
     data = await fetchJobs({ city: cityName, per_page: 50 });
@@ -113,13 +252,16 @@ async function CityLandingPage({ cityName }: { cityName: string }) {
           </p>
         </div>
       </section>
-      <div className="mx-auto max-w-5xl px-4 py-8 space-y-6">
-        <div className="flex gap-4 text-sm">
-          <Link href="/jobs" className="text-blue-600 hover:underline">← All jobs</Link>
-          <Link href={`/jobs?city=${encodeURIComponent(cityName)}&hidden=true`} className="text-fuchsia-600 hover:underline">
-            💎 Hidden gems in {cityName}
-          </Link>
-        </div>
+      <div className="mx-auto max-w-5xl px-4 py-8 space-y-8">
+        <HubBreadcrumb label={`Tech jobs in ${cityName}`} slug={slug} />
+
+        <Link
+          href={`/jobs?city=${encodeURIComponent(cityName)}&hidden=true`}
+          className="inline-block text-sm text-fuchsia-600 hover:underline"
+        >
+          💎 Hidden gems in {cityName}
+        </Link>
+
         {!data || data.jobs.length === 0 ? (
           <p className="py-16 text-center text-neutral-500">
             No jobs listed in {cityName} right now —{" "}
@@ -132,6 +274,7 @@ async function CityLandingPage({ cityName }: { cityName: string }) {
             ))}
           </div>
         )}
+
         {data && data.count > 50 && (
           <div className="text-center">
             <Link
@@ -142,15 +285,27 @@ async function CityLandingPage({ cityName }: { cityName: string }) {
             </Link>
           </div>
         )}
+
+        <div className="grid gap-8 border-t border-neutral-200 pt-8 sm:grid-cols-2">
+          <BrowseByRole />
+          <BrowseByCity exclude={cityName} />
+        </div>
       </div>
     </main>
   );
 }
 
 export default async function JobDetailPage({ params }: Props) {
-  const cityName = !idFromSlug(params.slug) ? CITY_PAGES[params.slug] : undefined;
+  const isHub = !idFromSlug(params.slug);
+
+  const cityName = isHub ? CITY_PAGES[params.slug] : undefined;
   if (cityName) {
-    return <CityLandingPage cityName={cityName} />;
+    return <CityLandingPage slug={params.slug} cityName={cityName} />;
+  }
+
+  const role = isHub ? ROLE_PAGES[params.slug] : undefined;
+  if (role) {
+    return <RoleLandingPage slug={params.slug} role={role} />;
   }
 
   const job = await getJob(params.slug);

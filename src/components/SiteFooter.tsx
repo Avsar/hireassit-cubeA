@@ -11,10 +11,19 @@ const CITY_LINKS = [
   ["nijmegen", "Nijmegen"],
 ];
 
+const ROLE_LINKS = [
+  ["software-engineer", "Software Engineer"],
+  ["developer", "Developer"],
+  ["data", "Data"],
+  ["product-manager", "Product Manager"],
+  ["devops", "DevOps & Cloud"],
+  ["security", "Security"],
+];
+
 export default function SiteFooter() {
   return (
     <footer className="mt-16 border-t border-neutral-200 bg-white">
-      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:grid-cols-3">
+      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <div className="text-sm font-semibold text-neutral-900">Find jobs</div>
           <ul className="mt-3 space-y-2 text-sm text-neutral-500">
@@ -28,6 +37,18 @@ export default function SiteFooter() {
           <div className="text-sm font-semibold text-neutral-900">Jobs by city</div>
           <ul className="mt-3 grid grid-cols-2 gap-2 text-sm text-neutral-500">
             {CITY_LINKS.map(([slug, name]) => (
+              <li key={slug}>
+                <Link href={`/jobs/${slug}`} className="hover:text-blue-700">
+                  {name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <div className="text-sm font-semibold text-neutral-900">Jobs by role</div>
+          <ul className="mt-3 grid grid-cols-1 gap-2 text-sm text-neutral-500">
+            {ROLE_LINKS.map(([slug, name]) => (
               <li key={slug}>
                 <Link href={`/jobs/${slug}`} className="hover:text-blue-700">
                   {name}

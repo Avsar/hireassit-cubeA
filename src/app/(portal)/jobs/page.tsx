@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
-import { fetchJobs } from "@/lib/hireassist";
+import { CITY_PAGES, ROLE_PAGES, fetchJobs } from "@/lib/hireassist";
 import JobCard from "@/components/jobs/JobCard";
 import JobFilters from "@/components/jobs/JobFilters";
 import AlertSignup from "@/components/jobs/AlertSignup";
@@ -147,6 +147,44 @@ export default async function JobsPage({
             )}
           </div>
         </div>
+
+        {/* Browse hubs — sitewide internal links that funnel crawlers and
+            users into the clean, indexable city and role landing pages. */}
+        <section className="mt-12 border-t border-neutral-200 pt-8">
+          <h2 className="font-[Sora] text-lg font-bold text-neutral-900">
+            Browse jobs by city and role
+          </h2>
+          <div className="mt-4 grid gap-8 sm:grid-cols-2">
+            <div>
+              <div className="text-sm font-semibold text-neutral-700">By city</div>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {Object.entries(CITY_PAGES).map(([slug, name]) => (
+                  <Link
+                    key={slug}
+                    href={`/jobs/${slug}`}
+                    className="rounded-full border border-neutral-200 bg-white px-3 py-1.5 text-sm text-neutral-700 hover:border-blue-300 hover:text-blue-700"
+                  >
+                    {name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+            <div>
+              <div className="text-sm font-semibold text-neutral-700">By role</div>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {Object.entries(ROLE_PAGES).map(([slug, role]) => (
+                  <Link
+                    key={slug}
+                    href={`/jobs/${slug}`}
+                    className="rounded-full border border-neutral-200 bg-white px-3 py-1.5 text-sm text-neutral-700 hover:border-blue-300 hover:text-blue-700"
+                  >
+                    {role.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
   );
