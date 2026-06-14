@@ -48,6 +48,9 @@ export default function SiteHeader() {
           <Link href="/jobs/saved" className="text-neutral-600 hover:text-neutral-900">
             ★ Saved
           </Link>
+          <Link href="/account" className="text-neutral-600 hover:text-neutral-900">
+            Account
+          </Link>
           <Link
             href="/recruiters"
             className="rounded-xl border border-neutral-300 px-3.5 py-1.5 text-neutral-700 hover:bg-neutral-50"
@@ -67,7 +70,7 @@ export default function SiteHeader() {
 
       {open && (
         <nav className="border-t border-neutral-200 bg-white px-4 py-3 md:hidden">
-          {[...LINKS, { href: "/jobs/saved", label: "★ Saved jobs" }, { href: "/recruiters", label: "For employers" }].map((l) => (
+          {[...LINKS, { href: "/jobs/saved", label: "★ Saved jobs" }, { href: "/account", label: "Account" }, { href: "/recruiters", label: "For employers" }].map((l) => (
             <Link
               key={l.href}
               href={l.href}
