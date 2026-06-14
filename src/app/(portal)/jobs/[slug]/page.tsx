@@ -11,6 +11,58 @@ interface Props {
   params: { slug: string };
 }
 
+// Maps Dutch cities to their province (schema.org addressRegion).
+// Used to enrich JobPosting structured data; unknown cities are simply omitted.
+const NL_CITY_REGIONS: Record<string, string> = {
+  amsterdam: "North Holland",
+  haarlem: "North Holland",
+  hilversum: "North Holland",
+  amstelveen: "North Holland",
+  alkmaar: "North Holland",
+  zaandam: "North Holland",
+  rotterdam: "South Holland",
+  "the hague": "South Holland",
+  "den haag": "South Holland",
+  "'s-gravenhage": "South Holland",
+  delft: "South Holland",
+  leiden: "South Holland",
+  "zoetermeer": "South Holland",
+  dordrecht: "South Holland",
+  gouda: "South Holland",
+  utrecht: "Utrecht",
+  amersfoort: "Utrecht",
+  nieuwegein: "Utrecht",
+  eindhoven: "North Brabant",
+  tilburg: "North Brabant",
+  breda: "North Brabant",
+  "'s-hertogenbosch": "North Brabant",
+  "den bosch": "North Brabant",
+  helmond: "North Brabant",
+  nijmegen: "Gelderland",
+  arnhem: "Gelderland",
+  apeldoorn: "Gelderland",
+  ede: "Gelderland",
+  groningen: "Groningen",
+  maastricht: "Limburg",
+  venlo: "Limburg",
+  heerlen: "Limburg",
+  enschede: "Overijssel",
+  zwolle: "Overijssel",
+  hengelo: "Overijssel",
+  deventer: "Overijssel",
+  almere: "Flevoland",
+  lelystad: "Flevoland",
+  leeuwarden: "Friesland",
+  assen: "Drenthe",
+  emmen: "Drenthe",
+  middelburg: "Zeeland",
+};
+
+function regionForCity(city?: string): string | undefined {
+  if (!city) return undefined;
+  return NL_CITY_REGIONS[city.trim().toLowerCase()];
+}
+
 async function getJob(slug: string) {
   const id = idFromSlug(slug);
   if (!id) return null;
@@ -108,6 +160,12 @@ export default async function JobDetailPage({ params }: Props) {
   const posted = timeAgo(job.posted_at);
   const isActive = !!job.is_active;
 
+  // Rolling 30-day expiry. The page revalidates hourly, so an active job
+  // always advertises a future validThrough and is never dropped by Google
+  // for being "expired"; once a job goes inactive we stop emitting JSON-LD.
+  const validThrough = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString();
+  const addressRegion = regionForCity(job.city);
+
   const jsonLd = isActive
     ? {
         "@context": "https://schema.org",
@@ -117,6 +175,7 @@ export default async function JobDetailPage({ params }: Props) {
           job.description ||
           `${job.title} position at ${job.company} in ${job.city || "the Netherlands"}.`,
         datePosted: (job.posted_at || job.first_seen_at || "").slice(0, 10),
+        validThrough,
         hiringOrganization: {
           "@type": "Organization",
           name: job.company,
@@ -126,6 +185,7 @@ export default async function JobDetailPage({ params }: Props) {
           address: {
             "@type": "PostalAddress",
             ...(job.city ? { addressLocality: job.city } : {}),
+            ...(addressRegion ? { addressRegion } : {}),
             addressCountry: job.country === "Netherlands" ? "NL" : job.country || "NL",
           },
         },
