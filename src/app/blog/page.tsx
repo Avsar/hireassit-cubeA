@@ -1,11 +1,14 @@
 import Link from "next/link";
 import { getAllPosts } from "@/lib/posts";
-import CubeALogo from "@/components/CubeALogo";
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blog — HireAssist by CubeA",
-  description: "Thoughts on hiring, AI recruiting, and the European talent market.",
+  title: "Blog — CubeA",
+  description:
+    "Notes on the hidden Dutch job market — job hunting, hidden gems, and finding roles that never reach LinkedIn.",
+  alternates: { canonical: "/blog" },
 };
 
 export default function BlogPage() {
@@ -13,36 +16,12 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen bg-neutral-50 text-neutral-900">
-      {/* Nav */}
-      <header className="sticky top-0 z-40 backdrop-blur bg-white/80 border-b border-neutral-200">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-          <Link href="/" className="flex items-center gap-2">
-            <CubeALogo />
-          </Link>
-          <nav className="flex items-center gap-6 text-sm">
-            <Link href="/#how" className="text-neutral-600 hover:text-black">
-              How it works
-            </Link>
-            <Link href="/#features" className="text-neutral-600 hover:text-black">
-              Features
-            </Link>
-            <Link href="/blog" className="font-medium text-black">
-              Blog
-            </Link>
-            <Link
-              href="/#contact"
-              className="px-3 py-2 rounded-xl bg-black text-white hover:bg-neutral-800"
-            >
-              Contact
-            </Link>
-          </nav>
-        </div>
-      </header>
+      <SiteHeader />
 
       <main className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16">
         <h1 className="text-3xl font-extrabold tracking-tight">Blog</h1>
         <p className="mt-2 text-neutral-600">
-          Thoughts on hiring, AI, and the European talent market.
+          Notes on the hidden Dutch job market — and finding roles that never reach LinkedIn.
         </p>
 
         <div className="mt-10 flex flex-col gap-8">
@@ -78,19 +57,7 @@ export default function BlogPage() {
         </div>
       </main>
 
-      <footer className="border-t border-neutral-200 bg-white mt-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 text-sm text-neutral-600 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-          <div>
-            <CubeALogo iconSize={24} />
-            <div className="mt-1">© {new Date().getFullYear()} CubeA. All rights reserved.</div>
-          </div>
-          <div className="flex gap-6">
-            <Link href="/privacy" className="hover:text-neutral-900">Privacy</Link>
-            <Link href="/terms" className="hover:text-neutral-900">Terms</Link>
-            <Link href="/impressum" className="hover:text-neutral-900">Impressum</Link>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

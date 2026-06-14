@@ -1,9 +1,12 @@
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getAllPosts, getPostBySlug } from "@/lib/posts";
-import CubeALogo from "@/components/CubeALogo";
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+
+const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://cubea.nl";
 
 type Props = { params: { slug: string } };
 
@@ -14,9 +17,24 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   try {
     const { meta } = getPostBySlug(params.slug);
+    const path = `/blog/${params.slug}`;
     return {
-      title: `${meta.title} — HireAssist by CubeA`,
+      title: `${meta.title} — CubeA`,
       description: meta.description,
+      alternates: { canonical: path },
+      openGraph: {
+        title: meta.title,
+        description: meta.description,
+        type: "article",
+        url: `${SITE}${path}`,
+        siteName: "CubeA",
+        publishedTime: meta.date,
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: meta.title,
+        description: meta.description,
+      },
     };
   } catch {
     return {};
@@ -33,33 +51,25 @@ export default function BlogPostPage({ params }: Props) {
 
   const { meta, content } = post;
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: meta.title,
+    description: meta.description,
+    datePublished: meta.date,
+    dateModified: meta.date,
+    author: { "@type": "Organization", name: "CubeA" },
+    publisher: { "@type": "Organization", name: "CubeA" },
+    mainEntityOfPage: `${SITE}/blog/${params.slug}`,
+  };
+
   return (
     <div className="min-h-screen bg-neutral-50 text-neutral-900">
-      {/* Nav */}
-      <header className="sticky top-0 z-40 backdrop-blur bg-white/80 border-b border-neutral-200">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-          <Link href="/" className="flex items-center gap-2">
-            <CubeALogo />
-          </Link>
-          <nav className="flex items-center gap-6 text-sm">
-            <Link href="/#how" className="text-neutral-600 hover:text-black">
-              How it works
-            </Link>
-            <Link href="/#features" className="text-neutral-600 hover:text-black">
-              Features
-            </Link>
-            <Link href="/blog" className="font-medium hover:text-black">
-              Blog
-            </Link>
-            <Link
-              href="/#contact"
-              className="px-3 py-2 rounded-xl bg-black text-white hover:bg-neutral-800"
-            >
-              Contact
-            </Link>
-          </nav>
-        </div>
-      </header>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <SiteHeader />
 
       <main className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8 py-16">
         <Link
@@ -90,19 +100,7 @@ export default function BlogPostPage({ params }: Props) {
         </article>
       </main>
 
-      <footer className="border-t border-neutral-200 bg-white mt-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 text-sm text-neutral-600 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-          <div>
-            <CubeALogo iconSize={24} />
-            <div className="mt-1">© {new Date().getFullYear()} CubeA. All rights reserved.</div>
-          </div>
-          <div className="flex gap-6">
-            <Link href="/privacy" className="hover:text-neutral-900">Privacy</Link>
-            <Link href="/terms" className="hover:text-neutral-900">Terms</Link>
-            <Link href="/impressum" className="hover:text-neutral-900">Impressum</Link>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
