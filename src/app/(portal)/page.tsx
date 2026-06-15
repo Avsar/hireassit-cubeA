@@ -10,7 +10,7 @@ const HOME_CITIES = [
 
 export default async function HomePage() {
   const data = await fetchHiddenSummary();
-  let verified = null;
+  let verified;
   try {
     verified = await fetchJobs({ hidden: true, per_page: 6, sort: "newest" });
   } catch {
