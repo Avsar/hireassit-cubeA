@@ -31,6 +31,8 @@ export default function SiteFooter() {
             <li><Link href="/hidden-gems" className="hover:text-fuchsia-700">💎 Hidden gems</Link></li>
             <li><Link href="/companies" className="hover:text-blue-700">Companies</Link></li>
             <li><Link href="/jobs/saved" className="hover:text-blue-700">Saved jobs</Link></li>
+            <li><Link href="/tools/cv-reviewer" className="hover:text-blue-700">CV reviewer</Link></li>
+            <li><Link href="/tools/ai-match" className="hover:text-blue-700">AI job match</Link></li>
           </ul>
         </div>
         <div>

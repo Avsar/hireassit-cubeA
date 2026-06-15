@@ -315,6 +315,12 @@ export default async function JobDetailPage({ params }: Props) {
   const techTags = (job.tech_tags || "").split("|").filter(Boolean);
   const posted = timeAgo(job.posted_at);
   const isActive = !!job.is_active;
+  const daysOld = (() => {
+    const d = job.first_seen_at || job.posted_at || "";
+    const t = new Date(d).getTime();
+    return isNaN(t) ? 0 : Math.floor((Date.now() - t) / 86400000);
+  })();
+  const isStale = isActive && daysOld > 30;
 
   // Rolling 30-day expiry. The page revalidates hourly, so an active job
   // always advertises a future validThrough and is never dropped by Google
@@ -455,11 +461,22 @@ export default async function JobDetailPage({ params }: Props) {
                   <p className="mt-3 text-center text-xs text-neutral-400">
                     You apply directly with {job.company}. No middlemen.
                   </p>
+                  {isStale && (
+                    <p className="mt-3 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-center text-xs text-amber-700">
+                      This listing is over a month old — it may already be filled. Worth confirming it&apos;s still open on the company&apos;s site.
+                    </p>
+                  )}
                 </>
               ) : (
-                <p className="text-center text-sm text-neutral-500">
-                  This position has closed.
-                </p>
+                <div className="text-center">
+                  <p className="text-sm text-neutral-500">This position has closed.</p>
+                  <Link
+                    href="/jobs"
+                    className="mt-3 inline-block rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-blue-700"
+                  >
+                    Browse open jobs →
+                  </Link>
+                </div>
               )}
 
               <dl className="mt-5 space-y-3 border-t border-neutral-100 pt-5 text-sm">
