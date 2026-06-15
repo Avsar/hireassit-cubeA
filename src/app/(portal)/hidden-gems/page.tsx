@@ -1,105 +1,84 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { fetchHiddenSummary } from "@/lib/hireassist";
+import { fetchJobs } from "@/lib/hireassist";
+import JobCard from "@/components/jobs/JobCard";
 
 export const metadata: Metadata = {
-  title: "Hidden Job Gems — Dutch jobs you won't find on LinkedIn | CubeA",
+  title: "Verified Hidden Job Gems — Dutch jobs not on LinkedIn | CubeA",
   description:
-    "Thousands of jobs at Dutch companies that never reach LinkedIn or Indeed — scraped daily, directly from company career pages. Less competition, real opportunities.",
+    "Dutch jobs we scraped straight from company career pages, then checked against LinkedIn and Indeed and couldn't find there. Verified hidden — not guessed.",
+  alternates: { canonical: "/hidden-gems" },
 };
 
 export const revalidate = 1800;
 
 export default async function HiddenGemsPage() {
-  const data = await fetchHiddenSummary();
+  let data;
+  try {
+    data = await fetchJobs({ hidden: true, per_page: 48, sort: "newest" });
+  } catch {
+    data = null;
+  }
 
   return (
     <main className="min-h-screen bg-neutral-50">
       <section className="bg-fuchsia-700 text-white">
-        <div className="mx-auto max-w-4xl px-4 py-16 text-center">
-          <h1 className="text-4xl font-bold">💎 Hidden job gems</h1>
+        <div className="mx-auto max-w-5xl px-4 py-16 text-center">
+          <h1 className="text-4xl font-bold">💎 Verified hidden gems</h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-fuchsia-100">
-            Most Dutch companies never post their vacancies on LinkedIn or
-            Indeed — they just put them on their own website. We crawl those
-            career pages every day, so you see jobs almost nobody else is
-            applying to.
+            Jobs we scraped straight from Dutch company career pages — then checked
+            against LinkedIn and Indeed and couldn&apos;t find there. Verified hidden,
+            not just guessed.
           </p>
           {data && (
-            <div className="mx-auto mt-8 flex max-w-lg justify-center gap-8">
-              <div>
-                <div className="text-3xl font-bold">{data.hidden_gems.toLocaleString("en-US")}</div>
-                <div className="text-sm text-fuchsia-200">hidden gems live now</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold">{data.low_visibility.toLocaleString("en-US")}</div>
-                <div className="text-sm text-fuchsia-200">low-visibility jobs</div>
-              </div>
+            <div className="mt-8">
+              <div className="text-3xl font-bold">{data.count.toLocaleString("en-US")}</div>
+              <div className="text-sm text-fuchsia-200">verified hidden gems live now</div>
             </div>
           )}
           <Link
             href="/jobs?hidden=true"
             className="mt-8 inline-block rounded-xl bg-white px-8 py-3 font-semibold text-fuchsia-700 hover:bg-fuchsia-50"
           >
-            Browse all hidden gems →
+            Browse all verified gems →
           </Link>
         </div>
       </section>
 
-      <div className="mx-auto max-w-4xl px-4 py-10 space-y-10">
+      <div className="mx-auto max-w-5xl px-4 py-10 space-y-8">
         <section>
-          <h2 className="text-xl font-bold">Why “hidden”?</h2>
-          <p className="mt-2 text-neutral-600 leading-relaxed">
-            Posting on big job boards costs money, so small and mid-sized
-            companies often skip it entirely. Their vacancies live only on
-            their own career pages — visited by almost nobody. We label a job
-            a <strong>hidden gem</strong> when we scraped it directly from a
-            company website, and <strong>low visibility</strong> when it comes
-            from a small company that rarely syndicates to job boards. Fewer
-            applicants per role means your application actually gets read.
+          <h2 className="text-xl font-bold">How we verify</h2>
+          <p className="mt-2 leading-relaxed text-neutral-600">
+            We crawl company career pages directly. For each candidate, we then search
+            LinkedIn and Indeed for the exact role — if it doesn&apos;t show up, we mark it
+            a <strong>verified hidden gem</strong>. Fewer applicants per role means your
+            application actually gets read. (Search engines don&apos;t index every posting on
+            every board, so treat this as &ldquo;rarely on the big boards,&rdquo; verified to the
+            best of what&apos;s findable — not an absolute guarantee.)
           </p>
         </section>
 
-        {data && data.top_companies.length > 0 && (
-          <section>
-            <h2 className="text-xl font-bold">Companies full of hidden gems</h2>
-            <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {data.top_companies.map((c) => (
-                <Link
-                  key={c.slug}
-                  href={`/companies/${c.slug}`}
-                  className="rounded-xl border border-neutral-200 bg-white px-4 py-3 hover:border-fuchsia-300"
-                >
-                  <div className="font-semibold truncate">{c.name}</div>
-                  <div className="text-xs text-fuchsia-600">💎 {c.hidden_gems} hidden gems</div>
-                </Link>
-              ))}
-            </div>
-          </section>
+        {!data || data.jobs.length === 0 ? (
+          <p className="py-12 text-center text-neutral-500">
+            No verified gems to show right now — check back soon.
+          </p>
+        ) : (
+          <div className="grid gap-3">
+            {data.jobs.map((job) => (
+              <JobCard key={job.id} job={job} />
+            ))}
+          </div>
         )}
 
-        {data && data.recent_gems.length > 0 && (
-          <section>
-            <h2 className="text-xl font-bold">Freshly discovered</h2>
-            <div className="mt-4 grid gap-2">
-              {data.recent_gems.map((j) => (
-                <Link
-                  key={j.id}
-                  href={`/jobs/${j.slug}`}
-                  target="_blank"
-                  className="flex items-center justify-between gap-3 rounded-xl border border-neutral-200 bg-white px-4 py-3 hover:border-fuchsia-300"
-                >
-                  <div className="min-w-0">
-                    <div className="font-medium truncate">{j.title}</div>
-                    <div className="text-xs text-neutral-400">
-                      {j.company}
-                      {j.city ? ` · ${j.city}` : ""}
-                    </div>
-                  </div>
-                  <span className="shrink-0 text-fuchsia-600">💎</span>
-                </Link>
-              ))}
-            </div>
-          </section>
+        {data && data.count > data.jobs.length && (
+          <div className="text-center">
+            <Link
+              href="/jobs?hidden=true"
+              className="inline-block rounded-xl bg-fuchsia-700 px-8 py-3 font-semibold text-white hover:bg-fuchsia-800"
+            >
+              See all {data.count.toLocaleString("en-US")} verified gems →
+            </Link>
+          </div>
         )}
       </div>
     </main>

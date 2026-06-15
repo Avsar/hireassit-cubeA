@@ -393,10 +393,10 @@ export default async function JobDetailPage({ params }: Props) {
               </div>
             </div>
 
-            {job.hidden_tier >= 2 && (
+            {job.verified_hidden && (
               <p className="mt-4 rounded-xl border border-fuchsia-200 bg-fuchsia-50 px-4 py-2.5 text-sm text-fuchsia-700">
-                💎 <strong>Hidden gem</strong> — scraped directly from the company&apos;s
-                website. Jobs like this rarely appear on LinkedIn or Indeed.
+                💎 <strong>Verified hidden gem</strong> — we checked LinkedIn and Indeed and
+                couldn&apos;t find this role there. Scraped straight from {job.company}.
               </p>
             )}
             {job.hidden_tier === 1 && (

@@ -25,14 +25,9 @@ export default function JobCard({ job }: { job: Job }) {
       </div>
 
       <div className="mt-3 flex flex-wrap items-center gap-2 text-xs">
-        {job.hidden_tier >= 2 && (
+        {job.verified_hidden && (
           <span className="rounded-full bg-fuchsia-50 border border-fuchsia-200 text-fuchsia-700 px-2.5 py-0.5 font-medium">
             💎 Hidden gem
-          </span>
-        )}
-        {job.hidden_tier === 1 && (
-          <span className="rounded-full bg-amber-50 border border-amber-200 text-amber-700 px-2.5 py-0.5">
-            Low visibility
           </span>
         )}
         {(job.city || job.location_raw) && (

@@ -22,6 +22,7 @@ export interface Job {
   is_stale?: boolean;
   tech_tags: string;
   hidden_tier: number;
+  verified_hidden?: boolean;
   snippet?: string;
 }
 
