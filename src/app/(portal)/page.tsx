@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { fetchHiddenSummary, logoColor, CITY_PAGES } from "@/lib/hireassist";
+import { fetchHiddenSummary, fetchJobs, logoColor, CITY_PAGES } from "@/lib/hireassist";
 
 export const revalidate = 1800;
 
@@ -10,6 +10,12 @@ const HOME_CITIES = [
 
 export default async function HomePage() {
   const data = await fetchHiddenSummary();
+  let verified = null;
+  try {
+    verified = await fetchJobs({ hidden: true, per_page: 6, sort: "newest" });
+  } catch {
+    verified = null;
+  }
 
   const homeJsonLd = {
     "@context": "https://schema.org",
@@ -80,9 +86,9 @@ export default async function HomePage() {
               </div>
               <Link href="/hidden-gems" className="group">
                 <div className="font-[Sora] text-2xl font-bold text-fuchsia-600 group-hover:text-fuchsia-700">
-                  {data.hidden_gems.toLocaleString("en-US")}
+                  {(verified?.count ?? 0).toLocaleString("en-US")}
                 </div>
-                <div className="text-xs text-neutral-400">💎 hidden gems</div>
+                <div className="text-xs text-neutral-400">💎 verified hidden gems</div>
               </Link>
               <Link href="/companies" className="group">
                 <div className="font-[Sora] text-2xl font-bold text-neutral-900 group-hover:text-blue-700">
@@ -113,7 +119,7 @@ export default async function HomePage() {
       </section>
 
       {/* FRESH GEMS */}
-      {data && data.recent_gems.length > 0 && (
+      {verified && verified.jobs.length > 0 && (
         <section className="mx-auto max-w-5xl px-4 pb-14">
           <div className="flex items-baseline justify-between">
             <h2 className="font-[Sora] text-xl font-bold">Freshly discovered gems</h2>
@@ -122,7 +128,7 @@ export default async function HomePage() {
             </Link>
           </div>
           <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {data.recent_gems.slice(0, 6).map((j) => (
+            {verified.jobs.slice(0, 6).map((j) => (
               <Link
                 key={j.id}
                 href={`/jobs/${j.slug}`}
