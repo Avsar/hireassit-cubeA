@@ -8,12 +8,35 @@ const CITIES = [
   "Groningen", "Delft", "Haarlem", "Leiden", "Nijmegen",
 ];
 
+const ROLE_OPTIONS: [string, string][] = [
+  ["engineering", "Engineering"],
+  ["developer", "Developer"],
+  ["data", "Data"],
+  ["product", "Product"],
+  ["design", "Design"],
+  ["devops", "DevOps & Cloud"],
+  ["security", "Security"],
+  ["marketing", "Marketing"],
+  ["sales", "Sales"],
+  ["finance", "Finance"],
+];
+
+const JOB_TYPES: [string, string][] = [
+  ["fulltime", "Full-time"],
+  ["parttime", "Part-time"],
+  ["internship", "Internship"],
+  ["contract", "Contract / freelance"],
+];
+
 export default function JobFilters() {
   const router = useRouter();
   const params = useSearchParams();
   const [q, setQ] = useState(params.get("q") || "");
 
   const city = params.get("city") || "";
+  const role = params.get("role") || "";
+  const jobType = params.get("job_type") || "";
+  const remote = params.get("remote") === "true";
   const hidden = params.get("hidden") === "true";
   const englishOnly = params.get("english_only") === "true";
   const newToday = params.get("new_today_only") === "true";
@@ -76,8 +99,48 @@ export default function JobFilters() {
 
       <div className="space-y-2">
         <label className="text-xs font-semibold uppercase tracking-wide text-neutral-400">
+          Role
+        </label>
+        <select
+          value={role}
+          onChange={(e) => apply({ role: e.target.value || null })}
+          className="w-full rounded-xl border border-neutral-300 bg-white px-3 py-2.5 text-sm"
+        >
+          <option value="">All roles</option>
+          {ROLE_OPTIONS.map(([val, label]) => (
+            <option key={val} value={val}>{label}</option>
+          ))}
+        </select>
+      </div>
+
+      <div className="space-y-2">
+        <label className="text-xs font-semibold uppercase tracking-wide text-neutral-400">
+          Job type
+        </label>
+        <select
+          value={jobType}
+          onChange={(e) => apply({ job_type: e.target.value || null })}
+          className="w-full rounded-xl border border-neutral-300 bg-white px-3 py-2.5 text-sm"
+        >
+          <option value="">Any type</option>
+          {JOB_TYPES.map(([val, label]) => (
+            <option key={val} value={val}>{label}</option>
+          ))}
+        </select>
+      </div>
+
+      <div className="space-y-2">
+        <label className="text-xs font-semibold uppercase tracking-wide text-neutral-400">
           Show me
         </label>
+        <button
+          onClick={() => apply({ remote: remote ? null : "true" })}
+          className={toggle(remote,
+            "border-teal-600 bg-teal-600 text-white",
+            "border-neutral-200 text-neutral-600 hover:bg-neutral-50")}
+        >
+          🏠 Remote / hybrid
+        </button>
         <button
           onClick={() => apply({ hidden: hidden ? null : "true" })}
           className={toggle(hidden,
@@ -104,7 +167,7 @@ export default function JobFilters() {
         </button>
       </div>
 
-      {(q || city || hidden || englishOnly || newToday) && (
+      {(q || city || role || jobType || remote || hidden || englishOnly || newToday) && (
         <button
           onClick={() => router.push("/jobs")}
           className="w-full text-center text-xs text-neutral-400 hover:text-neutral-600"

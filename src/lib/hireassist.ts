@@ -49,6 +49,9 @@ export interface JobsQuery {
   hidden?: boolean;
   english_only?: boolean;
   new_today_only?: boolean;
+  role?: string;
+  job_type?: string;
+  remote?: boolean;
   sort?: string;
   page?: number;
   per_page?: number;
@@ -75,6 +78,9 @@ export async function fetchJobs(query: JobsQuery = {}): Promise<JobsResponse> {
   if (query.hidden) params.set("hidden", "true");
   if (query.english_only) params.set("english_only", "true");
   if (query.new_today_only) params.set("new_today_only", "true");
+  if (query.role) params.set("role", query.role);
+  if (query.job_type) params.set("job_type", query.job_type);
+  if (query.remote) params.set("remote", "true");
   if (query.sort) params.set("sort", query.sort);
   params.set("page", String(query.page || 1));
   params.set("per_page", String(query.per_page || 25));

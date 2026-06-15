@@ -20,6 +20,9 @@ interface SearchParams {
   hidden?: string;
   english_only?: string;
   new_today_only?: string;
+  role?: string;
+  job_type?: string;
+  remote?: string;
   page?: string;
 }
 
@@ -37,6 +40,9 @@ export default async function JobsPage({
       hidden: searchParams.hidden === "true",
       english_only: searchParams.english_only === "true",
       new_today_only: searchParams.new_today_only === "true",
+      role: searchParams.role,
+      job_type: searchParams.job_type,
+      remote: searchParams.remote === "true",
       sort: "newest",
       page,
       per_page: 25,
@@ -65,8 +71,12 @@ export default async function JobsPage({
 
   const activeFilters = [
     searchParams.q && `“${searchParams.q}”`,
+    searchParams.role,
     searchParams.city,
+    searchParams.job_type,
+    searchParams.remote === "true" && "remote / hybrid",
     searchParams.hidden === "true" && "💎 hidden gems",
+    searchParams.english_only === "true" && "English only",
     searchParams.new_today_only === "true" && "new today",
   ].filter(Boolean);
 
