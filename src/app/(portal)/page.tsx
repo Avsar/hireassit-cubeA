@@ -1,5 +1,7 @@
+import { Suspense } from "react";
 import Link from "next/link";
 import { fetchHiddenSummary, fetchJobs, logoColor, CITY_PAGES } from "@/lib/hireassist";
+import AlertSignup from "@/components/jobs/AlertSignup";
 
 export const revalidate = 1800;
 
@@ -152,6 +154,16 @@ export default async function HomePage() {
           </div>
         </section>
       )}
+
+      {/* EMAIL ALERT */}
+      <section className="mx-auto max-w-5xl px-4 pb-14">
+        <Suspense>
+          <AlertSignup
+            heading="🔔 Get new jobs by email — including hidden gems"
+            subtext="One daily email with fresh roles straight from company career pages. Double opt-in, unsubscribe anytime."
+          />
+        </Suspense>
+      </section>
 
       {/* CITIES */}
       <section className="mx-auto max-w-5xl px-4 pb-14">
