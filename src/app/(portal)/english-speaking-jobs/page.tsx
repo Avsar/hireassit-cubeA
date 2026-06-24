@@ -1,7 +1,9 @@
 import { Metadata } from "next";
+import { Suspense } from "react";
 import Link from "next/link";
 import { CITY_PAGES, fetchJobs } from "@/lib/hireassist";
 import JobCard from "@/components/jobs/JobCard";
+import AlertSignup from "@/components/jobs/AlertSignup";
 
 export const revalidate = 1800;
 
@@ -91,6 +93,14 @@ export default async function EnglishSpeakingHub() {
           never reach the big job boards. We crawl those pages every day and surface the
           English-language openings here. Every apply button goes straight to the company.
         </p>
+
+        <Suspense>
+          <AlertSignup
+            lockedEnglish
+            heading="🔔 Get English-speaking jobs by email"
+            subtext="A daily email when new English-language roles appear — no Dutch required."
+          />
+        </Suspense>
 
         <section>
           <h2 className="text-sm font-semibold text-neutral-900">

@@ -5,16 +5,33 @@ import { useState } from "react";
 import Link from "next/link";
 import { track } from "@/lib/analytics";
 
-export default function AlertSignup() {
+interface AlertSignupProps {
+  /** Force a hidden-gems alert regardless of URL (for the /hidden-gems page). */
+  lockedHidden?: boolean;
+  /** Force an English-only alert regardless of URL (for the English-speaking hub). */
+  lockedEnglish?: boolean;
+  /** Force a city filter regardless of URL. */
+  lockedCity?: string;
+  heading?: string;
+  subtext?: string;
+}
+
+export default function AlertSignup({
+  lockedHidden,
+  lockedEnglish,
+  lockedCity,
+  heading,
+  subtext,
+}: AlertSignupProps = {}) {
   const params = useSearchParams();
   const [email, setEmail] = useState("");
   const [state, setState] = useState<"idle" | "sending" | "done" | "error">("idle");
   const [message, setMessage] = useState("");
 
   const q = params.get("q") || "";
-  const city = params.get("city") || "";
-  const hidden = params.get("hidden") === "true";
-  const englishOnly = params.get("english_only") === "true";
+  const city = lockedCity ?? (params.get("city") || "");
+  const hidden = lockedHidden ?? (params.get("hidden") === "true");
+  const englishOnly = lockedEnglish ?? (params.get("english_only") === "true");
 
   const filterBits = [
     q && `"${q}"`,
@@ -68,12 +85,13 @@ export default function AlertSignup() {
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="text-sm">
           <div className="font-semibold text-neutral-900">
-            🔔 Get new {filterBits.length > 0 ? "matching " : ""}jobs by email
+            {heading || `🔔 Get new ${filterBits.length > 0 ? "matching " : ""}jobs by email`}
           </div>
           <div className="text-neutral-600">
-            {filterBits.length > 0
-              ? `Daily alert for: ${filterBits.join(", ")}`
-              : "A daily email when new jobs appear — including hidden gems."}
+            {subtext ||
+              (filterBits.length > 0
+                ? `Daily alert for: ${filterBits.join(", ")}`
+                : "A daily email when new jobs appear — including hidden gems.")}
           </div>
         </div>
         <form onSubmit={subscribe} className="flex gap-2">

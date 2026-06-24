@@ -1,7 +1,9 @@
 import { Metadata } from "next";
+import { Suspense } from "react";
 import Link from "next/link";
 import { fetchJobs } from "@/lib/hireassist";
 import JobCard from "@/components/jobs/JobCard";
+import AlertSignup from "@/components/jobs/AlertSignup";
 
 export const metadata: Metadata = {
   title: "Verified Hidden Job Gems — Dutch jobs not on LinkedIn | CubeA",
@@ -46,6 +48,14 @@ export default async function HiddenGemsPage() {
       </section>
 
       <div className="mx-auto max-w-5xl px-4 py-10 space-y-8">
+        <Suspense>
+          <AlertSignup
+            lockedHidden
+            heading="💎 Get new hidden gems by email"
+            subtext="We'll email you when we verify new roles that aren't on LinkedIn or Indeed."
+          />
+        </Suspense>
+
         <section>
           <h2 className="text-xl font-bold">How we verify</h2>
           <p className="mt-2 leading-relaxed text-neutral-600">
