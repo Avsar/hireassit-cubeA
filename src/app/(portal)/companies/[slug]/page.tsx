@@ -12,12 +12,18 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const co = await fetchCompanyDetail(params.slug);
   if (!co) return { title: "Company not found | CubeA" };
+  const cityPart = co.cities.length ? ` in ${co.cities.slice(0, 3).join(", ")}` : "";
+  // Titles target the queries people actually search for a company:
+  // "<company> vacatures", "<company> careers", "jobs at <company>".
+  const title = `${co.name} vacatures & careers — ${co.active_jobs} open jobs | CubeA`;
+  const description = `All ${co.active_jobs} open vacancies and jobs at ${co.name}${cityPart}, crawled daily straight from their career page${
+    co.hidden_gems > 0 ? ` — including ${co.hidden_gems} hidden roles not posted on LinkedIn or Indeed` : ""
+  }.`;
   return {
-    title: `${co.name} — ${co.active_jobs} open jobs | CubeA`,
-    description: `${co.name} has ${co.active_jobs} open positions${
-      co.cities.length ? ` in ${co.cities.slice(0, 3).join(", ")}` : ""
-    }${co.hidden_gems > 0 ? `, including ${co.hidden_gems} hidden gems not found on big job boards` : ""}.`,
+    title,
+    description,
     alternates: { canonical: `/companies/${params.slug}` },
+    openGraph: { title, description, url: `/companies/${params.slug}`, type: "website" },
   };
 }
 
@@ -45,8 +51,46 @@ export default async function CompanyPage({ params }: Props) {
   const co = await fetchCompanyDetail(params.slug);
   if (!co) notFound();
 
+  const companyUrl = `https://cubea.nl/companies/${params.slug}`;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        name: co.name,
+        url: companyUrl,
+        ...(co.cities.length
+          ? { address: { "@type": "PostalAddress", addressLocality: co.cities[0], addressCountry: "NL" } }
+          : {}),
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://cubea.nl" },
+          { "@type": "ListItem", position: 2, name: "Companies", item: "https://cubea.nl/companies" },
+          { "@type": "ListItem", position: 3, name: co.name, item: companyUrl },
+        ],
+      },
+      {
+        "@type": "ItemList",
+        name: `Open jobs at ${co.name}`,
+        numberOfItems: co.jobs.length,
+        itemListElement: co.jobs.slice(0, 25).map((j, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name: j.title,
+          url: `https://cubea.nl/jobs/${j.slug}`,
+        })),
+      },
+    ],
+  };
+
   return (
     <main className="min-h-screen bg-neutral-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="mx-auto max-w-4xl px-4 py-10">
         <div className="flex gap-4 text-sm">
           <Link href="/companies" className="text-blue-600 hover:underline">← All companies</Link>
@@ -89,6 +133,16 @@ export default async function CompanyPage({ params }: Props) {
             </div>
           )}
         </div>
+
+        <p className="mt-6 text-sm leading-relaxed text-neutral-600">
+          Browse all {co.active_jobs} open {co.name} vacancies and jobs below — crawled daily
+          straight from {co.name}&apos;s own career page
+          {co.cities.length ? `, across ${co.cities.slice(0, 3).join(", ")}` : ""}.
+          {co.hidden_gems > 0
+            ? ` ${co.hidden_gems} of them are hidden gems: roles that never reached LinkedIn or Indeed.`
+            : ""}{" "}
+          Applying always goes directly to {co.name} — no recruiters in between.
+        </p>
 
         <h2 className="mt-8 text-sm font-semibold text-neutral-500 uppercase tracking-wide">
           Open positions
