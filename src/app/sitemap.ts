@@ -32,6 +32,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
+  // English-speaking hubs — high-priority demand cluster (expat search).
+  const ES_CITIES = ["amsterdam", "eindhoven", "rotterdam", "utrecht", "den-haag", "groningen"];
+  const englishPages: MetadataRoute.Sitemap = [
+    { url: `${SITE}/english-speaking-jobs`, changeFrequency: "daily" as const, priority: 0.9 },
+    ...ES_CITIES.map((slug) => ({
+      url: `${SITE}/english-speaking-jobs/${slug}`,
+      changeFrequency: "daily" as const,
+      priority: 0.8,
+    })),
+  ];
+
   let jobPages: MetadataRoute.Sitemap = [];
   try {
     const jobs = await fetchSitemapJobs();
@@ -57,5 +68,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // same resilience as jobs
   }
 
-  return [...staticPages, ...cityPages, ...rolePages, ...companyPages, ...jobPages];
+  return [...staticPages, ...englishPages, ...cityPages, ...rolePages, ...companyPages, ...jobPages];
 }

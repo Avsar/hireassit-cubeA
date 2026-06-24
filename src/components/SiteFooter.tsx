@@ -28,6 +28,7 @@ export default function SiteFooter() {
           <div className="text-sm font-semibold text-neutral-900">Find jobs</div>
           <ul className="mt-3 space-y-2 text-sm text-neutral-500">
             <li><Link href="/jobs" className="hover:text-blue-700">All jobs</Link></li>
+            <li><Link href="/english-speaking-jobs" className="hover:text-blue-700">English-speaking jobs</Link></li>
             <li><Link href="/hidden-gems" className="hover:text-fuchsia-700">💎 Hidden gems</Link></li>
             <li><Link href="/companies" className="hover:text-blue-700">Companies</Link></li>
             <li><Link href="/jobs/saved" className="hover:text-blue-700">Saved jobs</Link></li>
