@@ -4,14 +4,14 @@ import "./globals.css";
 import FeedbackButton from "@/components/FeedbackButton";
 
 export const metadata: Metadata = {
-  title: "CubeA — Dutch tech jobs, including the hidden ones",
+  title: "English-Speaking Jobs in the Netherlands — incl. the hidden ones | CubeA",
   description:
-    "Search 13,000+ jobs from 1,000+ Dutch companies, crawled daily from their own career pages — including hidden gems that never reach LinkedIn or Indeed.",
+    "Find English-speaking jobs in the Netherlands, crawled daily from 1,000+ company career pages — including roles that never reach LinkedIn or Indeed. No Dutch required, apply directly.",
   metadataBase: new URL("https://cubea.nl"),
   openGraph: {
-    title: "CubeA — Dutch tech jobs, including the hidden ones",
+    title: "English-Speaking Jobs in the Netherlands — incl. the hidden ones | CubeA",
     description:
-      "13,000+ jobs from 1,000+ Dutch companies — including hidden gems that never reach LinkedIn.",
+      "English-speaking jobs in the Netherlands — including roles that never reach LinkedIn or Indeed. No Dutch required.",
     type: "website",
     url: "https://cubea.nl",
     siteName: "CubeA",
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CubeA — Dutch tech jobs, including the hidden ones",
+    title: "English-Speaking Jobs in the Netherlands — incl. the hidden ones | CubeA",
     description:
-      "13,000+ jobs from 1,000+ Dutch companies — including hidden gems that never reach LinkedIn.",
+      "English-speaking jobs in the Netherlands — including roles that never reach LinkedIn or Indeed. No Dutch required.",
     images: ["/og.png"],
   },
 };

@@ -27,7 +27,7 @@ export default async function HomePage() {
         name: "CubeA",
         url: "https://cubea.nl",
         description:
-          "CubeA surfaces Dutch tech jobs crawled directly from 1,000+ company career pages — including hidden roles that never reach LinkedIn or Indeed.",
+          "CubeA helps internationals find English-speaking jobs in the Netherlands, crawled directly from 1,000+ company career pages — including hidden roles that never reach LinkedIn or Indeed.",
       },
       {
         "@type": "WebSite",
@@ -55,12 +55,13 @@ export default async function HomePage() {
       <section className="border-b border-neutral-200 bg-white">
         <div className="mx-auto max-w-3xl px-4 py-20 text-center">
           <h1 className="font-[Sora] text-4xl font-extrabold tracking-tight text-neutral-900 sm:text-5xl">
-            Find the jobs nobody
-            <br className="hidden sm:block" /> else shows you
+            English-speaking jobs in the Netherlands
+            <br className="hidden sm:block" /> that aren&apos;t on LinkedIn
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-neutral-500">
-            We crawl 1,000+ Dutch company websites every day — surfacing
-            thousands of jobs that never reach LinkedIn or Indeed.
+            We crawl 1,000+ Dutch company career pages every day to surface
+            English-language roles — including the hidden ones that never reach
+            LinkedIn or Indeed. No Dutch required; you apply straight to the company.
           </p>
 
           <form action="/jobs" method="get" className="mx-auto mt-8 flex max-w-xl gap-2">
