@@ -4,14 +4,14 @@ import "./globals.css";
 import FeedbackButton from "@/components/FeedbackButton";
 
 export const metadata: Metadata = {
-  title: "English-Speaking Jobs in the Netherlands — incl. the hidden ones | CubeA",
+  title: "CubeA — Dutch jobs that aren't on LinkedIn, incl. English-speaking roles",
   description:
-    "Find English-speaking jobs in the Netherlands, crawled daily from 1,000+ company career pages — including roles that never reach LinkedIn or Indeed. No Dutch required, apply directly.",
+    "We crawl 1,000+ Dutch company career pages every day to surface jobs that never reach LinkedIn or Indeed — including English-speaking roles for internationals. Apply directly, no recruiters.",
   metadataBase: new URL("https://cubea.nl"),
   openGraph: {
-    title: "English-Speaking Jobs in the Netherlands — incl. the hidden ones | CubeA",
+    title: "CubeA — Dutch jobs that aren't on LinkedIn, incl. English-speaking roles",
     description:
-      "English-speaking jobs in the Netherlands — including roles that never reach LinkedIn or Indeed. No Dutch required.",
+      "Dutch jobs that never reach LinkedIn or Indeed — crawled daily from company career pages, including English-speaking roles for internationals.",
     type: "website",
     url: "https://cubea.nl",
     siteName: "CubeA",
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "English-Speaking Jobs in the Netherlands — incl. the hidden ones | CubeA",
+    title: "CubeA — Dutch jobs that aren't on LinkedIn, incl. English-speaking roles",
     description:
-      "English-speaking jobs in the Netherlands — including roles that never reach LinkedIn or Indeed. No Dutch required.",
+      "Dutch jobs that never reach LinkedIn or Indeed — crawled daily from company career pages, including English-speaking roles for internationals.",
     images: ["/og.png"],
   },
 };
