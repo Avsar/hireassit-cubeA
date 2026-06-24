@@ -266,6 +266,16 @@ export const ROLE_PAGES: Record<string, RolePage> = {
   },
 };
 
+// Curated role × city combos served at /jobs/[role]/[city] (e.g. /jobs/data/amsterdam).
+// Limited to high-demand roles × the four biggest tech-hub cities so we only
+// pre-render / sitemap pages that reliably have inventory (no thin pages).
+// Other valid role∈ROLE_PAGES × city∈CITY_PAGES combos still render on demand.
+export const ROLE_CITY_ROLES = ["software-engineer", "developer", "data", "devops"] as const;
+export const ROLE_CITY_CITIES = ["amsterdam", "rotterdam", "utrecht", "eindhoven"] as const;
+export const ROLE_CITY_COMBOS: { role: string; city: string }[] = ROLE_CITY_ROLES.flatMap(
+  (role) => ROLE_CITY_CITIES.map((city) => ({ role, city })),
+);
+
 export function timeAgo(iso: string): string {
   if (!iso) return "";
   const then = new Date(iso).getTime();

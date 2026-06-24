@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { CITY_PAGES, ROLE_PAGES, type RolePage, fetchJobDetail, fetchJobs, idFromSlug, logoColor, timeAgo } from "@/lib/hireassist";
+import { CITY_PAGES, ROLE_PAGES, ROLE_CITY_ROLES, ROLE_CITY_CITIES, type RolePage, fetchJobDetail, fetchJobs, idFromSlug, logoColor, timeAgo } from "@/lib/hireassist";
 import SaveButton from "@/components/jobs/SaveButton";
 import JobCard from "@/components/jobs/JobCard";
 import ApplyButton from "@/components/ApplyButton";
@@ -221,6 +221,23 @@ async function RoleLandingPage({ slug, role }: { slug: string; role: RolePage })
             >
               See all {data.count.toLocaleString("en-US")} {role.label.toLowerCase()} jobs →
             </Link>
+          </div>
+        )}
+
+        {(ROLE_CITY_ROLES as readonly string[]).includes(slug) && (
+          <div>
+            <h2 className="text-sm font-semibold text-neutral-900">{role.label} jobs by city</h2>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {ROLE_CITY_CITIES.map((c) => (
+                <Link
+                  key={c}
+                  href={`/jobs/${slug}/${c}`}
+                  className="rounded-full border border-neutral-200 bg-white px-3 py-1.5 text-sm text-neutral-700 hover:border-blue-300 hover:text-blue-700"
+                >
+                  {role.label} in {CITY_PAGES[c]}
+                </Link>
+              ))}
+            </div>
           </div>
         )}
 

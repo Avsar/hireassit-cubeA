@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import { CITY_PAGES, ROLE_PAGES, fetchCompanies, fetchSitemapJobs } from "@/lib/hireassist";
+import { CITY_PAGES, ROLE_PAGES, ROLE_CITY_COMBOS, fetchCompanies, fetchSitemapJobs } from "@/lib/hireassist";
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://cubea.nl";
 
@@ -43,6 +43,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })),
   ];
 
+  // Role × city landing pages (e.g. /jobs/data/amsterdam) — high-demand long-tail.
+  const roleCityPages: MetadataRoute.Sitemap = ROLE_CITY_COMBOS.map(({ role, city }) => ({
+    url: `${SITE}/jobs/${role}/${city}`,
+    changeFrequency: "daily" as const,
+    priority: 0.8,
+  }));
+
   let jobPages: MetadataRoute.Sitemap = [];
   try {
     const jobs = await fetchSitemapJobs();
@@ -68,5 +75,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // same resilience as jobs
   }
 
-  return [...staticPages, ...englishPages, ...cityPages, ...rolePages, ...companyPages, ...jobPages];
+  return [...staticPages, ...englishPages, ...cityPages, ...rolePages, ...roleCityPages, ...companyPages, ...jobPages];
 }
