@@ -381,6 +381,31 @@ export default async function JobDetailPage({ params }: Props) {
     .replace(/^-+|-+$/g, "")
     .slice(0, 80);
 
+  // Provenance — where + when CubeA found this (a trust signal unique to us).
+  const sourceDomain = (() => {
+    try {
+      return new URL(job.apply_url).hostname.replace(/^www\./, "");
+    } catch {
+      return "";
+    }
+  })();
+  const checkedAgo = timeAgo(job.last_seen_at || job.first_seen_at || "");
+
+  // Visibility meter — how rarely this role shows up on the big boards.
+  // Derived entirely from existing hidden_tier / verified_hidden (no new data).
+  const meter = job.verified_hidden
+    ? { lit: 5, label: "Rarely on the big boards.", sub: "We checked LinkedIn & Indeed and couldn't find this role." }
+    : job.hidden_tier >= 2
+      ? { lit: 4, label: "Likely low visibility.", sub: "Scraped straight from the company — rarely syndicated." }
+      : job.hidden_tier === 1
+        ? { lit: 3, label: "Lower visibility than most.", sub: "This company posts on the big boards less than average." }
+        : null;
+
+  const remoteMarkers = ["remote", "hybrid", "thuiswerk", "work from home", "wfh"];
+  const isRemote = remoteMarkers.some((m) =>
+    `${job.location_raw} ${job.title} ${job.city}`.toLowerCase().includes(m),
+  );
+
   return (
     <main className="min-h-screen bg-neutral-50">
       {jsonLd && (
@@ -390,12 +415,12 @@ export default async function JobDetailPage({ params }: Props) {
         />
       )}
 
-      <div className="mx-auto max-w-5xl px-4 py-8">
+      <div className="mx-auto max-w-5xl px-4 py-8 pb-28 lg:pb-8">
         <Link href="/jobs" className="text-sm text-blue-600 hover:underline">
           ← All jobs
         </Link>
 
-        <div className="mt-4 grid gap-6 lg:grid-cols-[1fr,320px]">
+        <div className="mt-4 grid gap-6 lg:grid-cols-[1fr,340px]">
           {/* MAIN COLUMN */}
           <article className="min-w-0 rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8">
             <div className="flex items-center gap-3">
@@ -403,40 +428,79 @@ export default async function JobDetailPage({ params }: Props) {
                 {job.company.slice(0, 2).toUpperCase()}
               </div>
               <div className="min-w-0">
-                <Link href={`/companies/${companySlug}`} className="text-sm text-neutral-500 hover:text-blue-700">
+                <Link href={`/companies/${companySlug}`} className="text-sm font-medium text-neutral-600 hover:text-blue-700">
                   {job.company}
                 </Link>
-                <h1 className="font-[Sora] text-2xl font-bold text-neutral-900">{job.title}</h1>
+                {(job.city || job.country) && (
+                  <div className="text-xs text-neutral-400">
+                    {[job.city, job.country].filter(Boolean).join(" · ")}
+                  </div>
+                )}
               </div>
             </div>
 
-            {job.verified_hidden && (
-              <p className="mt-4 rounded-xl border border-fuchsia-200 bg-fuchsia-50 px-4 py-2.5 text-sm text-fuchsia-700">
-                💎 <strong>Verified hidden gem</strong> — we checked LinkedIn and Indeed and
-                couldn&apos;t find this role there. Scraped straight from {job.company}.
-              </p>
-            )}
-            {job.hidden_tier === 1 && (
-              <p className="mt-4 rounded-xl border border-amber-200 bg-amber-50 px-4 py-2.5 text-sm text-amber-700">
-                Low visibility — this company rarely posts on big job boards.
-              </p>
+            <h1 className="mt-4 font-[Sora] text-2xl font-bold leading-tight text-neutral-900 sm:text-3xl">
+              {job.title}
+            </h1>
+
+            {/* tags */}
+            <div className="mt-4 flex flex-wrap gap-2">
+              {job.verified_hidden ? (
+                <span className="rounded-full border border-fuchsia-200 bg-fuchsia-50 px-3 py-1 text-xs font-medium text-fuchsia-700">
+                  💎 Verified hidden gem
+                </span>
+              ) : job.hidden_tier === 1 ? (
+                <span className="rounded-full border border-amber-200 bg-amber-50 px-3 py-1 text-xs font-medium text-amber-700">
+                  Low visibility
+                </span>
+              ) : null}
+              {job.department && (
+                <span className="rounded-full border border-neutral-200 bg-white px-3 py-1 text-xs text-neutral-600">
+                  {job.department}
+                </span>
+              )}
+              {job.job_type && (
+                <span className="rounded-full border border-neutral-200 bg-white px-3 py-1 text-xs text-neutral-600">
+                  {job.job_type}
+                </span>
+              )}
+              {isRemote && (
+                <span className="rounded-full border border-neutral-200 bg-white px-3 py-1 text-xs text-neutral-600">
+                  Remote-friendly
+                </span>
+              )}
+            </div>
+
+            {/* provenance */}
+            {sourceDomain && (
+              <div className="mt-4 flex items-center gap-2 text-xs text-neutral-400">
+                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" />
+                Found on {sourceDomain}
+                {checkedAgo ? ` · last checked ${checkedAgo}` : ""}
+              </div>
             )}
 
+            <hr className="my-6 border-neutral-100" />
+
+            {/* about / description (real scraped text) */}
+            <h2 className="font-[Sora] text-xs font-semibold uppercase tracking-wider text-blue-600">
+              About this role
+            </h2>
             {!isActive ? (
-              <div className="mt-6 rounded-xl border border-neutral-200 bg-neutral-100 p-4 text-sm text-neutral-600">
+              <div className="mt-3 rounded-xl border border-neutral-200 bg-neutral-100 p-4 text-sm text-neutral-600">
                 This position is no longer listed by the company.{" "}
                 <Link href={`/companies/${companySlug}`} className="text-blue-600 underline">
                   See other jobs at {job.company}
                 </Link>
               </div>
             ) : job.description ? (
-              <div className="mt-6 whitespace-pre-line border-t border-neutral-100 pt-6 text-[15px] leading-relaxed text-neutral-700">
+              <div className="mt-3 whitespace-pre-line text-[15px] leading-relaxed text-neutral-700">
                 {job.description}
               </div>
             ) : (
-              <p className="mt-6 border-t border-neutral-100 pt-6 text-sm text-neutral-500">
-                The company hosts the full description on their own site — use
-                the apply button to read it there.
+              <p className="mt-3 text-sm text-neutral-500">
+                The company hosts the full description on their own site — use the
+                apply button to read it there.
               </p>
             )}
 
@@ -449,11 +513,49 @@ export default async function JobDetailPage({ params }: Props) {
                 ))}
               </div>
             )}
+
+            {/* why we flagged this */}
+            {meter && (
+              <div className="mt-8">
+                <h2 className="font-[Sora] text-xs font-semibold uppercase tracking-wider text-fuchsia-600">
+                  Why we flagged this
+                </h2>
+                <div className="mt-3 rounded-2xl border border-fuchsia-200 bg-fuchsia-50 p-5">
+                  <div className="font-[Sora] font-semibold text-fuchsia-800">
+                    💎 A genuine hidden gem
+                  </div>
+                  <p className="mt-1 text-sm leading-relaxed text-fuchsia-900/80">
+                    {job.verified_hidden
+                      ? `We scraped this straight from ${job.company}'s own career page, then checked LinkedIn and Indeed and couldn't find it there — so you're applying into a much smaller pool than usual.`
+                      : `${job.company} rarely posts on the big job boards. We found this on their own career page, so it's likely seen by far fewer applicants than a typical listing.`}
+                  </p>
+                </div>
+              </div>
+            )}
           </article>
 
-          {/* STICKY APPLY CARD */}
+          {/* STICKY RAIL */}
           <aside className="lg:sticky lg:top-20 lg:self-start">
             <div className="rounded-2xl border border-neutral-200 bg-white p-5">
+              {/* visibility meter */}
+              {meter && (
+                <div className="mb-5 rounded-xl border border-fuchsia-100 bg-fuchsia-50/60 p-4">
+                  <div className="flex items-center gap-1.5 text-xs font-semibold text-fuchsia-700">
+                    💎 Hidden gem
+                  </div>
+                  <div className="mt-2.5 flex gap-1">
+                    {[0, 1, 2, 3, 4].map((i) => (
+                      <div
+                        key={i}
+                        className={`h-2 flex-1 rounded-full ${i < meter.lit ? "bg-fuchsia-500" : "bg-neutral-200"}`}
+                      />
+                    ))}
+                  </div>
+                  <div className="mt-2.5 text-sm font-medium text-neutral-800">{meter.label}</div>
+                  <div className="text-xs text-neutral-500">{meter.sub}</div>
+                </div>
+              )}
+
               {isActive ? (
                 <>
                   <ApplyButton
@@ -475,9 +577,13 @@ export default async function JobDetailPage({ params }: Props) {
                       city={job.city}
                     />
                   </div>
-                  <p className="mt-3 text-center text-xs text-neutral-400">
-                    You apply directly with {job.company}. No middlemen.
-                  </p>
+                  <div className="mt-4 flex items-start gap-2 border-t border-neutral-100 pt-4">
+                    <span className="shrink-0 text-blue-600">🛡️</span>
+                    <p className="text-xs leading-relaxed text-neutral-500">
+                      You apply <strong className="text-neutral-700">directly with {job.company}</strong>.
+                      CubeA takes no fee, sees no application, and adds no middleman.
+                    </p>
+                  </div>
                   {isStale && (
                     <p className="mt-3 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-center text-xs text-amber-700">
                       This listing is over a month old — it may already be filled. Worth confirming it&apos;s still open on the company&apos;s site.
@@ -519,6 +625,10 @@ export default async function JobDetailPage({ params }: Props) {
                     <dd className="text-right font-medium">{posted}</dd>
                   </div>
                 )}
+                <div className="flex justify-between gap-3">
+                  <dt className="text-neutral-400">Apply via</dt>
+                  <dd className="text-right font-medium">Company site</dd>
+                </div>
               </dl>
 
               <Link
@@ -533,7 +643,7 @@ export default async function JobDetailPage({ params }: Props) {
 
         {job.related.length > 0 && (
           <section className="mt-8">
-            <h2 className="text-sm font-semibold uppercase tracking-wide text-neutral-500">
+            <h2 className="font-[Sora] text-sm font-semibold uppercase tracking-wide text-neutral-500">
               More at {job.company}
             </h2>
             <div className="mt-3 grid gap-2 sm:grid-cols-2">
@@ -552,6 +662,22 @@ export default async function JobDetailPage({ params }: Props) {
           </section>
         )}
       </div>
+
+      {/* mobile sticky apply */}
+      {isActive && (
+        <div className="fixed inset-x-0 bottom-0 z-40 border-t border-neutral-200 bg-white/95 px-4 py-3 backdrop-blur lg:hidden">
+          <ApplyButton
+            applyUrl={job.apply_url}
+            jobId={job.id}
+            company={job.company}
+            title={job.title}
+            hiddenTier={job.hidden_tier}
+            className="block w-full rounded-xl bg-blue-600 px-6 py-3 text-center font-semibold text-white hover:bg-blue-700"
+          >
+            Apply on company site →
+          </ApplyButton>
+        </div>
+      )}
     </main>
   );
 }
