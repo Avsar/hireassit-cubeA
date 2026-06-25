@@ -394,11 +394,11 @@ export default async function JobDetailPage({ params }: Props) {
   // Visibility meter — how rarely this role shows up on the big boards.
   // Derived entirely from existing hidden_tier / verified_hidden (no new data).
   const meter = job.verified_hidden
-    ? { lit: 5, label: "Rarely on the big boards.", sub: "We checked LinkedIn & Indeed and couldn't find this role." }
+    ? { lit: 5, tone: "gem" as const, badge: "Hidden gem", heading: "A verified hidden gem", label: "Rarely on the big boards.", sub: "We checked LinkedIn & Indeed and couldn't find this role." }
     : job.hidden_tier >= 2
-      ? { lit: 4, label: "Likely low visibility.", sub: "Scraped straight from the company — rarely syndicated." }
+      ? { lit: 4, tone: "gem" as const, badge: "Hidden gem", heading: "A likely hidden gem", label: "Likely low visibility.", sub: "Scraped straight from the company — rarely syndicated." }
       : job.hidden_tier === 1
-        ? { lit: 3, label: "Lower visibility than most.", sub: "This company posts on the big boards less than average." }
+        ? { lit: 3, tone: "low" as const, badge: "Low visibility", heading: "A lower-competition listing", label: "Lower visibility than most.", sub: "This company posts on the big boards less than average." }
         : null;
 
   const remoteMarkers = ["remote", "hybrid", "thuiswerk", "work from home", "wfh"];
@@ -498,10 +498,12 @@ export default async function JobDetailPage({ params }: Props) {
                 {job.description}
               </div>
             ) : (
-              <p className="mt-3 text-sm text-neutral-500">
-                The company hosts the full description on their own site — use the
-                apply button to read it there.
-              </p>
+              <div className="mt-3 rounded-xl border border-neutral-200 bg-neutral-50 p-4 text-sm leading-relaxed text-neutral-600">
+                {job.company} keeps the full description on their own site — and
+                that&apos;s where you apply, directly, with no middleman. Hit{" "}
+                <strong className="text-neutral-800">Apply</strong> to read the
+                details and apply in one step.
+              </div>
             )}
 
             {techTags.length > 0 && (
@@ -517,14 +519,14 @@ export default async function JobDetailPage({ params }: Props) {
             {/* why we flagged this */}
             {meter && (
               <div className="mt-8">
-                <h2 className="font-[Sora] text-xs font-semibold uppercase tracking-wider text-fuchsia-600">
+                <h2 className={`font-[Sora] text-xs font-semibold uppercase tracking-wider ${meter.tone === "gem" ? "text-fuchsia-600" : "text-amber-600"}`}>
                   Why we flagged this
                 </h2>
-                <div className="mt-3 rounded-2xl border border-fuchsia-200 bg-fuchsia-50 p-5">
-                  <div className="font-[Sora] font-semibold text-fuchsia-800">
-                    💎 A genuine hidden gem
+                <div className={`mt-3 rounded-2xl border p-5 ${meter.tone === "gem" ? "border-fuchsia-200 bg-fuchsia-50" : "border-amber-200 bg-amber-50"}`}>
+                  <div className={`font-[Sora] font-semibold ${meter.tone === "gem" ? "text-fuchsia-800" : "text-amber-800"}`}>
+                    {meter.tone === "gem" ? "💎 " : ""}{meter.heading}
                   </div>
-                  <p className="mt-1 text-sm leading-relaxed text-fuchsia-900/80">
+                  <p className={`mt-1 text-sm leading-relaxed ${meter.tone === "gem" ? "text-fuchsia-900/80" : "text-amber-900/80"}`}>
                     {job.verified_hidden
                       ? `We scraped this straight from ${job.company}'s own career page, then checked LinkedIn and Indeed and couldn't find it there — so you're applying into a much smaller pool than usual.`
                       : `${job.company} rarely posts on the big job boards. We found this on their own career page, so it's likely seen by far fewer applicants than a typical listing.`}
@@ -539,15 +541,15 @@ export default async function JobDetailPage({ params }: Props) {
             <div className="rounded-2xl border border-neutral-200 bg-white p-5">
               {/* visibility meter */}
               {meter && (
-                <div className="mb-5 rounded-xl border border-fuchsia-100 bg-fuchsia-50/60 p-4">
-                  <div className="flex items-center gap-1.5 text-xs font-semibold text-fuchsia-700">
-                    💎 Hidden gem
+                <div className={`mb-5 rounded-xl border p-4 ${meter.tone === "gem" ? "border-fuchsia-100 bg-fuchsia-50/60" : "border-amber-100 bg-amber-50/60"}`}>
+                  <div className={`flex items-center gap-1.5 text-xs font-semibold ${meter.tone === "gem" ? "text-fuchsia-700" : "text-amber-700"}`}>
+                    {meter.tone === "gem" ? "💎 " : ""}{meter.badge}
                   </div>
                   <div className="mt-2.5 flex gap-1">
                     {[0, 1, 2, 3, 4].map((i) => (
                       <div
                         key={i}
-                        className={`h-2 flex-1 rounded-full ${i < meter.lit ? "bg-fuchsia-500" : "bg-neutral-200"}`}
+                        className={`h-2 flex-1 rounded-full ${i < meter.lit ? (meter.tone === "gem" ? "bg-fuchsia-500" : "bg-amber-500") : "bg-neutral-200"}`}
                       />
                     ))}
                   </div>
