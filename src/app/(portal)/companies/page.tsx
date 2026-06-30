@@ -1,11 +1,11 @@
 import { Metadata } from "next";
-import { fetchCompanies } from "@/lib/hireassist";
+import { fetchCompanies, fetchJobs } from "@/lib/hireassist";
 import CompanyDirectory from "@/components/CompanyDirectory";
 
 export const metadata: Metadata = {
-  title: "Dutch Tech Companies Hiring Now — 700+ profiles | CubeA",
+  title: "Dutch Companies Hiring Now | CubeA",
   description:
-    "Browse 700+ Dutch companies with open vacancies, including small companies whose jobs never reach LinkedIn.",
+    "Browse Dutch companies with open vacancies, including small companies whose jobs never reach LinkedIn.",
 };
 
 export const revalidate = 3600;
@@ -23,7 +23,11 @@ export default async function CompaniesPage() {
     );
   }
 
-  const totalJobs = companies.reduce((s, c) => s + c.active_jobs, 0);
+  let liveJobCount: number | null = null;
+  try {
+    const jobs = await fetchJobs({ per_page: 1 });
+    liveJobCount = jobs.count;
+  } catch {}
 
   return (
     <main className="min-h-screen bg-neutral-50">
@@ -32,7 +36,7 @@ export default async function CompaniesPage() {
           <h1 className="font-[Sora] text-3xl font-bold">Companies hiring in the Netherlands</h1>
           <p className="mt-2 text-blue-100">
             {companies.length.toLocaleString("en-US")} companies ·{" "}
-            {totalJobs.toLocaleString("en-US")} open positions — crawled daily,
+            {liveJobCount !== null ? liveJobCount.toLocaleString("en-US") : "thousands of"} open positions — crawled daily,
             straight from the source.
           </p>
         </div>
