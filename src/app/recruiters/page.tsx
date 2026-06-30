@@ -20,8 +20,8 @@ const tools = [
     title: "JD Writer",
     desc: "Generate a clean job description",
     href: "/tools/jd-writer",
-    cta: "Try it",
-    available: false,
+    cta: "Open tool",
+    available: true,
   },
   {
     icon: "💬",

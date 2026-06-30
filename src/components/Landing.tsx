@@ -40,6 +40,9 @@ export default function Landing() {
             <a href="/tools/cv-reviewer" className="text-blue-600 hover:text-blue-800 font-medium">
               CV Reviewer
             </a>
+            <a href="/tools/jd-writer" className="text-blue-600 hover:text-blue-800 font-medium">
+              JD Writer
+            </a>
           </nav>
 
           <div className="flex items-center gap-2">
@@ -91,6 +94,9 @@ export default function Landing() {
             </a>
             <a href="/tools/cv-reviewer" onClick={() => setMobileOpen(false)} className="py-2 text-blue-600 hover:text-blue-800 font-medium">
               CV Reviewer
+            </a>
+            <a href="/tools/jd-writer" onClick={() => setMobileOpen(false)} className="py-2 text-blue-600 hover:text-blue-800 font-medium">
+              JD Writer
             </a>
           </div>
         )}
