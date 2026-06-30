@@ -147,6 +147,15 @@ export type PagePlan = {
   debug: { containment: number; reason?: string };
 };
 
+function clampMeta(s: string, max = 155): string {
+  const t = s.replace(/\s+/g, " ").trim();
+  if (t.length <= max) return t;
+  const cut = t.slice(0, max);
+  const lastSpace = cut.lastIndexOf(" ");
+  const base = lastSpace > max * 0.6 ? cut.slice(0, lastSpace) : cut;
+  return base.replace(/[\s.,;:!?–—-]+$/, "") + "…";
+}
+
 export function planJobPage(job: JobInput): PagePlan {
   const facts = {
     salary: extractSalary(job.rawDescription),
@@ -160,7 +169,7 @@ export function planJobPage(job: JobInput): PagePlan {
     return {
       bodyMode: "summary",
       index: true,
-      metaDescription: (job.summary as string).replace(/\s+/g, " ").trim().slice(0, 155),
+      metaDescription: clampMeta(job.summary as string),
       facts,
       debug: { containment: check.containment },
     };

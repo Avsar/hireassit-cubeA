@@ -2,7 +2,8 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CITY_PAGES, ROLE_PAGES, ROLE_CITY_ROLES, ROLE_CITY_CITIES, type RolePage, fetchJobDetail, fetchJobs, idFromSlug, logoColor, timeAgo } from "@/lib/hireassist";
-import { summariseJob, type JobSummary } from "@/lib/job-summariser";
+import { type JobSummary } from "@/lib/job-summariser";
+import { getCachedSummary } from "@/lib/summary-cache";
 import { planJobPage, type PagePlan, type Salary, type Hours } from "@/lib/jobContent";
 import SaveButton from "@/components/jobs/SaveButton";
 import JobCard from "@/components/jobs/JobCard";
@@ -118,11 +119,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  const cachedSummary = job.description ? getCachedSummary(job.id, job.description) : null;
   const plan = planJobPage({
     title: job.title,
     company: job.company,
     rawDescription: job.description || "",
-    summary: null,
+    summary: cachedSummary?.summary ?? null,
     listingLocation: job.city || null,
   });
 
@@ -358,14 +360,7 @@ export default async function JobDetailPage({ params }: Props) {
 
   let aiSummary: JobSummary | null = null;
   if (job.is_active && job.description) {
-    try {
-      aiSummary = await summariseJob({
-        title: job.title,
-        company: job.company,
-        language: "unknown",
-        rawText: job.description,
-      });
-    } catch {}
+    aiSummary = getCachedSummary(job.id, job.description);
   }
 
   const plan: PagePlan = planJobPage({
