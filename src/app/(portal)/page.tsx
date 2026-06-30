@@ -13,10 +13,15 @@ const HOME_CITIES = [
 export default async function HomePage() {
   const data = await fetchHiddenSummary();
   let verified;
+  let allJobs;
   try {
-    verified = await fetchJobs({ hidden: true, per_page: 6, sort: "newest" });
+    [verified, allJobs] = await Promise.all([
+      fetchJobs({ hidden: true, per_page: 6, sort: "newest" }),
+      fetchJobs({ per_page: 1 }),
+    ]);
   } catch {
     verified = null;
+    allJobs = null;
   }
 
   const homeJsonLd = {
@@ -79,14 +84,14 @@ export default async function HomePage() {
             </button>
           </form>
 
-          {data && (
+          {(allJobs || data) && (
             <div className="mt-10 flex justify-center gap-10 text-center">
-              <div>
-                <div className="font-[Sora] text-2xl font-bold text-neutral-900">
-                  {data.total_active.toLocaleString("en-US")}
+              <Link href="/jobs" className="group">
+                <div className="font-[Sora] text-2xl font-bold text-neutral-900 group-hover:text-blue-700">
+                  {(allJobs?.count ?? data?.total_active ?? 0).toLocaleString("en-US")}
                 </div>
                 <div className="text-xs text-neutral-400">jobs live now</div>
-              </div>
+              </Link>
               <Link href="/hidden-gems" className="group">
                 <div className="font-[Sora] text-2xl font-bold text-fuchsia-600 group-hover:text-fuchsia-700">
                   {(verified?.count ?? 0).toLocaleString("en-US")}
