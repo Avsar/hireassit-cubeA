@@ -3,11 +3,22 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CITY_PAGES, ROLE_PAGES, ROLE_CITY_ROLES, ROLE_CITY_CITIES, type RolePage, fetchJobDetail, fetchJobs, idFromSlug, logoColor, timeAgo } from "@/lib/hireassist";
 import { summariseJob, type JobSummary } from "@/lib/job-summariser";
+import { planJobPage, type PagePlan, type Salary, type Hours } from "@/lib/jobContent";
 import SaveButton from "@/components/jobs/SaveButton";
 import JobCard from "@/components/jobs/JobCard";
 import ApplyButton from "@/components/ApplyButton";
 
 export const revalidate = 3600;
+
+function formatSalary(s: Salary): string {
+  const fmt = (n: number) => n.toLocaleString("nl-NL");
+  const range = s.max != null ? `€${fmt(s.min)}–€${fmt(s.max)}` : `€${fmt(s.min)}`;
+  return `${range} / ${s.period}`;
+}
+
+function formatHours(h: Hours): string {
+  return h.max != null ? `${h.min}–${h.max} hrs` : `${h.min} hrs`;
+}
 
 interface Props {
   params: { slug: string };
@@ -97,14 +108,29 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const job = await getJob(params.slug);
   if (!job) return { title: "Job not found | CubeA" };
   const loc = job.city || "Netherlands";
-  const desc =
-    job.description?.slice(0, 155) ||
-    `${job.title} at ${job.company} in ${loc}. Apply directly on the company's website — no recruiters, no middlemen.`;
+
+  if (!job.is_active) {
+    return {
+      title: `${job.title} at ${job.company} — ${loc} | CubeA Jobs`,
+      description: `${job.title} at ${job.company} in ${loc}. This position has closed.`,
+      alternates: { canonical: `https://cubea.nl/jobs/${job.slug}` },
+      robots: { index: false },
+    };
+  }
+
+  const plan = planJobPage({
+    title: job.title,
+    company: job.company,
+    rawDescription: job.description || "",
+    summary: null,
+    listingLocation: job.city || null,
+  });
+
   return {
     title: `${job.title} at ${job.company} — ${loc} | CubeA Jobs`,
-    description: desc,
-    alternates: { canonical: `/jobs/${job.slug}` },
-    robots: job.is_active ? undefined : { index: false },
+    description: plan.metaDescription,
+    alternates: { canonical: `https://cubea.nl/jobs/${job.slug}` },
+    robots: plan.index ? undefined : { index: false, follow: true },
   };
 }
 
@@ -342,6 +368,14 @@ export default async function JobDetailPage({ params }: Props) {
     } catch {}
   }
 
+  const plan: PagePlan = planJobPage({
+    title: job.title,
+    company: job.company,
+    rawDescription: job.description || "",
+    summary: aiSummary?.summary ?? null,
+    listingLocation: job.city || null,
+  });
+
   const techTags = (job.tech_tags || "").split("|").filter(Boolean);
   const posted = timeAgo(job.posted_at);
   const isActive = !!job.is_active;
@@ -514,7 +548,7 @@ export default async function JobDetailPage({ params }: Props) {
 
             <hr className="my-6 border-neutral-100" />
 
-            {/* about / description */}
+            {/* about / description — driven by plan.bodyMode */}
             <h2 className="font-[Sora] text-xs font-semibold uppercase tracking-wider text-blue-600">
               About this role
             </h2>
@@ -525,14 +559,19 @@ export default async function JobDetailPage({ params }: Props) {
                   See other jobs at {job.company}
                 </Link>
               </div>
-            ) : aiSummary ? (
+            ) : plan.bodyMode === "summary" ? (
               <div className="mt-3 text-[15px] leading-relaxed text-neutral-700">
-                {aiSummary.summary}
+                {aiSummary!.summary}
               </div>
-            ) : job.description ? (
-              <div className="mt-3 whitespace-pre-line text-[15px] leading-relaxed text-neutral-700">
-                {job.description}
-              </div>
+            ) : plan.bodyMode === "raw_fallback" ? (
+              <>
+                {plan.attribution && (
+                  <p className="mt-3 text-xs text-neutral-400">{plan.attribution}</p>
+                )}
+                <div className="mt-2 whitespace-pre-line text-[15px] leading-relaxed text-neutral-700">
+                  {job.description}
+                </div>
+              </>
             ) : (
               <div className="mt-3 rounded-xl border border-neutral-200 bg-neutral-50 p-4 text-sm leading-relaxed text-neutral-600">
                 {job.company} keeps the full description on their own site — and
@@ -668,25 +707,20 @@ export default async function JobDetailPage({ params }: Props) {
               <dl className="mt-5 space-y-3 border-t border-neutral-100 pt-5 text-sm">
                 <div className="flex justify-between gap-3">
                   <dt className="text-neutral-400">Location</dt>
-                  <dd className="text-right font-medium">{aiSummary?.location || job.city || job.location_raw.slice(0, 30) || "Netherlands"}</dd>
+                  <dd className="text-right font-medium">{plan.facts.location || job.location_raw.slice(0, 30) || "Netherlands"}</dd>
                 </div>
-                {aiSummary?.salary ? (
+                <div className="flex justify-between gap-3">
+                  <dt className="text-neutral-400">Salary</dt>
+                  <dd className={`text-right ${plan.facts.salary ? "font-medium" : "text-neutral-400"}`}>
+                    {plan.facts.salary ? formatSalary(plan.facts.salary) : "Not listed"}
+                  </dd>
+                </div>
+                {plan.facts.hours && (
                   <div className="flex justify-between gap-3">
-                    <dt className="text-neutral-400">Salary</dt>
-                    <dd className="text-right font-medium">
-                      {[
-                        aiSummary.salary.min != null && `${aiSummary.salary.currency} ${aiSummary.salary.min.toLocaleString("en-US")}`,
-                        aiSummary.salary.max != null && `${aiSummary.salary.currency} ${aiSummary.salary.max.toLocaleString("en-US")}`,
-                      ].filter(Boolean).join(" – ")}
-                      {aiSummary.salary.period ? ` / ${aiSummary.salary.period}` : ""}
-                    </dd>
+                    <dt className="text-neutral-400">Hours</dt>
+                    <dd className="text-right font-medium">{formatHours(plan.facts.hours)}</dd>
                   </div>
-                ) : isActive ? (
-                  <div className="flex justify-between gap-3">
-                    <dt className="text-neutral-400">Salary</dt>
-                    <dd className="text-right text-neutral-400">Not listed</dd>
-                  </div>
-                ) : null}
+                )}
                 {job.job_type && (
                   <div className="flex justify-between gap-3">
                     <dt className="text-neutral-400">Type</dt>
