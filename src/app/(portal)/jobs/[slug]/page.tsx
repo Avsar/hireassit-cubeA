@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CITY_PAGES, ROLE_PAGES, ROLE_CITY_ROLES, ROLE_CITY_CITIES, type RolePage, fetchJobDetail, fetchJobs, idFromSlug, logoColor, timeAgo } from "@/lib/hireassist";
+import { summariseJob, type JobSummary } from "@/lib/job-summariser";
 import SaveButton from "@/components/jobs/SaveButton";
 import JobCard from "@/components/jobs/JobCard";
 import ApplyButton from "@/components/ApplyButton";
@@ -329,6 +330,18 @@ export default async function JobDetailPage({ params }: Props) {
   const job = await getJob(params.slug);
   if (!job) notFound();
 
+  let aiSummary: JobSummary | null = null;
+  if (job.is_active && job.description) {
+    try {
+      aiSummary = await summariseJob({
+        title: job.title,
+        company: job.company,
+        language: "unknown",
+        rawText: job.description,
+      });
+    } catch {}
+  }
+
   const techTags = (job.tech_tags || "").split("|").filter(Boolean);
   const posted = timeAgo(job.posted_at);
   const isActive = !!job.is_active;
@@ -454,9 +467,19 @@ export default async function JobDetailPage({ params }: Props) {
                   Low visibility
                 </span>
               ) : null}
+              {aiSummary && aiSummary.seniority !== "Unknown" && (
+                <Link href={`/jobs?q=${encodeURIComponent(aiSummary.seniority)}`} className="rounded-full border border-neutral-200 bg-white px-3 py-1 text-xs text-neutral-600 hover:border-blue-300 hover:text-blue-700">
+                  {aiSummary.seniority}
+                </Link>
+              )}
               {job.department && (
                 <span className="rounded-full border border-neutral-200 bg-white px-3 py-1 text-xs text-neutral-600">
                   {job.department}
+                </span>
+              )}
+              {aiSummary && aiSummary.role_category !== "Other" && !job.department && (
+                <span className="rounded-full border border-neutral-200 bg-white px-3 py-1 text-xs text-neutral-600">
+                  {aiSummary.role_category}
                 </span>
               )}
               {job.job_type && (
@@ -464,9 +487,18 @@ export default async function JobDetailPage({ params }: Props) {
                   {job.job_type}
                 </span>
               )}
-              {isRemote && (
+              {aiSummary && aiSummary.work_mode !== "Unknown" ? (
+                <span className="rounded-full border border-neutral-200 bg-white px-3 py-1 text-xs text-neutral-600">
+                  {aiSummary.work_mode}
+                </span>
+              ) : isRemote ? (
                 <span className="rounded-full border border-neutral-200 bg-white px-3 py-1 text-xs text-neutral-600">
                   Remote-friendly
+                </span>
+              ) : null}
+              {aiSummary && aiSummary.language_requirement !== "Unknown" && (
+                <span className="rounded-full border border-teal-200 bg-teal-50 px-3 py-1 text-xs text-teal-700">
+                  {aiSummary.language_requirement}
                 </span>
               )}
             </div>
@@ -482,7 +514,7 @@ export default async function JobDetailPage({ params }: Props) {
 
             <hr className="my-6 border-neutral-100" />
 
-            {/* about / description (real scraped text) */}
+            {/* about / description */}
             <h2 className="font-[Sora] text-xs font-semibold uppercase tracking-wider text-blue-600">
               About this role
             </h2>
@@ -492,6 +524,10 @@ export default async function JobDetailPage({ params }: Props) {
                 <Link href={`/companies/${companySlug}`} className="text-blue-600 underline">
                   See other jobs at {job.company}
                 </Link>
+              </div>
+            ) : aiSummary ? (
+              <div className="mt-3 text-[15px] leading-relaxed text-neutral-700">
+                {aiSummary.summary}
               </div>
             ) : job.description ? (
               <div className="mt-3 whitespace-pre-line text-[15px] leading-relaxed text-neutral-700">
@@ -506,13 +542,38 @@ export default async function JobDetailPage({ params }: Props) {
               </div>
             )}
 
-            {techTags.length > 0 && (
+            {/* requirements */}
+            {aiSummary?.requirements && aiSummary.requirements.length > 0 && (
+              <div className="mt-6">
+                <h2 className="font-[Sora] text-xs font-semibold uppercase tracking-wider text-blue-600">
+                  What you&apos;ll likely bring
+                </h2>
+                <ul className="mt-3 space-y-2">
+                  {aiSummary.requirements.map((req, i) => (
+                    <li key={i} className="flex items-start gap-2 text-[15px] leading-relaxed text-neutral-700">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-400" />
+                      {req}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* key tags + tech tags */}
+            {(techTags.length > 0 || (aiSummary?.key_tags && aiSummary.key_tags.length > 0)) && (
               <div className="mt-6 flex flex-wrap gap-2">
-                {techTags.map((t) => (
+                {(aiSummary?.key_tags ?? []).map((t) => (
                   <span key={t} className="rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs text-blue-700">
                     {t}
                   </span>
                 ))}
+                {techTags
+                  .filter((t) => !(aiSummary?.key_tags ?? []).some((k) => k.toLowerCase() === t.toLowerCase()))
+                  .map((t) => (
+                    <span key={t} className="rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs text-blue-700">
+                      {t}
+                    </span>
+                  ))}
               </div>
             )}
 
@@ -607,8 +668,25 @@ export default async function JobDetailPage({ params }: Props) {
               <dl className="mt-5 space-y-3 border-t border-neutral-100 pt-5 text-sm">
                 <div className="flex justify-between gap-3">
                   <dt className="text-neutral-400">Location</dt>
-                  <dd className="text-right font-medium">{job.city || job.location_raw.slice(0, 30) || "Netherlands"}</dd>
+                  <dd className="text-right font-medium">{aiSummary?.location || job.city || job.location_raw.slice(0, 30) || "Netherlands"}</dd>
                 </div>
+                {aiSummary?.salary ? (
+                  <div className="flex justify-between gap-3">
+                    <dt className="text-neutral-400">Salary</dt>
+                    <dd className="text-right font-medium">
+                      {[
+                        aiSummary.salary.min != null && `${aiSummary.salary.currency} ${aiSummary.salary.min.toLocaleString("en-US")}`,
+                        aiSummary.salary.max != null && `${aiSummary.salary.currency} ${aiSummary.salary.max.toLocaleString("en-US")}`,
+                      ].filter(Boolean).join(" – ")}
+                      {aiSummary.salary.period ? ` / ${aiSummary.salary.period}` : ""}
+                    </dd>
+                  </div>
+                ) : isActive ? (
+                  <div className="flex justify-between gap-3">
+                    <dt className="text-neutral-400">Salary</dt>
+                    <dd className="text-right text-neutral-400">Not listed</dd>
+                  </div>
+                ) : null}
                 {job.job_type && (
                   <div className="flex justify-between gap-3">
                     <dt className="text-neutral-400">Type</dt>
@@ -619,6 +697,12 @@ export default async function JobDetailPage({ params }: Props) {
                   <div className="flex justify-between gap-3">
                     <dt className="text-neutral-400">Department</dt>
                     <dd className="text-right font-medium">{job.department}</dd>
+                  </div>
+                )}
+                {aiSummary && aiSummary.language_requirement !== "Unknown" && (
+                  <div className="flex justify-between gap-3">
+                    <dt className="text-neutral-400">Language</dt>
+                    <dd className="text-right font-medium">{aiSummary.language_requirement}</dd>
                   </div>
                 )}
                 {posted && (
