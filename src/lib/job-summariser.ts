@@ -101,11 +101,13 @@ ${input.rawText.slice(0, 6000)}
 
   if (!res.ok) return null;
   const data = await res.json();
-  const text = (data.content ?? [])
+  let text = (data.content ?? [])
     .filter((b: { type: string }) => b.type === "text")
     .map((b: { text: string }) => b.text)
     .join("")
     .trim();
+
+  text = text.replace(/^```(?:json)?\s*/i, "").replace(/\s*```\s*$/, "");
 
   try {
     const parsed = JSON.parse(text) as JobSummary;

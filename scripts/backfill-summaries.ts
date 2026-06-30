@@ -157,10 +157,13 @@ async function summarise(title: string, company: string, rawText: string): Promi
     return null;
   }
   const data = await res.json();
-  const text = (data.content ?? [])
+  let text = (data.content ?? [])
     .filter((b: { type: string }) => b.type === "text")
     .map((b: { text: string }) => b.text)
     .join("").trim();
+
+  // Strip markdown code fences if the model wraps its JSON output
+  text = text.replace(/^```(?:json)?\s*/i, "").replace(/\s*```\s*$/, "");
 
   try {
     const parsed = JSON.parse(text) as JobSummary;
