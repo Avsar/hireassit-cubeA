@@ -183,7 +183,7 @@ const tx = {
       },
       seeker: {
         title: "I'm looking for a job",
-        desc: "Find your next role in Dutch tech with personalised AI-powered matches.",
+        desc: "Find your next role in the Netherlands with personalised AI-powered matches.",
         cta: "Get started",
       },
     },
@@ -203,7 +203,7 @@ const tx = {
       },
       seeker: {
         title: "Ik zoek een baan",
-        desc: "Vind je volgende rol in de Nederlandse tech met gepersonaliseerde AI-matches.",
+        desc: "Vind je volgende rol in Nederland met gepersonaliseerde AI-matches.",
         cta: "Aan de slag",
       },
     },

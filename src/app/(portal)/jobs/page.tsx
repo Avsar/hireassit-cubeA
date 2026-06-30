@@ -7,9 +7,9 @@ import JobFilters from "@/components/jobs/JobFilters";
 import AlertSignup from "@/components/jobs/AlertSignup";
 
 export const metadata: Metadata = {
-  title: "Tech Jobs in the Netherlands — incl. hidden jobs not on LinkedIn | CubeA",
+  title: "Jobs in the Netherlands — incl. hidden jobs not on LinkedIn | CubeA",
   description:
-    "Search 13,000+ jobs from 1,000+ Dutch companies — including hidden gems scraped directly from company career pages that never reach LinkedIn or Indeed.",
+    "Search jobs from 1,000+ Dutch companies — including hidden gems scraped directly from company career pages that never reach LinkedIn or Indeed.",
 };
 
 export const revalidate = 600;

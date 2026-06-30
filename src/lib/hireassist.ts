@@ -238,7 +238,7 @@ export const ROLE_PAGES: Record<string, RolePage> = {
     label: "Developer",
     query: "developer",
     blurb:
-      "Developer roles across web, mobile and full-stack at Dutch tech companies, crawled daily straight from their career pages.",
+      "Developer roles across web, mobile and full-stack at Dutch companies, crawled daily straight from their career pages.",
   },
   data: {
     label: "Data",
@@ -250,7 +250,7 @@ export const ROLE_PAGES: Record<string, RolePage> = {
     label: "Product Manager",
     query: "product manager",
     blurb:
-      "Product management and product owner roles at Dutch tech companies, sourced directly from the companies that are hiring.",
+      "Product management and product owner roles at Dutch companies, sourced directly from the companies that are hiring.",
   },
   devops: {
     label: "DevOps & Cloud",

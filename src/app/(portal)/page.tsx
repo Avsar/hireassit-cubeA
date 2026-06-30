@@ -85,7 +85,7 @@ export default async function HomePage() {
                 <div className="font-[Sora] text-2xl font-bold text-neutral-900">
                   {data.total_active.toLocaleString("en-US")}
                 </div>
-                <div className="text-xs text-neutral-400">jobs indexed</div>
+                <div className="text-xs text-neutral-400">jobs live now</div>
               </div>
               <Link href="/hidden-gems" className="group">
                 <div className="font-[Sora] text-2xl font-bold text-fuchsia-600 group-hover:text-fuchsia-700">

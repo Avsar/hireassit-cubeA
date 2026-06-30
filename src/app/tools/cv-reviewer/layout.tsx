@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Free CV Reviewer — CubeA",
   description:
-    "Get quick, free feedback on your CV for the Dutch tech job market with CubeA's CV reviewer.",
+    "Get quick, free feedback on your CV for the Dutch job market with CubeA's CV reviewer.",
   alternates: { canonical: "/tools/cv-reviewer" },
 };
 

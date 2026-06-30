@@ -70,7 +70,7 @@ export default function CVReviewerPage() {
             <div className="mb-8">
               <h1 className="text-3xl font-extrabold tracking-tight">CV Reviewer</h1>
               <p className="mt-2 text-neutral-600 max-w-xl">
-                Get expert feedback tailored to the Dutch tech job market.
+                Get expert feedback tailored to the Dutch job market.
               </p>
             </div>
 

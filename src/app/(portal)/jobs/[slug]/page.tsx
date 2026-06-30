@@ -77,7 +77,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const cityName = isHub ? CITY_PAGES[params.slug] : undefined;
   if (cityName) {
     return {
-      title: `Tech Jobs in ${cityName} — incl. hidden gems | CubeA`,
+      title: `Jobs in ${cityName} — incl. hidden gems | CubeA`,
       description: `Open positions in ${cityName}, crawled daily from company career pages and job boards — including hidden jobs that never reach LinkedIn.`,
       alternates: { canonical: `/jobs/${params.slug}` },
     };
@@ -262,7 +262,7 @@ async function CityLandingPage({ slug, cityName }: { slug: string; cityName: str
     <main className="min-h-screen bg-neutral-50">
       <section className="bg-blue-600 text-white">
         <div className="mx-auto max-w-5xl px-4 py-12">
-          <h1 className="text-3xl font-bold">Tech jobs in {cityName}</h1>
+          <h1 className="text-3xl font-bold">Jobs in {cityName}</h1>
           <p className="mt-2 text-blue-100">
             {data ? `${data.count.toLocaleString("en-US")} open positions` : "Open positions"} in{" "}
             {cityName} — crawled daily from company career pages, including
@@ -271,7 +271,7 @@ async function CityLandingPage({ slug, cityName }: { slug: string; cityName: str
         </div>
       </section>
       <div className="mx-auto max-w-5xl px-4 py-8 space-y-8">
-        <HubBreadcrumb label={`Tech jobs in ${cityName}`} slug={slug} />
+        <HubBreadcrumb label={`Jobs in ${cityName}`} slug={slug} />
 
         <Link
           href={`/jobs?city=${encodeURIComponent(cityName)}&hidden=true`}
