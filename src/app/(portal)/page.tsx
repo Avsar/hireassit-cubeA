@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import Link from "next/link";
-import { fetchHiddenSummary, fetchJobs, logoColor, CITY_PAGES } from "@/lib/hireassist";
+import { fetchCompanies, fetchHiddenSummary, fetchJobs, logoColor, CITY_PAGES } from "@/lib/hireassist";
 import AlertSignup from "@/components/jobs/AlertSignup";
 
 export const revalidate = 1800;
@@ -23,6 +23,11 @@ export default async function HomePage() {
     verified = null;
     allJobs = null;
   }
+  let companyCount: number | null = null;
+  try {
+    const companies = await fetchCompanies();
+    companyCount = companies.length;
+  } catch {}
 
   const homeJsonLd = {
     "@context": "https://schema.org",
@@ -100,7 +105,7 @@ export default async function HomePage() {
               </Link>
               <Link href="/companies" className="group">
                 <div className="font-[Sora] text-2xl font-bold text-neutral-900 group-hover:text-blue-700">
-                  1,000+
+                  {companyCount ? companyCount.toLocaleString("en-US") : "1,000+"}
                 </div>
                 <div className="text-xs text-neutral-400">companies crawled</div>
               </Link>
