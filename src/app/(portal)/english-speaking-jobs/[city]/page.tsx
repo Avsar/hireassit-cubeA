@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CITY_PAGES, fetchJobs } from "@/lib/hireassist";
+import { getSummariesBulk } from "@/lib/summary-cache";
 import JobCard from "@/components/jobs/JobCard";
 
 export const revalidate = 1800;
@@ -123,9 +124,12 @@ export default async function EnglishSpeakingCityPage({ params }: Props) {
           </p>
         ) : (
           <div className="grid gap-3">
-            {data.jobs.map((job) => (
-              <JobCard key={job.id} job={job} />
-            ))}
+            {(() => {
+              const summaries = getSummariesBulk(data.jobs.map((j) => j.id));
+              return data.jobs.map((job) => (
+                <JobCard key={job.id} job={job} summary={summaries.get(job.id) ?? null} />
+              ));
+            })()}
           </div>
         )}
 

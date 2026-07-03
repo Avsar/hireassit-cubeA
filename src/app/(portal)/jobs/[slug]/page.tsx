@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CITY_PAGES, ROLE_PAGES, ROLE_CITY_ROLES, ROLE_CITY_CITIES, type RolePage, fetchJobDetail, fetchJobs, idFromSlug, logoColor, timeAgo } from "@/lib/hireassist";
 import { type JobSummary } from "@/lib/job-summariser";
-import { getCachedSummary } from "@/lib/summary-cache";
+import { getCachedSummary, getSummariesBulk } from "@/lib/summary-cache";
 import { planJobPage, type PagePlan, type Salary, type Hours } from "@/lib/jobContent";
 import SaveButton from "@/components/jobs/SaveButton";
 import JobCard from "@/components/jobs/JobCard";
@@ -236,9 +236,12 @@ async function RoleLandingPage({ slug, role }: { slug: string; role: RolePage })
           </p>
         ) : (
           <div className="grid gap-3">
-            {data.jobs.map((job) => (
-              <JobCard key={job.id} job={job} />
-            ))}
+            {(() => {
+              const summaries = getSummariesBulk(data.jobs.map((j) => j.id));
+              return data.jobs.map((job) => (
+                <JobCard key={job.id} job={job} summary={summaries.get(job.id) ?? null} />
+              ));
+            })()}
           </div>
         )}
 
@@ -316,9 +319,12 @@ async function CityLandingPage({ slug, cityName }: { slug: string; cityName: str
           </p>
         ) : (
           <div className="grid gap-3">
-            {data.jobs.map((job) => (
-              <JobCard key={job.id} job={job} />
-            ))}
+            {(() => {
+              const summaries = getSummariesBulk(data.jobs.map((j) => j.id));
+              return data.jobs.map((job) => (
+                <JobCard key={job.id} job={job} summary={summaries.get(job.id) ?? null} />
+              ));
+            })()}
           </div>
         )}
 

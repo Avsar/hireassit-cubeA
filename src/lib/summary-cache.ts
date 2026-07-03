@@ -51,6 +51,16 @@ export function getAllCachedIds(): Set<string> {
   return new Set(Object.keys(cache));
 }
 
+export function getSummariesBulk(jobIds: number[]): Map<number, JobSummary> {
+  const cache = readCache();
+  const result = new Map<number, JobSummary>();
+  for (const id of jobIds) {
+    const entry = cache[String(id)];
+    if (entry?.summary) result.set(id, entry.summary);
+  }
+  return result;
+}
+
 export function getCacheStats(): { total: number; entries: CacheData } {
   const cache = readCache();
   return { total: Object.keys(cache).length, entries: cache };
