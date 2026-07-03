@@ -69,8 +69,8 @@ export default function JobFilters() {
   const chip = (active: boolean) =>
     `inline-flex items-center gap-1 whitespace-nowrap rounded-full border px-3.5 py-2 text-sm font-medium transition cursor-pointer ${
       active
-        ? "border-blue-600 bg-blue-600 text-white"
-        : "border-neutral-300 bg-white text-neutral-600 hover:border-blue-400 hover:text-blue-700"
+        ? "border-gem bg-gem text-white"
+        : "border-neutral-300 bg-white text-neutral-600 hover:border-gem hover:text-gem"
     }`;
 
   const gemChip = (active: boolean) =>
@@ -103,7 +103,7 @@ export default function JobFilters() {
             value={q}
             onChange={(e) => setQ(e.target.value)}
             placeholder='Try "python", "Adyen", or "UX designer"…'
-            className="w-full rounded-full border border-neutral-300 bg-white py-2 pl-9 pr-3.5 text-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100"
+            className="w-full rounded-full border border-neutral-300 bg-white py-2 pl-9 pr-3.5 text-sm focus:border-gem focus:outline-none focus:ring-2 focus:ring-gem-wash"
           />
         </form>
 
@@ -119,7 +119,7 @@ export default function JobFilters() {
             }}
             onFocus={() => setCityOpen(true)}
             placeholder="City…"
-            className="w-[140px] rounded-full border border-neutral-300 bg-white px-3.5 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100"
+            className="w-[140px] rounded-full border border-neutral-300 bg-white px-3.5 py-2 text-sm focus:border-gem focus:outline-none focus:ring-2 focus:ring-gem-wash"
           />
           {cityOpen && filteredCities.length > 0 && (
             <div className="absolute left-0 top-full z-50 mt-1 min-w-[180px] rounded-xl border border-neutral-200 bg-white py-1 shadow-lg">
@@ -132,8 +132,8 @@ export default function JobFilters() {
                     setCityOpen(false);
                     apply({ city: c });
                   }}
-                  className={`block w-full px-3.5 py-2 text-left text-sm hover:bg-blue-50 ${
-                    c === city ? "font-medium text-blue-700" : "text-neutral-700"
+                  className={`block w-full px-3.5 py-2 text-left text-sm hover:bg-gem-wash ${
+                    c === city ? "font-medium text-gem" : "text-neutral-700"
                   }`}
                 >
                   {c}
@@ -148,7 +148,7 @@ export default function JobFilters() {
           <select
             value={role}
             onChange={(e) => apply({ role: e.target.value || null })}
-            className="appearance-none rounded-full border border-neutral-300 bg-white py-2 pl-3.5 pr-8 text-sm font-medium text-neutral-600 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100"
+            className="appearance-none rounded-full border border-neutral-300 bg-white py-2 pl-3.5 pr-8 text-sm font-medium text-neutral-600 focus:border-gem focus:outline-none focus:ring-2 focus:ring-gem-wash"
           >
             <option value="">All roles</option>
             {ROLE_OPTIONS.map(([val, label]) => (
@@ -240,7 +240,7 @@ export default function JobFilters() {
               setCityQuery("");
               router.push("/jobs");
             }}
-            className="text-blue-600 underline"
+            className="text-gem underline"
           >
             Clear filters
           </button>

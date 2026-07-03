@@ -93,8 +93,8 @@ export default async function CompanyPage({ params }: Props) {
       />
       <div className="mx-auto max-w-4xl px-4 py-10">
         <div className="flex gap-4 text-sm">
-          <Link href="/companies" className="text-blue-600 hover:underline">← All companies</Link>
-          <Link href="/jobs" className="text-blue-600 hover:underline">All jobs</Link>
+          <Link href="/companies" className="text-gem hover:underline">← All companies</Link>
+          <Link href="/jobs" className="text-gem hover:underline">All jobs</Link>
         </div>
 
         <div className="mt-4 rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8">
@@ -114,11 +114,11 @@ export default async function CompanyPage({ params }: Props) {
 
           <dl className="mt-6 grid grid-cols-3 gap-4 text-center">
             <div className="rounded-xl bg-neutral-50 p-3">
-              <dd className="text-2xl font-bold text-blue-700">{co.active_jobs}</dd>
+              <dd className="text-2xl font-bold text-gem">{co.active_jobs}</dd>
               <dt className="text-xs text-neutral-500">Open positions</dt>
             </div>
             <div className="rounded-xl bg-neutral-50 p-3">
-              <dd className="text-2xl font-bold text-fuchsia-700">{co.hidden_gems}</dd>
+              <dd className="text-2xl font-bold text-amber-700">{co.hidden_gems}</dd>
               <dt className="text-xs text-neutral-500">Hidden gems</dt>
             </div>
             <div className="rounded-xl bg-neutral-50 p-3">
@@ -153,7 +153,7 @@ export default async function CompanyPage({ params }: Props) {
               key={j.id}
               href={`/jobs/${j.slug}`}
               target="_blank"
-              className="flex items-center justify-between gap-3 rounded-xl border border-neutral-200 bg-white px-4 py-3 hover:border-blue-300"
+              className="flex items-center justify-between gap-3 rounded-xl border border-neutral-200 bg-white px-4 py-3 hover:border-gem"
             >
               <div className="min-w-0">
                 <div className="font-medium truncate">{j.title}</div>

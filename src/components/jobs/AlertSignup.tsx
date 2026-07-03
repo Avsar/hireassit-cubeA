@@ -81,7 +81,7 @@ export default function AlertSignup({
   }
 
   return (
-    <div className="rounded-2xl border border-blue-200 bg-blue-50 p-5">
+    <div className="rounded-2xl border border-gem-100 bg-gem-wash p-5">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="text-sm">
           <div className="font-semibold text-neutral-900">
@@ -101,12 +101,12 @@ export default function AlertSignup({
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="you@email.com"
-            className="rounded-xl border border-neutral-300 px-3 py-2 text-sm w-52 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="rounded-xl border border-neutral-300 px-3 py-2 text-sm w-52 focus:outline-none focus:ring-2 focus:ring-gem-wash focus:border-gem"
           />
           <button
             type="submit"
             disabled={state === "sending"}
-            className="rounded-xl bg-blue-600 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700 disabled:opacity-60"
+            className="rounded-xl bg-gem text-white px-4 py-2 text-sm font-medium hover:bg-gem-deep disabled:opacity-60"
           >
             {state === "sending" ? "…" : "Set alert"}
           </button>

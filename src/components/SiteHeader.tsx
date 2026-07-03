@@ -35,7 +35,7 @@ export default function SiteHeader() {
               href={l.href}
               className={
                 isActive(l.href)
-                  ? "font-semibold text-blue-700"
+                  ? "font-semibold text-gem"
                   : "text-neutral-600 hover:text-neutral-900"
               }
             >
@@ -75,7 +75,7 @@ export default function SiteHeader() {
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="block py-2.5 text-neutral-700 hover:text-blue-700"
+              className="block py-2.5 text-neutral-700 hover:text-gem"
             >
               {l.label}
             </Link>

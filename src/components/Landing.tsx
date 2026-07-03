@@ -31,13 +31,13 @@ export default function Landing() {
             <a href="/blog" className="hover:text-black">
               Blog
             </a>
-            <a href="/tools/ai-match" className="text-blue-600 hover:text-blue-800 font-medium">
+            <a href="/tools/ai-match" className="text-gem hover:text-gem font-medium">
               AI Match
             </a>
-            <a href="/jobs" className="text-blue-600 hover:text-blue-800 font-medium">
+            <a href="/jobs" className="text-gem hover:text-gem font-medium">
               Jobs
             </a>
-            <a href="/tools/cv-reviewer" className="text-blue-600 hover:text-blue-800 font-medium">
+            <a href="/tools/cv-reviewer" className="text-gem hover:text-gem font-medium">
               CV Reviewer
             </a>
           </nav>
@@ -83,13 +83,13 @@ export default function Landing() {
             <a href="/blog" onClick={() => setMobileOpen(false)} className="py-2 hover:text-black">
               Blog
             </a>
-            <a href="/tools/ai-match" onClick={() => setMobileOpen(false)} className="py-2 text-blue-600 hover:text-blue-800 font-medium">
+            <a href="/tools/ai-match" onClick={() => setMobileOpen(false)} className="py-2 text-gem hover:text-gem font-medium">
               AI Match
             </a>
-            <a href="/jobs" onClick={() => setMobileOpen(false)} className="py-2 text-blue-600 hover:text-blue-800 font-medium">
+            <a href="/jobs" onClick={() => setMobileOpen(false)} className="py-2 text-gem hover:text-gem font-medium">
               Jobs
             </a>
-            <a href="/tools/cv-reviewer" onClick={() => setMobileOpen(false)} className="py-2 text-blue-600 hover:text-blue-800 font-medium">
+            <a href="/tools/cv-reviewer" onClick={() => setMobileOpen(false)} className="py-2 text-gem hover:text-gem font-medium">
               CV Reviewer
             </a>
           </div>

@@ -53,7 +53,7 @@ export default async function JobsPage({
   } catch {
     return (
       <main className="mx-auto max-w-3xl px-4 py-20 text-center">
-        <h1 className="font-[Sora] text-2xl font-bold">Job search is briefly unavailable</h1>
+        <h1 className="font-display text-2xl font-bold">Job search is briefly unavailable</h1>
         <p className="mt-2 text-neutral-500">
           Our job index is waking up — please refresh in a few seconds.
         </p>
@@ -88,8 +88,8 @@ export default async function JobsPage({
       <div className="mx-auto max-w-4xl px-4">
         {/* Page heading */}
         <div className="pb-2 pt-8">
-          <h1 className="font-[Sora] text-2xl font-bold">
-            <span className="text-blue-600">{data.count.toLocaleString("en-US")}</span>{" "}
+          <h1 className="font-display text-2xl font-bold">
+            <span className="text-gem">{data.count.toLocaleString("en-US")}</span>{" "}
             {activeFilters.length > 0 ? "matching jobs" : "jobs in the Netherlands"}
           </h1>
           <p className="mt-1 text-xs text-neutral-400">
@@ -112,12 +112,12 @@ export default async function JobsPage({
 
           {data.jobs.length === 0 ? (
             <div className="rounded-2xl border border-neutral-200 bg-white py-16 text-center">
-              <p className="font-[Sora] font-semibold text-neutral-700">
+              <p className="font-display font-semibold text-neutral-700">
                 No jobs match these filters
               </p>
               <p className="mt-1 text-sm text-neutral-500">
                 Try a broader search, or{" "}
-                <Link href="/jobs" className="text-blue-600 underline">
+                <Link href="/jobs" className="text-gem underline">
                   reset the filters
                 </Link>
                 .
@@ -161,7 +161,7 @@ export default async function JobsPage({
 
         {/* Browse hubs for SEO */}
         <section className="border-t border-neutral-200 pb-12 pt-8">
-          <h2 className="font-[Sora] text-lg font-bold text-neutral-900">
+          <h2 className="font-display text-lg font-bold text-neutral-900">
             Browse jobs by city and role
           </h2>
           <div className="mt-4 grid gap-8 sm:grid-cols-2">
@@ -172,7 +172,7 @@ export default async function JobsPage({
                   <Link
                     key={slug}
                     href={`/jobs/${slug}`}
-                    className="rounded-full border border-neutral-200 bg-white px-3 py-1.5 text-sm text-neutral-700 hover:border-blue-300 hover:text-blue-700"
+                    className="rounded-full border border-neutral-200 bg-white px-3 py-1.5 text-sm text-neutral-700 hover:border-gem hover:text-gem"
                   >
                     {name}
                   </Link>
@@ -186,7 +186,7 @@ export default async function JobsPage({
                   <Link
                     key={slug}
                     href={`/jobs/${slug}`}
-                    className="rounded-full border border-neutral-200 bg-white px-3 py-1.5 text-sm text-neutral-700 hover:border-blue-300 hover:text-blue-700"
+                    className="rounded-full border border-neutral-200 bg-white px-3 py-1.5 text-sm text-neutral-700 hover:border-gem hover:text-gem"
                   >
                     {role.label}
                   </Link>

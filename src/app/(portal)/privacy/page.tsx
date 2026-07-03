@@ -10,7 +10,7 @@ export default function PrivacyPage() {
   return (
     <main className="min-h-screen bg-neutral-50">
       <div className="mx-auto max-w-2xl px-4 py-12">
-        <Link href="/jobs" className="text-sm text-blue-600 hover:underline">
+        <Link href="/jobs" className="text-sm text-gem hover:underline">
           ← Back to jobs
         </Link>
         <h1 className="mt-3 text-3xl font-bold">Privacy Policy</h1>
@@ -43,7 +43,7 @@ export default function PrivacyPage() {
               Every alert email contains a one-click unsubscribe link, which
               deactivates your alert immediately. To have your email removed from
               our records entirely, send a short message to{" "}
-              <a href="mailto:success@cubea.nl" className="text-blue-600 underline">
+              <a href="mailto:success@cubea.nl" className="text-gem underline">
                 success@cubea.nl
               </a>{" "}
               and we will delete it within 30 days.
@@ -64,7 +64,7 @@ export default function PrivacyPage() {
             <h2 className="font-semibold text-neutral-900">Contact</h2>
             <p className="mt-1">
               Questions? Email{" "}
-              <a href="mailto:success@cubea.nl" className="text-blue-600 underline">
+              <a href="mailto:success@cubea.nl" className="text-gem underline">
                 success@cubea.nl
               </a>
               .

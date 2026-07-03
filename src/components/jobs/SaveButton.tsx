@@ -23,7 +23,7 @@ export default function SaveButton(props: Props) {
       onClick={() => setSaved(toggleSaved(props))}
       className={`rounded-xl border px-4 py-2 text-sm font-medium transition ${
         saved
-          ? "border-blue-600 bg-blue-50 text-blue-700"
+          ? "border-gem bg-gem-wash text-gem"
           : "border-neutral-300 text-neutral-600 hover:bg-neutral-50"
       }`}
     >

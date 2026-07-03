@@ -25,14 +25,14 @@ export default function CompanyDirectory({ companies }: { companies: CompanySumm
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
           placeholder="Filter by name or city…"
-          className="w-full max-w-xs rounded-xl border border-neutral-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full max-w-xs rounded-xl border border-neutral-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-gem-wash"
         />
         <button
           onClick={() => setGemsOnly(!gemsOnly)}
           className={`rounded-full border px-3.5 py-1.5 text-sm transition ${
             gemsOnly
-              ? "border-fuchsia-600 bg-fuchsia-600 text-white"
-              : "border-fuchsia-200 text-fuchsia-700 hover:bg-fuchsia-50"
+              ? "border-amber-600 bg-amber-600 text-white"
+              : "border-amber-200 text-amber-700 hover:bg-amber-50"
           }`}
         >
           💎 With hidden gems
@@ -52,7 +52,7 @@ export default function CompanyDirectory({ companies }: { companies: CompanySumm
             <Link
               key={c.slug}
               href={`/companies/${c.slug}`}
-              className="rounded-2xl border border-neutral-200 bg-white p-4 transition hover:border-blue-300 hover:shadow-sm"
+              className="rounded-2xl border border-neutral-200 bg-white p-4 transition hover:border-gem hover:shadow-sm"
             >
               <div className="flex items-center gap-3">
                 <div className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-xs font-semibold text-white ${logoColor(c.name)}`}>
@@ -66,11 +66,11 @@ export default function CompanyDirectory({ companies }: { companies: CompanySumm
                 </div>
               </div>
               <div className="mt-3 flex flex-wrap gap-2 text-xs">
-                <span className="rounded-full border border-blue-200 bg-blue-50 px-2.5 py-0.5 text-blue-700">
+                <span className="rounded-full border border-gem-100 bg-gem-wash px-2.5 py-0.5 text-gem">
                   {c.active_jobs} {c.active_jobs === 1 ? "job" : "jobs"}
                 </span>
                 {c.hidden_gems > 0 && (
-                  <span className="rounded-full border border-fuchsia-200 bg-fuchsia-50 px-2.5 py-0.5 text-fuchsia-700">
+                  <span className="rounded-full border border-amber-200 bg-amber-50 px-2.5 py-0.5 text-amber-700">
                     💎 {c.hidden_gems}
                   </span>
                 )}
