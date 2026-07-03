@@ -24,6 +24,7 @@ interface SearchParams {
   role?: string;
   job_type?: string;
   remote?: string;
+  sort?: string;
   page?: string;
 }
 
@@ -33,6 +34,7 @@ export default async function JobsPage({
   searchParams: SearchParams;
 }) {
   const page = Math.max(1, parseInt(searchParams.page || "1", 10) || 1);
+  const sort = searchParams.sort || "newest";
   let data;
   try {
     data = await fetchJobs({
@@ -44,7 +46,7 @@ export default async function JobsPage({
       role: searchParams.role,
       job_type: searchParams.job_type,
       remote: searchParams.remote === "true",
-      sort: "newest",
+      sort,
       page,
       per_page: 25,
     });
@@ -71,7 +73,7 @@ export default async function JobsPage({
   };
 
   const activeFilters = [
-    searchParams.q && `“${searchParams.q}”`,
+    searchParams.q && `"${searchParams.q}"`,
     searchParams.role,
     searchParams.city,
     searchParams.job_type,
@@ -83,88 +85,82 @@ export default async function JobsPage({
 
   return (
     <main className="min-h-screen bg-neutral-50">
-      <div className="mx-auto max-w-6xl px-4 py-8">
-        <div className="grid gap-8 lg:grid-cols-[260px,1fr]">
-          {/* FILTER RAIL */}
-          <aside className="lg:sticky lg:top-20 lg:self-start">
-            <div className="rounded-2xl border border-neutral-200 bg-white p-5">
-              <Suspense>
-                <JobFilters />
-              </Suspense>
-            </div>
-          </aside>
-
-          {/* RESULTS */}
-          <div className="min-w-0 space-y-4">
-            <div className="flex flex-wrap items-baseline justify-between gap-2">
-              <h1 className="font-[Sora] text-xl font-bold">
-                {data.count.toLocaleString("en-US")}{" "}
-                {activeFilters.length > 0 ? "matching jobs" : "jobs in the Netherlands"}
-              </h1>
-              {activeFilters.length > 0 && (
-                <span className="text-sm text-neutral-400">
-                  {activeFilters.join(" · ")}
-                </span>
-              )}
-            </div>
-
-            <Suspense>
-              <AlertSignup />
-            </Suspense>
-
-            {data.jobs.length === 0 ? (
-              <div className="rounded-2xl border border-neutral-200 bg-white py-16 text-center">
-                <p className="font-[Sora] font-semibold text-neutral-700">
-                  No jobs match these filters
-                </p>
-                <p className="mt-1 text-sm text-neutral-500">
-                  Try a broader search, or{" "}
-                  <Link href="/jobs" className="text-blue-600 underline">
-                    reset the filters
-                  </Link>
-                  .
-                </p>
-              </div>
-            ) : (
-              <div className="grid gap-3">
-                {(() => {
-                  const summaries = getSummariesBulk(data.jobs.map((j) => j.id));
-                  return data.jobs.map((job) => (
-                    <JobCard key={job.id} job={job} summary={summaries.get(job.id) ?? null} />
-                  ));
-                })()}
-              </div>
-            )}
-
-            {data.pages > 1 && (
-              <nav className="flex items-center justify-center gap-2 pt-4 text-sm">
-                {page > 1 && (
-                  <Link
-                    href={pageUrl(page - 1)}
-                    className="rounded-lg border border-neutral-300 px-3 py-1.5 hover:bg-white"
-                  >
-                    ← Previous
-                  </Link>
-                )}
-                <span className="px-3 text-neutral-500">
-                  Page {page} of {data.pages}
-                </span>
-                {page < data.pages && (
-                  <Link
-                    href={pageUrl(page + 1)}
-                    className="rounded-lg border border-neutral-300 px-3 py-1.5 hover:bg-white"
-                  >
-                    Next →
-                  </Link>
-                )}
-              </nav>
-            )}
-          </div>
+      <div className="mx-auto max-w-4xl px-4">
+        {/* Page heading */}
+        <div className="pb-2 pt-8">
+          <h1 className="font-[Sora] text-2xl font-bold">
+            <span className="text-blue-600">{data.count.toLocaleString("en-US")}</span>{" "}
+            {activeFilters.length > 0 ? "matching jobs" : "jobs in the Netherlands"}
+          </h1>
+          <p className="mt-1 text-xs text-neutral-400">
+            incl. hidden gems from company career pages · updated daily
+          </p>
         </div>
 
-        {/* Browse hubs — sitewide internal links that funnel crawlers and
-            users into the clean, indexable city and role landing pages. */}
-        <section className="mt-12 border-t border-neutral-200 pt-8">
+        {/* Sticky filter bar */}
+        <div className="sticky top-0 z-30 -mx-4 border-b border-neutral-200 bg-neutral-50/95 px-4 pb-3 pt-3 backdrop-blur">
+          <Suspense>
+            <JobFilters />
+          </Suspense>
+        </div>
+
+        {/* Results */}
+        <div className="space-y-4 pb-8 pt-4">
+          <Suspense>
+            <AlertSignup />
+          </Suspense>
+
+          {data.jobs.length === 0 ? (
+            <div className="rounded-2xl border border-neutral-200 bg-white py-16 text-center">
+              <p className="font-[Sora] font-semibold text-neutral-700">
+                No jobs match these filters
+              </p>
+              <p className="mt-1 text-sm text-neutral-500">
+                Try a broader search, or{" "}
+                <Link href="/jobs" className="text-blue-600 underline">
+                  reset the filters
+                </Link>
+                .
+              </p>
+            </div>
+          ) : (
+            <div className="grid gap-3">
+              {(() => {
+                const summaries = getSummariesBulk(data.jobs.map((j) => j.id));
+                return data.jobs.map((job) => (
+                  <JobCard key={job.id} job={job} summary={summaries.get(job.id) ?? null} />
+                ));
+              })()}
+            </div>
+          )}
+
+          {data.pages > 1 && (
+            <nav className="flex items-center justify-center gap-2 pt-4 text-sm">
+              {page > 1 && (
+                <Link
+                  href={pageUrl(page - 1)}
+                  className="rounded-lg border border-neutral-300 px-3 py-1.5 hover:bg-white"
+                >
+                  ← Previous
+                </Link>
+              )}
+              <span className="px-3 text-neutral-500">
+                Page {page} of {data.pages}
+              </span>
+              {page < data.pages && (
+                <Link
+                  href={pageUrl(page + 1)}
+                  className="rounded-lg border border-neutral-300 px-3 py-1.5 hover:bg-white"
+                >
+                  Next →
+                </Link>
+              )}
+            </nav>
+          )}
+        </div>
+
+        {/* Browse hubs for SEO */}
+        <section className="border-t border-neutral-200 pb-12 pt-8">
           <h2 className="font-[Sora] text-lg font-bold text-neutral-900">
             Browse jobs by city and role
           </h2>
