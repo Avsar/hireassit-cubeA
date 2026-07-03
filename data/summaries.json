@@ -2068,6 +2068,39 @@
     "descriptionHash": "707b48b4ce79a780",
     "updatedAt": "2026-06-30T17:57:56.754Z"
   },
+  "1012": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "As a work preparation specialist for civil engineering projects, you will manage project planning, budgeting, safety, and quality assurance from design through completion. You coordinate technical activities, handle procurement, liaise with suppliers and subcontractors, and ensure smooth project execution. You work independently within a collaborative team environment across multiple project sites and offices, with a focus on sustainability.",
+      "requirements": [
+        "Experience as a work preparation specialist",
+        "Passion for road construction and civil engineering",
+        "Project planning and budgeting skills",
+        "Safety and quality assurance knowledge",
+        "Procurement and vendor management experience",
+        "Self-directed work approach with initiative",
+        "Strong client communication abilities",
+        "Ability to work across multiple locations"
+      ],
+      "role_category": "Engineering",
+      "seniority": "Unknown",
+      "employment_type": "Unknown",
+      "work_mode": "Hybrid",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Eindhoven, Netherlands (AMS-UTR region)",
+      "key_tags": [
+        "civil engineering",
+        "project planning",
+        "work preparation",
+        "road construction",
+        "quality assurance",
+        "sustainability"
+      ]
+    },
+    "descriptionHash": "18426dd87e511b25",
+    "updatedAt": "2026-07-03T08:36:08.821Z"
+  },
   "1013": {
     "summary": {
       "is_valid_posting": true,
@@ -2340,6 +2373,72 @@
     "descriptionHash": "11429bcebdff7c28",
     "updatedAt": "2026-06-30T17:58:14.393Z"
   },
+  "1027": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Work on civil engineering and infrastructure projects across the Amsterdam-Utrecht region, performing tasks such as excavation, sewer connections, foundation work, and road surfacing. You'll spend your days outdoors handling varied manual work, from digging and connecting utilities to creating test trenches and maintaining clean work sites. Each project is different, offering diverse hands-on experience in construction and infrastructure maintenance.",
+      "requirements": [
+        "Physical capability to work outdoors in all weather conditions",
+        "Practical skills in excavation, sewer connections, and foundation work",
+        "Ability to perform varied manual labor tasks independently",
+        "Attention to detail and commitment to maintaining clean work sites",
+        "Experience as a skilled tradesperson in civil engineering or related field"
+      ],
+      "role_category": "Engineering",
+      "seniority": "Mid",
+      "employment_type": "Full-time",
+      "work_mode": "On-site",
+      "language_requirement": "Dutch",
+      "salary": {
+        "min": 3600,
+        "max": 4300,
+        "currency": "EUR",
+        "period": "month"
+      },
+      "location": "Amsterdam-Utrecht region, Netherlands",
+      "key_tags": [
+        "Civil Engineering",
+        "Infrastructure",
+        "Outdoor Work",
+        "Manual Labor",
+        "Sewer Systems",
+        "Road Construction",
+        "Foundations"
+      ]
+    },
+    "descriptionHash": "11429bcebdff7c28",
+    "updatedAt": "2026-07-03T08:36:21.331Z"
+  },
+  "1029": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "As an environmental manager for water infrastructure projects at KWS Waterbouw, you will manage stakeholder relationships and oversee environmental conditions for major water management initiatives such as dike reinforcements. You contribute to integrated solutions during the tender phase by balancing technical, ecological, and social considerations. During execution, you translate these approaches into practice, manage external risks, and identify opportunities. You map project constraints and stakeholder interests, develop feasible solutions, and present them persuasively to clients and partners including water boards, municipalities, residents, and conservation organizations.",
+      "requirements": [
+        "Experience in stakeholder management and environmental coordination",
+        "Ability to develop integrated solutions balancing technical, ecological, and social factors",
+        "Expertise in mapping project constraints and stakeholder interests",
+        "Capability to manage external risks during project execution",
+        "Strong communication skills for dialogue with clients and partners",
+        "Experience with water infrastructure or similar large-scale projects"
+      ],
+      "role_category": "Other",
+      "seniority": "Unknown",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Netherlands",
+      "key_tags": [
+        "water infrastructure",
+        "stakeholder management",
+        "environmental coordination",
+        "dike reinforcement",
+        "project management"
+      ]
+    },
+    "descriptionHash": "b13aeb38d4b5c433",
+    "updatedAt": "2026-07-03T08:36:37.077Z"
+  },
   "1030": {
     "summary": {
       "is_valid_posting": true,
@@ -2580,6 +2679,36 @@
     },
     "descriptionHash": "2cb9650c30c65c80",
     "updatedAt": "2026-06-30T18:01:24.529Z"
+  },
+  "1042": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "As an experienced safety professional, you will be responsible for ensuring safety across complex construction projects in the northern Netherlands region. You will work with project teams to identify and manage risks, ensure compliance with safety procedures, and integrate safety considerations throughout all project phases from tendering to completion. You'll coordinate safety across multiple parties and subcontractors, conduct regular safety audits, and provide coaching to colleagues on workplace safety practices.",
+      "requirements": [
+        "Experienced safety professional with demonstrated expertise in construction safety",
+        "Ability to identify and manage project risks",
+        "Experience coordinating safety across multiple parties and subcontractors",
+        "Capability to conduct safety audits",
+        "Strong collaboration and communication skills with project teams",
+        "Knowledge of safety procedures and compliance requirements"
+      ],
+      "role_category": "Other",
+      "seniority": "Mid",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Northern Netherlands",
+      "key_tags": [
+        "Safety Management",
+        "Construction",
+        "Risk Management",
+        "Project Safety",
+        "Compliance"
+      ]
+    },
+    "descriptionHash": "5ed6b03e24580211",
+    "updatedAt": "2026-07-03T08:37:49.536Z"
   },
   "1044": {
     "summary": {
@@ -11914,6 +12043,37 @@
     "descriptionHash": "9a8f0f81e84f409c",
     "updatedAt": "2026-06-30T17:50:11.444Z"
   },
+  "5919": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "As a mid-level inspector and asset management advisor, you will inspect civil engineering structures such as bridges, tunnels, quays, and locks, and translate your findings into actionable recommendations. You'll assess technical condition using standards like CUR117 and NEN2767, input data into management systems, and develop multi-year maintenance plans (MJOPs). You'll also advise on maintenance strategies and policy decisions. The role involves using modern tools including GBI software, digital inspection applications, and reporting tools. You'll work within a national asset management team that supports professional development, with a home base in one of three locations but collaborating across sites.",
+      "requirements": [
+        "Ability to inspect civil engineering structures and assess technical condition",
+        "Experience with or knowledge of CUR117 and NEN2767 standards",
+        "Proficiency with asset management systems and data processing",
+        "Capability to develop multi-year maintenance plans and maintenance strategies",
+        "Familiarity with GBI software and digital inspection tools",
+        "Technical writing and reporting skills",
+        "Ability to work collaboratively within a team environment"
+      ],
+      "role_category": "Engineering",
+      "seniority": "Mid",
+      "employment_type": "Full-time",
+      "work_mode": "Hybrid",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Capelle aan den IJssel, Almere, or Heerenveen, Netherlands",
+      "key_tags": [
+        "civil engineering",
+        "infrastructure inspection",
+        "asset management",
+        "maintenance planning",
+        "technical assessment"
+      ]
+    },
+    "descriptionHash": "869acd71f71cabd3",
+    "updatedAt": "2026-07-03T08:33:02.484Z"
+  },
   "5920": {
     "summary": {
       "is_valid_posting": true,
@@ -13642,6 +13802,69 @@
     },
     "descriptionHash": "9d669ba5898bc92e",
     "updatedAt": "2026-06-30T18:16:58.029Z"
+  },
+  "6015": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join Antea Group as an infrastructure cost specialist, responsible for financial analysis and cost estimation on infrastructure projects ranging from road construction to urban development. You will prepare cost estimates using CROW standards and RAW specifications, document assumptions in clear reports, and serve as the primary point of contact for clients on cost and risk matters. Work across project phases from initial concept through final design, collaborating with project managers, technical leads, and design teams to deliver sound analyses and recommendations.",
+      "requirements": [
+        "Expertise in cost estimation and financial analysis for infrastructure projects",
+        "Knowledge of CROW standards and RAW specifications for cost estimation",
+        "Ability to prepare detailed cost reports with clear documentation of assumptions",
+        "Experience working in project teams and coordinating with multiple stakeholders",
+        "Strong communication skills to serve as client contact on cost and risk matters",
+        "Experience with infrastructure projects such as road construction or urban development"
+      ],
+      "role_category": "Finance",
+      "seniority": "Unknown",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "cost estimation",
+        "infrastructure",
+        "financial analysis",
+        "project management",
+        "CROW standards",
+        "RAW specifications"
+      ]
+    },
+    "descriptionHash": "f0f7653c136c0dd2",
+    "updatedAt": "2026-07-03T08:41:09.008Z"
+  },
+  "6016": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Support the project manager and site supervisor on civil engineering and environmental projects, primarily involving soil protection and remediation work. Responsibilities include scheduling, quality control, subcontractor coordination, procurement, project administration, and client communication. Based in Heerenveen.",
+      "requirements": [
+        "Enthusiasm for technical work",
+        "Strong organizational and planning skills",
+        "Ability to collaborate effectively",
+        "Experience with quality control",
+        "Capability to manage subcontractors",
+        "Administrative competence",
+        "Willingness to perform hands-on work when needed",
+        "Client communication skills"
+      ],
+      "role_category": "Engineering",
+      "seniority": "Junior",
+      "employment_type": "Full-time",
+      "work_mode": "On-site",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Heerenveen, Netherlands",
+      "key_tags": [
+        "civil engineering",
+        "soil protection",
+        "environmental remediation",
+        "project support",
+        "site coordination"
+      ]
+    },
+    "descriptionHash": "68b70d12c5ab30c3",
+    "updatedAt": "2026-07-03T08:41:08.896Z"
   },
   "6017": {
     "summary": {
@@ -22212,6 +22435,37 @@
     "descriptionHash": "e51d28df97aaa4e2",
     "updatedAt": "2026-06-30T17:58:44.644Z"
   },
+  "7345": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join aaff as an experienced corporate finance lawyer in Nijkerk. You will provide legal guidance throughout acquisition and sale transactions, working with a multidisciplinary team of advisors, accountants, and tax specialists. You'll handle the full lifecycle of takeover processes, including purchase and sale agreements, joint ventures, family business transfers, employee participation arrangements, and due diligence. aaff is one of the Netherlands' largest corporate finance advisors for SMEs, managing 200-300 acquisition transactions annually. As a co-owner, you'll develop professionally while making a tangible impact on client outcomes.",
+      "requirements": [
+        "Experienced lawyer with corporate finance expertise",
+        "Ability to provide legal guidance on acquisition and sale transactions",
+        "Experience coordinating with multidisciplinary teams",
+        "Knowledge of due diligence processes",
+        "Capability to manage transactions from initiation through completion",
+        "Collaboration skills with fellow lawyers and specialists"
+      ],
+      "role_category": "Other",
+      "seniority": "Senior",
+      "employment_type": "Full-time",
+      "work_mode": "On-site",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Nijkerk, Netherlands",
+      "key_tags": [
+        "Corporate Finance",
+        "Legal",
+        "M&A",
+        "Acquisitions",
+        "Due Diligence",
+        "SME Advisory"
+      ]
+    },
+    "descriptionHash": "14a7fba717d8a5a2",
+    "updatedAt": "2026-07-03T08:36:28.424Z"
+  },
   "7346": {
     "summary": {
       "is_valid_posting": true,
@@ -23037,6 +23291,38 @@
     },
     "descriptionHash": "fbe2d6d0e65adc9b",
     "updatedAt": "2026-06-30T18:02:26.263Z"
+  },
+  "7384": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join aaff as a salary professional with international expertise in Aalsmeer. You will manage Dutch payroll processing and provide salary administration services to a diverse client base including family businesses, SMEs, agricultural enterprises, and non-profits. Your role involves handling sick leave notifications, pension funds, and income tax matters, while also delivering strategic advice and solutions to help clients grow. You'll work closely with a dedicated team and serve as a primary contact for clients, leveraging your international knowledge to support foreign employers.",
+      "requirements": [
+        "Expertise in Dutch payroll processing",
+        "Knowledge of social insurance and income tax regulations",
+        "International salary administration experience",
+        "Ability to identify opportunities and add value to client relationships",
+        "Strong client relationship-building skills",
+        "Strategic advisory capabilities",
+        "Collaborative team player"
+      ],
+      "role_category": "Finance",
+      "seniority": "Mid",
+      "employment_type": "Full-time",
+      "work_mode": "On-site",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Aalsmeer, Netherlands",
+      "key_tags": [
+        "payroll administration",
+        "salary processing",
+        "international expertise",
+        "Dutch tax",
+        "social insurance",
+        "financial advisory"
+      ]
+    },
+    "descriptionHash": "a0c783160cf8a062",
+    "updatedAt": "2026-07-03T08:38:23.519Z"
   },
   "7385": {
     "summary": {
@@ -25751,6 +26037,36 @@
     "descriptionHash": "94fb820cdceea799",
     "updatedAt": "2026-06-30T18:07:04.426Z"
   },
+  "7493": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join aaff as a Junior Manager Audit in Roosendaal. You will lead and execute audit assignments, manage a team of audit assistants, and serve as a key client contact. Working alongside senior managers and directors, you'll handle audit planning, control procedures, and ensure timely project delivery. The role emphasizes analytical skills, client focus, and technical audit expertise. aaff is an accountancy and advisory firm with 180 years of experience, offering co-ownership participation to its 2000 employee-owners.",
+      "requirements": [
+        "Ability to lead and supervise audit assistant teams",
+        "Strong analytical and critical thinking skills",
+        "Technical audit expertise and knowledge of audit procedures",
+        "Client-focused approach with excellent communication abilities",
+        "Capability to manage audit planning and ensure timely delivery",
+        "Attention to detail in audit documentation and file management"
+      ],
+      "role_category": "Finance",
+      "seniority": "Junior",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Roosendaal",
+      "key_tags": [
+        "Audit",
+        "Accountancy",
+        "Team Leadership",
+        "Financial Control",
+        "Co-ownership"
+      ]
+    },
+    "descriptionHash": "88cf5b3747efe2e4",
+    "updatedAt": "2026-07-03T08:39:28.995Z"
+  },
   "7497": {
     "summary": {
       "is_valid_posting": true,
@@ -27426,6 +27742,41 @@
     },
     "descriptionHash": "f6a9a1738b78e6b7",
     "updatedAt": "2026-06-30T17:54:24.578Z"
+  },
+  "7881": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Work as an automotive technician at a-point's Amsterdam West location, performing maintenance, diagnostics, and repairs on Volkswagen Group vehicles including Volkswagen, SEAT, ŠKODA, CUPRA, and commercial vans. You will use modern diagnostic equipment and work alongside experienced colleagues to ensure vehicles meet road-readiness standards. The role offers opportunities for professional development and career growth within the company.",
+      "requirements": [
+        "Level 2 diploma in vehicle and mobile equipment maintenance, or currently completing this qualification",
+        "Valid driver's license (category B)",
+        "Fluent Dutch language skills (spoken and written)",
+        "Dedicated approach to automotive work with attention to quality",
+        "Flexibility and precision in task execution",
+        "APK inspection certification is advantageous"
+      ],
+      "role_category": "Engineering",
+      "seniority": "Mid",
+      "employment_type": "Full-time",
+      "work_mode": "On-site",
+      "language_requirement": "Dutch",
+      "salary": {
+        "min": 2924.78,
+        "max": 3957.05,
+        "currency": "EUR",
+        "period": "month"
+      },
+      "location": "Amsterdam West, Netherlands",
+      "key_tags": [
+        "automotive technician",
+        "vehicle maintenance",
+        "diagnostics",
+        "Volkswagen Group",
+        "Amsterdam"
+      ]
+    },
+    "descriptionHash": "2655d2cea492bdf2",
+    "updatedAt": "2026-07-03T08:35:05.536Z"
   },
   "7882": {
     "summary": {
@@ -30765,6 +31116,40 @@
     "descriptionHash": "e74fb6c275484de3",
     "updatedAt": "2026-06-30T18:14:20.970Z"
   },
+  "9825": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "As a Security Business Consultant at Tesorion Cybersecurity, you will serve as a trusted IT security advisor to clients across various industries. You will provide strategic and tactical guidance on implementing IT security within client organizations, identify risks in business processes, and recommend appropriate mitigation measures. Your role combines technical expertise with business acumen—developing comprehensive security strategies that address technology, people, and processes. You will maintain stakeholder relationships, identify market opportunities, support business case development, and contribute to service offerings. Typical activities include conducting security risk assessments, developing cybersecurity policies and guidelines, and managing security projects.",
+      "requirements": [
+        "Passion for cybersecurity and IT security advisory",
+        "Strong consulting and advisory skills",
+        "Ability to advise at both strategic and tactical levels",
+        "Capability to identify risks in business processes and recommend solutions",
+        "Experience developing comprehensive security strategies across technical, human, and process dimensions",
+        "Proactive stakeholder management and relationship-building skills",
+        "Ability to identify market opportunities and support business development",
+        "Knowledge of security risk assessments and cybersecurity policy development",
+        "Contribution to service and proposition development based on market and technical knowledge"
+      ],
+      "role_category": "Security",
+      "seniority": "Unknown",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "cybersecurity",
+        "security advisory",
+        "risk assessment",
+        "security strategy",
+        "IT security",
+        "business consultant"
+      ]
+    },
+    "descriptionHash": "28948712798e9b98",
+    "updatedAt": "2026-07-03T08:39:01.169Z"
+  },
   "9836": {
     "summary": {
       "is_valid_posting": true,
@@ -30826,6 +31211,38 @@
     },
     "descriptionHash": "a1710303c3b4bdbe",
     "updatedAt": "2026-07-01T13:05:10.337Z"
+  },
+  "9842": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "As a Data Analytics Engineer at Xomnia, you will design and implement data models and pipelines that connect raw data to business decision-making. You'll work with clients across industries to build scalable analytics infrastructures, translate stakeholder requirements into data models, and enable self-service analytics platforms. The role involves working with tools such as dbt, Snowflake, and Power BI to create governed data pipelines and drive adoption through documentation and visualization.",
+      "requirements": [
+        "Strong engineering foundation with understanding of data architecture and pipeline design",
+        "Experience building scalable data models and ETL/ELT processes",
+        "Proficiency with analytics tools such as dbt, Snowflake, and Power BI",
+        "Ability to translate business requirements into technical data solutions",
+        "Strong communication skills for stakeholder engagement and documentation",
+        "Collaborative mindset with ability to work across technical and business teams"
+      ],
+      "role_category": "Data",
+      "seniority": "Unknown",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": null,
+      "key_tags": [
+        "data engineering",
+        "analytics",
+        "dbt",
+        "Snowflake",
+        "Power BI",
+        "data pipelines",
+        "data modeling"
+      ]
+    },
+    "descriptionHash": "f881ae597294ce17",
+    "updatedAt": "2026-07-03T08:40:46.488Z"
   },
   "9843": {
     "summary": {
@@ -36109,6 +36526,38 @@
     "descriptionHash": "535ee44f98b75e55",
     "updatedAt": "2026-06-30T17:46:21.462Z"
   },
+  "12044": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Lead a product management organization and oversee PMO processes at a transport and logistics company. Manage five Product Owners and collaborate with business stakeholders to develop product vision, roadmap, and backlog. Monitor progress and planning of initiatives across the organization. Act as a bridge between business and technical teams, structuring and prioritizing requests from Operations, Media, IT, and Finance & HR departments. Participate in the IT management team alongside colleagues responsible for IT Operations, Security, Architecture, Data, Cloud, and Software Development.",
+      "requirements": [
+        "Strong stakeholder management skills",
+        "Ability to facilitate prioritization processes",
+        "Experience managing product teams",
+        "PMO process knowledge and oversight capability",
+        "Capacity to translate business vision into technical roadmaps and backlogs",
+        "Proficiency in clarifying business requirements through structured questioning",
+        "Ability to work across multiple departments and business functions"
+      ],
+      "role_category": "Product",
+      "seniority": "Lead",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "Product Management",
+        "PMO",
+        "Leadership",
+        "Stakeholder Management",
+        "Transport & Logistics",
+        "Team Management"
+      ]
+    },
+    "descriptionHash": "703088f87bf41620",
+    "updatedAt": "2026-07-03T08:35:34.221Z"
+  },
   "12046": {
     "summary": {
       "is_valid_posting": true,
@@ -36234,6 +36683,41 @@
     },
     "descriptionHash": "49a6398d88a5aed0",
     "updatedAt": "2026-06-30T17:45:01.708Z"
+  },
+  "12058": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "As an Application Consultant for Finance at Centric, you bridge the gap between customers and software solutions in both on-premise and SaaS environments. You support high-quality software implementations by resolving customer questions, incidents, and technical issues. You collaborate across departments to integrate applications and tackle complex technical challenges. The role emphasizes continuous improvement, rapid mastery of Centric applications, and professional development opportunities.",
+      "requirements": [
+        "Analytical mindset and solution-oriented approach",
+        "Ability to quickly learn and master Centric applications in both functional and technical areas",
+        "Knowledge of ITIL",
+        "Technical skills in XML and SQL",
+        "Strong communication skills to support customers with on-premise and SaaS solutions",
+        "Ability to collaborate with other departments",
+        "Commitment to continuous professional development"
+      ],
+      "role_category": "Other",
+      "seniority": "Unknown",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Netherlands",
+      "key_tags": [
+        "Application Consultant",
+        "Finance",
+        "SaaS",
+        "On-premise",
+        "Customer Support",
+        "Technical Support",
+        "ITIL",
+        "SQL",
+        "XML"
+      ]
+    },
+    "descriptionHash": "4ad258081ba7e35b",
+    "updatedAt": "2026-07-03T08:31:50.731Z"
   },
   "12061": {
     "summary": {
@@ -41677,6 +42161,38 @@
     "descriptionHash": "269ced3b78db5958",
     "updatedAt": "2026-06-30T18:10:56.161Z"
   },
+  "13066": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Supervisor Audit role at Baker Tilly focused on audit and advisory services for public sector clients. You will work directly with clients across different organizations, providing independent advice and conducting financial statement reviews. Responsibilities include managing junior staff, identifying risks and trends, ensuring strong project planning and control, and delivering clear reporting. The role involves frequent client visits and exposure to diverse organizational environments.",
+      "requirements": [
+        "Ability to coach and supervise junior audit staff",
+        "Strong client communication and advisory skills",
+        "Experience with financial statement audits and controls",
+        "Risk assessment and trend analysis capabilities",
+        "Project management skills including planning and budget control",
+        "Ability to work independently with clients",
+        "Clear written and verbal communication for reporting"
+      ],
+      "role_category": "Other",
+      "seniority": "Mid",
+      "employment_type": "Full-time",
+      "work_mode": "On-site",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Netherlands",
+      "key_tags": [
+        "Audit",
+        "Supervisor",
+        "Public Sector",
+        "Financial Controls",
+        "Team Leadership",
+        "Client Advisory"
+      ]
+    },
+    "descriptionHash": "0e632572bff60baa",
+    "updatedAt": "2026-07-03T08:39:56.399Z"
+  },
   "13067": {
     "summary": {
       "is_valid_posting": true,
@@ -45601,6 +46117,39 @@
     "descriptionHash": "f3f95693a8ff8b9b",
     "updatedAt": "2026-06-30T17:44:54.653Z"
   },
+  "15734": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join a growth-focused technology and marketing firm as an AI Engineer. You will design and implement AI solutions for major clients across industries, working with machine learning models and data technologies. Responsibilities include consulting on AI use cases, building proof-of-concept projects, deploying production systems, and developing multi-agent AI workflows. You'll collaborate with cross-functional teams to solve complex business problems using modern AI and MLOps practices.",
+      "requirements": [
+        "Experience designing and developing AI solutions",
+        "Knowledge of machine learning and predictive modeling",
+        "Ability to build scalable, production-ready systems",
+        "Familiarity with MLOps principles and model optimization",
+        "Experience with multi-agent systems or AI workflows",
+        "Consulting and client-facing skills",
+        "Ability to work in multidisciplinary teams"
+      ],
+      "role_category": "Data",
+      "seniority": "Unknown",
+      "employment_type": "Full-time",
+      "work_mode": "Hybrid",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": "Amsterdam, Rotterdam, London, Manchester, Berlin, Hamburg, Budapest, Zagreb, Skopje",
+      "key_tags": [
+        "AI",
+        "Machine Learning",
+        "MLOps",
+        "Data Science",
+        "Python",
+        "Multi-agent Systems",
+        "Proof of Concept"
+      ]
+    },
+    "descriptionHash": "4b1b884c019f764f",
+    "updatedAt": "2026-07-03T08:15:27.953Z"
+  },
   "15743": {
     "summary": {
       "is_valid_posting": true,
@@ -46842,6 +47391,38 @@
     },
     "descriptionHash": "8fc8e619dbe20758",
     "updatedAt": "2026-06-30T17:45:30.227Z"
+  },
+  "16021": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "As a Project Organizer for the Corporate Office, you will translate architectural designs into optimal and intelligent construction methodologies. Working at the Dura Vermeer Bouw en Vastgoed corporate office in Rotterdam, you will be involved from the outset in residential and commercial building projects. Your role includes analyzing structures, determining construction methods, creating build schedules using Asta Powerproject, calculating site costs, designing 3D site layouts in Revit, and coordinating with equipment services, suppliers, and subcontractors. You will work within an experienced team with significant autonomy and opportunity for initiative.",
+      "requirements": [
+        "Extensive technical knowledge of construction",
+        "Affinity for planning and cost estimation",
+        "Experience with Asta Powerproject for scheduling",
+        "Proficiency in Revit for 3D design",
+        "Ability to analyze construction methods and optimize building approaches",
+        "Strong coordination and communication skills with suppliers and subcontractors",
+        "Experience in residential and/or commercial construction projects"
+      ],
+      "role_category": "Other",
+      "seniority": "Mid",
+      "employment_type": "Full-time",
+      "work_mode": "On-site",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Rotterdam, Netherlands",
+      "key_tags": [
+        "construction planning",
+        "project organization",
+        "Asta Powerproject",
+        "Revit",
+        "building methodology",
+        "cost estimation"
+      ]
+    },
+    "descriptionHash": "f25dcdaa61d5eb97",
+    "updatedAt": "2026-07-03T08:31:43.256Z"
   },
   "16023": {
     "summary": {
@@ -52255,6 +52836,37 @@
     "descriptionHash": "c03038cb505f2904",
     "updatedAt": "2026-06-30T17:50:40.109Z"
   },
+  "20065": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Translate client needs and challenges into concrete solutions by gathering and analyzing data to identify trends and patterns. Conduct in-depth business process analyses to pinpoint improvement opportunities. Support implementation of improvement initiatives, monitor progress toward objectives, and create detailed reports and presentations to communicate findings. The role emphasizes continuous improvement and going the extra mile to deliver added value to clients.",
+      "requirements": [
+        "Proven experience working as a Business Analyst",
+        "Ability to gather and analyze data to identify trends and patterns",
+        "Skills in conducting business process analysis",
+        "Experience supporting implementation of improvement initiatives",
+        "Ability to create detailed reports and presentations",
+        "Entrepreneurial, decisive, and eager to learn mindset",
+        "Intrinsic drive for continuous improvement"
+      ],
+      "role_category": "Other",
+      "seniority": "Mid",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "Business Analysis",
+        "Data Analysis",
+        "Process Improvement",
+        "Client Solutions",
+        "Reporting"
+      ]
+    },
+    "descriptionHash": "7ce5984b8f02cbdd",
+    "updatedAt": "2026-07-03T08:33:52.922Z"
+  },
   "20069": {
     "summary": {
       "is_valid_posting": true,
@@ -57626,6 +58238,36 @@
     "descriptionHash": "d9c95e429ed67a78",
     "updatedAt": "2026-06-30T18:14:01.148Z"
   },
+  "25416": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join Toast's New Ventures unit as a founding fullstack engineer building new products for industries beyond restaurants. You'll work independently and collaboratively with senior engineers to develop features addressing unmet operator needs, leveraging Toast's existing cloud platform and infrastructure. The role involves building from scratch within an early-stage team focused on scaling new business lines.",
+      "requirements": [
+        "Fullstack software engineering experience",
+        "Frontend expertise",
+        "Ability to work independently as a strong contributor",
+        "Experience shipping products and features",
+        "Willingness to work in early-stage, scrappy environments"
+      ],
+      "role_category": "Developer",
+      "seniority": "Senior",
+      "employment_type": "Full-time",
+      "work_mode": "Hybrid",
+      "language_requirement": "English",
+      "salary": null,
+      "location": "US (remote, Boston, or New York)",
+      "key_tags": [
+        "fullstack",
+        "frontend",
+        "new ventures",
+        "founding engineer",
+        "cloud platform",
+        "early-stage"
+      ]
+    },
+    "descriptionHash": "00bef62db222b501",
+    "updatedAt": "2026-07-03T08:15:21.474Z"
+  },
   "25422": {
     "summary": {
       "is_valid_posting": true,
@@ -58972,6 +59614,35 @@
     },
     "descriptionHash": "95d32b9bd13136bc",
     "updatedAt": "2026-06-30T17:23:51.386Z"
+  },
+  "26787": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Corporate Recruiter responsible for managing the complete recruitment lifecycle within the organization. You will collaborate with hiring managers and stakeholders to attract talent, maintain candidate experience standards, and contribute to recruitment strategy and employer branding. Key responsibilities include conducting intake meetings, sourcing candidates across multiple channels, conducting interviews, building talent pools, optimizing job descriptions, and driving process improvements.",
+      "requirements": [
+        "Completed HBO-level education",
+        "Minimum one year of experience as a Corporate Recruiter, Talent Acquisition Specialist, or similar role",
+        "Fluent Dutch (spoken and written)",
+        "Business-level English (spoken and written)"
+      ],
+      "role_category": "Other",
+      "seniority": "Mid",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "English or Dutch",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "recruitment",
+        "talent acquisition",
+        "hiring",
+        "employer branding",
+        "candidate experience",
+        "sourcing"
+      ]
+    },
+    "descriptionHash": "226eecfd3f7be273",
+    "updatedAt": "2026-07-03T08:26:15.532Z"
   },
   "26791": {
     "summary": {
@@ -60533,6 +61204,41 @@
     },
     "descriptionHash": "ff84e3dc9061bcb4",
     "updatedAt": "2026-06-30T17:34:17.084Z"
+  },
+  "27790": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "As a Manufacturing Engineer at Benchmark Electronics, you will serve as the bridge between customers and production. Your role involves translating technical specifications into efficient manufacturing processes for PCBA assemblies and related products. You will design production workflows, create work instructions, program machinery, develop tooling, and establish digital routing systems. You'll evaluate product designs and technical feasibility, conduct design-for-manufacturability analyses, implement process controls for traceability, develop clear operational procedures, provide technical feedback to internal teams and customers, and ultimately approve final production processes. This position combines technical expertise with project leadership responsibilities.",
+      "requirements": [
+        "Ability to translate technical data packages into complete and robust production processes",
+        "Experience with process design and manufacturing workflow optimization",
+        "Competency in creating work instructions and programming production machinery",
+        "Knowledge of design-for-manufacturability (DfX) analyses and DFMEA methodologies",
+        "Ability to evaluate product designs, technical drawings, and bill of materials for feasibility",
+        "Experience implementing process controls and traceability systems",
+        "Capability to develop clear operational procedures for production staff",
+        "Ability to provide technical feedback and identify improvement opportunities",
+        "Mid-career level experience and readiness for new challenges"
+      ],
+      "role_category": "Engineering",
+      "seniority": "Mid",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "Manufacturing Engineering",
+        "PCBA Assembly",
+        "Process Design",
+        "DfX Analysis",
+        "DFMEA",
+        "Production Planning",
+        "Technical Documentation"
+      ]
+    },
+    "descriptionHash": "aa1d9baef0ca5e75",
+    "updatedAt": "2026-07-03T08:25:32.095Z"
   },
   "27794": {
     "summary": {
@@ -64332,6 +65038,39 @@
     "descriptionHash": "1b25e8a8d43f5c7b",
     "updatedAt": "2026-06-30T16:56:33.233Z"
   },
+  "30532": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Adyen is seeking an Infrastructure (Cloud) Engineer to join their Infrastructure Engineering team. You will be responsible for building and operating foundational Linux and cloud infrastructure at scale. The role involves designing and implementing multi-cloud foundations, automating cloud account management, establishing network topologies and security frameworks, and creating shared platforms for cost management, observability, logging, and tracing. You will own and evolve critical infrastructure layers that support developers and engineers across the organization.",
+      "requirements": [
+        "Deep, production-level experience administering Linux at scale",
+        "Hands-on experience designing, building, and operating cloud infrastructure",
+        "Experience with multi-cloud environments",
+        "Ability to automate cloud account onboarding and lifecycle management",
+        "Experience designing cloud network topologies",
+        "Knowledge of security and identity foundations",
+        "Experience building shared platforms for cost management, observability, logging, and tracing"
+      ],
+      "role_category": "DevOps & Cloud",
+      "seniority": "Mid",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": null,
+      "key_tags": [
+        "Linux",
+        "Cloud Infrastructure",
+        "Multi-cloud",
+        "Infrastructure Engineering",
+        "Cloud Security",
+        "Automation",
+        "DevOps"
+      ]
+    },
+    "descriptionHash": "6a1acd11eecd40fd",
+    "updatedAt": "2026-07-03T08:16:38.698Z"
+  },
   "30537": {
     "summary": {
       "is_valid_posting": true,
@@ -65511,6 +66250,38 @@
     },
     "descriptionHash": "4bc7248f8c63293c",
     "updatedAt": "2026-06-30T17:28:04.875Z"
+  },
+  "30644": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "As a groundwater management executor, you oversee groundwater control operations across construction and infrastructure projects throughout the Netherlands. You coordinate technical, administrative, and financial aspects of projects, working both from the office and on-site. You manage personnel and equipment planning, ensure projects run safely and efficiently, and liaise daily with colleagues, clients, and authorities. The role involves supervising small short-term projects to large long-term operations, with the Groundwater Management department based in Buren and Geesbrug.",
+      "requirements": [
+        "Responsibility for preparation and execution of groundwater management work",
+        "Monitor technical, administrative, and financial project progress",
+        "Coordinate with colleagues, clients, and authorities",
+        "Plan personnel and equipment in consultation with planners and other executors",
+        "Ensure safe and efficient project setup",
+        "Work both in office and on-site locations",
+        "Manage oversight and make adjustments as needed for various project scales"
+      ],
+      "role_category": "Other",
+      "seniority": "Mid",
+      "employment_type": "Full-time",
+      "work_mode": "Hybrid",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Buren and Geesbrug, Netherlands (projects nationwide)",
+      "key_tags": [
+        "groundwater management",
+        "construction",
+        "infrastructure",
+        "project coordination",
+        "site management",
+        "Netherlands"
+      ]
+    },
+    "descriptionHash": "12b645fbaa625fd2",
+    "updatedAt": "2026-07-03T08:24:10.138Z"
   },
   "30645": {
     "summary": {
@@ -68299,6 +69070,37 @@
     },
     "descriptionHash": "aaab101b0cf802f0",
     "updatedAt": "2026-06-30T17:30:23.435Z"
+  },
+  "31002": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Lead the implementation of software solutions for clients as Manager Professional Services at Centric. You oversee project managers and team leads, ensuring successful deployment of the company's products while maintaining high customer satisfaction. Responsibilities include managing complex implementation projects, supporting customer adoption, monitoring project quality and progress, building a strong implementation team, improving internal processes, and developing staff through coaching and HR conversations.",
+      "requirements": [
+        "Leadership experience managing project managers and team leads",
+        "Project management background with experience in complex implementation scenarios",
+        "Ability to engage and maintain customer enthusiasm during challenging implementation phases",
+        "Focus on quality, progress monitoring, and customer satisfaction",
+        "Experience with HR conversations, staff coaching, and employee development",
+        "Capability to align vision, strategy, and processes within a management team",
+        "Experience improving operational processes and service delivery methods"
+      ],
+      "role_category": "Product",
+      "seniority": "Senior",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Netherlands",
+      "key_tags": [
+        "Professional Services",
+        "Project Management",
+        "Team Leadership",
+        "Software Implementation",
+        "Customer Success"
+      ]
+    },
+    "descriptionHash": "bd6cb02f873a4d55",
+    "updatedAt": "2026-07-03T08:24:48.233Z"
   },
   "31004": {
     "summary": {
@@ -71370,6 +72172,37 @@
     "descriptionHash": "cec29cf1af54d68b",
     "updatedAt": "2026-06-30T17:26:07.129Z"
   },
+  "32095": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Safety and QHSE advisor for infrastructure operations at Dura Vermeer Materieel. You will develop and implement safety policies across projects and work sites, conduct accident investigations and audits, coach managers and staff on safe practices, and ensure compliance with workplace inspections and safety protocols. The role involves regular site visits and close collaboration with operational teams to embed safety culture throughout the organization.",
+      "requirements": [
+        "Experience as a safety professional or QHSE advisor",
+        "Ability to conduct accident investigations and safety audits",
+        "Knowledge of workplace inspection procedures and safety compliance",
+        "Coaching and communication skills to engage staff and management",
+        "Capability to develop and implement safety policies and programs",
+        "Willingness to work on-site regularly and engage directly with operational teams"
+      ],
+      "role_category": "Other",
+      "seniority": "Mid",
+      "employment_type": "Full-time",
+      "work_mode": "Hybrid",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "QHSE",
+        "Safety",
+        "Infrastructure",
+        "Compliance",
+        "Audits",
+        "Risk Management"
+      ]
+    },
+    "descriptionHash": "f207d677c96892fe",
+    "updatedAt": "2026-07-03T08:23:58.334Z"
+  },
   "32096": {
     "summary": {
       "is_valid_posting": true,
@@ -72220,6 +73053,40 @@
     },
     "descriptionHash": "2a43419ea6762c92",
     "updatedAt": "2026-06-30T17:32:39.451Z"
+  },
+  "32132": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "As a skilled tradesperson in civil engineering, you will perform diverse tasks including sewer replacement, installation of inspection pits and gullies, and preparation of street and asphalt work. Working outdoors with your hands as part of a team, you coordinate daily activities with colleagues and the site supervisor, manage equipment setup and blueprint reading, execute groundwork, and ensure workplace safety and regulatory compliance. Each day brings different responsibilities on projects in South Holland.",
+      "requirements": [
+        "Experience or qualification in civil engineering, road, and water construction (GWW)",
+        "Ability to work outdoors and perform manual labor",
+        "Knowledge of safety regulations and ability to enforce compliance",
+        "Ability to read technical drawings and blueprints",
+        "Equipment operation and setup skills",
+        "Teamwork and communication skills",
+        "Attention to detail and responsibility for tool and equipment standards"
+      ],
+      "role_category": "Engineering",
+      "seniority": "Unknown",
+      "employment_type": "Full-time",
+      "work_mode": "On-site",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "South Holland, Netherlands",
+      "key_tags": [
+        "civil engineering",
+        "GWW",
+        "sewer work",
+        "groundwork",
+        "asphalt preparation",
+        "outdoor work",
+        "manual labor",
+        "safety compliance"
+      ]
+    },
+    "descriptionHash": "e17e37f4fd8f8a91",
+    "updatedAt": "2026-07-03T08:25:02.650Z"
   },
   "32133": {
     "summary": {
@@ -78089,6 +78956,37 @@
     "descriptionHash": "54a336932471dad6",
     "updatedAt": "2026-06-30T17:26:46.542Z"
   },
+  "33817": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Team Lead position at Qualinx, a semiconductor scale-up focused on GNSS and IoT connectivity solutions. The role involves leading a digital verification team within a company developing ultra-low power chipsets and adaptive connectivity technologies. Based on the company's mission to advance GNSS and IoT innovation, the position likely involves overseeing verification strategies and quality assurance for semiconductor products.",
+      "requirements": [
+        "Leadership experience managing a verification or quality assurance team",
+        "Technical background in digital verification or semiconductor testing",
+        "Experience with GNSS, IoT, or RF technology preferred",
+        "Ability to work in a fast-paced startup environment",
+        "Strong problem-solving and communication skills"
+      ],
+      "role_category": "Engineering",
+      "seniority": "Lead",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": null,
+      "key_tags": [
+        "GNSS",
+        "IoT",
+        "Semiconductor",
+        "Digital Verification",
+        "Team Leadership",
+        "RF Technology",
+        "Startup"
+      ]
+    },
+    "descriptionHash": "54a336932471dad6",
+    "updatedAt": "2026-07-03T08:24:00.161Z"
+  },
   "33818": {
     "summary": {
       "is_valid_posting": true,
@@ -79533,6 +80431,37 @@
     },
     "descriptionHash": "076a88d00e07d45d",
     "updatedAt": "2026-06-30T17:33:04.126Z"
+  },
+  "34372": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join Toast's Websites team as a Staff Software Engineer to build and enhance the restaurant platform's website design and hosting product. You'll work on a modern tech stack, collaborating closely with the Online Ordering product team to create consumer experiences used by millions daily. The role combines hands-on engineering with influence over product and business strategy, requiring you to innovate at scale while maintaining system stability and reliability.",
+      "requirements": [
+        "Strong technical engineering skills with ability to influence product and business decisions",
+        "Experience working with modern tech stacks",
+        "Ability to run experiments and iterate quickly",
+        "Hands-on, entrepreneurial mindset",
+        "Problem-solving orientation focused on real-world challenges",
+        "Experience building or supporting products at significant scale"
+      ],
+      "role_category": "Developer",
+      "seniority": "Senior",
+      "employment_type": "Full-time",
+      "work_mode": "Hybrid",
+      "language_requirement": "English",
+      "salary": null,
+      "location": "US (remote), Boston (hybrid), or New York (hybrid)",
+      "key_tags": [
+        "Staff Engineer",
+        "Websites",
+        "Restaurant Technology",
+        "Product-Oriented",
+        "Scalability",
+        "Online Ordering"
+      ]
+    },
+    "descriptionHash": "ca27014d077d8fbe",
+    "updatedAt": "2026-07-03T08:16:20.780Z"
   },
   "34473": {
     "summary": {
@@ -83897,6 +84826,39 @@
     "descriptionHash": "9e3a9ae05f20e8e9",
     "updatedAt": "2026-06-30T16:56:34.729Z"
   },
+  "37037": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Adyen is seeking a Senior Data Platform Engineer to build and maintain foundational infrastructure for large-scale on-premise Big Data Platforms. You will work at the intersection of data engineering, backend engineering, and systems engineering, collaborating with data engineers and ML specialists to develop tools and processes that support multiple products, hundreds of developers, and thousands of daily jobs. The role involves operating massive clusters (500+ nodes, 25k+ CPU cores, 240+ TBs RAM, 23+ PBs storage) running tens of thousands of Spark jobs daily.",
+      "requirements": [
+        "Experience in data platform engineering or related infrastructure roles",
+        "Strong background in big data technologies and distributed systems",
+        "Proficiency with large-scale cluster management and operations",
+        "Experience with Spark or similar big data processing frameworks",
+        "Ability to collaborate with data engineers, ML scientists, and engineers",
+        "Systems engineering and backend engineering expertise"
+      ],
+      "role_category": "Data",
+      "seniority": "Senior",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "Data Platform Engineering",
+        "Big Data",
+        "OLAP",
+        "Spark",
+        "Distributed Systems",
+        "Infrastructure",
+        "On-premise",
+        "DataOps"
+      ]
+    },
+    "descriptionHash": "eab8ee13d3fb6758",
+    "updatedAt": "2026-07-03T08:15:15.096Z"
+  },
   "37040": {
     "summary": {
       "is_valid_posting": true,
@@ -87553,6 +88515,68 @@
     },
     "descriptionHash": "9f722c13e00066d2",
     "updatedAt": "2026-06-30T17:18:03.946Z"
+  },
+  "37802": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Apprenticeship program for service technicians starting September 2026 in Flevoland. You'll work alongside experienced technicians on installation and maintenance of heating systems, hybrid installations, and heat pumps. The role involves troubleshooting, performing maintenance, and inspecting installations. Training combines on-the-job learning with practical courses at the training facility in Drachten. No prior experience required; curiosity and willingness to learn are essential.",
+      "requirements": [
+        "Reside in Flevoland",
+        "Interest in installation technology",
+        "Curiosity and eagerness to learn",
+        "Willingness to work in the field and travel daily",
+        "No prior experience necessary"
+      ],
+      "role_category": "Engineering",
+      "seniority": "Internship",
+      "employment_type": "Internship",
+      "work_mode": "On-site",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Flevoland, Netherlands",
+      "key_tags": [
+        "apprenticeship",
+        "service technician",
+        "heating systems",
+        "heat pumps",
+        "maintenance",
+        "installation",
+        "practical training"
+      ]
+    },
+    "descriptionHash": "367fd9bb8b73fb2d",
+    "updatedAt": "2026-07-03T08:21:31.628Z"
+  },
+  "37803": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Apprenticeship program for service technician at Feenstra N.V. in Groningen, starting September 2026. You will learn heating system maintenance, repairs, and installations through hands-on work alongside experienced technicians. Training covers boilers, hybrid systems, and heat pumps, with practical instruction at the Drachten training facility. No prior experience required; motivation to learn is essential. You'll work within a supportive team environment, gaining skills in troubleshooting and independent service delivery.",
+      "requirements": [
+        "Reside in Groningen or Drenthe region",
+        "Interest in technical work",
+        "Motivation to learn a trade",
+        "Availability to start September 2026",
+        "Willingness to work with experienced technicians and follow guidance"
+      ],
+      "role_category": "Engineering",
+      "seniority": "Internship",
+      "employment_type": "Internship",
+      "work_mode": "On-site",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Groningen, Netherlands",
+      "key_tags": [
+        "apprenticeship",
+        "service technician",
+        "heating systems",
+        "HVAC",
+        "heat pumps",
+        "practical training",
+        "entry-level"
+      ]
+    },
+    "descriptionHash": "bf77d72e9daae1fd",
+    "updatedAt": "2026-07-03T08:21:32.707Z"
   },
   "37804": {
     "summary": {
@@ -94322,6 +95346,29 @@
     "descriptionHash": "ac8a9f57fd459a0b",
     "updatedAt": "2026-06-30T17:06:08.933Z"
   },
+  "40269": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join IQIP Eindhoven as a Marketeer to develop and execute marketing strategies for a global foundation equipment company. The role involves promoting specialized equipment used in offshore and onshore energy projects, with a focus on communicating the company's impact in renewable energy and infrastructure development. You'll work within an international organization managing complex projects across the energy sector.",
+      "requirements": null,
+      "role_category": "Marketing",
+      "seniority": "Unknown",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": "Eindhoven",
+      "key_tags": [
+        "marketing",
+        "energy sector",
+        "offshore wind",
+        "international projects",
+        "B2B"
+      ]
+    },
+    "descriptionHash": "71aa96fda02f3aca",
+    "updatedAt": "2026-07-03T08:19:34.228Z"
+  },
   "80673": {
     "summary": {
       "is_valid_posting": true,
@@ -98355,6 +99402,35 @@
     },
     "descriptionHash": "980388eb4b2e508a",
     "updatedAt": "2026-06-30T16:59:26.336Z"
+  },
+  "139629": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Customer service representative for the Liquid Food Business Unit, serving as the primary contact for international clients. You will translate commercial and operational agreements into instructions for colleagues and partners, coordinate transport logistics from order intake through invoicing, manage daily client and internal communications, and liaise with shipping companies, rail operators, and cleaning facilities to deliver tailored transport solutions.",
+      "requirements": [
+        "Ability to manage operational execution and associated administrative tasks",
+        "Strong communication skills for daily interaction with clients and internal departments",
+        "Experience coordinating with external partners such as shipping companies, rail operators, and logistics service providers",
+        "Capability to develop and propose creative transport solutions",
+        "Organizational skills to oversee and control multiple parties in the transport chain"
+      ],
+      "role_category": "Other",
+      "seniority": "Unknown",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Barneveld",
+      "key_tags": [
+        "customer service",
+        "logistics",
+        "transport coordination",
+        "liquid food",
+        "international clients"
+      ]
+    },
+    "descriptionHash": "2f5629588b637767",
+    "updatedAt": "2026-07-03T08:19:03.601Z"
   },
   "139630": {
     "summary": {
@@ -112084,6 +113160,38 @@
     "descriptionHash": "1e90b9973c0c17f2",
     "updatedAt": "2026-07-01T13:22:09.546Z"
   },
+  "463204": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join ABS Autoherstel Oostendorp Valkenswaard as a Claims Calculator and Damage Manager. You will be responsible for assessing vehicle damage using tablet-based tools, calculating repair costs according to manufacturer specifications, coordinating with clients on approvals and repair procedures, creating work orders, scheduling workshop activities, ordering parts, and overseeing quality control and invoicing. This role combines technical expertise with customer interaction in a collaborative workshop environment.",
+      "requirements": [
+        "Extensive experience in vehicle damage assessment and repair",
+        "Proficiency in damage calculation and cost estimation",
+        "Ability to use tablet-based damage assessment tools",
+        "Knowledge of manufacturer repair specifications",
+        "Strong communication and customer service skills",
+        "Experience coordinating with clients and repair teams",
+        "Parts ordering and inventory management capability",
+        "Quality control and documentation skills"
+      ],
+      "role_category": "Other",
+      "seniority": "Mid",
+      "employment_type": "Full-time",
+      "work_mode": "On-site",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Valkenswaard, Netherlands",
+      "key_tags": [
+        "vehicle damage assessment",
+        "claims management",
+        "repair coordination",
+        "cost calculation",
+        "customer service"
+      ]
+    },
+    "descriptionHash": "f4209a7ee0c0e15f",
+    "updatedAt": "2026-07-03T08:31:46.975Z"
+  },
   "463205": {
     "summary": {
       "is_valid_posting": true,
@@ -113320,6 +114428,36 @@
     "descriptionHash": "02927d64907b9802",
     "updatedAt": "2026-07-01T13:24:57.867Z"
   },
+  "463247": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join a 25-person team at our Gorinchem location as a damage manager. You'll be the primary contact for customers with vehicle damage, handling intake assessments, scheduling repair appointments, ordering parts, and preparing final invoices. Work closely with front-office staff and the location manager in a collaborative environment. The role emphasizes customer communication and satisfaction, with regular team activities and a supportive workplace culture.",
+      "requirements": [
+        "Strong customer communication and interpersonal skills",
+        "Ability to assess vehicle damage and document findings",
+        "Experience with repair scheduling and parts ordering",
+        "Capability to prepare accurate damage calculations and invoices",
+        "Ability to work collaboratively within a team",
+        "Attention to detail and organizational skills"
+      ],
+      "role_category": "Other",
+      "seniority": "Unknown",
+      "employment_type": "Unknown",
+      "work_mode": "On-site",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Gorinchem, Netherlands",
+      "key_tags": [
+        "damage assessment",
+        "customer service",
+        "automotive",
+        "repair coordination",
+        "claims management"
+      ]
+    },
+    "descriptionHash": "1ebb48527fee054f",
+    "updatedAt": "2026-07-03T08:35:47.517Z"
+  },
   "463248": {
     "summary": {
       "is_valid_posting": true,
@@ -113705,6 +114843,36 @@
     },
     "descriptionHash": "9e80c6c3459afd46",
     "updatedAt": "2026-07-01T13:26:13.432Z"
+  },
+  "463261": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Specialist in damage repair for recreational vehicles (campers and caravans). Responsibilities include bodywork and interior damage restoration, spray painting, roof replacement, window repair, furniture restoration, and dent removal. Work involves using modern techniques and professional tools to restore vehicles to like-new condition.",
+      "requirements": [
+        "Completed MBO qualification in damage repair",
+        "Demonstrable experience in damage repair work",
+        "Experience with campers and caravans preferred",
+        "Technical understanding and knowledge of various materials and repair methods",
+        "Independent, precise work approach with solution-oriented mindset"
+      ],
+      "role_category": "Other",
+      "seniority": "Mid",
+      "employment_type": "Full-time",
+      "work_mode": "On-site",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Born, Netherlands",
+      "key_tags": [
+        "damage repair",
+        "camper repair",
+        "caravan repair",
+        "bodywork",
+        "spray painting",
+        "MBO qualified"
+      ]
+    },
+    "descriptionHash": "c711af00c97c342c",
+    "updatedAt": "2026-07-03T08:38:20.802Z"
   },
   "463262": {
     "summary": {
@@ -114223,6 +115391,39 @@
     },
     "descriptionHash": "cb38b9c3b8be6a4f",
     "updatedAt": "2026-07-01T13:27:22.634Z"
+  },
+  "463279": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Lead the damage assessment and repair process at an automotive repair facility. You will manage intake procedures, cost calculations, coordination with insurers and clients, workshop scheduling, parts ordering, quality control, and file closure. The role requires overseeing the entire workflow from initial damage report to final delivery, ensuring compliance with manufacturer standards and maintaining high customer satisfaction.",
+      "requirements": [
+        "Extensive experience in damage assessment and claims management",
+        "Ability to manage the complete repair process from intake to completion",
+        "Knowledge of damage intake procedures and cost calculation methods",
+        "Experience coordinating with insurers and clients on approvals",
+        "Capability to plan and organize workshop activities",
+        "Parts ordering and delivery timeline management",
+        "Quality control and inspection skills",
+        "Strong organizational and decision-making abilities",
+        "Team leadership and communication skills"
+      ],
+      "role_category": "Other",
+      "seniority": "Senior",
+      "employment_type": "Full-time",
+      "work_mode": "On-site",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Oss, Netherlands",
+      "key_tags": [
+        "damage management",
+        "automotive repair",
+        "claims processing",
+        "workshop management",
+        "quality control"
+      ]
+    },
+    "descriptionHash": "e0c3cbc7f5fdabca",
+    "updatedAt": "2026-07-03T08:39:38.494Z"
   },
   "463282": {
     "summary": {
@@ -115915,6 +117116,40 @@
     "descriptionHash": "7657349a5ff9798e",
     "updatedAt": "2026-07-01T13:29:05.859Z"
   },
+  "463348": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Antea Group is seeking a Commercial Project Manager for civil engineering to lead innovative infrastructure projects with societal impact. You will identify market opportunities, build and leverage your professional network to secure new projects, and serve as a key contact for clients. Once projects are acquired, you take full responsibility for their delivery from design through maintenance phases, managing finances, contracts, quality, and stakeholder relationships to ensure successful outcomes.",
+      "requirements": [
+        "Ability to identify emerging market opportunities and understand key players in the civil engineering sector",
+        "Experience managing complex, innovative civil engineering projects at both strategic and tactical levels",
+        "Strong commercial acumen to translate opportunities into successful project implementations",
+        "Proven ability to build and effectively leverage professional networks",
+        "Experience managing project finances, contracts, and quality standards",
+        "Capability to guide projects through all phases from design to maintenance",
+        "Strong client relationship management and communication skills",
+        "Comfort with technically challenging and diverse project assignments",
+        "Ownership mentality and ability to take full responsibility for project delivery"
+      ],
+      "role_category": "Product",
+      "seniority": "Mid",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "civil engineering",
+        "project management",
+        "commercial development",
+        "infrastructure",
+        "client relations",
+        "network building"
+      ]
+    },
+    "descriptionHash": "4aff8b4b9c17ad37",
+    "updatedAt": "2026-07-03T08:17:48.972Z"
+  },
   "508274": {
     "summary": {
       "is_valid_posting": true,
@@ -116100,6 +117335,40 @@
     },
     "descriptionHash": "fe23dbb4fa845377",
     "updatedAt": "2026-07-01T13:14:11.335Z"
+  },
+  "508391": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join Dura Vermeer's Legal Affairs team as a Legal Officer, responsible for corporate housekeeping, internal company registrations, and legal documentation. You will draft shareholder resolutions and agreements, provide governance and corporate law advice, manage compliance procedures (KYC, Bibob), handle commercial register and UBO register filings, and maintain the company registration system. You'll also support the Head of Legal Affairs with administrative tasks, file management, and trademark registration.",
+      "requirements": [
+        "Experienced legal professional with expertise in corporate law",
+        "Strong attention to detail",
+        "Knowledge of corporate housekeeping and company registrations",
+        "Experience with compliance procedures (KYC, Bibob)",
+        "Familiarity with commercial register and UBO register procedures",
+        "Ability to translate regulatory developments into practical advice",
+        "Self-directed work style",
+        "Ability to collaborate across departments and subsidiaries"
+      ],
+      "role_category": "Other",
+      "seniority": "Mid",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "Corporate Law",
+        "Legal Compliance",
+        "Company Registration",
+        "Governance",
+        "KYC",
+        "Bibob",
+        "Commercial Register"
+      ]
+    },
+    "descriptionHash": "d51279bade282fb3",
+    "updatedAt": "2026-07-03T08:17:42.234Z"
   },
   "508427": {
     "summary": {
@@ -116289,5 +117558,2248 @@
     },
     "descriptionHash": "da08424cca8d2481",
     "updatedAt": "2026-07-01T13:03:59.317Z"
+  },
+  "520018": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join AB InBev's Growth Group as a Senior Data Scientist supporting BEES, a B2B e-commerce and SaaS platform serving small and medium-sized retailers. You will contribute to the BEES AI organization, driving data science and machine learning strategy to unlock growth opportunities and improve customer and business outcomes across the platform.",
+      "requirements": null,
+      "role_category": "Data",
+      "seniority": "Senior",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "Data Science",
+        "Machine Learning",
+        "B2B E-commerce",
+        "SaaS",
+        "AI Strategy"
+      ]
+    },
+    "descriptionHash": "88ddeb72b1669473",
+    "updatedAt": "2026-07-03T08:16:20.392Z"
+  },
+  "520085": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join Adyen's Finance Data & Technology team in Amsterdam as an AI Transformation Manager. In this hands-on senior individual contributor role, you will design, build, and deploy AI-driven workflows and agentic systems for finance operations. You'll establish evaluation frameworks and validation processes to ensure AI solutions are production-ready, trustworthy, and operate within governance and security requirements. Your work will involve optimizing data foundations and defining standards for scaling AI across finance teams.",
+      "requirements": [
+        "Proven experience designing and deploying AI-driven workflows in production environments",
+        "Strong understanding of AI governance, security frameworks, and data governance requirements",
+        "Ability to establish evaluation and validation frameworks for AI systems",
+        "Experience building or working with agentic AI systems",
+        "Hands-on technical capability to implement AI solutions",
+        "Understanding of finance operations and processes",
+        "Ability to work across multiple teams and define organizational standards"
+      ],
+      "role_category": "Data",
+      "seniority": "Senior",
+      "employment_type": "Full-time",
+      "work_mode": "On-site",
+      "language_requirement": "English",
+      "salary": null,
+      "location": "Amsterdam, Netherlands",
+      "key_tags": [
+        "AI transformation",
+        "Finance technology",
+        "AI governance",
+        "Agentic systems",
+        "Data frameworks",
+        "Production AI"
+      ]
+    },
+    "descriptionHash": "f216e589057a54eb",
+    "updatedAt": "2026-07-03T08:16:33.906Z"
+  },
+  "520087": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Lead the workplace operations for Adyen's Amsterdam headquarters, managing four buildings and overseeing the local workplace team. Report to the Global Head of Real Estate and Workplace. Responsible for creating an exceptional, productive, and inclusive in-office experience for Amsterdam-based employees and guests. Balance strategic alignment with global leadership while providing empathetic team leadership in a rapidly scaling environment.",
+      "requirements": [
+        "Direct leadership experience managing teams",
+        "Experience in workplace management or real estate operations",
+        "Ability to thrive in rapidly scaling environments",
+        "Growth mindset and strategic thinking",
+        "Strong interpersonal and mentoring skills",
+        "Capability to balance global operational alignment with local team leadership"
+      ],
+      "role_category": "Other",
+      "seniority": "Lead",
+      "employment_type": "Full-time",
+      "work_mode": "On-site",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": "Amsterdam, Netherlands",
+      "key_tags": [
+        "workplace management",
+        "team leadership",
+        "real estate operations",
+        "Amsterdam HQ",
+        "facilities management"
+      ]
+    },
+    "descriptionHash": "698274b7796590b3",
+    "updatedAt": "2026-07-03T08:16:34.173Z"
+  },
+  "520095": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Clockwise Software is seeking an experienced Front-End Engineer specializing in React to join a project team developing a modern health data analytics platform. The platform serves clinics, helping them streamline operations and patient interactions. The company develops mobile and web applications for startups and small-to-medium businesses across North America, Europe, and Australia.",
+      "requirements": [
+        "Demonstrated experience with React",
+        "Front-end engineering expertise"
+      ],
+      "role_category": "Developer",
+      "seniority": "Mid",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "React",
+        "Front-End",
+        "Web Development",
+        "Healthcare Technology"
+      ]
+    },
+    "descriptionHash": "acd22bf1805d6135",
+    "updatedAt": "2026-07-03T08:16:52.994Z"
+  },
+  "520115": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Retail sales position at Coolblue in Haarlem focused on providing product advice to customers and helping them find suitable solutions. The role involves assisting customers on the shop floor, with opportunities to improve store processes such as inventory management and ordering. The position offers career development through Coolblue's training platform, with potential advancement to Senior Sales Associate or Team Lead roles.",
+      "requirements": [
+        "Fluent in Dutch (spoken and written)",
+        "Product knowledge to advise customers effectively",
+        "Ability to improve store processes and workflows",
+        "Valid Certificate of Conduct (Verklaring Omtrent Gedrag)",
+        "Customer service orientation"
+      ],
+      "role_category": "Sales",
+      "seniority": "Junior",
+      "employment_type": "Part-time",
+      "work_mode": "On-site",
+      "language_requirement": "Dutch",
+      "salary": {
+        "min": 14.8,
+        "max": 16.68,
+        "currency": "EUR",
+        "period": "hour"
+      },
+      "location": "Haarlem, Netherlands",
+      "key_tags": [
+        "retail sales",
+        "customer service",
+        "26 hours per week",
+        "7-month contract",
+        "vacation days",
+        "pension",
+        "travel allowance",
+        "employee discount"
+      ]
+    },
+    "descriptionHash": "26960f9d7d764d93",
+    "updatedAt": "2026-07-03T08:15:55.377Z"
+  },
+  "520126": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Drive product adoption and build strategic relationships with Datadog's largest customers in Thailand. Work across sales, engineering, and support teams to onboard enterprise clients, identify their business needs, and demonstrate product value. Serve as a trusted advisor, monitor usage patterns to identify growth and renewal risks, and manage the full customer lifecycle from onboarding through contract optimization.",
+      "requirements": [
+        "3+ years of experience in Customer Success or Account Management",
+        "Ability to manage a diverse portfolio of accounts with large enterprise clients",
+        "Experience working with Fortune 500 or similarly large organizations",
+        "Strong relationship-building and communication skills",
+        "Cross-functional collaboration experience with sales, support, product, and other teams",
+        "Ability to identify customer needs and translate them into product value propositions",
+        "Experience with usage analysis and contract optimization"
+      ],
+      "role_category": "Sales",
+      "seniority": "Mid",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": "Thailand",
+      "key_tags": [
+        "Customer Success",
+        "Enterprise Sales",
+        "Account Management",
+        "Relationship Management",
+        "Product Adoption"
+      ]
+    },
+    "descriptionHash": "aca5cfd39fdfec2b",
+    "updatedAt": "2026-07-03T08:15:10.714Z"
+  },
+  "520135": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Support paid search marketing operations for client accounts at a growth-focused marketing agency. Generate performance reports, execute campaign optimizations, build and deploy campaigns, and assist with client meetings and internal coordination. You will manage 2-3 accounts while learning the agency's paid search practices and building skills for advancement.",
+      "requirements": [
+        "Ability to produce and format performance reports",
+        "Experience implementing account optimizations and tasks",
+        "Capability to build and upload campaigns",
+        "Comfort participating in client meetings and internal syncs",
+        "Note-taking and documentation skills",
+        "Willingness to learn paid search best practices"
+      ],
+      "role_category": "Marketing",
+      "seniority": "Junior",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": null,
+      "key_tags": [
+        "paid search",
+        "Google App campaigns",
+        "account coordination",
+        "campaign management",
+        "performance reporting",
+        "SEM"
+      ]
+    },
+    "descriptionHash": "0b1c8a77f01366f6",
+    "updatedAt": "2026-07-03T08:16:23.926Z"
+  },
+  "520139": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join Dura Vermeer Bouw & Vastgoed Amsterdam as a cost estimator (calculator/kostendeskundige) specializing in residential and commercial building renovations. You will assess project financial feasibility from initial concept through contract award, prepare budgets and cost analyses, identify risks, and collaborate with project managers and design teams to develop smart, sustainable solutions for complex urban renovation projects.",
+      "requirements": [
+        "Expertise in cost estimation and pricing for renovation projects",
+        "Ability to prepare budgets, cost overviews, and risk analyses",
+        "Experience with residential and commercial building renovations",
+        "Capacity to work on complex urban renovation challenges",
+        "Collaborative approach with project managers, design leads, and office staff",
+        "Capability to develop tender estimates and bid budgets"
+      ],
+      "role_category": "Finance",
+      "seniority": "Unknown",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Amsterdam, Netherlands",
+      "key_tags": [
+        "cost estimation",
+        "renovation",
+        "construction",
+        "budgeting",
+        "residential",
+        "commercial",
+        "sustainability"
+      ]
+    },
+    "descriptionHash": "0d0b7633fc0041d6",
+    "updatedAt": "2026-07-03T08:17:49.026Z"
+  },
+  "520167": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "GitLab is seeking a Manager of Business Development to join their remote team serving the United States or Canada. The role involves driving business growth and development initiatives for GitLab's DevSecOps platform, which serves over 50 million users and more than half of the Fortune 100. You will work within a high-performance culture that emphasizes AI integration, continuous learning, and collaborative problem-solving.",
+      "requirements": [
+        "Business development or similar management experience",
+        "Ability to work in a remote environment",
+        "Based in or able to work across US or Canadian time zones"
+      ],
+      "role_category": "Sales",
+      "seniority": "Mid",
+      "employment_type": "Full-time",
+      "work_mode": "Remote",
+      "language_requirement": "English",
+      "salary": null,
+      "location": "United States or Canada",
+      "key_tags": [
+        "business development",
+        "management",
+        "remote",
+        "devops",
+        "saas"
+      ]
+    },
+    "descriptionHash": "231433248fd1a6aa",
+    "updatedAt": "2026-07-03T08:16:29.540Z"
+  },
+  "520169": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "GitLab seeks a Strategic Account Executive for the San Francisco region. You will manage key accounts and drive revenue growth for GitLab's DevSecOps platform, which serves over 50 million users including more than half of the Fortune 100. The role involves building and maintaining strategic client relationships, identifying expansion opportunities, and supporting organizations in accelerating their digital transformation through secure software development practices.",
+      "requirements": [
+        "Experience in strategic account management or enterprise sales",
+        "Ability to manage complex, high-value client relationships",
+        "Understanding of DevSecOps, software development, or related technology domains",
+        "Strong communication and negotiation skills",
+        "Proven track record of meeting or exceeding sales targets"
+      ],
+      "role_category": "Sales",
+      "seniority": "Unknown",
+      "employment_type": "Full-time",
+      "work_mode": "On-site",
+      "language_requirement": "English",
+      "salary": null,
+      "location": "San Francisco, California",
+      "key_tags": [
+        "Strategic Account Management",
+        "Enterprise Sales",
+        "DevSecOps",
+        "Account Executive",
+        "SaaS"
+      ]
+    },
+    "descriptionHash": "c55b355e79dad227",
+    "updatedAt": "2026-07-03T08:16:22.653Z"
+  },
+  "520180": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Lead the Order-to-Cash service delivery function across Hunter Douglas's international operations, spanning EMEA, Global E-Commerce, and Global Headquarters. This strategic leadership role focuses on driving operational excellence, standardization, and transformation across the entire order-to-cash lifecycle. You will work with senior stakeholders across Finance, Commercial, and Supply Chain to build a modern, scalable, and customer-focused Global Business Services function.",
+      "requirements": [
+        "Extensive experience in a GBS Tower Lead or similar strategic operations leadership role",
+        "Deep expertise in Order-to-Cash processes and end-to-end lifecycle management",
+        "Proven track record driving operational excellence and standardization across international organizations",
+        "Strong stakeholder management skills with ability to partner across Finance, Commercial, and Supply Chain functions",
+        "Experience leading transformation initiatives in a global business services environment",
+        "Strategic mindset with focus on building scalable, customer-centric operations"
+      ],
+      "role_category": "Other",
+      "seniority": "Lead",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": "EMEA, Global (with coverage of EMEA, Global E-Commerce, and Global Headquarters)",
+      "key_tags": [
+        "Order-to-Cash",
+        "GBS",
+        "Operations Leadership",
+        "International",
+        "Transformation",
+        "EMEA"
+      ]
+    },
+    "descriptionHash": "ebaf7f32493b319c",
+    "updatedAt": "2026-07-03T08:16:35.655Z"
+  },
+  "520193": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Manage and maintain Interconnect's internal IT infrastructure across two locations, supporting approximately 130 employees. Responsibilities include overseeing Microsoft 365 and related systems (Windows, Active Directory, Exchange, WiFi, telecom), monitoring system performance and security, implementing lifecycle management, providing user support, and onboarding new staff. Document processes and solutions in the company knowledge management system.",
+      "requirements": [
+        "Minimum 3 years of experience in a similar role such as systems administrator, cloud engineer, or infrastructure specialist",
+        "Broad knowledge of Microsoft products including Microsoft 365, Entra ID, Windows Server (Active Directory, Certificate Authority, WSUS, Group Policies, NPS), Windows 11, and Microsoft System Center Configuration Manager or Intune",
+        "Ability to troubleshoot technical issues systematically and develop practical solutions",
+        "Willingness to help others and support end users",
+        "Continuous learning mindset and commitment to expanding technical knowledge",
+        "Experience with both end-user systems and server/software infrastructure"
+      ],
+      "role_category": "DevOps & Cloud",
+      "seniority": "Mid",
+      "employment_type": "Full-time",
+      "work_mode": "On-site",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "Microsoft 365",
+        "Active Directory",
+        "Windows Server",
+        "Systems Administration",
+        "IT Infrastructure",
+        "User Support",
+        "Intune",
+        "Exchange"
+      ]
+    },
+    "descriptionHash": "4bf413cb057c80cf",
+    "updatedAt": "2026-07-03T08:17:50.601Z"
+  },
+  "520194": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join the IT Services team within Operations as a Security Analyst/Specialist. You will work closely with colleagues in Security, Internal Systems, and Application Management to develop and strengthen the organization's cybersecurity posture. Your primary responsibilities include identifying, analyzing, and addressing technical and non-technical threats to protect critical processes, assets, and data. You will monitor systems, coordinate with external authorities like the NCSC and CSIRT-DSP, assess vulnerabilities, and implement remediation measures in collaboration with the SOC team and Risk & Compliance department.",
+      "requirements": [
+        "Experience in cybersecurity analysis and threat identification",
+        "Ability to analyze and correlate technical and non-technical security threats",
+        "Knowledge of vulnerability assessment and risk-based prioritization",
+        "Familiarity with security monitoring and incident response processes",
+        "Capability to work collaboratively across IT, Risk, and Compliance teams",
+        "Understanding of cybersecurity frameworks and external authority guidelines (NCSC, CSIRT-DSP)"
+      ],
+      "role_category": "Security",
+      "seniority": "Unknown",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "cybersecurity",
+        "threat analysis",
+        "vulnerability management",
+        "incident response",
+        "risk assessment",
+        "security monitoring"
+      ]
+    },
+    "descriptionHash": "ca152d5e83e268c3",
+    "updatedAt": "2026-07-03T08:18:07.643Z"
+  },
+  "520197": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Lead incident response operations for organizations experiencing major cybersecurity crises, from initial detection through recovery. You assemble and direct multidisciplinary teams including forensic investigators, recovery specialists, negotiators, and subject matter experts. You serve as the primary point of contact for clients, coordinate across forensic investigation, business continuity, legal considerations, and recovery efforts, and ensure stakeholders remain informed throughout the incident lifecycle. Work is performed 24/7 across European locations.",
+      "requirements": [
+        "Ability to lead and coordinate multidisciplinary incident response teams",
+        "Experience managing complex cybersecurity incidents including ransomware, extortion, and data breaches",
+        "Strong client communication and stakeholder management skills",
+        "Capability to make critical decisions under pressure",
+        "Understanding of forensic investigation, business continuity, legal, and recovery processes",
+        "Availability for 24/7 incident response operations"
+      ],
+      "role_category": "Security",
+      "seniority": "Senior",
+      "employment_type": "Full-time",
+      "work_mode": "On-site",
+      "language_requirement": "Dutch or English",
+      "salary": null,
+      "location": "Utrecht, Netherlands (with offices in Germany, Sweden, and Belgium)",
+      "key_tags": [
+        "incident response",
+        "cybersecurity",
+        "crisis management",
+        "ransomware",
+        "team leadership",
+        "24/7 operations",
+        "CERT",
+        "forensics"
+      ]
+    },
+    "descriptionHash": "48a3a9eb3363c953",
+    "updatedAt": "2026-07-03T08:16:49.543Z"
+  },
+  "520204": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "LearningSpecialist, a sister organization of inBrain, seeks an experienced Senior Learning & Development Specialist to lead strategic projects across various sectors. You will advise clients on forward-thinking learning strategies, guide multidisciplinary teams through complex learning solution implementations, and focus on creating measurable organizational impact. The role emphasizes depth, challenging assignments, and professional growth opportunities tailored to your expertise.",
+      "requirements": [
+        "Extensive experience in Learning & Development or educational consulting",
+        "Proven ability to develop and execute strategic learning initiatives",
+        "Experience leading multidisciplinary teams on complex projects",
+        "Strong advisory and consulting skills with client-facing experience",
+        "Passion for creating effective, impactful learning solutions",
+        "Ability to work across multiple sectors and organizational contexts"
+      ],
+      "role_category": "Other",
+      "seniority": "Senior",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": null,
+      "key_tags": [
+        "Learning & Development",
+        "Educational Strategy",
+        "Consulting",
+        "Project Leadership",
+        "Organizational Development"
+      ]
+    },
+    "descriptionHash": "01a5a3a47b2ba369",
+    "updatedAt": "2026-07-03T08:15:55.039Z"
+  },
+  "520218": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join Sweco's Logistics and Corporate Housing business unit as a junior construction project leader. You will work within integrated design teams on multifunctional buildings where logistics processes are central. Projects include high-bay warehouses, refrigerated storage facilities, cross-docks, e-commerce centers, hangars, and residential developments. Your role involves ensuring that architectural design, building systems, and logistics solutions work seamlessly together. You'll collaborate with architects, project managers, engineers, and logistics advisors to create intelligent, future-proof solutions for clients.",
+      "requirements": [
+        "Background in construction or project management",
+        "Ability to coordinate between architectural design, building systems, and logistics requirements",
+        "Collaborative mindset to work with multidisciplinary teams",
+        "Interest in logistics and industrial building design"
+      ],
+      "role_category": "Engineering",
+      "seniority": "Junior",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "construction project management",
+        "logistics",
+        "architectural design",
+        "warehouses",
+        "e-commerce centers",
+        "building systems integration"
+      ]
+    },
+    "descriptionHash": "dae6a00196beefb5",
+    "updatedAt": "2026-07-03T08:16:50.645Z"
+  },
+  "520219": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join Sweco Architects as an Integral Sustainability Manager within a large European architecture and engineering network. You will work on sustainability challenges in the built environment, collaborating with advisors, designers, and specialists. Your focus will be on circular design, CO₂ reduction, healthy living environments, and future-proof construction. You'll support clients including municipalities, provinces, developers, housing corporations, and real estate managers on projects ranging from retrofitting existing buildings to circular new construction, area development, sustainability strategies, and policy questions. Your work will include material analysis, CO₂ calculations, and circularity assessments.",
+      "requirements": [
+        "Ability to translate complex sustainability challenges into practical solutions",
+        "Collaborative mindset, comfortable working across different disciplines",
+        "Interest in circular economy, CO₂ reduction, and sustainable building practices",
+        "Experience or knowledge in sustainability assessment and analysis"
+      ],
+      "role_category": "Other",
+      "seniority": "Unknown",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "sustainability",
+        "circular economy",
+        "CO₂ reduction",
+        "built environment",
+        "architecture",
+        "building design",
+        "environmental consulting"
+      ]
+    },
+    "descriptionHash": "77fd3eabb2d92ad3",
+    "updatedAt": "2026-07-03T08:16:55.474Z"
+  },
+  "520223": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Toast is seeking a Menu Multilingual Onboarding Consultant (Spanish) to work with Spanish-speaking restaurant customers during their implementation phase. You will manage menu configuration and setup, serve as the primary point of contact for customers from purchase through go-live, and ensure successful onboarding outcomes. The role involves collaborating with POS onboarding teams, building implementation plans, and working toward monthly activation targets while maintaining high-quality customer interactions.",
+      "requirements": [
+        "Fluent Spanish language skills (primary language for customer interactions)",
+        "Product knowledge of Toast POS system",
+        "Project management capabilities",
+        "Ability to work autonomously under manager supervision",
+        "Strong customer relationship management skills",
+        "Flexibility and comfort working in ambiguous environments",
+        "Motivation to meet aggressive growth and activation goals",
+        "Menu configuration and technical setup expertise"
+      ],
+      "role_category": "Other",
+      "seniority": "Junior",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "Spanish",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "onboarding",
+        "implementation",
+        "customer success",
+        "Spanish language",
+        "restaurant technology",
+        "POS systems",
+        "menu management"
+      ]
+    },
+    "descriptionHash": "e1d8987fd6eeec9d",
+    "updatedAt": "2026-07-03T08:16:27.202Z"
+  },
+  "520226": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Toast is seeking a Senior Software Engineer to join the Core Frameworks team, which provides foundational engineering support across the organization. You will design, develop, and maintain core libraries and developer tools used by hundreds of engineers to build web services and customer-facing features. The role involves enhancing local development tools, integrating AI capabilities to improve developer workflows, and collaborating with product managers and internal stakeholders to streamline the software development lifecycle. You'll work on service templates, feature flags, and other platform components that enable developer productivity.",
+      "requirements": [
+        "Strong background in building core libraries and developer tooling",
+        "Experience designing and maintaining infrastructure and tools for developer productivity",
+        "Ability to work collaboratively with cross-functional teams including product managers and internal users",
+        "Proactive approach to problem-solving and technical leadership",
+        "Experience with or interest in AI-assisted development workflows"
+      ],
+      "role_category": "Developer",
+      "seniority": "Senior",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": null,
+      "key_tags": [
+        "Core Libraries",
+        "Developer Tools",
+        "Platform Engineering",
+        "AI Integration",
+        "Web Services",
+        "Infrastructure"
+      ]
+    },
+    "descriptionHash": "64d1d2ec5907621f",
+    "updatedAt": "2026-07-03T08:16:33.871Z"
+  },
+  "520235": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Lead and expand relationships with enterprise customers in the retail sector who use Twilio's communications platform for messaging, voice, and email services. Drive complex, data-driven sales cycles with large-scale global customers operating in competitive and compliance-heavy environments. Work cross-functionally to protect and grow the communications business within your assigned customer portfolio.",
+      "requirements": [
+        "Experience managing enterprise customer relationships and complex sales cycles",
+        "Ability to conduct analytical and consultative sales processes",
+        "Understanding of large-scale, global business operations and compliance requirements",
+        "Cross-functional collaboration skills",
+        "Track record of protecting and growing customer accounts"
+      ],
+      "role_category": "Sales",
+      "seniority": "Senior",
+      "employment_type": "Full-time",
+      "work_mode": "Remote",
+      "language_requirement": "English",
+      "salary": null,
+      "location": null,
+      "key_tags": [
+        "Strategic Account Executive",
+        "Enterprise Sales",
+        "Retail Vertical",
+        "Communications Platform",
+        "Account Management"
+      ]
+    },
+    "descriptionHash": "775bb622a312acfe",
+    "updatedAt": "2026-07-03T08:16:24.327Z"
+  },
+  "520239": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join Wrike's Sales Strategy & Operations team as an analyst responsible for enabling efficient go-to-market execution. You will develop and maintain dashboards and reports for sales leadership, deliver accurate reporting on pipeline and performance metrics, support forecasting and pipeline analysis, and collaborate across the business to enhance sales effectiveness and operational scalability. This individual contributor role is ideal for someone with strong analytical skills, attention to detail, and experience in a fast-paced SaaS environment.",
+      "requirements": [
+        "2–3 years of experience in sales operations, revenue operations, business operations, or strategy",
+        "Strong analytical capabilities",
+        "Attention to detail",
+        "Sound communication skills",
+        "Ability to learn and grow in a fast-paced SaaS environment",
+        "Experience developing dashboards and reports",
+        "Proficiency with sales metrics, pipeline analysis, and forecasting"
+      ],
+      "role_category": "Sales",
+      "seniority": "Junior",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "English",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "Sales Operations",
+        "Revenue Operations",
+        "Analytics",
+        "Reporting",
+        "SaaS",
+        "Pipeline Management",
+        "Data Analysis"
+      ]
+    },
+    "descriptionHash": "c468cff0b86b3bb7",
+    "updatedAt": "2026-07-03T08:16:38.123Z"
+  },
+  "520241": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Lead the Accountancy & Advisory practice across the South region as Director. You will oversee quality, customer value, and commercial growth across multiple locations. Responsibilities include strategic direction, team development, cross-office collaboration, digital transformation, and maintaining a healthy balance between results and workplace culture. The role emphasizes building a professional, improvement-focused environment where colleagues develop and work with purpose.",
+      "requirements": [
+        "Proven leadership experience managing regional business operations",
+        "Strong commercial acumen and ability to drive growth",
+        "Strategic thinking with capability to translate strategy into actionable decisions",
+        "Experience building and strengthening teams and leadership",
+        "Knowledge of accountancy and advisory practices",
+        "Ability to ensure technical quality, compliance, and professional standards",
+        "Commitment to fostering collaborative, improvement-oriented culture",
+        "Experience with digital transformation and data-driven working methods"
+      ],
+      "role_category": "Other",
+      "seniority": "Lead",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "South region, Netherlands",
+      "key_tags": [
+        "Accountancy",
+        "Advisory",
+        "Regional Director",
+        "Leadership",
+        "Commercial Growth",
+        "Team Management",
+        "Co-ownership opportunity"
+      ]
+    },
+    "descriptionHash": "6ffd53de8dcd3ce9",
+    "updatedAt": "2026-07-03T08:16:57.370Z"
+  },
+  "520242": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join bol.com's retail media platform as a Performance Specialist to bridge internal sales and operations teams with advertisers. You'll work with 50,000+ partners and major brands to design and optimize advertising campaigns that reach customers at the moment of purchase. Your role involves understanding advertiser goals, mapping them to available channels (social, display, onsite), conducting A/B testing, developing media plans, and sharing insights back to the sales team to drive campaign success.",
+      "requirements": [
+        "Ability to connect and engage with both internal teams and external advertisers",
+        "Experience translating business objectives into concrete media strategies",
+        "Understanding of digital advertising channels and campaign optimization",
+        "Capability to conduct and interpret A/B testing",
+        "Strong communication skills to inspire operational teams and provide actionable insights",
+        "Experience working with sales and operations teams"
+      ],
+      "role_category": "Marketing",
+      "seniority": "Unknown",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "retail media",
+        "advertising",
+        "campaign optimization",
+        "performance marketing",
+        "A/B testing",
+        "media planning",
+        "bol.com"
+      ]
+    },
+    "descriptionHash": "4322d2f1dadd7e44",
+    "updatedAt": "2026-07-03T08:16:36.823Z"
+  },
+  "532110": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join the intake team at A-Point Service's modern reception center in Almere to prepare used vehicles for sale. You will document vehicle features and condition, create compelling online listings, coordinate repairs and transport between locations, and support daily operations to ensure smooth workflow. The role combines inspection, administrative tasks, and coordination to present each vehicle professionally for online and showroom sales across Amsterdam, Almere, and Hoofddorp.",
+      "requirements": [
+        "Attention to detail and passion for automobiles",
+        "Ability to document vehicle options and equipment accurately",
+        "Skill in writing clear, engaging product descriptions for online listings",
+        "Experience identifying and recording vehicle damage",
+        "Capability to coordinate transport logistics between multiple locations",
+        "Willingness to perform light administrative work",
+        "Ability to support team operations and optimize workflow"
+      ],
+      "role_category": "Other",
+      "seniority": "Unknown",
+      "employment_type": "Unknown",
+      "work_mode": "On-site",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Almere, Netherlands",
+      "key_tags": [
+        "used car preparation",
+        "vehicle inspection",
+        "online listings",
+        "logistics coordination",
+        "administrative support"
+      ]
+    },
+    "descriptionHash": "db160fdf8451ec7a",
+    "updatedAt": "2026-07-03T08:36:47.583Z"
+  },
+  "532329": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Lead strategic partnership development for ACCESS Energy B.V. in the hospitality sector. Work with the VP of Strategic Partnerships to grow revenue, expand hotel partnerships nationwide, and identify business opportunities. Build and maintain relationships with hotel brands, ownership groups, convention centers, and industry organizations. Represent the company at industry events and collaborate across departments to execute partnership strategy.",
+      "requirements": [
+        "Deep industry connections in hospitality",
+        "Strong business development skills",
+        "Ability to build executive-level relationships",
+        "Experience with hotel brands, ownership groups, or convention centers",
+        "Strategic thinking and planning capability",
+        "Sales support and collaboration skills",
+        "Comfort representing company at industry events"
+      ],
+      "role_category": "Sales",
+      "seniority": "Senior",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "Strategic Partnerships",
+        "Hospitality",
+        "Business Development",
+        "Revenue Growth",
+        "Relationship Management"
+      ]
+    },
+    "descriptionHash": "d4475f11cfca541c",
+    "updatedAt": "2026-07-03T08:19:35.730Z"
+  },
+  "532330": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Talent & Culture Business Partner role focused on strengthening organizational health and leadership effectiveness. You will serve as a trusted advisor to Directors, handling employee relations matters including performance management, conflict resolution, and investigations. The position involves supporting people strategies, ensuring fair and consistent employee experiences, and coaching leaders through people-related challenges. This is a remote role with occasional in-person travel for leadership meetings.",
+      "requirements": [
+        "Experience in employee relations and performance management",
+        "Ability to handle sensitive situations with fairness and compliance awareness",
+        "Strong coaching and advisory skills for senior leaders",
+        "Capability to lead and document investigations",
+        "Comfort with occasional in-person engagement and travel for meetings",
+        "Understanding of organizational scaling and people strategy execution"
+      ],
+      "role_category": "Other",
+      "seniority": "Mid",
+      "employment_type": "Full-time",
+      "work_mode": "Remote",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": null,
+      "key_tags": [
+        "HR",
+        "Employee Relations",
+        "Talent Management",
+        "Leadership Coaching",
+        "Performance Management",
+        "Remote"
+      ]
+    },
+    "descriptionHash": "7f2f2b19eafc8c5d",
+    "updatedAt": "2026-07-03T08:24:45.328Z"
+  },
+  "532358": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join Van Gelder, a fresh produce supplier transforming into a strategic partner for chefs and food service professionals. As a B2B marketer, you'll develop and execute campaigns across digital and traditional channels, create relevant content daily, and contribute to brand growth. You'll work with a young, ambitious marketing team to understand diverse customer segments and translate their needs into targeted communications. The role offers the opportunity to shape new brand initiatives and support the rollout of a new partnership program.",
+      "requirements": [
+        "Creative mindset with ability to identify market opportunities",
+        "Strong writing skills and content creation capability",
+        "Experience in B2B marketing",
+        "Understanding of different customer segments and their distinct needs",
+        "Ability to translate customer insights into campaigns and content",
+        "Comfort with variety and changing priorities",
+        "Collaborative approach to working with internal teams"
+      ],
+      "role_category": "Marketing",
+      "seniority": "Unknown",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "B2B Marketing",
+        "Content Creation",
+        "Campaign Management",
+        "Food Service",
+        "Brand Development"
+      ]
+    },
+    "descriptionHash": "a227b78633e963d9",
+    "updatedAt": "2026-07-03T08:16:00.579Z"
+  },
+  "532361": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join Amac as a sales associate and become an Apple expert. You'll assist customers with product advice and service inquiries, learn about Apple products through training and hands-on experience, and work in a collaborative retail environment. No prior experience required—the company provides comprehensive training through Apple and the Amac Academy. Your day-to-day involves customer consultations, product knowledge sharing with colleagues, maintaining store presentation, and celebrating team successes.",
+      "requirements": [
+        "Customer service orientation and ability to listen to customer needs",
+        "Willingness to learn about Apple products and services",
+        "Ability to work collaboratively with team members",
+        "Attention to store maintenance and presentation",
+        "No prior experience required"
+      ],
+      "role_category": "Sales",
+      "seniority": "Junior",
+      "employment_type": "Full-time",
+      "work_mode": "On-site",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Delft",
+      "key_tags": [
+        "Apple products",
+        "Retail sales",
+        "Customer service",
+        "Training provided",
+        "Entry-level"
+      ]
+    },
+    "descriptionHash": "286f6fa1afd5524a",
+    "updatedAt": "2026-07-03T08:16:06.226Z"
+  },
+  "532362": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join Amac as a sales associate and become an Apple expert. You'll assist customers with product advice and service inquiries, learn about Apple products through training and hands-on experience, and work in a collaborative retail environment. No prior experience required—the company provides comprehensive training through Apple and the Amac Academy. Your day-to-day involves customer consultations, sharing product knowledge with colleagues, maintaining store presentation, and celebrating team successes.",
+      "requirements": [
+        "Ability to provide personalized customer advice",
+        "Willingness to learn about Apple products and services",
+        "Collaborative mindset to share knowledge with team members",
+        "Attention to store cleanliness and presentation",
+        "Customer service orientation"
+      ],
+      "role_category": "Sales",
+      "seniority": "Junior",
+      "employment_type": "Full-time",
+      "work_mode": "On-site",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Eindhoven",
+      "key_tags": [
+        "Apple products",
+        "Retail sales",
+        "Customer service",
+        "Training provided",
+        "No experience required"
+      ]
+    },
+    "descriptionHash": "286f6fa1afd5524a",
+    "updatedAt": "2026-07-03T08:16:14.697Z"
+  },
+  "532363": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join Antea Group Nederland as an electrical engineering advisor specializing in civil infrastructure works. You will contribute to the design, advisory, and testing of electrical installations for Dutch infrastructure projects including movable bridges, locks, pumping stations, and weirs. Work spans new construction, renovation, and replacement projects, covering energy supply systems, PLC controls, security installations, and building-integrated systems. You'll conduct feasibility studies and prepare technical specifications while collaborating with multidisciplinary teams to develop safe, reliable, and future-proof solutions for critical infrastructure.",
+      "requirements": [
+        "Expertise in electrical engineering for civil infrastructure applications",
+        "Experience with energy supply systems and PLC control systems",
+        "Knowledge of security installations and building-integrated electrical systems",
+        "Ability to conduct feasibility studies and produce technical documentation",
+        "Strong collaborative skills to work with colleagues from various disciplines",
+        "Interest in solving technically complex problems with societal impact",
+        "Openness to innovation and personal development"
+      ],
+      "role_category": "Engineering",
+      "seniority": "Unknown",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Netherlands",
+      "key_tags": [
+        "electrical engineering",
+        "civil infrastructure",
+        "PLC controls",
+        "bridges and locks",
+        "technical advisory",
+        "feasibility studies"
+      ]
+    },
+    "descriptionHash": "89b7abb2d05b5703",
+    "updatedAt": "2026-07-03T08:16:17.245Z"
+  },
+  "532365": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Lead concrete infrastructure projects from planning through completion at BKB Infra. You will manage multiple simultaneous projects involving innovative and sustainable concrete pavements, overseeing design, tender preparation, team coordination, scheduling, quality, safety, and financial performance. The role combines strategic planning with hands-on project execution across Dutch infrastructure developments.",
+      "requirements": [
+        "Experience managing infrastructure or construction projects",
+        "Knowledge of concrete design and sustainable construction practices",
+        "Understanding of environmental management and project planning",
+        "Ability to manage budgets, timelines, quality, and safety standards",
+        "Team leadership and stakeholder coordination skills",
+        "Collaborative approach to problem-solving and result-oriented mindset"
+      ],
+      "role_category": "Other",
+      "seniority": "Mid",
+      "employment_type": "Full-time",
+      "work_mode": "On-site",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Eindhoven, Netherlands",
+      "key_tags": [
+        "project management",
+        "concrete infrastructure",
+        "construction",
+        "civil engineering",
+        "sustainability",
+        "team leadership"
+      ]
+    },
+    "descriptionHash": "fb9735fe12b3805b",
+    "updatedAt": "2026-07-03T08:16:01.078Z"
+  },
+  "532366": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join Aveco de Bondt as an ecologist to support sustainable area development and conduct ecological research on protected species and natural values. You will perform ecological surveys, analyze findings, prepare reports, conduct field visits across urban and rural locations, and advise on ecological opportunities and risks in development projects. Work collaborates with a multidisciplinary team including landscape architects, urban planners, and water specialists. The role combines fieldwork, research, and advisory services contributing to biodiversity and climate adaptation.",
+      "requirements": [
+        "Background or experience in ecology or related field",
+        "Ability to conduct ecological surveys and species research",
+        "Experience with data analysis and report writing",
+        "Valid driver's license for field visits",
+        "Passion for nature and ecology",
+        "Ability to work collaboratively in multidisciplinary teams"
+      ],
+      "role_category": "Other",
+      "seniority": "Mid",
+      "employment_type": "Full-time",
+      "work_mode": "Hybrid",
+      "language_requirement": "Dutch",
+      "salary": {
+        "min": 3350,
+        "max": 5100,
+        "currency": "EUR",
+        "period": "month"
+      },
+      "location": "Holten or Nieuwegein, Netherlands",
+      "key_tags": [
+        "Ecology",
+        "Environmental Research",
+        "Fieldwork",
+        "Species Survey",
+        "Sustainable Development",
+        "Biodiversity",
+        "Climate Adaptation"
+      ]
+    },
+    "descriptionHash": "42a1f1bc33e49cb1",
+    "updatedAt": "2026-07-03T08:16:57.169Z"
+  },
+  "532367": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "BUKO Infrasupport is seeking an experienced Learning & Development Business Partner to advance their organizational learning initiatives. The company has established foundational L&D infrastructure including an academy, learning management system, and training partnerships. The role involves developing learning pathways, leadership programs, talent development strategies, and fostering a sustainable learning culture. You will have autonomy to drive initiatives, translate ideas into concrete outcomes, and shape the direction of learning and development across the organization.",
+      "requirements": [
+        "Proven experience as a Learning & Development professional or Business Partner",
+        "Ability to develop and implement learning pathways and leadership programs",
+        "Experience in talent development and building learning cultures",
+        "Strong project management and initiative-taking skills",
+        "Capacity to translate strategic ideas into measurable results",
+        "Collaborative mindset to connect and align L&D efforts across the organization"
+      ],
+      "role_category": "Other",
+      "seniority": "Mid",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "Learning & Development",
+        "Talent Development",
+        "Leadership Programs",
+        "Learning Culture",
+        "Organizational Development"
+      ]
+    },
+    "descriptionHash": "d6937840cf7a2302",
+    "updatedAt": "2026-07-03T08:18:41.052Z"
+  },
+  "532373": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Support Catawiki's Communications team on a 6-month paid internship contract. You will assist with communications initiatives and day-to-day press office operations, reporting to the Communications Manager. Responsibilities include researching topics, drafting press materials such as pitches and press releases, and supporting media outreach efforts across various company projects.",
+      "requirements": [
+        "Versatile communicator capable of handling multiple communication tasks",
+        "Ability to research timely topics",
+        "Competence in drafting press materials and press releases",
+        "Experience or capability in media outreach",
+        "Alignment with company values: ownership, openness to feedback, and passion for the mission"
+      ],
+      "role_category": "Marketing",
+      "seniority": "Internship",
+      "employment_type": "Internship",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "communications",
+        "press office",
+        "media outreach",
+        "internship",
+        "6-month contract"
+      ]
+    },
+    "descriptionHash": "71595f0286d52ef3",
+    "updatedAt": "2026-07-03T08:15:32.453Z"
+  },
+  "532374": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join Catawiki as an Expert for Literature Books to curate and manage book auctions on our marketplace. You will evaluate book submissions for auction suitability, create engaging listings with accurate descriptions and valuations, and help grow the books category by working with sellers and ensuring transparent transactions. Your expertise will shape how special and rare books are presented to our audience of over 100,000 weekly auction participants.",
+      "requirements": [
+        "Deep knowledge of literature and book markets to evaluate submissions and determine auction suitability",
+        "Ability to write clear, compelling product descriptions and listings",
+        "Experience assessing book condition, authenticity, and market value",
+        "Strong attention to detail for accuracy in titles, descriptions, and imagery",
+        "Capability to estimate fair market values based on expertise and market trends",
+        "Network or ability to identify and onboard relevant book sellers",
+        "Understanding of auction dynamics and customer expectations"
+      ],
+      "role_category": "Other",
+      "seniority": "Unknown",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": null,
+      "key_tags": [
+        "books",
+        "literature",
+        "auction",
+        "curation",
+        "expertise",
+        "marketplace",
+        "valuation"
+      ]
+    },
+    "descriptionHash": "33c388aa5d37d1a2",
+    "updatedAt": "2026-07-03T08:15:46.038Z"
+  },
+  "532375": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join Catawiki as a Model Trains Expert to curate and evaluate model train auctions. You will assess submitted lots based on brand, rarity, condition, and valuation, ensuring accuracy and commercial viability. Your expertise will help grow the model trains category, attract collectors, and maintain trust within the community.",
+      "requirements": [
+        "Specialist knowledge of model trains, including brands, rarity assessment, and condition evaluation",
+        "Understanding of model train valuation and collector market expectations",
+        "Ability to evaluate and assess auction lots for quality and commercial appeal",
+        "Sound commercial judgment combined with category expertise",
+        "Commitment to transparency and building trust with collectors and sellers"
+      ],
+      "role_category": "Other",
+      "seniority": "Unknown",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": null,
+      "key_tags": [
+        "model trains",
+        "expert curation",
+        "auction",
+        "collector market",
+        "valuation"
+      ]
+    },
+    "descriptionHash": "ef079974e0fd256e",
+    "updatedAt": "2026-07-03T08:15:46.878Z"
+  },
+  "532376": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join Catawiki as a Stamps Expert for the Benelux region. You will curate and evaluate stamp collections submitted by users, creating high-quality weekly auctions that appeal to both bidders and sellers. Your role involves assessing lot quality, ensuring market relevance, and maintaining auction standards through expert knowledge and commercial judgment. You'll directly contribute to category growth and the platform's mission of becoming the world's leading marketplace for special objects.",
+      "requirements": [
+        "Deep expertise and knowledge of the stamps market",
+        "Ability to evaluate and assess stamp lots for quality and authenticity",
+        "Strong commercial judgment and market awareness",
+        "Experience curating collections or managing auctions",
+        "Ability to create compelling lot selections",
+        "Understanding of fair auction practices and transparency standards",
+        "Knowledge of the Benelux stamps market"
+      ],
+      "role_category": "Other",
+      "seniority": "Unknown",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": "Benelux",
+      "key_tags": [
+        "stamps",
+        "expert",
+        "auction curation",
+        "marketplace",
+        "Benelux"
+      ]
+    },
+    "descriptionHash": "3be036adab3a62ef",
+    "updatedAt": "2026-07-03T08:15:46.141Z"
+  },
+  "532377": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join Catawiki's legal team as a Paralegal Intern supporting an international marketplace for special objects. You will assist legal counsels across diverse practice areas including commercial law, consumer law, contracts, compliance, privacy, data protection, corporate law, sustainability, and AI. The role offers broad exposure to legal projects in a fast-paced, dynamic environment with opportunities to develop practical skills across multiple domains.",
+      "requirements": [
+        "Passion for providing high-quality legal support",
+        "Interest in learning across multiple legal practice areas",
+        "Ability to work in a dynamic, fast-paced environment",
+        "Alignment with company values: ownership, openness to feedback, and commitment to the mission"
+      ],
+      "role_category": "Other",
+      "seniority": "Internship",
+      "employment_type": "Internship",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": null,
+      "key_tags": [
+        "legal",
+        "paralegal",
+        "internship",
+        "commercial law",
+        "compliance",
+        "data protection",
+        "contract law"
+      ]
+    },
+    "descriptionHash": "246ca4c541af3ec5",
+    "updatedAt": "2026-07-03T08:15:57.346Z"
+  },
+  "532378": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join as a business consultant bridging clients and software solutions in the transport and logistics sector. You'll analyze operational processes, identify improvement opportunities, and advise clients on optimizations using software tools and smart solutions. Work closely with clients, colleagues, and development teams to translate needs into practical implementations. The role emphasizes taking initiative, challenging clients to think differently, and contributing ideas on sector innovations.",
+      "requirements": [
+        "Curiosity and entrepreneurial mindset with willingness to take ownership",
+        "Ability to analyze logistics and operational processes",
+        "Strong advisory and consulting skills",
+        "Capacity to work collaboratively with clients, consultants, and development teams",
+        "Proactive approach to identifying and implementing improvements",
+        "Understanding of transport and logistics industry practices"
+      ],
+      "role_category": "Other",
+      "seniority": "Junior",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Netherlands",
+      "key_tags": [
+        "business consulting",
+        "logistics",
+        "process optimization",
+        "transport",
+        "software solutions"
+      ]
+    },
+    "descriptionHash": "53ea2705fd18b018",
+    "updatedAt": "2026-07-03T08:16:16.156Z"
+  },
+  "532419": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Provide customer service in German for Coolblue, handling inbound calls and inquiries without scripts. Listen carefully, ask relevant questions, and find appropriate solutions for customers. Work flexibly from home, available Monday to Saturday between 08:00 and 23:59. Receive support and training to develop your skills in the role.",
+      "requirements": [
+        "Fluent German (spoken and written), verified through language test and role-play",
+        "English writing ability",
+        "Available to work Saturdays or Mondays",
+        "Minimum 18 years old on first working day",
+        "Able to reach Rotterdam Centraal within 90 minutes",
+        "Stress-resistant and able to handle difficult customer interactions and objections"
+      ],
+      "role_category": "Other",
+      "seniority": "Unknown",
+      "employment_type": "Full-time",
+      "work_mode": "Remote",
+      "language_requirement": "German",
+      "salary": {
+        "min": 14.71,
+        "max": null,
+        "currency": "EUR",
+        "period": "hour"
+      },
+      "location": "Netherlands (remote, within 90 minutes of Rotterdam Centraal)",
+      "key_tags": [
+        "customer service",
+        "German language",
+        "remote work",
+        "flexible schedule",
+        "Monday-Saturday"
+      ]
+    },
+    "descriptionHash": "11e5f8c1037228f2",
+    "updatedAt": "2026-07-03T08:15:00.275Z"
+  },
+  "532420": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "As a mid-level Display Marketing Specialist at Coolblue, you will optimize display and social media campaigns through data analysis and performance testing. You'll identify improvement opportunities, conduct A/B tests and experiments, leverage AI to enhance campaign effectiveness, and translate insights into actionable strategies. Working within the Banner, Social & Video Marketing team, you'll collaborate with colleagues in Marketing Data, Marketing Development, and Design while taking ownership of high-impact projects.",
+      "requirements": [
+        "Experience analyzing performance data and translating findings into optimization actions",
+        "Ability to build and manage performance campaigns based on KPIs and results",
+        "Proficiency in setting up, analyzing, and implementing A/B tests and experiments",
+        "Experience using AI tools to improve campaign performance",
+        "Strong communication skills to share insights with team members and stakeholders",
+        "Self-directed approach to project work with ability to take ownership"
+      ],
+      "role_category": "Marketing",
+      "seniority": "Mid",
+      "employment_type": "Full-time",
+      "work_mode": "Hybrid",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Netherlands",
+      "key_tags": [
+        "Display Marketing",
+        "Social Media Marketing",
+        "Performance Marketing",
+        "Data Analysis",
+        "A/B Testing",
+        "Campaign Optimization",
+        "AI in Marketing"
+      ]
+    },
+    "descriptionHash": "600d63fbe701fa0f",
+    "updatedAt": "2026-07-03T08:15:00.122Z"
+  },
+  "532421": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Internship opportunity in media consulting at Coolblue. You will support the Media Consultant team across operational tasks including creating and managing marketing plans, coordinating campaigns across online and offline channels, supporting the category team with administrative work and oversight, managing stakeholder relationships, developing brand activations, and improving customer journey through content and channel strategy. The role involves cross-functional collaboration and administrative support.",
+      "requirements": [
+        "Interest in marketing and media planning",
+        "Ability to manage multiple stakeholders and coordinate across teams",
+        "Administrative and organizational skills",
+        "Willingness to support campaign execution and monitoring",
+        "Collaborative mindset and ability to work in a team environment"
+      ],
+      "role_category": "Marketing",
+      "seniority": "Internship",
+      "employment_type": "Internship",
+      "work_mode": "On-site",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Netherlands",
+      "key_tags": [
+        "marketing",
+        "media planning",
+        "campaigns",
+        "internship",
+        "stakeholder management",
+        "administrative support"
+      ]
+    },
+    "descriptionHash": "dccf15e606c94996",
+    "updatedAt": "2026-07-03T08:14:58.973Z"
+  },
+  "532422": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Retail position at Coolblue's Groningen store offering customer service and sales support. Responsibilities include providing personalized product advice, meeting sales targets, resolving customer issues, and processing orders. The role includes opportunities for career progression to senior positions or team leadership. Benefits include annual salary increases, 8% holiday pay, pension, travel allowance, and a strong team culture with regular social events and staff competitions.",
+      "requirements": [
+        "Fluent in Dutch (speaking and writing)",
+        "Available at least one weekend day per week",
+        "Willingness to obtain a Certificate of Conduct (VOG)",
+        "Alignment with Coolblue's core values"
+      ],
+      "role_category": "Sales",
+      "seniority": "Unknown",
+      "employment_type": "Full-time",
+      "work_mode": "On-site",
+      "language_requirement": "Dutch",
+      "salary": {
+        "min": 14.8,
+        "max": 16.68,
+        "currency": "EUR",
+        "period": "hour"
+      },
+      "location": "Groningen, Netherlands",
+      "key_tags": [
+        "retail",
+        "sales",
+        "customer service",
+        "32 hours per week",
+        "7-month contract",
+        "29 vacation days"
+      ]
+    },
+    "descriptionHash": "114ea6227c8e3430",
+    "updatedAt": "2026-07-03T08:15:01.631Z"
+  },
+  "532424": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Lead a team of Forward Deployed Engineers at Databricks, working with enterprise customers on data migrations, AI transformation, and lakehouse implementations. Manage regional performance targets, team growth, and hiring while ensuring delivery quality and customer success. Partner with strategic enterprises to architect and deliver solutions spanning data modernization, generative AI, MLOps, and AI agent deployments.",
+      "requirements": [
+        "Experience leading and scaling technical teams",
+        "Track record managing regional performance targets and utilization metrics",
+        "Expertise in data platforms, cloud migrations, or AI/ML systems",
+        "Ability to set delivery standards and drive execution excellence",
+        "Experience hiring and developing technical talent",
+        "Strategic thinking around customer engagement and business value delivery"
+      ],
+      "role_category": "Lead",
+      "seniority": "Lead",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "English",
+      "salary": null,
+      "location": null,
+      "key_tags": [
+        "team leadership",
+        "forward deployed engineering",
+        "data platforms",
+        "AI/ML",
+        "enterprise customers",
+        "cloud migrations",
+        "generative AI"
+      ]
+    },
+    "descriptionHash": "cbcdd15608c57f80",
+    "updatedAt": "2026-07-03T08:15:42.768Z"
+  },
+  "532437": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join Dept's Content & Communications Strategy practice as an intern in the Netherlands. You'll work within a team that develops communication strategies for major brands, determining messaging direction, channel roles, content architecture, and audience targeting. The internship is part of a structured talent program designed to develop you into a strategic communications professional, with mentorship and feedback throughout.",
+      "requirements": [
+        "Interest in content and communications strategy",
+        "Willingness to learn strategic thinking beyond individual content creation",
+        "Based in or able to work in the Netherlands"
+      ],
+      "role_category": "Marketing",
+      "seniority": "Internship",
+      "employment_type": "Internship",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": "Netherlands",
+      "key_tags": [
+        "content strategy",
+        "communications",
+        "brand strategy",
+        "internship",
+        "talent program"
+      ]
+    },
+    "descriptionHash": "fa860de7fc7b2203",
+    "updatedAt": "2026-07-03T08:15:26.062Z"
+  },
+  "532438": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Lead resource planning and operational efficiency for a major growth-stage client account in the Americas. Translate business targets and revenue forecasts into staffing plans, manage utilization metrics, and coordinate with delivery, craft, and finance teams. This is a hands-on leadership role that begins as an individual contributor and scales with the team.",
+      "requirements": [
+        "Experience translating business targets into headcount and staffing plans",
+        "Ability to manage regional utilization metrics",
+        "Proficiency with resourcing data, tooling, and forecast reporting",
+        "Capability to work across multiple teams (Delivery, Craft, Finance)",
+        "Operational and process improvement mindset",
+        "Ability to function as both individual contributor and coach"
+      ],
+      "role_category": "Other",
+      "seniority": "Lead",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": "Americas",
+      "key_tags": [
+        "Resource Management",
+        "Operations",
+        "Staffing",
+        "Forecasting",
+        "Leadership"
+      ]
+    },
+    "descriptionHash": "bca3c0b69be17553",
+    "updatedAt": "2026-07-03T08:15:14.303Z"
+  },
+  "532443": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join Dept's Content & Communications Strategy practice as a Social Strategy Intern in the Netherlands. You will develop expertise in connecting brand messaging with audience behavior across social platforms. The role involves researching social and cultural trends, analyzing audience insights, defining content strategies and formats, creating creative briefs, and measuring content performance to inform future strategy. This is part of a structured talent program designed to develop you into a skilled social strategist.",
+      "requirements": [
+        "Interest in social media strategy and cultural trends",
+        "Ability to analyze audience behavior and platform dynamics",
+        "Strong communication skills to translate strategy into creative briefs",
+        "Analytical mindset to track and report on content performance",
+        "Willingness to learn and grow in a mentorship-focused environment"
+      ],
+      "role_category": "Marketing",
+      "seniority": "Internship",
+      "employment_type": "Internship",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": "Netherlands",
+      "key_tags": [
+        "social strategy",
+        "content strategy",
+        "social media",
+        "marketing",
+        "internship",
+        "communications",
+        "audience analysis"
+      ]
+    },
+    "descriptionHash": "30693f2e866cbd74",
+    "updatedAt": "2026-07-03T08:15:27.036Z"
+  },
+  "532445": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "As an infrastructure calculator, you will play a central role in winning tenders and establishing the foundation for successful infrastructure projects. You translate complex plans into realistic and competitive cost estimates, working closely with tender managers, designers, work planners, and clients. You analyze different execution scenarios, create trade-off matrices, and determine pricing that aligns with optimal solutions. Your focus is on delivering feasible projects at fair prices. You are involved from the earliest project phases and contribute strategic input during both tender processes and construction team operations.",
+      "requirements": [
+        "Knowledge of infrastructure work and execution processes",
+        "Ability to translate complex plans into realistic cost estimates",
+        "Experience with tender calculations and cost analysis",
+        "Collaborative skills to work with designers, tender managers, work planners, and clients",
+        "Analytical capability to evaluate different execution scenarios",
+        "Understanding of trade-off analysis and cost optimization",
+        "Ability to think beyond numbers and consider practical feasibility"
+      ],
+      "role_category": "Finance",
+      "seniority": "Unknown",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Amersfoort, Netherlands",
+      "key_tags": [
+        "infrastructure",
+        "cost estimation",
+        "tender calculation",
+        "project planning",
+        "construction"
+      ]
+    },
+    "descriptionHash": "1a07e8967d1eb2ac",
+    "updatedAt": "2026-07-03T08:16:08.013Z"
+  },
+  "532446": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join Dura Vermeer Infra Regio Midden as a civil and infrastructure cost estimator. You will be involved in tender processes and construction teams, responsible for developing trade-off matrices and determining accurate cost prices for infrastructure and civil engineering projects. Your expertise will span both infrastructure and civil works, with a focus on sustainable practices including emission-free operations and modern asphalt mixtures. You'll work on high-profile projects such as the Utrecht-Veenendaal cycling route and the ROVA waste processing facility in Amersfoort, collaborating with clients and internal teams to deliver fair-priced solutions.",
+      "requirements": [
+        "Expertise in cost estimation for both infrastructure and civil engineering works",
+        "Ability to develop trade-off matrices and determine accurate cost prices",
+        "Knowledge of emission-free work practices and environmental cost indicators",
+        "Understanding of modern asphalt mixtures and their environmental implications",
+        "Experience working in tender processes and construction teams",
+        "Ability to collaborate effectively with clients and colleagues",
+        "Strong analytical and problem-solving skills"
+      ],
+      "role_category": "Engineering",
+      "seniority": "Unknown",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Midden region, Netherlands (projects in Utrecht province area)",
+      "key_tags": [
+        "cost estimation",
+        "infrastructure",
+        "civil engineering",
+        "tender management",
+        "sustainable construction",
+        "emission-free operations"
+      ]
+    },
+    "descriptionHash": "0453016c2044728f",
+    "updatedAt": "2026-07-03T08:16:10.632Z"
+  },
+  "532450": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Lead a construction site as a site manager for the Stadshagen urban development project in Zwolle. You will oversee daily operations, supervise workers and tradespeople, and ensure projects progress safely, on schedule, and within budget. Work closely with the operations manager, maintain clear communication with the team, and drive quality and safety standards. This role requires someone with construction experience, technical knowledge, and strong leadership skills who can motivate teams and solve problems quickly.",
+      "requirements": [
+        "Experience as a construction site manager or in a similar supervisory role on building projects",
+        "Knowledge of construction processes, safety regulations, and project management",
+        "Strong leadership and team management abilities",
+        "Ability to communicate clearly and coordinate with multiple stakeholders",
+        "Attention to detail regarding quality, safety, timelines, and costs",
+        "Problem-solving skills and ability to adapt quickly to changing conditions",
+        "Passion for construction and understanding of technical aspects"
+      ],
+      "role_category": "Other",
+      "seniority": "Mid",
+      "employment_type": "Unknown",
+      "work_mode": "On-site",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Zwolle, Netherlands",
+      "key_tags": [
+        "construction management",
+        "site manager",
+        "team leadership",
+        "project oversight",
+        "safety management",
+        "urban development"
+      ]
+    },
+    "descriptionHash": "cab651c0314d2d86",
+    "updatedAt": "2026-07-03T08:24:52.961Z"
+  },
+  "532451": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Lead a construction team as a site manager on the Stadshagen urban development project in Zwolle. You will oversee daily operations, manage skilled workers, ensure project timelines are met, and maintain safety and quality standards. The role involves coordinating a significant mixed-use development that combines residential, commercial, and public spaces in the city center.",
+      "requirements": [
+        "Experience as a construction site manager or supervisor",
+        "Ability to lead and coordinate a team of skilled tradespeople",
+        "Strong organizational and planning skills",
+        "Commitment to safety and quality standards",
+        "Practical, straightforward approach to problem-solving"
+      ],
+      "role_category": "Engineering",
+      "seniority": "Mid",
+      "employment_type": "Full-time",
+      "work_mode": "On-site",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Zwolle, Netherlands",
+      "key_tags": [
+        "construction management",
+        "site supervision",
+        "team leadership",
+        "urban development",
+        "building and construction"
+      ]
+    },
+    "descriptionHash": "6ec6e35823a9ee2f",
+    "updatedAt": "2026-07-03T08:24:52.528Z"
+  },
+  "532482": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join Flex's Money Team as a Staff Software Engineer to lead the design and development of financial infrastructure supporting payments, billing, subscriptions, payouts, and ledger systems. You will provide technical leadership across multiple teams, architect mission-critical financial platforms, and collaborate with Product, Finance, Risk, Compliance, Data, and Engineering to build secure, reliable, and scalable money movement systems.",
+      "requirements": [
+        "Staff-level backend engineering expertise",
+        "Experience designing and scaling financial systems or payment infrastructure",
+        "Ability to provide technical leadership across multiple teams",
+        "Strong understanding of security, compliance, and reliability in financial systems",
+        "Experience with APIs and backend services architecture",
+        "Ability to collaborate with cross-functional teams including Product, Finance, Risk, and Compliance"
+      ],
+      "role_category": "Developer",
+      "seniority": "Lead",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "English",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "Backend Engineering",
+        "Financial Systems",
+        "Payment Infrastructure",
+        "Technical Leadership",
+        "FinTech",
+        "Scalability",
+        "Compliance"
+      ]
+    },
+    "descriptionHash": "b94ac9e5a211cb18",
+    "updatedAt": "2026-07-03T08:15:25.796Z"
+  },
+  "532483": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Strategic Account Manager at Flex, a FinTech company focused on rent payment solutions. You will manage and grow relationships with property management companies, serving as a trusted advisor and business partner. The role involves executive engagement, portfolio management of high-value accounts, and supporting clients with complex needs across multiple touchpoints.",
+      "requirements": [
+        "Senior-level experience in client-facing account management roles",
+        "Ability to build and maintain relationships with C-suite executives",
+        "Experience managing complex customer portfolios and strategic accounts",
+        "Strong business acumen and industry expertise in property management or related sectors",
+        "Proactive approach to identifying growth opportunities within existing relationships"
+      ],
+      "role_category": "Sales",
+      "seniority": "Senior",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": null,
+      "key_tags": [
+        "Account Management",
+        "FinTech",
+        "Relationship Management",
+        "Property Management",
+        "Strategic Accounts"
+      ]
+    },
+    "descriptionHash": "57f5264e7f8d4f62",
+    "updatedAt": "2026-07-03T08:15:18.360Z"
+  },
+  "532488": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join GitLab as a Commercial Account Executive focused on the Nordic region, serving mid-market customers. You will be the main point of contact between GitLab and clients, responsible for building and maintaining customer relationships. GitLab is a DevSecOps platform trusted by over 50% of Fortune 100 companies, serving more than 50 million registered users globally.",
+      "requirements": [
+        "Ability to serve as primary customer contact and relationship manager",
+        "Experience in account executive or similar sales role",
+        "Knowledge of or interest in DevSecOps, software development, or related technology domains",
+        "Capability to work across the Nordic region"
+      ],
+      "role_category": "Sales",
+      "seniority": "Mid",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": "Nordics",
+      "key_tags": [
+        "Account Executive",
+        "Sales",
+        "Mid-Market",
+        "DevSecOps",
+        "SaaS",
+        "Nordic Region"
+      ]
+    },
+    "descriptionHash": "778cb938beacd7d9",
+    "updatedAt": "2026-07-03T08:15:23.676Z"
+  },
+  "532492": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "GitLab is seeking a New Business Account Executive to drive growth in the Nordic region. You will be responsible for identifying and closing new business opportunities, building relationships with enterprise clients, and contributing to GitLab's expansion in the Nordics market. This role is part of GitLab's sales organization, supporting the company's mission to enable organizations to improve developer productivity and accelerate digital transformation.",
+      "requirements": [
+        "Sales experience in enterprise software or SaaS environments",
+        "Ability to identify and qualify new business opportunities",
+        "Strong relationship-building and negotiation skills",
+        "Understanding of DevSecOps or software development tools (preferred)",
+        "Track record of closing deals and meeting sales targets"
+      ],
+      "role_category": "Sales",
+      "seniority": "Unknown",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": "Nordics",
+      "key_tags": [
+        "Account Executive",
+        "New Business Development",
+        "Enterprise Sales",
+        "SaaS",
+        "DevSecOps"
+      ]
+    },
+    "descriptionHash": "ece73d1660247292",
+    "updatedAt": "2026-07-03T08:15:57.939Z"
+  },
+  "532501": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Senior leadership position overseeing all broker sales and account management operations for Pivot Health, a health insurance distribution subsidiary. The role involves building and leading a sales team, developing new business strategies, and managing relationships with broker and consultant partners. This is a hands-on executive position reporting to the President, suited for someone comfortable operating in a fast-paced, startup-like environment.",
+      "requirements": [
+        "Senior leadership experience in sales and account management",
+        "Ability to build and lead high-performance teams",
+        "Experience with broker and consultant distribution channels",
+        "Strategic and tactical operational capability",
+        "Comfort working in fast-paced, dynamic environments",
+        "Ability to establish new business development processes"
+      ],
+      "role_category": "Sales",
+      "seniority": "Lead",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "English",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "VP Sales",
+        "Account Management",
+        "Insurance",
+        "Broker Relations",
+        "Team Leadership",
+        "Business Development"
+      ]
+    },
+    "descriptionHash": "388321b5bbefa3d3",
+    "updatedAt": "2026-07-03T08:15:11.936Z"
+  },
+  "532508": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join HelloFresh's Benelux Marketing team as a Social Media & Influencer Intern. You will support content creation and adaptation, manage social media channels, and develop authentic influencer partnerships. Working in a dynamic, international environment, you'll contribute directly to how the brand is perceived online and help inspire people to cook with HelloFresh. This is a paid internship with structured mentorship.",
+      "requirements": [
+        "Passion for social media and creative content",
+        "Ability to work hands-on in a dynamic team environment",
+        "Student status with ability to complete internship during proposed period",
+        "Ability to provide university requirements documentation (duration, tasks, criteria)"
+      ],
+      "role_category": "Marketing",
+      "seniority": "Internship",
+      "employment_type": "Internship",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": "Benelux (Netherlands and Belgium)",
+      "key_tags": [
+        "social media",
+        "influencer marketing",
+        "content creation",
+        "marketing",
+        "internship",
+        "paid"
+      ]
+    },
+    "descriptionHash": "08854c49ecc1ffa4",
+    "updatedAt": "2026-07-03T08:15:43.983Z"
+  },
+  "532510": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join HelloFresh's European Logistics team to oversee route planning and transport scheduling across the Benelux region. You will optimize delivery routes to balance efficiency, driver experience, and customer satisfaction. The role involves coordinating with external carriers, fleet managers, and hub teams, simulating routing scenarios, and serving as the main liaison between production sites, distribution centers, and logistics partners. Your work will ensure timely delivery of fresh ingredients to thousands of households.",
+      "requirements": [
+        "Data-driven problem-solving approach with ability to analyze complex routing scenarios and make quick decisions",
+        "Strong communication and relationship-building skills",
+        "Experience with route planning and transport scheduling",
+        "Ability to coordinate across multiple stakeholders including external carriers, fleet managers, and hub teams",
+        "Capability to simulate and test new routing scenarios"
+      ],
+      "role_category": "Other",
+      "seniority": "Unknown",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": "Benelux",
+      "key_tags": [
+        "route planning",
+        "transport scheduling",
+        "logistics optimization",
+        "supply chain coordination",
+        "Benelux"
+      ]
+    },
+    "descriptionHash": "24c7c8c30e4f6e45",
+    "updatedAt": "2026-07-03T08:15:36.185Z"
+  },
+  "532514": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Hunter Douglas, a global leader in window coverings and architectural products, is seeking a proactive and customer-focused IT Service Desk Engineer to join their EMEA IT team in Rotterdam. You will serve as the primary technical support contact for the region, delivering high-quality technical services and ensuring excellent user experience. This role suits someone with solid IT support experience who wants to grow in a fast-paced, international environment.",
+      "requirements": [
+        "Fluent in Dutch and English",
+        "Solid foundation in IT support",
+        "Proactive and customer-focused approach",
+        "Must be located near the Rotterdam office location"
+      ],
+      "role_category": "DevOps & Cloud",
+      "seniority": "Mid",
+      "employment_type": "Full-time",
+      "work_mode": "On-site",
+      "language_requirement": "English or Dutch",
+      "salary": null,
+      "location": "Rotterdam, Netherlands",
+      "key_tags": [
+        "IT Service Desk",
+        "Technical Support",
+        "EMEA",
+        "Customer Service",
+        "On-site"
+      ]
+    },
+    "descriptionHash": "7defe12ca900c2b2",
+    "updatedAt": "2026-07-03T08:15:30.306Z"
+  },
+  "532518": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Lead collection launches from concept to market delivery as part of the Product Marketing team at Hunter Douglas, a global leader in window coverings and architectural products. Work cross-functionally with Finance, Product Management, Design, and Local Marketing teams to ensure projects stay aligned, on schedule, and within budget. Coordinate with General Managers across the organization to drive new product introductions to market.",
+      "requirements": [
+        "Ability to manage projects from concept through market launch",
+        "Cross-functional collaboration skills across Finance, Product Management, Design, and Marketing",
+        "Project management and budget oversight experience",
+        "Stakeholder management capabilities",
+        "Driven, intelligent, creative, and entrepreneurial mindset"
+      ],
+      "role_category": "Product",
+      "seniority": "Unknown",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "Product Marketing",
+        "Project Management",
+        "Collection Launch",
+        "Cross-functional Leadership",
+        "Window Coverings"
+      ]
+    },
+    "descriptionHash": "c894e672e614c53f",
+    "updatedAt": "2026-07-03T08:15:25.094Z"
+  },
+  "532521": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join the finance team at Joanknecht Assurance in Eindhoven as an Assistant Controller. You will support the preparation of management reports and financial forecasts, optimize finance processes through data-driven improvements, maintain accurate financial records, oversee project administration controls, and handle ad-hoc financial tasks. Working within a team of 4 finance colleagues under a Finance Manager, you will contribute to enhancing project administration and reporting quality while supporting forward-looking financial planning.",
+      "requirements": [
+        "Foundational knowledge of finance and accounting practices",
+        "Interest in transitioning into controlling and financial analysis",
+        "Ability to prepare and support management reporting and financial forecasting",
+        "Experience or capability with financial administration and record maintenance",
+        "Comfort with process optimization and data-driven approaches",
+        "Ability to work collaboratively within a team environment",
+        "Willingness to take on diverse ad-hoc financial responsibilities"
+      ],
+      "role_category": "Finance",
+      "seniority": "Junior",
+      "employment_type": "Full-time",
+      "work_mode": "On-site",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Eindhoven, Netherlands",
+      "key_tags": [
+        "Finance",
+        "Controlling",
+        "Management Reporting",
+        "Financial Analysis",
+        "Process Optimization",
+        "Project Administration"
+      ]
+    },
+    "descriptionHash": "2143035035a5aceb",
+    "updatedAt": "2026-07-03T08:16:10.821Z"
+  },
+  "532532": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Securitas is hiring tram conductors and public transport security personnel. In this role, you provide customer service to passengers, maintain alertness, and respond effectively to safety concerns. You'll work on trams and metro systems, interact with the public, and help create a secure environment. The position offers intensive support and development opportunities, including the possibility to pursue a free MBO2 security qualification to advance your career within the organization.",
+      "requirements": [
+        "Strong customer service orientation and ability to engage with passengers",
+        "Ability to remain calm and respond effectively in unsafe or challenging situations",
+        "Willingness to complete required training programs",
+        "Reliability and perseverance",
+        "Comfort working in a mobile, varied work environment"
+      ],
+      "role_category": "Security",
+      "seniority": "Junior",
+      "employment_type": "Full-time",
+      "work_mode": "On-site",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "tram conductor",
+        "public transport security",
+        "customer service",
+        "safety",
+        "training provided",
+        "career development"
+      ]
+    },
+    "descriptionHash": "557f87640d0bedd1",
+    "updatedAt": "2026-07-03T08:15:03.753Z"
+  },
+  "532549": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Securitas is hiring datacenter security personnel and will provide free training to become a certified security guard. You'll work in physical security at a datacenter facility, protecting critical infrastructure and data. The role includes 24/7 shift availability with a 4-week rotating schedule. No prior security experience or diploma is required—Securitas covers all training costs. The position offers career growth opportunities into supervisory or office roles.",
+      "requirements": [
+        "Willingness to work 24/7 shifts on a 4-week rotating schedule",
+        "Ability to obtain datacenter security certification (training provided)",
+        "Physical capability to perform security duties",
+        "Availability to work in a dynamic, round-the-clock environment"
+      ],
+      "role_category": "Security",
+      "seniority": "Junior",
+      "employment_type": "Full-time",
+      "work_mode": "On-site",
+      "language_requirement": "Dutch",
+      "salary": {
+        "min": 16.63,
+        "max": 17.37,
+        "currency": "EUR",
+        "period": "hour"
+      },
+      "location": "Middenmeer, Netherlands",
+      "key_tags": [
+        "datacenter security",
+        "paid training",
+        "24/7 shifts",
+        "no experience required",
+        "career development",
+        "benefits package"
+      ]
+    },
+    "descriptionHash": "9c4edc1660d5cba9",
+    "updatedAt": "2026-07-03T08:15:02.326Z"
+  },
+  "532574": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join Sweco's Water division as a transport pipeline engineer, working on diverse projects in water management and infrastructure. You'll develop specialized expertise while collaborating with a large European network of architects and engineers. The role combines office-based work with field visits, offering exposure to multiple concurrent projects. Focus areas include climate adaptation, water safety, energy transition, and sustainable solutions for government bodies, water boards, utilities, municipalities, and industrial clients.",
+      "requirements": [
+        "Engineering expertise in transport pipelines or related water infrastructure",
+        "Ability to work on multiple projects simultaneously",
+        "Willingness to combine office work with field-based activities",
+        "Commitment to continuous professional development",
+        "Strong quality standards and client engagement"
+      ],
+      "role_category": "Engineering",
+      "seniority": "Unknown",
+      "employment_type": "Unknown",
+      "work_mode": "Hybrid",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Netherlands",
+      "key_tags": [
+        "transport pipelines",
+        "water management",
+        "infrastructure engineering",
+        "climate adaptation",
+        "water safety",
+        "sustainable solutions"
+      ]
+    },
+    "descriptionHash": "54887bf27d66b0d7",
+    "updatedAt": "2026-07-03T08:15:59.533Z"
+  },
+  "532575": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join Sweco Architects' Logistics and Corporate Housing unit as a BIM engineer. You will collaborate with integrated design teams to develop multifunctional buildings where logistics processes are central. Work on high-bay warehouses, refrigerated storage facilities, cross-docks, e-commerce centers, hangars, and residential projects. Your role involves ensuring that structural design, building systems, and logistics solutions integrate seamlessly. You'll contribute to smart, future-proof solutions for clients while supporting team growth.",
+      "requirements": [
+        "BIM engineering expertise in structural design",
+        "Ability to coordinate between architectural, MEP, and logistics systems",
+        "Experience with warehouse, logistics, or industrial building projects",
+        "Collaborative approach to working within multidisciplinary teams",
+        "Knowledge of building information modeling and design integration"
+      ],
+      "role_category": "Engineering",
+      "seniority": "Unknown",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "BIM",
+        "Structural Engineering",
+        "Logistics",
+        "Warehouse Design",
+        "Building Design",
+        "E-commerce Centers",
+        "Multidisciplinary Collaboration"
+      ]
+    },
+    "descriptionHash": "8562415d84f6cefe",
+    "updatedAt": "2026-07-03T08:16:02.739Z"
+  },
+  "532584": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join Toast's Configuration Platform team as a Staff Software Engineer, working on the high-concurrency infrastructure that powers real-time system updates across Toast's ecosystem. You'll be responsible for a mission-critical platform handling configuration changes for customers globally, from menu updates to pricing adjustments. The role involves building scalable, reliable systems that support diverse customer needs across multiple industries and markets, while also serving as an internal platform enabling other engineering teams.",
+      "requirements": [
+        "Experience building and maintaining high-concurrency, mission-critical systems",
+        "Expertise in scalable platform architecture and resiliency",
+        "Strong background in change management and configuration systems",
+        "Ability to work on systems serving thousands of concurrent operations",
+        "Experience enabling and supporting other engineering teams through platform infrastructure"
+      ],
+      "role_category": "Engineer",
+      "seniority": "Senior",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "English",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "Configuration Platform",
+        "High-Concurrency Systems",
+        "Infrastructure",
+        "Scalability",
+        "Real-time Updates",
+        "Change Management"
+      ]
+    },
+    "descriptionHash": "fe8a124c751211c2",
+    "updatedAt": "2026-07-03T08:15:20.261Z"
+  },
+  "532587": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join Twilio's GTM Innovation team as a Forward Deployed Engineer to accelerate adoption of new solutions and platform capabilities with top global customers. You will bridge the gap in enterprise AI projects by owning technical delivery of the Solution Acceleration Program, working embedded with customer engineering teams to move projects from sandbox to production environments.",
+      "requirements": [
+        "Experience with enterprise AI projects and technical delivery",
+        "Ability to work embedded with customer engineering teams",
+        "Understanding of solution acceleration and go-to-market strategies",
+        "Capability to bridge technical gaps in enterprise deployments"
+      ],
+      "role_category": "Engineering",
+      "seniority": "Unknown",
+      "employment_type": "Full-time",
+      "work_mode": "Remote",
+      "language_requirement": "English",
+      "salary": null,
+      "location": null,
+      "key_tags": [
+        "Forward Deployed Engineer",
+        "Enterprise AI",
+        "Solution Acceleration",
+        "Customer Engineering",
+        "GTM Innovation"
+      ]
+    },
+    "descriptionHash": "d6520a75c89080d1",
+    "updatedAt": "2026-07-03T08:15:16.955Z"
+  },
+  "532588": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join Twilio's Onboarding and Compliance design team as a Staff Product Designer. You will design features that improve customer onboarding experiences and ensure regulatory compliance for a platform serving hundreds of thousands of businesses. The role is part of a five-person design team with mixed experience levels, working on products that power real-time business communications globally. Twilio operates as a remote-first company with a focus on global inclusion.",
+      "requirements": [
+        "Product design experience at a senior level",
+        "Portfolio demonstrating design work on customer onboarding or compliance features",
+        "Ability to collaborate with cross-functional teams",
+        "Experience designing for scale and diverse user bases"
+      ],
+      "role_category": "Design",
+      "seniority": "Senior",
+      "employment_type": "Full-time",
+      "work_mode": "Remote",
+      "language_requirement": "English",
+      "salary": null,
+      "location": null,
+      "key_tags": [
+        "product design",
+        "onboarding",
+        "compliance",
+        "remote-first",
+        "communications platform"
+      ]
+    },
+    "descriptionHash": "cb9d4a147d036c09",
+    "updatedAt": "2026-07-03T08:15:28.661Z"
+  },
+  "532590": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join iO as a Senior SEO Specialist to develop and implement integrated SEO strategies for major clients including NS, ABN AMRO, and TUI. You will work across content, technical, and authority dimensions to drive organic growth and measurable business results. The role involves conducting comprehensive SEO audits, collaborating with stakeholders at all levels, and partnering with a performance marketing team of SEO, SEA, CRO, and data specialists. iO emphasizes continuous learning through training, education budgets, and conference attendance opportunities.",
+      "requirements": [
+        "Expertise in SEO strategy development and implementation",
+        "Experience conducting comprehensive SEO audits across traditional search, social search, GEO, and marketplaces",
+        "Ability to work with data to drive organic growth and business outcomes",
+        "Strong stakeholder management skills across all organizational levels",
+        "Experience collaborating with cross-functional teams (SEO, SEA, CRO, data specialists)",
+        "Knowledge of emerging SEO trends including AI, GEO, and E-E-A-T",
+        "Passion for SEO and commitment to continuous professional development"
+      ],
+      "role_category": "Marketing",
+      "seniority": "Senior",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Eindhoven",
+      "key_tags": [
+        "SEO Strategy",
+        "Digital Marketing",
+        "Performance Marketing",
+        "Data-driven",
+        "Client Management",
+        "Technical SEO",
+        "Content Strategy"
+      ]
+    },
+    "descriptionHash": "1e57d45186f11e8f",
+    "updatedAt": "2026-07-03T08:16:03.796Z"
+  },
+  "532591": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join iO's performance marketing team as a Senior SEO Specialist to develop and implement integrated SEO strategies for major clients including NS, ABN AMRO, and TUI. You will serve as a strategic partner, conducting comprehensive audits and building strategies across content, technical SEO, and authority-building. The role involves collaborating with stakeholders at all levels, driving organic growth through data-driven approaches, and working alongside SEO, SEA, CRO, and data specialists. iO emphasizes continuous learning through training, education budgets, and conference attendance opportunities.",
+      "requirements": [
+        "Expertise in SEO strategy development and implementation",
+        "Experience conducting comprehensive SEO audits across traditional search, social search, GEO, and marketplaces",
+        "Ability to work with data to drive measurable business results",
+        "Strong stakeholder management skills across all organizational levels",
+        "Knowledge of emerging SEO trends including AI, GEO, and E-E-A-T",
+        "Collaborative mindset to work effectively with SEO, SEA, CRO, and data teams",
+        "Experience in performance marketing environments"
+      ],
+      "role_category": "Marketing",
+      "seniority": "Senior",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Eindhoven",
+      "key_tags": [
+        "SEO Strategy",
+        "Digital Marketing",
+        "Performance Marketing",
+        "Data-driven",
+        "Technical SEO",
+        "Content Strategy",
+        "E-E-A-T",
+        "GEO"
+      ]
+    },
+    "descriptionHash": "1e57d45186f11e8f",
+    "updatedAt": "2026-07-03T08:16:10.548Z"
+  },
+  "532592": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join iO as a Senior SEO Specialist to develop and implement integrated SEO strategies for major clients including NS, ABN AMRO, and TUI. You will work across content, technical, and authority-building initiatives, using data to drive organic growth and measurable business results. You'll act as a strategic partner to clients, conducting comprehensive SEO audits, managing stakeholder relationships from marketing teams to C-level executives, and collaborating with a performance marketing team of SEO, SEA, CRO, and data specialists. The role emphasizes continuous learning through training, education budgets, and conference attendance.",
+      "requirements": [
+        "Expertise in developing and implementing integrated SEO strategies across content, technical, and authority domains",
+        "Ability to conduct comprehensive 360° SEO audits covering traditional search engines, social search, GEO, and marketplaces",
+        "Strong data analysis skills to measure and optimize for organic growth and business outcomes",
+        "Experience managing client relationships and stakeholder communication at all organizational levels",
+        "Collaborative mindset to work effectively with SEO, SEA, CRO, and data specialists",
+        "Knowledge of emerging SEO trends including AI, GEO, and E-E-A-T principles"
+      ],
+      "role_category": "Marketing",
+      "seniority": "Senior",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Eindhoven",
+      "key_tags": [
+        "SEO Strategy",
+        "Digital Marketing",
+        "Performance Marketing",
+        "Data-Driven",
+        "Client Management",
+        "Technical SEO",
+        "Content Strategy"
+      ]
+    },
+    "descriptionHash": "1e57d45186f11e8f",
+    "updatedAt": "2026-07-03T08:16:07.356Z"
+  },
+  "532593": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join iO's performance marketing team as a Senior SEO Specialist to develop and implement integrated SEO strategies for major clients including NS, ABN AMRO, and TUI. You will serve as a strategic partner to clients, managing SEO initiatives across content, technical, and authority domains while driving measurable organic growth and business results. The role involves conducting comprehensive SEO audits, stakeholder management across all organizational levels, and collaborating with SEO, SEA, CRO, and data specialists. iO emphasizes continuous learning through training, education budgets, and conference attendance opportunities.",
+      "requirements": [
+        "Expertise in developing and implementing integrated SEO strategies",
+        "Experience conducting comprehensive SEO audits across traditional search, social search, GEO, and marketplaces",
+        "Ability to manage stakeholder relationships at all organizational levels",
+        "Data-driven approach to achieving organic growth and measurable business results",
+        "Knowledge of emerging SEO trends including AI, GEO, and E-E-A-T",
+        "Collaborative mindset to work effectively with SEO, SEA, CRO, and data specialists",
+        "Strategic thinking and project leadership capabilities"
+      ],
+      "role_category": "Marketing",
+      "seniority": "Senior",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Eindhoven",
+      "key_tags": [
+        "SEO Strategy",
+        "Digital Marketing",
+        "Performance Marketing",
+        "Technical SEO",
+        "Content Strategy",
+        "Data Analysis",
+        "Client Management"
+      ]
+    },
+    "descriptionHash": "1e57d45186f11e8f",
+    "updatedAt": "2026-07-03T08:16:14.781Z"
+  },
+  "532613": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Policy specialist role focused on business income assessment for mortgage lending. You will work within the Policies & Standards team under Credit Control at one of the Netherlands' largest mortgage providers. The position involves developing policies and standards for mortgage and housing matters, with particular expertise needed in translating business financial data from entrepreneurs into verifiable, sustainable income assessments—a complex area where standard rules often fall short.",
+      "requirements": [
+        "Deep expertise in business income assessment and mortgage lending policy",
+        "Ability to translate complex business financial data into standardized income calculations",
+        "Experience developing policies and standards in financial services or mortgage sector",
+        "Strong analytical and problem-solving skills for non-standard cases"
+      ],
+      "role_category": "Other",
+      "seniority": "Unknown",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Amersfoort, Utrecht, Netherlands",
+      "key_tags": [
+        "mortgage lending",
+        "business income",
+        "policy development",
+        "credit control",
+        "financial assessment"
+      ]
+    },
+    "descriptionHash": "2476f66083c879de",
+    "updatedAt": "2026-07-03T08:14:55.361Z"
   }
 }
