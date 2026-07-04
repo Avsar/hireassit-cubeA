@@ -82,12 +82,12 @@ export default async function EnglishSpeakingCityPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <section className="bg-blue-600 text-white">
+      <section className="bg-gem text-white">
         <div className="mx-auto max-w-5xl px-4 py-14">
-          <h1 className="font-[Sora] text-3xl font-bold sm:text-4xl">
+          <h1 className="font-display text-3xl font-bold sm:text-4xl">
             English-speaking jobs in {cityName}
           </h1>
-          <p className="mt-3 max-w-2xl text-blue-100">
+          <p className="mt-3 max-w-2xl text-emerald-100">
             {data
               ? `${data.count.toLocaleString("en-US")} English-language openings`
               : "English-language openings"}{" "}
@@ -99,9 +99,9 @@ export default async function EnglishSpeakingCityPage({ params }: Props) {
 
       <div className="mx-auto max-w-5xl px-4 py-8 space-y-8">
         <nav className="text-sm text-neutral-500">
-          <Link href="/" className="hover:text-blue-700">Home</Link>
+          <Link href="/" className="hover:text-gem">Home</Link>
           <span className="mx-2">/</span>
-          <Link href="/english-speaking-jobs" className="hover:text-blue-700">
+          <Link href="/english-speaking-jobs" className="hover:text-gem">
             English-speaking jobs
           </Link>
           <span className="mx-2">/</span>
@@ -118,7 +118,7 @@ export default async function EnglishSpeakingCityPage({ params }: Props) {
         {!data || data.jobs.length === 0 ? (
           <p className="py-16 text-center text-neutral-500">
             No English-speaking jobs listed in {cityName} right now —{" "}
-            <Link href="/english-speaking-jobs" className="text-blue-600 underline">
+            <Link href="/english-speaking-jobs" className="text-gem underline">
               see all English-speaking jobs
             </Link>.
           </p>
@@ -137,7 +137,7 @@ export default async function EnglishSpeakingCityPage({ params }: Props) {
           <div className="text-center">
             <Link
               href={`/jobs?english_only=true&city=${encodeURIComponent(cityName)}`}
-              className="inline-block rounded-xl bg-blue-600 px-6 py-3 font-medium text-white hover:bg-blue-700"
+              className="inline-block rounded-xl bg-gem px-6 py-3 font-medium text-white hover:bg-gem-deep"
             >
               See all {data.count.toLocaleString("en-US")} English-speaking jobs in {cityName} →
             </Link>
@@ -153,7 +153,7 @@ export default async function EnglishSpeakingCityPage({ params }: Props) {
               <Link
                 key={slug}
                 href={`/english-speaking-jobs/${slug}`}
-                className="rounded-full border border-neutral-200 bg-white px-3 py-1.5 text-sm text-neutral-700 hover:border-blue-300 hover:text-blue-700"
+                className="rounded-full border border-neutral-200 bg-white px-3 py-1.5 text-sm text-neutral-700 hover:border-gem hover:text-gem"
               >
                 {CITY_PAGES[slug]}
               </Link>

@@ -61,10 +61,10 @@ export default async function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
       />
-      {/* HERO — search first */}
+      {/* HERO */}
       <section className="border-b border-neutral-200 bg-white">
         <div className="mx-auto max-w-3xl px-4 py-20 text-center">
-          <h1 className="font-[Sora] text-4xl font-extrabold tracking-tight text-neutral-900 sm:text-5xl">
+          <h1 className="font-display text-4xl font-extrabold tracking-tight text-neutral-900 sm:text-5xl">
             The Dutch jobs that aren&apos;t
             <br className="hidden sm:block" /> on LinkedIn or Indeed
           </h1>
@@ -79,11 +79,11 @@ export default async function HomePage() {
               type="text"
               name="q"
               placeholder="Job title, skill, or keyword…"
-              className="min-w-0 flex-1 rounded-xl border border-neutral-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="min-w-0 flex-1 rounded-xl border border-neutral-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-gem-wash focus:border-gem"
             />
             <button
               type="submit"
-              className="rounded-xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white hover:bg-blue-700"
+              className="rounded-xl bg-gem px-6 py-3 text-sm font-semibold text-white hover:bg-gem-deep"
             >
               Search
             </button>
@@ -92,22 +92,22 @@ export default async function HomePage() {
           {(allJobs || data) && (
             <div className="mt-10 flex justify-center gap-10 text-center">
               <Link href="/jobs" className="group">
-                <div className="font-[Sora] text-2xl font-bold text-neutral-900 group-hover:text-blue-700">
+                <div className="font-display text-2xl font-bold text-neutral-900 group-hover:text-gem">
                   {(allJobs?.count ?? data?.total_active ?? 0).toLocaleString("en-US")}
                 </div>
-                <div className="text-xs text-neutral-400">jobs live now</div>
+                <div className="text-xs text-neutral-400 font-mono">jobs live now</div>
               </Link>
               <Link href="/hidden-gems" className="group">
-                <div className="font-[Sora] text-2xl font-bold text-fuchsia-600 group-hover:text-fuchsia-700">
+                <div className="font-display text-2xl font-bold text-amber-600 group-hover:text-amber-700">
                   {(verified?.count ?? 0).toLocaleString("en-US")}
                 </div>
-                <div className="text-xs text-neutral-400">💎 verified hidden gems</div>
+                <div className="text-xs text-neutral-400 font-mono">💎 verified hidden gems</div>
               </Link>
               <Link href="/companies" className="group">
-                <div className="font-[Sora] text-2xl font-bold text-neutral-900 group-hover:text-blue-700">
+                <div className="font-display text-2xl font-bold text-neutral-900 group-hover:text-gem">
                   {companyCount ? companyCount.toLocaleString("en-US") : "1,000+"}
                 </div>
-                <div className="text-xs text-neutral-400">companies crawled</div>
+                <div className="text-xs text-neutral-400 font-mono">companies crawled</div>
               </Link>
             </div>
           )}
@@ -124,7 +124,7 @@ export default async function HomePage() {
           ].map(([icon, title, body]) => (
             <div key={title as string} className="rounded-2xl border border-neutral-200 bg-white p-6">
               <div className="text-2xl">{icon}</div>
-              <h2 className="mt-3 font-[Sora] font-semibold text-neutral-900">{title}</h2>
+              <h2 className="mt-3 font-display font-bold text-neutral-900">{title}</h2>
               <p className="mt-1 text-sm leading-relaxed text-neutral-500">{body}</p>
             </div>
           ))}
@@ -135,8 +135,8 @@ export default async function HomePage() {
       {verified && verified.jobs.length > 0 && (
         <section className="mx-auto max-w-5xl px-4 pb-14">
           <div className="flex items-baseline justify-between">
-            <h2 className="font-[Sora] text-xl font-bold">Freshly discovered gems</h2>
-            <Link href="/hidden-gems" className="text-sm text-fuchsia-600 hover:underline">
+            <h2 className="font-display text-xl font-bold">Freshly discovered gems</h2>
+            <Link href="/hidden-gems" className="text-sm text-amber-600 hover:underline">
               See all →
             </Link>
           </div>
@@ -146,7 +146,7 @@ export default async function HomePage() {
                 key={j.id}
                 href={`/jobs/${j.slug}`}
                 target="_blank"
-                className="rounded-2xl border border-neutral-200 bg-white p-4 transition hover:border-fuchsia-300 hover:shadow-sm"
+                className="rounded-2xl border border-neutral-200 bg-white p-4 transition hover:border-amber-300 hover:shadow-sm"
               >
                 <div className="flex items-center gap-3">
                   <div className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-xs font-semibold text-white ${logoColor(j.company)}`}>
@@ -154,7 +154,7 @@ export default async function HomePage() {
                   </div>
                   <div className="min-w-0">
                     <div className="truncate text-sm font-semibold">{j.title}</div>
-                    <div className="truncate text-xs text-neutral-400">
+                    <div className="truncate text-xs text-neutral-400 font-mono">
                       {j.company}
                       {j.city ? ` · ${j.city}` : ""}
                     </div>
@@ -178,13 +178,13 @@ export default async function HomePage() {
 
       {/* CITIES */}
       <section className="mx-auto max-w-5xl px-4 pb-14">
-        <h2 className="font-[Sora] text-xl font-bold">Jobs by city</h2>
+        <h2 className="font-display text-xl font-bold">Jobs by city</h2>
         <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
           {HOME_CITIES.map((slug) => (
             <Link
               key={slug}
               href={`/jobs/${slug}`}
-              className="rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-center font-medium text-neutral-700 transition hover:border-blue-300 hover:text-blue-700"
+              className="rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-center font-medium text-neutral-700 transition hover:border-gem hover:text-gem"
             >
               {CITY_PAGES[slug]}
             </Link>

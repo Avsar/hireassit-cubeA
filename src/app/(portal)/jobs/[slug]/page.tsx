@@ -157,7 +157,7 @@ function HubBreadcrumb({ label, slug }: { label: string; slug: string }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <nav className="text-sm text-neutral-500">
-        <Link href="/jobs" className="hover:text-blue-700">Jobs</Link>
+        <Link href="/jobs" className="hover:text-gem">Jobs</Link>
         <span className="mx-2">/</span>
         <span className="text-neutral-700">{label}</span>
       </nav>
@@ -176,7 +176,7 @@ function BrowseByRole({ exclude }: { exclude?: string }) {
           <Link
             key={slug}
             href={`/jobs/${slug}`}
-            className="rounded-full border border-neutral-200 bg-white px-3 py-1.5 text-sm text-neutral-700 hover:border-blue-300 hover:text-blue-700"
+            className="rounded-full border border-neutral-200 bg-white px-3 py-1.5 text-sm text-neutral-700 hover:border-gem hover:text-gem"
           >
             {role.label}
           </Link>
@@ -197,7 +197,7 @@ function BrowseByCity({ exclude }: { exclude?: string }) {
           <Link
             key={slug}
             href={`/jobs/${slug}`}
-            className="rounded-full border border-neutral-200 bg-white px-3 py-1.5 text-sm text-neutral-700 hover:border-blue-300 hover:text-blue-700"
+            className="rounded-full border border-neutral-200 bg-white px-3 py-1.5 text-sm text-neutral-700 hover:border-gem hover:text-gem"
           >
             {name}
           </Link>
@@ -217,10 +217,10 @@ async function RoleLandingPage({ slug, role }: { slug: string; role: RolePage })
 
   return (
     <main className="min-h-screen bg-neutral-50">
-      <section className="bg-blue-600 text-white">
+      <section className="bg-gem text-white">
         <div className="mx-auto max-w-5xl px-4 py-12">
           <h1 className="text-3xl font-bold">{role.label} jobs in the Netherlands</h1>
-          <p className="mt-2 max-w-2xl text-blue-100">
+          <p className="mt-2 max-w-2xl text-emerald-100">
             {data ? `${data.count.toLocaleString("en-US")} open ${role.label.toLowerCase()} positions` : `Open ${role.label.toLowerCase()} positions`}{" "}
             — {role.blurb}
           </p>
@@ -232,7 +232,7 @@ async function RoleLandingPage({ slug, role }: { slug: string; role: RolePage })
         {!data || data.jobs.length === 0 ? (
           <p className="py-16 text-center text-neutral-500">
             No {role.label.toLowerCase()} jobs listed right now —{" "}
-            <Link href="/jobs" className="text-blue-600 underline">browse all jobs</Link>.
+            <Link href="/jobs" className="text-gem underline">browse all jobs</Link>.
           </p>
         ) : (
           <div className="grid gap-3">
@@ -249,7 +249,7 @@ async function RoleLandingPage({ slug, role }: { slug: string; role: RolePage })
           <div className="text-center">
             <Link
               href={`/jobs?q=${encodeURIComponent(role.query)}`}
-              className="inline-block rounded-xl bg-blue-600 px-6 py-3 font-medium text-white hover:bg-blue-700"
+              className="inline-block rounded-xl bg-gem px-6 py-3 font-medium text-white hover:bg-gem-deep"
             >
               See all {data.count.toLocaleString("en-US")} {role.label.toLowerCase()} jobs →
             </Link>
@@ -264,7 +264,7 @@ async function RoleLandingPage({ slug, role }: { slug: string; role: RolePage })
                 <Link
                   key={c}
                   href={`/jobs/${slug}/${c}`}
-                  className="rounded-full border border-neutral-200 bg-white px-3 py-1.5 text-sm text-neutral-700 hover:border-blue-300 hover:text-blue-700"
+                  className="rounded-full border border-neutral-200 bg-white px-3 py-1.5 text-sm text-neutral-700 hover:border-gem hover:text-gem"
                 >
                   {role.label} in {CITY_PAGES[c]}
                 </Link>
@@ -292,10 +292,10 @@ async function CityLandingPage({ slug, cityName }: { slug: string; cityName: str
 
   return (
     <main className="min-h-screen bg-neutral-50">
-      <section className="bg-blue-600 text-white">
+      <section className="bg-gem text-white">
         <div className="mx-auto max-w-5xl px-4 py-12">
           <h1 className="text-3xl font-bold">Jobs in {cityName}</h1>
-          <p className="mt-2 text-blue-100">
+          <p className="mt-2 text-emerald-100">
             {data ? `${data.count.toLocaleString("en-US")} open positions` : "Open positions"} in{" "}
             {cityName} — crawled daily from company career pages, including
             hidden jobs that never reach LinkedIn.
@@ -307,7 +307,7 @@ async function CityLandingPage({ slug, cityName }: { slug: string; cityName: str
 
         <Link
           href={`/jobs?city=${encodeURIComponent(cityName)}&hidden=true`}
-          className="inline-block text-sm text-fuchsia-600 hover:underline"
+          className="inline-block text-sm text-amber-600 hover:underline"
         >
           💎 Hidden gems in {cityName}
         </Link>
@@ -315,7 +315,7 @@ async function CityLandingPage({ slug, cityName }: { slug: string; cityName: str
         {!data || data.jobs.length === 0 ? (
           <p className="py-16 text-center text-neutral-500">
             No jobs listed in {cityName} right now —{" "}
-            <Link href="/jobs" className="text-blue-600 underline">browse all jobs</Link>.
+            <Link href="/jobs" className="text-gem underline">browse all jobs</Link>.
           </p>
         ) : (
           <div className="grid gap-3">
@@ -332,7 +332,7 @@ async function CityLandingPage({ slug, cityName }: { slug: string; cityName: str
           <div className="text-center">
             <Link
               href={`/jobs?city=${encodeURIComponent(cityName)}`}
-              className="inline-block rounded-xl bg-blue-600 px-6 py-3 text-white font-medium hover:bg-blue-700"
+              className="inline-block rounded-xl bg-gem px-6 py-3 text-white font-medium hover:bg-gem-deep"
             >
               See all {data.count.toLocaleString("en-US")} jobs in {cityName} →
             </Link>
@@ -464,7 +464,7 @@ export default async function JobDetailPage({ params }: Props) {
       )}
 
       <div className="mx-auto max-w-5xl px-4 py-8 pb-28 lg:pb-8">
-        <Link href="/jobs" className="text-sm text-blue-600 hover:underline">
+        <Link href="/jobs" className="text-sm text-gem hover:underline">
           ← All jobs
         </Link>
 
@@ -476,7 +476,7 @@ export default async function JobDetailPage({ params }: Props) {
                 {job.company.slice(0, 2).toUpperCase()}
               </div>
               <div className="min-w-0">
-                <Link href={`/companies/${companySlug}`} className="text-sm font-medium text-neutral-600 hover:text-blue-700">
+                <Link href={`/companies/${companySlug}`} className="text-sm font-medium text-neutral-600 hover:text-gem">
                   {job.company}
                 </Link>
                 {(job.city || job.country) && (
@@ -487,14 +487,14 @@ export default async function JobDetailPage({ params }: Props) {
               </div>
             </div>
 
-            <h1 className="mt-4 font-[Sora] text-2xl font-bold leading-tight text-neutral-900 sm:text-3xl">
+            <h1 className="mt-4 font-display text-2xl font-bold leading-tight text-neutral-900 sm:text-3xl">
               {job.title}
             </h1>
 
             {/* tags */}
             <div className="mt-4 flex flex-wrap gap-2">
               {job.verified_hidden ? (
-                <span className="rounded-full border border-fuchsia-200 bg-fuchsia-50 px-3 py-1 text-xs font-medium text-fuchsia-700">
+                <span className="rounded-full border border-amber-200 bg-amber-50 px-3 py-1 text-xs font-medium text-amber-700">
                   💎 Verified hidden gem
                 </span>
               ) : job.hidden_tier === 1 ? (
@@ -503,7 +503,7 @@ export default async function JobDetailPage({ params }: Props) {
                 </span>
               ) : null}
               {aiSummary && aiSummary.seniority !== "Unknown" && (
-                <Link href={`/jobs?q=${encodeURIComponent(aiSummary.seniority)}`} className="rounded-full border border-neutral-200 bg-white px-3 py-1 text-xs text-neutral-600 hover:border-blue-300 hover:text-blue-700">
+                <Link href={`/jobs?q=${encodeURIComponent(aiSummary.seniority)}`} className="rounded-full border border-neutral-200 bg-white px-3 py-1 text-xs text-neutral-600 hover:border-gem hover:text-gem">
                   {aiSummary.seniority}
                 </Link>
               )}
@@ -550,13 +550,13 @@ export default async function JobDetailPage({ params }: Props) {
             <hr className="my-6 border-neutral-100" />
 
             {/* about / description — driven by plan.bodyMode */}
-            <h2 className="font-[Sora] text-xs font-semibold uppercase tracking-wider text-blue-600">
+            <h2 className="font-display text-xs font-semibold uppercase tracking-wider text-gem">
               About this role
             </h2>
             {!isActive ? (
               <div className="mt-3 rounded-xl border border-neutral-200 bg-neutral-100 p-4 text-sm text-neutral-600">
                 This position is no longer listed by the company.{" "}
-                <Link href={`/companies/${companySlug}`} className="text-blue-600 underline">
+                <Link href={`/companies/${companySlug}`} className="text-gem underline">
                   See other jobs at {job.company}
                 </Link>
               </div>
@@ -585,7 +585,7 @@ export default async function JobDetailPage({ params }: Props) {
             {/* requirements */}
             {aiSummary?.requirements && aiSummary.requirements.length > 0 && (
               <div className="mt-6">
-                <h2 className="font-[Sora] text-xs font-semibold uppercase tracking-wider text-blue-600">
+                <h2 className="font-display text-xs font-semibold uppercase tracking-wider text-gem">
                   What you&apos;ll likely bring
                 </h2>
                 <ul className="mt-3 space-y-2">
@@ -603,14 +603,14 @@ export default async function JobDetailPage({ params }: Props) {
             {(techTags.length > 0 || (aiSummary?.key_tags && aiSummary.key_tags.length > 0)) && (
               <div className="mt-6 flex flex-wrap gap-2">
                 {(aiSummary?.key_tags ?? []).map((t) => (
-                  <span key={t} className="rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs text-blue-700">
+                  <span key={t} className="rounded-full border border-gem-100 bg-gem-wash px-3 py-1 text-xs text-gem">
                     {t}
                   </span>
                 ))}
                 {techTags
                   .filter((t) => !(aiSummary?.key_tags ?? []).some((k) => k.toLowerCase() === t.toLowerCase()))
                   .map((t) => (
-                    <span key={t} className="rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs text-blue-700">
+                    <span key={t} className="rounded-full border border-gem-100 bg-gem-wash px-3 py-1 text-xs text-gem">
                       {t}
                     </span>
                   ))}
@@ -620,14 +620,14 @@ export default async function JobDetailPage({ params }: Props) {
             {/* why we flagged this */}
             {meter && (
               <div className="mt-8">
-                <h2 className={`font-[Sora] text-xs font-semibold uppercase tracking-wider ${meter.tone === "gem" ? "text-fuchsia-600" : "text-amber-600"}`}>
+                <h2 className={`font-display text-xs font-semibold uppercase tracking-wider ${meter.tone === "gem" ? "text-amber-600" : "text-amber-600"}`}>
                   Why we flagged this
                 </h2>
-                <div className={`mt-3 rounded-2xl border p-5 ${meter.tone === "gem" ? "border-fuchsia-200 bg-fuchsia-50" : "border-amber-200 bg-amber-50"}`}>
-                  <div className={`font-[Sora] font-semibold ${meter.tone === "gem" ? "text-fuchsia-800" : "text-amber-800"}`}>
+                <div className={`mt-3 rounded-2xl border p-5 ${meter.tone === "gem" ? "border-amber-200 bg-amber-50" : "border-amber-200 bg-amber-50"}`}>
+                  <div className={`font-display font-semibold ${meter.tone === "gem" ? "text-amber-800" : "text-amber-800"}`}>
                     {meter.tone === "gem" ? "💎 " : ""}{meter.heading}
                   </div>
-                  <p className={`mt-1 text-sm leading-relaxed ${meter.tone === "gem" ? "text-fuchsia-900/80" : "text-amber-900/80"}`}>
+                  <p className={`mt-1 text-sm leading-relaxed ${meter.tone === "gem" ? "text-amber-900/80" : "text-amber-900/80"}`}>
                     {job.verified_hidden
                       ? `We scraped this straight from ${job.company}'s own career page, then checked LinkedIn and Indeed and couldn't find it there — so you're applying into a much smaller pool than usual.`
                       : `${job.company} rarely posts on the big job boards. We found this on their own career page, so it's likely seen by far fewer applicants than a typical listing.`}
@@ -642,15 +642,15 @@ export default async function JobDetailPage({ params }: Props) {
             <div className="rounded-2xl border border-neutral-200 bg-white p-5">
               {/* visibility meter */}
               {meter && (
-                <div className={`mb-5 rounded-xl border p-4 ${meter.tone === "gem" ? "border-fuchsia-100 bg-fuchsia-50/60" : "border-amber-100 bg-amber-50/60"}`}>
-                  <div className={`flex items-center gap-1.5 text-xs font-semibold ${meter.tone === "gem" ? "text-fuchsia-700" : "text-amber-700"}`}>
+                <div className={`mb-5 rounded-xl border p-4 ${meter.tone === "gem" ? "border-amber-100 bg-amber-50/60" : "border-amber-100 bg-amber-50/60"}`}>
+                  <div className={`flex items-center gap-1.5 text-xs font-semibold ${meter.tone === "gem" ? "text-amber-700" : "text-amber-700"}`}>
                     {meter.tone === "gem" ? "💎 " : ""}{meter.badge}
                   </div>
                   <div className="mt-2.5 flex gap-1">
                     {[0, 1, 2, 3, 4].map((i) => (
                       <div
                         key={i}
-                        className={`h-2 flex-1 rounded-full ${i < meter.lit ? (meter.tone === "gem" ? "bg-fuchsia-500" : "bg-amber-500") : "bg-neutral-200"}`}
+                        className={`h-2 flex-1 rounded-full ${i < meter.lit ? (meter.tone === "gem" ? "bg-amber-500" : "bg-amber-500") : "bg-neutral-200"}`}
                       />
                     ))}
                   </div>
@@ -667,7 +667,7 @@ export default async function JobDetailPage({ params }: Props) {
                     company={job.company}
                     title={job.title}
                     hiddenTier={job.hidden_tier}
-                    className="block w-full rounded-xl bg-blue-600 px-6 py-3 text-center font-semibold text-white hover:bg-blue-700"
+                    className="block w-full rounded-xl bg-gem px-6 py-3 text-center font-semibold text-white hover:bg-gem-deep"
                   >
                     Apply on company site →
                   </ApplyButton>
@@ -681,7 +681,7 @@ export default async function JobDetailPage({ params }: Props) {
                     />
                   </div>
                   <div className="mt-4 flex items-start gap-2 border-t border-neutral-100 pt-4">
-                    <span className="shrink-0 text-blue-600">🛡️</span>
+                    <span className="shrink-0 text-gem">🛡️</span>
                     <p className="text-xs leading-relaxed text-neutral-500">
                       You apply <strong className="text-neutral-700">directly with {job.company}</strong>.
                       CubeA takes no fee, sees no application, and adds no middleman.
@@ -698,7 +698,7 @@ export default async function JobDetailPage({ params }: Props) {
                   <p className="text-sm text-neutral-500">This position has closed.</p>
                   <Link
                     href="/jobs"
-                    className="mt-3 inline-block rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-blue-700"
+                    className="mt-3 inline-block rounded-xl bg-gem px-5 py-2.5 text-sm font-semibold text-white hover:bg-gem-deep"
                   >
                     Browse open jobs →
                   </Link>
@@ -754,7 +754,7 @@ export default async function JobDetailPage({ params }: Props) {
 
               <Link
                 href={`/companies/${companySlug}`}
-                className="mt-5 block rounded-xl border border-neutral-200 px-4 py-2.5 text-center text-sm text-neutral-600 hover:border-blue-300 hover:text-blue-700"
+                className="mt-5 block rounded-xl border border-neutral-200 px-4 py-2.5 text-center text-sm text-neutral-600 hover:border-gem hover:text-gem"
               >
                 All jobs at {job.company}
               </Link>
@@ -764,7 +764,7 @@ export default async function JobDetailPage({ params }: Props) {
 
         {job.related.length > 0 && (
           <section className="mt-8">
-            <h2 className="font-[Sora] text-sm font-semibold uppercase tracking-wide text-neutral-500">
+            <h2 className="font-display text-sm font-semibold uppercase tracking-wide text-neutral-500">
               More at {job.company}
             </h2>
             <div className="mt-3 grid gap-2 sm:grid-cols-2">
@@ -773,7 +773,7 @@ export default async function JobDetailPage({ params }: Props) {
                   key={r.id}
                   href={`/jobs/${r.slug}`}
                   target="_blank"
-                  className="rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm hover:border-blue-300"
+                  className="rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm hover:border-gem"
                 >
                   <span className="font-medium">{r.title}</span>
                   {r.city && <span className="text-neutral-400"> — {r.city}</span>}
@@ -793,7 +793,7 @@ export default async function JobDetailPage({ params }: Props) {
             company={job.company}
             title={job.title}
             hiddenTier={job.hidden_tier}
-            className="block w-full rounded-xl bg-blue-600 px-6 py-3 text-center font-semibold text-white hover:bg-blue-700"
+            className="block w-full rounded-xl bg-gem px-6 py-3 text-center font-semibold text-white hover:bg-gem-deep"
           >
             Apply on company site →
           </ApplyButton>

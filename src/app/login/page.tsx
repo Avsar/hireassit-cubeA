@@ -30,7 +30,7 @@ export default function LoginPage() {
     <main className="min-h-screen bg-neutral-50">
       <div className="mx-auto max-w-md px-4 py-16">
         <div className="rounded-2xl border border-neutral-200 bg-white p-8">
-          <h1 className="font-[Sora] text-2xl font-bold text-neutral-900">Log in to CubeA</h1>
+          <h1 className="font-display text-2xl font-bold text-neutral-900">Log in to CubeA</h1>
           <p className="mt-2 text-sm text-neutral-600">
             Enter your email and we&apos;ll send you a one-tap login link — no password needed.
           </p>
@@ -47,12 +47,12 @@ export default function LoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@email.com"
-                className="w-full rounded-xl border border-neutral-300 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full rounded-xl border border-neutral-300 px-3 py-2.5 text-sm focus:outline-none focus:ring-gem-wash"
               />
               <button
                 type="submit"
                 disabled={state === "sending"}
-                className="w-full rounded-xl bg-blue-600 px-6 py-2.5 font-semibold text-white hover:bg-blue-700 disabled:opacity-60"
+                className="w-full rounded-xl bg-gem px-6 py-2.5 font-semibold text-white hover:bg-gem-deep disabled:opacity-60"
               >
                 {state === "sending" ? "Sending…" : "Send me a login link"}
               </button>
@@ -64,7 +64,7 @@ export default function LoginPage() {
 
           <p className="mt-6 text-xs text-neutral-400">
             Logging in lets you manage your job alerts and preferences.{" "}
-            <Link href="/jobs" className="text-blue-600 hover:underline">
+            <Link href="/jobs" className="text-gem hover:underline">
               Browse jobs
             </Link>
           </p>

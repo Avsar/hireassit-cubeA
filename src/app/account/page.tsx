@@ -59,7 +59,7 @@ export default async function AccountPage() {
     <main className="min-h-screen bg-neutral-50">
       <div className="mx-auto max-w-3xl px-4 py-10">
         <div className="flex flex-wrap items-baseline justify-between gap-2">
-          <h1 className="font-[Sora] text-2xl font-bold text-neutral-900">Your account</h1>
+          <h1 className="font-display text-2xl font-bold text-neutral-900">Your account</h1>
           <a href="/api/auth/logout" className="text-sm text-neutral-500 hover:text-neutral-800">
             Log out
           </a>
@@ -69,12 +69,12 @@ export default async function AccountPage() {
         </p>
 
         <section className="mt-8">
-          <h2 className="font-[Sora] text-lg font-semibold text-neutral-900">Your job alerts</h2>
+          <h2 className="font-display text-lg font-semibold text-neutral-900">Your job alerts</h2>
 
           {alerts.length === 0 ? (
             <div className="mt-4 rounded-2xl border border-neutral-200 bg-white p-6 text-sm text-neutral-600">
               You don&apos;t have any active alerts yet.{" "}
-              <Link href="/jobs" className="text-blue-600 hover:underline">
+              <Link href="/jobs" className="text-gem hover:underline">
                 Browse jobs
               </Link>{" "}
               and set one up — you&apos;ll get an email when new matches (including hidden gems) appear.
@@ -106,7 +106,7 @@ export default async function AccountPage() {
           <div className="mt-6">
             <Link
               href="/jobs"
-              className="inline-block rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-blue-700"
+              className="inline-block rounded-xl bg-gem px-5 py-2.5 text-sm font-semibold text-white hover:bg-gem-deep"
             >
               Browse jobs &amp; add an alert →
             </Link>

@@ -92,12 +92,12 @@ export default async function RoleCityPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <section className="bg-blue-600 text-white">
+      <section className="bg-gem text-white">
         <div className="mx-auto max-w-5xl px-4 py-12">
           <h1 className="text-3xl font-bold">
             {role.label} jobs in {cityName}
           </h1>
-          <p className="mt-2 max-w-2xl text-blue-100">
+          <p className="mt-2 max-w-2xl text-emerald-100">
             {data
               ? `${data.count.toLocaleString("en-US")} open ${roleLower} positions`
               : `Open ${roleLower} positions`}{" "}
@@ -109,9 +109,9 @@ export default async function RoleCityPage({ params }: Props) {
 
       <div className="mx-auto max-w-5xl px-4 py-8 space-y-8">
         <nav className="text-sm text-neutral-500">
-          <Link href="/jobs" className="hover:text-blue-700">Jobs</Link>
+          <Link href="/jobs" className="hover:text-gem">Jobs</Link>
           <span className="mx-2">/</span>
-          <Link href={`/jobs/${params.slug}`} className="hover:text-blue-700">
+          <Link href={`/jobs/${params.slug}`} className="hover:text-gem">
             {role.label} jobs
           </Link>
           <span className="mx-2">/</span>
@@ -120,7 +120,7 @@ export default async function RoleCityPage({ params }: Props) {
 
         <Link
           href={`/jobs?q=${encodeURIComponent(role.query)}&city=${encodeURIComponent(cityName)}&hidden=true`}
-          className="inline-block text-sm text-fuchsia-600 hover:underline"
+          className="inline-block text-sm text-amber-600 hover:underline"
         >
           💎 Hidden {roleLower} gems in {cityName}
         </Link>
@@ -128,11 +128,11 @@ export default async function RoleCityPage({ params }: Props) {
         {!data || data.jobs.length === 0 ? (
           <p className="py-16 text-center text-neutral-500">
             No {roleLower} jobs in {cityName} right now —{" "}
-            <Link href={`/jobs/${params.slug}`} className="text-blue-600 underline">
+            <Link href={`/jobs/${params.slug}`} className="text-gem underline">
               see all {roleLower} jobs
             </Link>{" "}
             or{" "}
-            <Link href={`/jobs/${params.city}`} className="text-blue-600 underline">
+            <Link href={`/jobs/${params.city}`} className="text-gem underline">
               all jobs in {cityName}
             </Link>
             .
@@ -152,7 +152,7 @@ export default async function RoleCityPage({ params }: Props) {
           <div className="text-center">
             <Link
               href={`/jobs?q=${encodeURIComponent(role.query)}&city=${encodeURIComponent(cityName)}`}
-              className="inline-block rounded-xl bg-blue-600 px-6 py-3 font-medium text-white hover:bg-blue-700"
+              className="inline-block rounded-xl bg-gem px-6 py-3 font-medium text-white hover:bg-gem-deep"
             >
               See all {data.count.toLocaleString("en-US")} {roleLower} jobs in {cityName} →
             </Link>
@@ -169,7 +169,7 @@ export default async function RoleCityPage({ params }: Props) {
                 <Link
                   key={slug}
                   href={`/jobs/${params.slug}/${slug}`}
-                  className="rounded-full border border-neutral-200 bg-white px-3 py-1.5 text-sm text-neutral-700 hover:border-blue-300 hover:text-blue-700"
+                  className="rounded-full border border-neutral-200 bg-white px-3 py-1.5 text-sm text-neutral-700 hover:border-gem hover:text-gem"
                 >
                   {CITY_PAGES[slug]}
                 </Link>
@@ -183,7 +183,7 @@ export default async function RoleCityPage({ params }: Props) {
                 <Link
                   key={slug}
                   href={`/jobs/${slug}/${params.city}`}
-                  className="rounded-full border border-neutral-200 bg-white px-3 py-1.5 text-sm text-neutral-700 hover:border-blue-300 hover:text-blue-700"
+                  className="rounded-full border border-neutral-200 bg-white px-3 py-1.5 text-sm text-neutral-700 hover:border-gem hover:text-gem"
                 >
                   {ROLE_PAGES[slug].label}
                 </Link>

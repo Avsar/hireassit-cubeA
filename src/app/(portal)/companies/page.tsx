@@ -17,7 +17,7 @@ export default async function CompaniesPage() {
   } catch {
     return (
       <main className="mx-auto max-w-3xl px-4 py-20 text-center">
-        <h1 className="font-[Sora] text-2xl font-bold">Company directory is briefly unavailable</h1>
+        <h1 className="font-display text-2xl font-bold">Company directory is briefly unavailable</h1>
         <p className="mt-2 text-neutral-500">Please refresh in a few seconds.</p>
       </main>
     );
@@ -31,10 +31,10 @@ export default async function CompaniesPage() {
 
   return (
     <main className="min-h-screen bg-neutral-50">
-      <section className="bg-blue-600 text-white">
+      <section className="bg-gem text-white">
         <div className="mx-auto max-w-5xl px-4 py-12">
-          <h1 className="font-[Sora] text-3xl font-bold">Companies hiring in the Netherlands</h1>
-          <p className="mt-2 text-blue-100">
+          <h1 className="font-display text-3xl font-bold">Companies hiring in the Netherlands</h1>
+          <p className="mt-2 text-emerald-100">
             {companies.length.toLocaleString("en-US")} companies ·{" "}
             {liveJobCount !== null ? liveJobCount.toLocaleString("en-US") : "thousands of"} open positions — crawled daily,
             straight from the source.

@@ -34,7 +34,7 @@ export default function JobCard({
     <Link
       href={`/jobs/${job.slug}`}
       target="_blank"
-      className="group block rounded-2xl border border-neutral-200 bg-white p-5 hover:border-blue-300 hover:shadow-sm transition"
+      className="group block rounded-2xl border border-neutral-200 bg-white p-5 hover:border-gem hover:shadow-sm transition"
     >
       {/* Top row: logo, title+company, gem badge */}
       <div className="flex items-start gap-3">
@@ -45,7 +45,7 @@ export default function JobCard({
             {job.company.slice(0, 2).toUpperCase()}
           </div>
           <div className="min-w-0">
-            <h3 className="font-semibold text-neutral-900 leading-tight truncate group-hover:text-blue-700 transition-colors">
+            <h3 className="font-semibold text-neutral-900 leading-tight truncate group-hover:text-gem transition-colors">
               {job.title}
             </h3>
             <div className="text-sm text-neutral-500 truncate">

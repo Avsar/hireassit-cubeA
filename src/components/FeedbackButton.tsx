@@ -39,7 +39,7 @@ export default function FeedbackButton() {
           setOpen((o) => !o);
           setState("idle");
         }}
-        className="fixed bottom-5 right-5 z-50 rounded-full bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white shadow-lg hover:bg-blue-700"
+        className="fixed bottom-5 right-5 z-50 rounded-full bg-gem px-4 py-2.5 text-sm font-semibold text-white shadow-lg hover:bg-gem-deep"
         aria-label="Send feedback"
       >
         💬 Feedback
@@ -53,7 +53,7 @@ export default function FeedbackButton() {
               <div className="mt-3">
                 <button
                   onClick={() => setOpen(false)}
-                  className="text-blue-600 hover:underline"
+                  className="text-gem hover:underline"
                 >
                   Close
                 </button>
@@ -81,19 +81,19 @@ export default function FeedbackButton() {
                 onChange={(e) => setMessage(e.target.value)}
                 rows={4}
                 placeholder="What's on your mind?"
-                className="w-full rounded-xl border border-neutral-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full rounded-xl border border-neutral-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gem-wash focus:border-gem"
               />
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email (optional, if you'd like a reply)"
-                className="w-full rounded-xl border border-neutral-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full rounded-xl border border-neutral-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gem-wash focus:border-gem"
               />
               <button
                 type="submit"
                 disabled={state === "sending"}
-                className="w-full rounded-xl bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 disabled:opacity-60"
+                className="w-full rounded-xl bg-gem px-4 py-2 text-sm font-semibold text-white hover:bg-gem-deep disabled:opacity-60"
               >
                 {state === "sending" ? "Sending…" : "Send feedback"}
               </button>

@@ -25,10 +25,10 @@ export default async function HiddenGemsPage() {
 
   return (
     <main className="min-h-screen bg-neutral-50">
-      <section className="bg-fuchsia-700 text-white">
+      <section className="bg-amber-700 text-white">
         <div className="mx-auto max-w-5xl px-4 py-16 text-center">
           <h1 className="text-4xl font-bold">💎 Verified hidden gems</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-fuchsia-100">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-amber-100">
             Jobs we scraped straight from Dutch company career pages — then checked
             against LinkedIn and Indeed and couldn&apos;t find there. Verified hidden,
             not just guessed.
@@ -36,12 +36,12 @@ export default async function HiddenGemsPage() {
           {data && (
             <div className="mt-8">
               <div className="text-3xl font-bold">{data.count.toLocaleString("en-US")}</div>
-              <div className="text-sm text-fuchsia-200">verified hidden gems live now</div>
+              <div className="text-sm text-amber-200">verified hidden gems live now</div>
             </div>
           )}
           <Link
             href="/jobs?hidden=true"
-            className="mt-8 inline-block rounded-xl bg-white px-8 py-3 font-semibold text-fuchsia-700 hover:bg-fuchsia-50"
+            className="mt-8 inline-block rounded-xl bg-white px-8 py-3 font-semibold text-amber-700 hover:bg-amber-50"
           >
             Browse all verified gems →
           </Link>
@@ -88,7 +88,7 @@ export default async function HiddenGemsPage() {
           <div className="text-center">
             <Link
               href="/jobs?hidden=true"
-              className="inline-block rounded-xl bg-fuchsia-700 px-8 py-3 font-semibold text-white hover:bg-fuchsia-800"
+              className="inline-block rounded-xl bg-amber-700 px-8 py-3 font-semibold text-white hover:bg-amber-800"
             >
               See all {data.count.toLocaleString("en-US")} verified gems →
             </Link>
