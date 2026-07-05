@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
-import { CITY_PAGES, ROLE_PAGES, fetchJobs, type Job } from "@/lib/hireassist";
+import { CITY_PAGES, ROLE_PAGES, fetchJobs, fetchCompanies, type Job } from "@/lib/hireassist";
 import { getSummariesBulk } from "@/lib/summary-cache";
 import JobCard from "@/components/jobs/JobCard";
 import ClusterCard, { type Cluster } from "@/components/jobs/ClusterCard";
@@ -27,6 +27,80 @@ interface SearchParams {
   remote?: string;
   sort?: string;
   page?: string;
+}
+
+const CLUSTER_THRESHOLD = 8;
+
+async function JobResults({ jobs, isUnfiltered }: { jobs: Job[]; isUnfiltered: boolean }) {
+  const summaries = getSummariesBulk(jobs.map((j) => j.id));
+
+  if (!isUnfiltered) {
+    return (
+      <div className="grid gap-3">
+        {jobs.map((job) => (
+          <JobCard key={job.id} job={job} summary={summaries.get(job.id) ?? null} />
+        ))}
+      </div>
+    );
+  }
+
+  let companyJobCounts = new Map<string, { slug: string; total: number }>();
+  try {
+    const companies = await fetchCompanies();
+    for (const c of companies) {
+      if (c.active_jobs >= CLUSTER_THRESHOLD) {
+        companyJobCounts.set(c.name, { slug: c.slug, total: c.active_jobs });
+      }
+    }
+  } catch {}
+
+  const byCompany = new Map<string, Job[]>();
+  for (const job of jobs) {
+    if (companyJobCounts.has(job.company)) {
+      const list = byCompany.get(job.company) || [];
+      list.push(job);
+      byCompany.set(job.company, list);
+    }
+  }
+
+  const clusters: Cluster[] = [];
+  const clusteredCompanies = new Set<string>();
+
+  byCompany.forEach((pageJobs, company) => {
+    const info = companyJobCounts.get(company)!;
+    clusters.push({
+      company,
+      companySlug: info.slug,
+      jobCount: info.total,
+      jobs: pageJobs.map((j) => ({ slug: j.slug, title: j.title, city: j.city })),
+    });
+    clusteredCompanies.add(company);
+  });
+
+  const singleJobs = jobs.filter((j) => !clusteredCompanies.has(j.company));
+
+  const items: React.ReactNode[] = [];
+  let clusterIdx = 0;
+  let jobIdx = 0;
+
+  while (jobIdx < singleJobs.length || clusterIdx < clusters.length) {
+    if (jobIdx < 3 && jobIdx < singleJobs.length) {
+      const job = singleJobs[jobIdx];
+      items.push(<JobCard key={job.id} job={job} summary={summaries.get(job.id) ?? null} />);
+      jobIdx++;
+    } else if (clusterIdx < clusters.length) {
+      items.push(<ClusterCard key={`cluster-${clusters[clusterIdx].company}`} cluster={clusters[clusterIdx]} />);
+      clusterIdx++;
+    } else if (jobIdx < singleJobs.length) {
+      const job = singleJobs[jobIdx];
+      items.push(<JobCard key={job.id} job={job} summary={summaries.get(job.id) ?? null} />);
+      jobIdx++;
+    } else {
+      break;
+    }
+  }
+
+  return <div className="grid gap-3">{items}</div>;
 }
 
 export default async function JobsPage({
@@ -125,71 +199,7 @@ export default async function JobsPage({
               </p>
             </div>
           ) : (
-            <div className="grid gap-3">
-              {(() => {
-                const summaries = getSummariesBulk(data.jobs.map((j) => j.id));
-                const isUnfiltered = page === 1 && activeFilters.length === 0;
-
-                if (!isUnfiltered) {
-                  return data.jobs.map((job) => (
-                    <JobCard key={job.id} job={job} summary={summaries.get(job.id) ?? null} />
-                  ));
-                }
-
-                const byCompany = new Map<string, Job[]>();
-                for (const job of data.jobs) {
-                  const list = byCompany.get(job.company) || [];
-                  list.push(job);
-                  byCompany.set(job.company, list);
-                }
-
-                const clusterThreshold = 5;
-                const clusters: Cluster[] = [];
-                const clusteredCompanies = new Set<string>();
-
-                byCompany.forEach((jobs, company) => {
-                  if (jobs.length >= clusterThreshold) {
-                    const companySlug = company
-                      .toLowerCase()
-                      .replace(/[^a-z0-9]+/g, "-")
-                      .replace(/^-+|-+$/g, "")
-                      .slice(0, 80);
-                    clusters.push({
-                      company,
-                      companySlug,
-                      jobCount: jobs.length,
-                      jobs: jobs.map((j) => ({ slug: j.slug, title: j.title, city: j.city })),
-                    });
-                    clusteredCompanies.add(company);
-                  }
-                });
-
-                const singleJobs = data.jobs.filter((j) => !clusteredCompanies.has(j.company));
-
-                const items: React.ReactNode[] = [];
-                let clusterIdx = 0;
-                let jobIdx = 0;
-
-                while (jobIdx < singleJobs.length || clusterIdx < clusters.length) {
-                  if (jobIdx < 3 && jobIdx < singleJobs.length) {
-                    const job = singleJobs[jobIdx];
-                    items.push(<JobCard key={job.id} job={job} summary={summaries.get(job.id) ?? null} />);
-                    jobIdx++;
-                  } else if (clusterIdx < clusters.length) {
-                    items.push(<ClusterCard key={`cluster-${clusters[clusterIdx].company}`} cluster={clusters[clusterIdx]} />);
-                    clusterIdx++;
-                  } else if (jobIdx < singleJobs.length) {
-                    const job = singleJobs[jobIdx];
-                    items.push(<JobCard key={job.id} job={job} summary={summaries.get(job.id) ?? null} />);
-                    jobIdx++;
-                  } else {
-                    break;
-                  }
-                }
-
-                return items;
-              })()}
-            </div>
+            <JobResults jobs={data.jobs} isUnfiltered={page === 1 && activeFilters.length === 0} />
           )}
 
           {data.pages > 1 && (
