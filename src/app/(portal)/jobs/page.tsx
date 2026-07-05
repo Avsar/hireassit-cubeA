@@ -11,7 +11,14 @@ import AlertSignup from "@/components/jobs/AlertSignup";
 export const metadata: Metadata = {
   title: "Jobs in the Netherlands — incl. hidden jobs not on LinkedIn | CubeA",
   description:
-    "Search jobs from 1,000+ Dutch companies — including hidden gems scraped directly from company career pages that never reach LinkedIn or Indeed.",
+    "Search jobs from hundreds of Dutch companies — including hidden gems scraped directly from company career pages that never reach LinkedIn or Indeed.",
+  openGraph: {
+    title: "Jobs in the Netherlands — incl. hidden jobs not on LinkedIn | CubeA",
+    description:
+      "Search jobs from hundreds of Dutch companies — including hidden gems scraped directly from company career pages that never reach LinkedIn or Indeed.",
+    url: "/jobs",
+    type: "website",
+  },
 };
 
 export const revalidate = 600;
@@ -158,6 +165,10 @@ export default async function JobsPage({
     searchParams.new_today_only === "true" && "new today",
   ].filter(Boolean);
 
+  const pageSummaries = getSummariesBulk(data.jobs.map((j) => j.id));
+  const withSalary = Array.from(pageSummaries.values()).filter((s) => s.salary && s.salary.min != null).length;
+  const salaryRatio = data.jobs.length > 0 ? withSalary / data.jobs.length : 0;
+
   return (
     <main className="min-h-screen bg-neutral-50">
       <div className="mx-auto max-w-4xl px-4">
@@ -175,7 +186,7 @@ export default async function JobsPage({
         {/* Sticky filter bar */}
         <div className="sticky top-0 z-30 -mx-4 border-b border-neutral-200 bg-neutral-50/95 px-4 pb-3 pt-3 backdrop-blur">
           <Suspense>
-            <JobFilters />
+            <JobFilters showSalarySort={salaryRatio >= 0.15} />
           </Suspense>
         </div>
 
