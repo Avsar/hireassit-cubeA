@@ -22,7 +22,7 @@ const ROLE_OPTIONS: [string, string][] = [
   ["finance", "Finance"],
 ];
 
-export default function JobFilters() {
+export default function JobFilters({ showSalarySort = true }: { showSalarySort?: boolean }) {
   const router = useRouter();
   const params = useSearchParams();
   const [q, setQ] = useState(params.get("q") || "");
@@ -205,17 +205,19 @@ export default function JobFilters() {
           >
             Newest
           </button>
-          <button
-            type="button"
-            onClick={() => apply({ sort: "salary" })}
-            className={`rounded-full px-3 py-1 text-xs font-medium transition ${
-              sort === "salary"
-                ? "bg-neutral-800 text-white"
-                : "text-neutral-500 hover:text-neutral-700"
-            }`}
-          >
-            Salary
-          </button>
+          {showSalarySort && (
+            <button
+              type="button"
+              onClick={() => apply({ sort: "salary" })}
+              className={`rounded-full px-3 py-1 text-xs font-medium transition ${
+                sort === "salary"
+                  ? "bg-neutral-800 text-white"
+                  : "text-neutral-500 hover:text-neutral-700"
+              }`}
+            >
+              Salary
+            </button>
+          )}
         </div>
       </div>
 

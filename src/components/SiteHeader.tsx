@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import CubeALogo from "./CubeALogo";
 
@@ -12,9 +12,48 @@ const LINKS = [
   { href: "/blog", label: "Blog" },
 ];
 
+function HeaderSearch() {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const isJobsPage = pathname === "/jobs" || /^\/jobs\/(?!saved)/.test(pathname);
+  const [q, setQ] = useState(isJobsPage ? searchParams.get("q") || "" : "");
+
+  return (
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        if (q.trim()) {
+          router.push(`/jobs?q=${encodeURIComponent(q.trim())}`);
+        } else {
+          router.push("/jobs");
+        }
+      }}
+      className="relative"
+    >
+      <svg
+        className="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 text-neutral-400"
+        width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"
+      >
+        <circle cx="11" cy="11" r="7" />
+        <path d="M20 20l-3.5-3.5" />
+      </svg>
+      <input
+        type="search"
+        value={q}
+        onChange={(e) => setQ(e.target.value)}
+        placeholder='Try "ux designer", "Adyen", or "python"…'
+        className="w-[220px] rounded-full border border-neutral-300 bg-neutral-50 py-1.5 pl-8 pr-3 text-sm focus:border-gem focus:bg-white focus:outline-none focus:ring-2 focus:ring-gem-wash"
+      />
+    </form>
+  );
+}
+
 export default function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const router = useRouter();
+  const [mobileQ, setMobileQ] = useState("");
 
   const isActive = (href: string) =>
     href === "/jobs"
@@ -23,12 +62,12 @@ export default function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-neutral-200 bg-white/90 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4">
+        <Link href="/" className="flex shrink-0 items-center gap-2">
           <CubeALogo />
         </Link>
 
-        <nav className="hidden items-center gap-6 text-sm md:flex">
+        <nav className="hidden items-center gap-5 text-sm lg:flex">
           {LINKS.map((l) => (
             <Link
               key={l.href}
@@ -44,7 +83,8 @@ export default function SiteHeader() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-4 text-sm md:flex">
+        <div className="hidden items-center gap-3 text-sm lg:flex">
+          <HeaderSearch />
           <Link href="/jobs/saved" className="text-neutral-600 hover:text-neutral-900">
             ★ Saved
           </Link>
@@ -62,14 +102,39 @@ export default function SiteHeader() {
         <button
           onClick={() => setOpen(!open)}
           aria-label="Menu"
-          className="md:hidden rounded-lg border border-neutral-300 px-3 py-1.5 text-sm"
+          className="lg:hidden rounded-lg border border-neutral-300 px-3 py-1.5 text-sm"
         >
           {open ? "✕" : "☰"}
         </button>
       </div>
 
       {open && (
-        <nav className="border-t border-neutral-200 bg-white px-4 py-3 md:hidden">
+        <nav className="border-t border-neutral-200 bg-white px-4 py-3 lg:hidden">
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              if (mobileQ.trim()) {
+                router.push(`/jobs?q=${encodeURIComponent(mobileQ.trim())}`);
+                setOpen(false);
+              }
+            }}
+            className="relative mb-3"
+          >
+            <svg
+              className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400"
+              width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"
+            >
+              <circle cx="11" cy="11" r="7" />
+              <path d="M20 20l-3.5-3.5" />
+            </svg>
+            <input
+              type="search"
+              value={mobileQ}
+              onChange={(e) => setMobileQ(e.target.value)}
+              placeholder="Search jobs…"
+              className="w-full rounded-full border border-neutral-300 py-2 pl-9 pr-3.5 text-sm focus:border-gem focus:outline-none focus:ring-2 focus:ring-gem-wash"
+            />
+          </form>
           {[...LINKS, { href: "/jobs/saved", label: "★ Saved jobs" }, { href: "/account", label: "Account" }, { href: "/recruiters", label: "For employers" }].map((l) => (
             <Link
               key={l.href}

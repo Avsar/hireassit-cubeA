@@ -11,6 +11,13 @@ export const metadata: Metadata = {
   description:
     "Dutch jobs we scraped straight from company career pages, then checked against LinkedIn and Indeed and couldn't find there. Verified hidden — not guessed.",
   alternates: { canonical: "/hidden-gems" },
+  openGraph: {
+    title: "Verified Hidden Job Gems — Dutch jobs not on LinkedIn | CubeA",
+    description:
+      "Dutch jobs we scraped straight from company career pages, then checked against LinkedIn and Indeed and couldn't find there. Verified hidden — not guessed.",
+    url: "/hidden-gems",
+    type: "website",
+  },
 };
 
 export const revalidate = 1800;

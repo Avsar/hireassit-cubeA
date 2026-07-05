@@ -1,7 +1,10 @@
 import { Suspense } from "react";
 import Link from "next/link";
-import { fetchCompanies, fetchHiddenSummary, fetchJobs, logoColor, CITY_PAGES } from "@/lib/hireassist";
+import { fetchCompanies, fetchHiddenSummary, fetchJobs, logoColor, CITY_PAGES, type Job } from "@/lib/hireassist";
+import { getSummariesBulk } from "@/lib/summary-cache";
 import AlertSignup from "@/components/jobs/AlertSignup";
+
+const SHOWCASE_EXCLUDE_PATTERN = /verkoopmedewerker|vakkenvuller|bezorger|schoonmaker|kassamedewerk|winkelmedewerk|orderpicker|inpak|magazijn|horeca|barista|ober|serveerst|afwas|keukenhulp|koerier|postbezorg|krantenbezorg/i;
 
 export const revalidate = 1800;
 
@@ -16,12 +19,24 @@ export default async function HomePage() {
   let allJobs;
   try {
     [verified, allJobs] = await Promise.all([
-      fetchJobs({ hidden: true, per_page: 6, sort: "newest" }),
+      fetchJobs({ hidden: true, per_page: 30, sort: "newest" }),
       fetchJobs({ per_page: 1 }),
     ]);
   } catch {
     verified = null;
     allJobs = null;
+  }
+
+  let showcaseGems: Job[] = [];
+  if (verified && verified.jobs.length > 0) {
+    const summaries = getSummariesBulk(verified.jobs.map((j) => j.id));
+    showcaseGems = verified.jobs.filter((j) => {
+      if (!j.city) return false;
+      if (SHOWCASE_EXCLUDE_PATTERN.test(j.title)) return false;
+      const s = summaries.get(j.id);
+      if (s && (s.role_category === "Other" || !s.summary)) return false;
+      return true;
+    }).slice(0, 6);
   }
   let companyCount: number | null = null;
   try {
@@ -37,7 +52,7 @@ export default async function HomePage() {
         name: "CubeA",
         url: "https://cubea.nl",
         description:
-          "CubeA crawls 1,000+ Dutch company career pages daily to surface jobs that never reach LinkedIn or Indeed — including English-speaking roles for internationals.",
+          `CubeA crawls ${companyCount ? companyCount.toLocaleString("en-US") : "1,000+"} Dutch company career pages daily to surface jobs that never reach LinkedIn or Indeed — including English-speaking roles for internationals.`,
       },
       {
         "@type": "WebSite",
@@ -69,7 +84,7 @@ export default async function HomePage() {
             <br className="hidden sm:block" /> on LinkedIn or Indeed
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-neutral-500">
-            We crawl 1,000+ company career pages every day to surface roles the
+            We crawl {companyCount ? companyCount.toLocaleString("en-US") : "1,000+"} company career pages every day to surface roles the
             big job boards miss — including English-speaking jobs for
             internationals. You apply straight to the company.
           </p>
@@ -118,7 +133,7 @@ export default async function HomePage() {
       <section className="mx-auto max-w-5xl px-4 py-14">
         <div className="grid gap-6 sm:grid-cols-3">
           {[
-            ["🕷️", "We crawl career pages", "Every day, directly from 1,000+ Dutch company websites — not just the big job boards."],
+            ["🕷️", "We crawl career pages", `Every day, directly from ${companyCount ? companyCount.toLocaleString("en-US") : "1,000+"} Dutch company websites — not just the big job boards.`],
             ["💎", "We spot hidden gems", "Jobs that were never syndicated to LinkedIn or Indeed get flagged — less competition for you."],
             ["🎯", "You apply directly", "Every apply button goes straight to the company. No recruiters, no middlemen, no account needed."],
           ].map(([icon, title, body]) => (
@@ -132,7 +147,7 @@ export default async function HomePage() {
       </section>
 
       {/* FRESH GEMS */}
-      {verified && verified.jobs.length > 0 && (
+      {showcaseGems.length > 0 && (
         <section className="mx-auto max-w-5xl px-4 pb-14">
           <div className="flex items-baseline justify-between">
             <h2 className="font-display text-xl font-bold">Freshly discovered gems</h2>
@@ -141,7 +156,7 @@ export default async function HomePage() {
             </Link>
           </div>
           <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {verified.jobs.slice(0, 6).map((j) => (
+            {showcaseGems.map((j) => (
               <Link
                 key={j.id}
                 href={`/jobs/${j.slug}`}
