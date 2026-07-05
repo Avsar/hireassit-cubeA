@@ -6,6 +6,13 @@ export const metadata: Metadata = {
   title: "Dutch Companies Hiring Now | CubeA",
   description:
     "Browse Dutch companies with open vacancies, including small companies whose jobs never reach LinkedIn.",
+  openGraph: {
+    title: "Dutch Companies Hiring Now | CubeA",
+    description:
+      "Browse Dutch companies with open vacancies, including small companies whose jobs never reach LinkedIn.",
+    url: "/companies",
+    type: "website",
+  },
 };
 
 export const revalidate = 3600;

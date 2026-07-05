@@ -6,12 +6,12 @@ import FeedbackButton from "@/components/FeedbackButton";
 export const metadata: Metadata = {
   title: "CubeA — Dutch jobs that aren't on LinkedIn, incl. English-speaking roles",
   description:
-    "We crawl 1,000+ Dutch company career pages every day to surface jobs that never reach LinkedIn or Indeed — including English-speaking roles for internationals. Apply directly, no recruiters.",
+    "We crawl hundreds of Dutch company career pages every day to surface jobs that never reach LinkedIn or Indeed — including English-speaking roles for internationals. Apply directly, no recruiters.",
   metadataBase: new URL("https://cubea.nl"),
   openGraph: {
     title: "CubeA — Dutch jobs that aren't on LinkedIn, incl. English-speaking roles",
     description:
-      "Dutch jobs that never reach LinkedIn or Indeed — crawled daily from company career pages, including English-speaking roles for internationals.",
+      "Dutch jobs that never reach LinkedIn or Indeed — crawled daily from hundreds of company career pages, including English-speaking roles for internationals.",
     type: "website",
     url: "https://cubea.nl",
     siteName: "CubeA",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "CubeA — Dutch jobs that aren't on LinkedIn, incl. English-speaking roles",
     description:
-      "Dutch jobs that never reach LinkedIn or Indeed — crawled daily from company career pages, including English-speaking roles for internationals.",
+      "Dutch jobs that never reach LinkedIn or Indeed — crawled daily from hundreds of company career pages, including English-speaking roles for internationals.",
     images: ["/og.png"],
   },
 };

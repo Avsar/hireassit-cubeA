@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { fetchCompanies } from "@/lib/hireassist";
 
 const CITY_LINKS = [
   ["amsterdam", "Amsterdam"],
@@ -20,7 +21,13 @@ const ROLE_LINKS = [
   ["security", "Security"],
 ];
 
-export default function SiteFooter() {
+export default async function SiteFooter() {
+  let companyCount: number | null = null;
+  try {
+    const companies = await fetchCompanies();
+    companyCount = companies.length;
+  } catch {}
+
   return (
     <footer className="mt-16 border-t border-neutral-200 bg-white">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:grid-cols-2 lg:grid-cols-4">
@@ -73,7 +80,7 @@ export default function SiteFooter() {
       </div>
       <div className="border-t border-neutral-100">
         <p className="mx-auto max-w-6xl px-4 py-5 text-xs text-neutral-400 font-mono">
-          Jobs crawled daily from 1,000+ Dutch company websites — including the
+          Jobs crawled daily from {companyCount ? companyCount.toLocaleString("en-US") : "1,000+"} Dutch company websites — including the
           ones nobody else shows you. Applying always happens directly with the
           company.
         </p>

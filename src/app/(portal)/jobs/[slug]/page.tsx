@@ -89,20 +89,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // City landing pages: /jobs/eindhoven, /jobs/amsterdam, ...
   const cityName = isHub ? CITY_PAGES[params.slug] : undefined;
   if (cityName) {
+    const title = `Jobs in ${cityName} — incl. hidden gems | CubeA`;
+    const description = `Open positions in ${cityName}, crawled daily from company career pages and job boards — including hidden jobs that never reach LinkedIn.`;
     return {
-      title: `Jobs in ${cityName} — incl. hidden gems | CubeA`,
-      description: `Open positions in ${cityName}, crawled daily from company career pages and job boards — including hidden jobs that never reach LinkedIn.`,
+      title,
+      description,
       alternates: { canonical: `/jobs/${params.slug}` },
+      openGraph: { title, description, url: `/jobs/${params.slug}`, type: "website" },
     };
   }
 
   // Role landing pages: /jobs/software-engineer, /jobs/data, ...
   const role = isHub ? ROLE_PAGES[params.slug] : undefined;
   if (role) {
+    const title = `${role.label} Jobs in the Netherlands — incl. hidden gems | CubeA`;
     return {
-      title: `${role.label} Jobs in the Netherlands — incl. hidden gems | CubeA`,
+      title,
       description: role.blurb,
       alternates: { canonical: `/jobs/${params.slug}` },
+      openGraph: { title, description: role.blurb, url: `/jobs/${params.slug}`, type: "website" },
     };
   }
 
@@ -111,11 +116,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const loc = job.city || "Netherlands";
 
   if (!job.is_active) {
+    const title = `${job.title} at ${job.company} — ${loc} | CubeA Jobs`;
+    const description = `${job.title} at ${job.company} in ${loc}. This position has closed.`;
     return {
-      title: `${job.title} at ${job.company} — ${loc} | CubeA Jobs`,
-      description: `${job.title} at ${job.company} in ${loc}. This position has closed.`,
+      title,
+      description,
       alternates: { canonical: `https://cubea.nl/jobs/${job.slug}` },
       robots: { index: false },
+      openGraph: { title, description, url: `/jobs/${job.slug}`, type: "website" },
     };
   }
 
@@ -128,11 +136,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     listingLocation: job.city || null,
   });
 
+  const jobTitle = `${job.title} at ${job.company} — ${loc} | CubeA Jobs`;
   return {
-    title: `${job.title} at ${job.company} — ${loc} | CubeA Jobs`,
+    title: jobTitle,
     description: plan.metaDescription,
     alternates: { canonical: `https://cubea.nl/jobs/${job.slug}` },
     robots: plan.index ? undefined : { index: false, follow: true },
+    openGraph: { title: jobTitle, description: plan.metaDescription, url: `/jobs/${job.slug}`, type: "website" },
   };
 }
 
