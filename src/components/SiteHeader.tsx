@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import CubeALogo from "./CubeALogo";
 
 const LINKS = [
@@ -12,7 +12,7 @@ const LINKS = [
   { href: "/blog", label: "Blog" },
 ];
 
-function HeaderSearch() {
+function HeaderSearchInner() {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -46,6 +46,26 @@ function HeaderSearch() {
         className="w-[220px] rounded-full border border-neutral-300 bg-neutral-50 py-1.5 pl-8 pr-3 text-sm focus:border-gem focus:bg-white focus:outline-none focus:ring-2 focus:ring-gem-wash"
       />
     </form>
+  );
+}
+
+function SearchFallback() {
+  return (
+    <div className="relative">
+      <svg
+        className="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 text-neutral-400"
+        width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"
+      >
+        <circle cx="11" cy="11" r="7" />
+        <path d="M20 20l-3.5-3.5" />
+      </svg>
+      <input
+        type="search"
+        disabled
+        placeholder='Try "ux designer", "Adyen", or "python"…'
+        className="w-[220px] rounded-full border border-neutral-300 bg-neutral-50 py-1.5 pl-8 pr-3 text-sm"
+      />
+    </div>
   );
 }
 
@@ -84,7 +104,9 @@ export default function SiteHeader() {
         </nav>
 
         <div className="hidden items-center gap-3 text-sm lg:flex">
-          <HeaderSearch />
+          <Suspense fallback={<SearchFallback />}>
+            <HeaderSearchInner />
+          </Suspense>
           <Link href="/jobs/saved" className="text-neutral-600 hover:text-neutral-900">
             ★ Saved
           </Link>
