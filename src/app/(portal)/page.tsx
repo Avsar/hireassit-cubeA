@@ -196,6 +196,49 @@ export default async function HomePage() {
         </Suspense>
       </section>
 
+      {/* FREE AI TOOLS */}
+      <section className="mx-auto max-w-5xl px-4 pb-14">
+        <h2 className="font-display text-xl font-bold">Free AI tools for job seekers</h2>
+        <div className="mt-4 grid gap-4 sm:grid-cols-2">
+          <Link
+            href="/tools/cv-reviewer"
+            className="group rounded-2xl border border-neutral-200 bg-white p-6 transition hover:border-gem hover:shadow-sm"
+          >
+            <div className="flex items-start gap-4">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gem-wash text-lg">
+                📄
+              </div>
+              <div>
+                <h3 className="font-display font-bold text-neutral-900 group-hover:text-gem">
+                  CV Reviewer
+                </h3>
+                <p className="mt-1 text-sm leading-relaxed text-neutral-500">
+                  Paste your CV and get instant AI feedback — strengths, gaps, and concrete suggestions to improve it.
+                </p>
+              </div>
+            </div>
+          </Link>
+          <Link
+            href="/tools/ai-match"
+            className="group rounded-2xl border border-neutral-200 bg-white p-6 transition hover:border-gem hover:shadow-sm"
+          >
+            <div className="flex items-start gap-4">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gem-wash text-lg">
+                🎯
+              </div>
+              <div>
+                <h3 className="font-display font-bold text-neutral-900 group-hover:text-gem">
+                  AI Job Match
+                </h3>
+                <p className="mt-1 text-sm leading-relaxed text-neutral-500">
+                  Paste a job description and your CV to see how well you match — with a score and key highlights.
+                </p>
+              </div>
+            </div>
+          </Link>
+        </div>
+      </section>
+
       {/* CITIES */}
       <section className="mx-auto max-w-5xl px-4 pb-14">
         <h2 className="font-display text-xl font-bold">Jobs by city</h2>
@@ -210,6 +253,26 @@ export default async function HomePage() {
             </Link>
           ))}
         </div>
+      </section>
+
+      {/* ENGLISH-SPEAKING CTA */}
+      <section className="mx-auto max-w-5xl px-4 pb-14">
+        <Link
+          href="/english-speaking-jobs"
+          className="group flex items-center justify-between rounded-2xl border border-gem/20 bg-gem-wash p-6 transition hover:border-gem hover:shadow-sm"
+        >
+          <div>
+            <h2 className="font-display font-bold text-neutral-900 group-hover:text-gem">
+              English-speaking jobs in the Netherlands
+            </h2>
+            <p className="mt-1 text-sm text-neutral-500">
+              No Dutch? No problem. Browse roles where English is the working language.
+            </p>
+          </div>
+          <span className="hidden shrink-0 text-sm font-medium text-gem sm:block">
+            Browse →
+          </span>
+        </Link>
       </section>
 
       {/* EMPLOYER STRIP */}
