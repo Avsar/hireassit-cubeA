@@ -397,11 +397,37 @@ export default async function JobDetailPage({ params }: Props) {
   })();
   const isStale = isActive && daysOld > 30;
 
-  // Rolling 30-day expiry. The page revalidates hourly, so an active job
-  // always advertises a future validThrough and is never dropped by Google
-  // for being "expired"; once a job goes inactive we stop emitting JSON-LD.
   const validThrough = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString();
   const addressRegion = regionForCity(job.city);
+  const salary = plan.facts.salary ?? aiSummary?.salary ?? null;
+
+  const companySlug = job.company
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 80);
+
+  const sourceDomain = (() => {
+    try {
+      return new URL(job.apply_url).hostname.replace(/^www\./, "");
+    } catch {
+      return "";
+    }
+  })();
+  const checkedAgo = timeAgo(job.last_seen_at || job.first_seen_at || "");
+
+  const meter = job.verified_hidden
+    ? { lit: 5, tone: "gem" as const, badge: "Hidden gem", heading: "A verified hidden gem", label: "Rarely on the big boards.", sub: "We checked LinkedIn & Indeed and couldn't find this role." }
+    : job.hidden_tier >= 2
+      ? { lit: 4, tone: "gem" as const, badge: "Hidden gem", heading: "A likely hidden gem", label: "Likely low visibility.", sub: "Scraped straight from the company — rarely syndicated." }
+      : job.hidden_tier === 1
+        ? { lit: 3, tone: "low" as const, badge: "Low visibility", heading: "A lower-competition listing", label: "Lower visibility than most.", sub: "This company posts on the big boards less than average." }
+        : null;
+
+  const remoteMarkers = ["remote", "hybrid", "thuiswerk", "work from home", "wfh"];
+  const isRemote = remoteMarkers.some((m) =>
+    `${job.location_raw} ${job.title} ${job.city}`.toLowerCase().includes(m),
+  );
 
   const jsonLd = isActive
     ? {
@@ -429,40 +455,24 @@ export default async function JobDetailPage({ params }: Props) {
         ...(job.job_type
           ? { employmentType: job.job_type.toUpperCase().replace(/[\s-]/g, "_") }
           : {}),
+        ...(isRemote ? { jobLocationType: "TELECOMMUTE" } : {}),
+        ...(salary && salary.min != null
+          ? {
+              baseSalary: {
+                "@type": "MonetaryAmount",
+                currency: salary.currency || "EUR",
+                value: {
+                  "@type": "QuantitativeValue",
+                  ...(salary.min != null ? { minValue: salary.min } : {}),
+                  ...(salary.max != null ? { maxValue: salary.max } : {}),
+                  unitText: salary.period === "hour" ? "HOUR" : salary.period === "year" ? "YEAR" : "MONTH",
+                },
+              },
+            }
+          : {}),
         directApply: false,
       }
     : null;
-
-  const companySlug = job.company
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "")
-    .slice(0, 80);
-
-  // Provenance — where + when CubeA found this (a trust signal unique to us).
-  const sourceDomain = (() => {
-    try {
-      return new URL(job.apply_url).hostname.replace(/^www\./, "");
-    } catch {
-      return "";
-    }
-  })();
-  const checkedAgo = timeAgo(job.last_seen_at || job.first_seen_at || "");
-
-  // Visibility meter — how rarely this role shows up on the big boards.
-  // Derived entirely from existing hidden_tier / verified_hidden (no new data).
-  const meter = job.verified_hidden
-    ? { lit: 5, tone: "gem" as const, badge: "Hidden gem", heading: "A verified hidden gem", label: "Rarely on the big boards.", sub: "We checked LinkedIn & Indeed and couldn't find this role." }
-    : job.hidden_tier >= 2
-      ? { lit: 4, tone: "gem" as const, badge: "Hidden gem", heading: "A likely hidden gem", label: "Likely low visibility.", sub: "Scraped straight from the company — rarely syndicated." }
-      : job.hidden_tier === 1
-        ? { lit: 3, tone: "low" as const, badge: "Low visibility", heading: "A lower-competition listing", label: "Lower visibility than most.", sub: "This company posts on the big boards less than average." }
-        : null;
-
-  const remoteMarkers = ["remote", "hybrid", "thuiswerk", "work from home", "wfh"];
-  const isRemote = remoteMarkers.some((m) =>
-    `${job.location_raw} ${job.title} ${job.city}`.toLowerCase().includes(m),
-  );
 
   return (
     <main className="min-h-screen bg-neutral-50">
