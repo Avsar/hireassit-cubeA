@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { CITY_PAGES, ROLE_PAGES, ROLE_CITY_COMBOS, fetchCompanies, fetchSitemapJobs } from "@/lib/hireassist";
+import { getAllCachedIds } from "@/lib/summary-cache";
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://cubea.nl";
 
@@ -53,12 +54,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   let jobPages: MetadataRoute.Sitemap = [];
   try {
     const jobs = await fetchSitemapJobs();
-    jobPages = jobs.map((j) => ({
-      url: `${SITE}/jobs/${j.slug}`,
-      lastModified: j.lastmod || undefined,
-      changeFrequency: "daily" as const,
-      priority: 0.7,
-    }));
+    const summarisedIds = getAllCachedIds();
+    jobPages = jobs
+      .filter((j) => summarisedIds.has(String(j.id)))
+      .map((j) => ({
+        url: `${SITE}/jobs/${j.slug}`,
+        lastModified: j.lastmod || undefined,
+        changeFrequency: "daily" as const,
+        priority: 0.7,
+      }));
   } catch {
     // API briefly unavailable: ship the static pages, jobs return next revalidation
   }

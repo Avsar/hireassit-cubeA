@@ -5317,6 +5317,37 @@
     "descriptionHash": "7592aa66b521909d",
     "updatedAt": "2026-06-30T16:59:21.697Z"
   },
+  "2685": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Lead security initiatives for Databricks' AI and ML platform as a senior technical expert. You will identify and mitigate critical security risks across AI services including Agent Bricks, Genie, Model Serving, MLflow, and Unity AI Gateway. Responsibilities include conducting red team exercises against production systems, reviewing security architectures for complex AI features, developing security tools for AI workloads, and collaborating with product teams to integrate security into the development process from inception.",
+      "requirements": [
+        "Deep offensive security expertise combined with practical AI/ML systems knowledge",
+        "Experience leading red team engagements and security assessments",
+        "Ability to conduct security architecture reviews for complex, multi-system features",
+        "Experience building security tooling and infrastructure",
+        "Senior-level technical leadership and standard-setting capabilities",
+        "Ability to partner effectively with product teams across the organization"
+      ],
+      "role_category": "Security",
+      "seniority": "Lead",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "English",
+      "salary": null,
+      "location": "United States (any location)",
+      "key_tags": [
+        "AI Security",
+        "ML Security",
+        "Red Team",
+        "Security Architecture",
+        "Offensive Security",
+        "Security Engineering"
+      ]
+    },
+    "descriptionHash": "57f58ccd414166ad",
+    "updatedAt": "2026-07-21T16:49:58.982Z"
+  },
   "2714": {
     "summary": {
       "is_valid_posting": true,
@@ -80367,6 +80398,38 @@
     "descriptionHash": "bbb57362e758e69b",
     "updatedAt": "2026-06-30T17:25:35.605Z"
   },
+  "34342": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Toast ICT is seeking a Senior Software Engineer (Fullstack) for the Digital Storefront team. You will work on consumer-facing products including online ordering, e-commerce, branded websites, and mobile applications used by millions of restaurant customers daily. The role involves technical development across a modern tech stack, with influence over product and business strategy. You'll conduct experiments, iterate rapidly, and contribute to scaling products while maintaining stability.",
+      "requirements": [
+        "Fullstack software engineering expertise",
+        "Experience with modern tech stack",
+        "Ability to work on large-scale consumer products",
+        "Problem-solving skills in real-world technical contexts",
+        "Hands-on, entrepreneurial mindset",
+        "Experience with experimentation and rapid iteration"
+      ],
+      "role_category": "Developer",
+      "seniority": "Senior",
+      "employment_type": "Full-time",
+      "work_mode": "Hybrid",
+      "language_requirement": "English",
+      "salary": null,
+      "location": "US (remote), Boston (hybrid), or New York (hybrid)",
+      "key_tags": [
+        "Fullstack",
+        "Restaurant Technology",
+        "Online Ordering",
+        "E-commerce",
+        "Mobile Apps",
+        "Scalability",
+        "Product-focused"
+      ]
+    },
+    "descriptionHash": "9c6d7283ae8b2bce",
+    "updatedAt": "2026-07-21T16:50:17.337Z"
+  },
   "34359": {
     "summary": {
       "is_valid_posting": true,
@@ -80625,6 +80688,37 @@
     },
     "descriptionHash": "1b0f40cffab746c8",
     "updatedAt": "2026-06-30T17:33:37.107Z"
+  },
+  "34494": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Lead Twilio's Strategic Accounts team serving the regulated healthcare sector. Manage and mentor a team of 6-8 Strategic Account Executives across North America, driving revenue growth and expanding product adoption within existing named accounts. The role emphasizes customer focus, data-driven decision-making, and a consultative sales approach.",
+      "requirements": [
+        "Leadership experience managing sales teams",
+        "Track record in strategic account management and revenue growth",
+        "Consultative sales philosophy and customer-focused approach",
+        "Ability to mentor and scale high-performing teams",
+        "Experience in regulated verticals or healthcare sector preferred",
+        "North America sales territory knowledge"
+      ],
+      "role_category": "Sales",
+      "seniority": "Lead",
+      "employment_type": "Full-time",
+      "work_mode": "Remote",
+      "language_requirement": "English",
+      "salary": null,
+      "location": "North America",
+      "key_tags": [
+        "Strategic Accounts",
+        "Sales Leadership",
+        "Healthcare",
+        "Regulated Verticals",
+        "Team Management",
+        "Revenue Growth"
+      ]
+    },
+    "descriptionHash": "4bee0b51e301d38b",
+    "updatedAt": "2026-07-21T16:49:59.765Z"
   },
   "34501": {
     "summary": {
@@ -90125,6 +90219,35 @@
     },
     "descriptionHash": "53667a96d357c6d5",
     "updatedAt": "2026-06-30T16:59:48.852Z"
+  },
+  "38256": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join Stripe's Vulnerability Management team as a Security Analyst focused on bug bounty operations. You will manage the complete lifecycle of security vulnerability reports submitted through Stripe's bug bounty program, from initial triage through researcher engagement. The role involves analyzing vulnerabilities to understand root causes, coordinating fixes, and driving continuous improvements to the program's effectiveness. You'll have autonomy to shape researcher campaigns and enhance program transparency.",
+      "requirements": [
+        "Highly technical background with strong attention to detail",
+        "Experience with security vulnerability triage and analysis",
+        "Ability to coordinate with multiple teams on vulnerability resolution",
+        "Experience engaging with external security researchers",
+        "Capability to implement process improvements and drive program effectiveness"
+      ],
+      "role_category": "Security",
+      "seniority": "Unknown",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": null,
+      "key_tags": [
+        "bug bounty",
+        "vulnerability management",
+        "security analysis",
+        "triage",
+        "researcher engagement"
+      ]
+    },
+    "descriptionHash": "b2851385009f461a",
+    "updatedAt": "2026-07-21T16:50:02.950Z"
   },
   "38271": {
     "summary": {
@@ -119801,5 +119924,1104 @@
     },
     "descriptionHash": "2476f66083c879de",
     "updatedAt": "2026-07-03T08:14:55.361Z"
+  },
+  "580275": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join Databricks' Security Field Engineering team as a Principal Security Field Engineer. You will work with customers and internal teams to address security questions, conduct training, and create customer-facing materials including documentation, presentations, and technical resources. The role emphasizes scalable solutions and knowledge sharing over individual heroics, with opportunities to influence security strategy across the organization through direct customer engagement, content creation, process improvements, and technical leadership.",
+      "requirements": [
+        "Security expertise to advise on platform architectures and compliance matters",
+        "Ability to communicate complex security concepts to customers and internal teams",
+        "Experience creating technical content such as presentations, white papers, and documentation",
+        "Capability to work autonomously and prioritize high-impact, scalable solutions",
+        "Willingness to contribute across multiple areas including customer interactions, enablement, automation, and process improvement"
+      ],
+      "role_category": "Security",
+      "seniority": "Lead",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "English",
+      "salary": null,
+      "location": "US (multiple locations considered)",
+      "key_tags": [
+        "security",
+        "field engineering",
+        "customer-facing",
+        "compliance",
+        "technical leadership",
+        "databricks"
+      ]
+    },
+    "descriptionHash": "3bf74c6eec100c52",
+    "updatedAt": "2026-07-21T16:49:58.076Z"
+  },
+  "580348": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Factor_, a HelloFresh brand, is hiring a cleaning professional for their Verden facility to maintain outdoor areas and production spaces. You will be responsible for cleaning and upkeeping external grounds, logistics areas, and production floors while ensuring high hygiene standards are consistently met. The role includes identifying and addressing damage or contamination in the production area, operating and maintaining modern cleaning equipment, and performing winter maintenance duties such as snow and ice removal on the premises.",
+      "requirements": [
+        "Strong attention to detail and commitment to cleanliness and order",
+        "German language skills at A2 level or higher for team coordination",
+        "Flexibility and willingness to work shifts, including weekends as needed",
+        "Experience in cleaning, preferably in production facilities (career changers welcome)",
+        "Ability to operate and maintain modern cleaning equipment",
+        "Willingness to perform winter maintenance tasks"
+      ],
+      "role_category": "Other",
+      "seniority": "Unknown",
+      "employment_type": "Full-time",
+      "work_mode": "On-site",
+      "language_requirement": "German",
+      "salary": null,
+      "location": "Verden, Germany",
+      "key_tags": [
+        "cleaning",
+        "production facility",
+        "shift work",
+        "maintenance",
+        "HelloFresh",
+        "Factor_"
+      ]
+    },
+    "descriptionHash": "1126636016eef16d",
+    "updatedAt": "2026-07-21T16:50:10.293Z"
+  },
+  "592076": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join Databricks' Security Field Engineering team to help customers understand and secure their data platforms. You'll work with field teams and customers to address security architecture questions, compliance concerns, and platform security topics. Responsibilities include customer meetings, creating technical content like presentations and white papers, training internal teams, and developing scalable solutions. The role emphasizes building reusable resources and knowledge over individual heroics, offering exposure across all security domains with significant autonomy and growth potential.",
+      "requirements": [
+        "Security expertise and ability to work with customers on architecture and compliance questions",
+        "Experience creating technical content such as presentations, white papers, or documentation",
+        "Ability to train and enable other team members",
+        "Comfort with both customer-facing interactions and independent project work",
+        "Coding skills (implied by mention of writing code for customers)"
+      ],
+      "role_category": "Security",
+      "seniority": "Senior",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "English",
+      "salary": null,
+      "location": "US (multiple locations considered)",
+      "key_tags": [
+        "security",
+        "field engineering",
+        "customer-facing",
+        "compliance",
+        "technical content creation",
+        "Databricks"
+      ]
+    },
+    "descriptionHash": "e449d608eafb10a5",
+    "updatedAt": "2026-07-21T16:49:55.501Z"
+  },
+  "592251": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Entry-level sales development role at Toast, a restaurant and business technology company. The position involves high-volume prospecting through calls, emails, and social outreach to qualify leads for Account Executives. Designed as a structured career pathway with clear advancement to Account Executive within 12-18 months through the Toast Sales Academy program. Requires bilingual capability in Mandarin and English.",
+      "requirements": [
+        "Ability to execute 100+ high-quality outreach activities daily",
+        "Bilingual proficiency in Mandarin and English",
+        "Experience with warm and cold calling, email outreach, and social engagement",
+        "Ability to qualify business opportunities and assess mutual fit",
+        "Commitment to sales development and willingness to advance through structured training program"
+      ],
+      "role_category": "Sales",
+      "seniority": "Junior",
+      "employment_type": "Full-time",
+      "work_mode": "Hybrid",
+      "language_requirement": "English or Dutch",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "Sales Development",
+        "Bilingual",
+        "Mandarin",
+        "Entry-level",
+        "Restaurant Technology",
+        "Lead Generation",
+        "Career Development"
+      ]
+    },
+    "descriptionHash": "5951efcd541f2713",
+    "updatedAt": "2026-07-21T16:50:11.190Z"
+  },
+  "592256": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Toast is seeking a Staff Software Engineer for their Android Systems team to design and build backend services that power device management for their restaurant POS platform. The role involves hands-on Kotlin development, architecting end-to-end systems for device configuration and management, and collaborating across product, hardware, and QA teams to shape the technical direction of Toast's hardware ecosystem software.",
+      "requirements": [
+        "Hands-on coding ability with Kotlin backend services",
+        "Experience designing end-to-end systems",
+        "Leadership and collaboration skills across multiple teams",
+        "Focus on software quality and customer empathy",
+        "Ability to think strategically and define technical requirements"
+      ],
+      "role_category": "Developer",
+      "seniority": "Lead",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": null,
+      "key_tags": [
+        "Kotlin",
+        "Backend",
+        "Device Management",
+        "POS Systems",
+        "System Design",
+        "Cloud Services"
+      ]
+    },
+    "descriptionHash": "5065e6e8cfed3b43",
+    "updatedAt": "2026-07-21T16:50:22.800Z"
+  },
+  "604264": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Toast Capital Markets is seeking a Principal to support lending and financing operations for the Toast Capital Loan Program. You will report to the Senior Director of Capital Markets and work across the fintech business to drive growth in the lending business. Key responsibilities include financial modeling and analysis for capital decisions, managing ABS-style reporting and audit processes, maintaining relationships with external capital partners, negotiating private credit arrangements, and collaborating with Risk, R&D, Strategic Finance, Accounting, and Product teams.",
+      "requirements": [
+        "Strong analytical and financial modeling skills",
+        "Ability to navigate complex, data-driven decisions",
+        "Attention to detail",
+        "Experience with capital markets, lending, or financing activities",
+        "Ability to manage reporting and audit processes",
+        "Relationship management and negotiation skills",
+        "Cross-functional collaboration experience"
+      ],
+      "role_category": "Finance",
+      "seniority": "Senior",
+      "employment_type": "Full-time",
+      "work_mode": "Remote",
+      "language_requirement": "English",
+      "salary": null,
+      "location": "United States (Remote, East Coast preferred)",
+      "key_tags": [
+        "Capital Markets",
+        "Lending",
+        "Financial Modeling",
+        "ABS Reporting",
+        "Private Credit",
+        "Fintech"
+      ]
+    },
+    "descriptionHash": "0c577b0a054a6d45",
+    "updatedAt": "2026-07-21T16:50:15.787Z"
+  },
+  "616827": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Toast is seeking a Senior Manager to lead AI-driven go-to-market initiatives within the Retail division. You will oversee the deployment of AI applications designed to enhance sales team productivity and streamline customer onboarding. Working across Account Executives, Business Development Representatives, and Onboarding teams, you'll architect scalable AI solutions that accelerate sales cycles and improve time-to-value for customers. This role is central to Toast's strategy of integrating AI across the enterprise to redefine how the company competes in retail.",
+      "requirements": [
+        "Expertise in applied AI and its practical business applications",
+        "Experience driving go-to-market strategy and execution",
+        "Ability to lead cross-functional teams including sales, business development, and customer success",
+        "Track record of deploying productivity and automation solutions at scale",
+        "Capability to balance corporate-wide coordination with vertical accountability",
+        "Experience optimizing sales processes and metrics such as Productivity Per Rep"
+      ],
+      "role_category": "Sales",
+      "seniority": "Senior",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "AI/Machine Learning",
+        "Go-to-Market",
+        "Sales Engineering",
+        "Retail Technology",
+        "Sales Leadership",
+        "Productivity Automation"
+      ]
+    },
+    "descriptionHash": "1b96bd8ae507bb74",
+    "updatedAt": "2026-07-21T16:50:20.510Z"
+  },
+  "616829": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Toast is hiring a Staff Machine Learning Engineer to lead the ML Platform team, which builds core infrastructure supporting machine learning across the organization. This includes the feature store, model hosting and serving, experimentation platform, and training pipelines. The role involves setting architectural direction, delivering foundational systems that enable other teams, and mentoring engineers. You will work on infrastructure that powers personalization, forecasting, fraud detection, search, and AI features for restaurant customers. The position requires both hands-on technical work and leadership in distributed systems design.",
+      "requirements": [
+        "Expertise in machine learning platform architecture and infrastructure",
+        "Experience designing and building distributed systems",
+        "Ability to write and review production code",
+        "Leadership experience mentoring and elevating other engineers",
+        "Skill in technical design and architectural decision-making",
+        "Ability to partner effectively with ML engineers, data scientists, product teams, and infrastructure leadership",
+        "Comfort influencing organizational decisions on ML development and deployment practices"
+      ],
+      "role_category": "Data",
+      "seniority": "Lead",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": null,
+      "key_tags": [
+        "Machine Learning",
+        "Platform Engineering",
+        "Infrastructure",
+        "Feature Store",
+        "Model Serving",
+        "Distributed Systems",
+        "Leadership"
+      ]
+    },
+    "descriptionHash": "76b017ac6b41543a",
+    "updatedAt": "2026-07-21T16:50:20.790Z"
+  },
+  "628729": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Lead Toast's global transportation, trade, and compliance operations as a senior manager. Develop and execute strategy for domestic and international hardware product logistics, manage carrier relationships, monitor supply chain risks, and ensure regulatory compliance across all regions. Translate operational metrics into strategic insights for executive leadership and provide expertise on cross-border trade, imports, exports, and customs regulations.",
+      "requirements": [
+        "Senior-level leadership experience in global transportation and logistics",
+        "Expertise in trade compliance, customs regulations, and cross-border operations",
+        "Ability to develop and execute end-to-end logistics strategy",
+        "Experience managing relationships with transportation carriers",
+        "Capability to identify and mitigate supply chain risks",
+        "Skill in translating operational data into strategic business recommendations",
+        "Knowledge of scaling logistics operations across multiple regions"
+      ],
+      "role_category": "Other",
+      "seniority": "Senior",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": null,
+      "key_tags": [
+        "logistics",
+        "supply chain",
+        "trade compliance",
+        "global operations",
+        "transportation management",
+        "customs",
+        "risk management"
+      ]
+    },
+    "descriptionHash": "add02a8c12b5b1af",
+    "updatedAt": "2026-07-21T16:50:22.131Z"
+  },
+  "712127": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Toast is seeking a Senior Analyst for Retail Revenue Operations to design and optimize sales territories and go-to-market analytics. You will transition the retail division from manual, spreadsheet-based territory planning to automated, data-driven models using Salesforce, Snowflake, and Sigma. The role encompasses market segmentation, territory design, sales capacity optimization, and building analytics infrastructure to support rapid retail growth. Responsibilities include developing scalable analyses on sales execution, pipeline health, account prioritization, market coverage, and sales productivity, as well as creating decision-support tools for leadership.",
+      "requirements": [
+        "Experience designing and optimizing sales territories using data-driven approaches",
+        "Proficiency with Salesforce, Snowflake, and Sigma or similar analytics platforms",
+        "Strong analytical and modeling skills to build automated, algorithmic solutions",
+        "Ability to translate complex data into actionable business insights and decision-support tools",
+        "Experience with sales operations, go-to-market strategy, or revenue operations",
+        "Capability to manage end-to-end projects from manual processes to automated infrastructure"
+      ],
+      "role_category": "Data",
+      "seniority": "Senior",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "English",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "Revenue Operations",
+        "Territory Design",
+        "GTM Analytics",
+        "Salesforce",
+        "Snowflake",
+        "Sigma",
+        "Sales Analytics",
+        "Data-driven Strategy"
+      ]
+    },
+    "descriptionHash": "6c09eec08793411d",
+    "updatedAt": "2026-07-21T16:50:14.232Z"
+  },
+  "723992": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Flow Traders seeks a Senior Market Risk Manager to provide oversight of market risk across all trading activities in the EMEA region. Reporting to the Market Risk Lead, you will manage the day-to-day execution and improvement of the market risk framework, including limits, monitoring, stress testing, and analytics. The role involves close collaboration with trading desks across ETFs, fixed income, FX, digital assets, and options to understand strategies and exposures, then translate that knowledge into a robust and commercially relevant risk framework. You will monitor portfolio risk, investigate breaches and P&L anomalies, and drive risk mitigation initiatives. This is an individual contributor role focused on specialist expertise rather than people management.",
+      "requirements": [
+        "Experience in market risk management or a related risk discipline",
+        "Understanding of trading strategies and exposures across multiple asset classes (ETFs, fixed income, FX, digital assets, options)",
+        "Ability to develop and oversee risk frameworks including risk appetite, limits, stress testing, and intraday controls",
+        "Strong analytical and problem-solving skills for monitoring portfolio risk and investigating anomalies",
+        "Capability to work effectively with trading desks and translate technical risk insights into actionable frameworks",
+        "Experience with risk monitoring tools and analytics"
+      ],
+      "role_category": "Finance",
+      "seniority": "Senior",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": "EMEA",
+      "key_tags": [
+        "Market Risk",
+        "Risk Management",
+        "Trading",
+        "ETFs",
+        "Fixed Income",
+        "FX",
+        "Digital Assets",
+        "Risk Framework",
+        "Stress Testing",
+        "Portfolio Monitoring"
+      ]
+    },
+    "descriptionHash": "4ab1462fce9d1540",
+    "updatedAt": "2026-07-21T16:50:38.623Z"
+  },
+  "724097": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Lead the program management for Toast IQ, an AI agent platform for restaurant operators. You will design and operate the monthly release cycle, establish quality standards for platform readiness, and coordinate go-to-market strategy to ensure cohesive messaging across multiple AI agent launches. The role involves working cross-functionally with product, engineering, marketing, support, and finance teams to build scalable operating processes that enable rapid, confident delivery as the platform grows.",
+      "requirements": [
+        "Experience designing and managing complex release programs or product launch cadences",
+        "Ability to influence and coordinate across multiple teams without direct authority",
+        "Strong cross-functional collaboration skills across product, engineering, marketing, support, and finance",
+        "Capability to set and maintain quality standards and platform readiness criteria",
+        "Experience building repeatable operating mechanisms and scalable processes",
+        "Comfort serving as an escalation point and decision-maker in ambiguous situations"
+      ],
+      "role_category": "Product",
+      "seniority": "Senior",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "English",
+      "salary": null,
+      "location": null,
+      "key_tags": [
+        "program management",
+        "product launches",
+        "AI platform",
+        "release management",
+        "cross-functional leadership",
+        "restaurant technology"
+      ]
+    },
+    "descriptionHash": "625db7160d655f16",
+    "updatedAt": "2026-07-21T16:50:15.058Z"
+  },
+  "747925": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Support the execution of paid search campaigns by building, quality-assuring, and deploying campaigns across multiple search platforms including Google Ads, Microsoft Ads, and Apple Search Ads. Work with campaign specifications and platform tools to implement strategy, with a focus on developing technical expertise in campaign setup and deployment processes while collaborating with activation teams.",
+      "requirements": [
+        "Ability to build and launch paid search campaigns across Google Ads, Microsoft Ads, Apple Search Ads, and other supported platforms",
+        "Experience or willingness to learn campaign deployment using platform editors and bulk uploads",
+        "Capability to execute quality assurance and trafficking tasks",
+        "Ability to work from documented campaign specifications",
+        "Collaboration skills to partner with Activation teams",
+        "Attention to detail for error-free execution of standard tasks"
+      ],
+      "role_category": "Marketing",
+      "seniority": "Junior",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": null,
+      "key_tags": [
+        "paid search",
+        "Google Ads",
+        "Microsoft Ads",
+        "campaign deployment",
+        "digital marketing",
+        "search advertising"
+      ]
+    },
+    "descriptionHash": "4bdd2f3329a99393",
+    "updatedAt": "2026-07-21T16:49:14.735Z"
+  },
+  "747975": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "GitLab seeks a Business Development Representative to cover the Saudi Arabia and UAE markets. The role is fully remote and involves driving business growth in the MENA region for GitLab's DevSecOps platform, which serves over 50 million users globally.",
+      "requirements": [
+        "Experience in business development or sales, preferably in the MENA region",
+        "Ability to work independently in a remote environment",
+        "Knowledge of DevSecOps or software development tools is advantageous"
+      ],
+      "role_category": "Sales",
+      "seniority": "Unknown",
+      "employment_type": "Full-time",
+      "work_mode": "Remote",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": "Saudi Arabia and UAE (Remote)",
+      "key_tags": [
+        "Business Development",
+        "Sales",
+        "MENA",
+        "Remote",
+        "DevSecOps"
+      ]
+    },
+    "descriptionHash": "4b6d9a98b27aa315",
+    "updatedAt": "2026-07-21T16:49:07.782Z"
+  },
+  "760461": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Lead commercial growth and strategy for Adyen's Food & Beverage vertical. Partner with enterprise and SaaS customers in restaurants, coffee shops, bars, catering, and food delivery to identify their needs and drive vertical success. This role is part of the Commercial Strategy & Go-to-Market team, responsible for positioning Adyen as a global fintech leader in the F&B space.",
+      "requirements": [
+        "Ownership of commercial growth strategy for the F&B vertical",
+        "Ability to partner closely with enterprise and SaaS customers",
+        "Experience identifying customer needs and supporting business growth",
+        "Strategic thinking and go-to-market expertise"
+      ],
+      "role_category": "Product",
+      "seniority": "Senior",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": null,
+      "key_tags": [
+        "F&B",
+        "Vertical Strategy",
+        "Commercial Growth",
+        "Go-to-Market",
+        "Fintech",
+        "Enterprise Sales"
+      ]
+    },
+    "descriptionHash": "7629dce5816f3981",
+    "updatedAt": "2026-07-21T16:50:26.030Z"
+  },
+  "760464": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Lead a regional IT support team of nine people across Amsterdam, Madrid, and London offices. Develop and execute short and medium-term strategic plans to enhance IT support quality across Adyen's global operations. Balance hands-on management with technical involvement, working to automate processes and improve overall IT experience while partnering with senior regional leadership.",
+      "requirements": [
+        "People leadership experience managing distributed teams",
+        "Strategic planning and vision-setting capability",
+        "Technical IT support background",
+        "Process automation and improvement mindset",
+        "Ability to work hands-on in support operations when needed",
+        "Experience partnering with senior management"
+      ],
+      "role_category": "Other",
+      "seniority": "Lead",
+      "employment_type": "Full-time",
+      "work_mode": "On-site",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": "Amsterdam, Netherlands (with team across Amsterdam, Madrid, and London)",
+      "key_tags": [
+        "Team Lead",
+        "IT Support",
+        "EMEA",
+        "People Management",
+        "Strategic Planning",
+        "Process Automation"
+      ]
+    },
+    "descriptionHash": "834dbf49f3a8d8d0",
+    "updatedAt": "2026-07-21T16:50:31.198Z"
+  },
+  "760536": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Dispatch Data Services seeks an Account Executive to drive enterprise sales for their field service management platform. You will independently prospect into target accounts, build pipeline, and close complex SaaS deals. The role offers uncapped earning potential, territory ownership, and remote-first flexibility with optional Boston office access. Dispatch is a rapidly growing company within the Valsoft portfolio, serving leading brands in home and field service.",
+      "requirements": [
+        "Proven track record closing six-figure-plus SaaS deals",
+        "Strong prospecting and pipeline-building skills",
+        "Ability to navigate complex enterprise sales cycles",
+        "Experience with independent account development and territory management",
+        "Demonstrated success in consultative, hunter-style sales"
+      ],
+      "role_category": "Sales",
+      "seniority": "Mid",
+      "employment_type": "Full-time",
+      "work_mode": "Remote",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": "Boston (optional office access); Remote",
+      "key_tags": [
+        "SaaS",
+        "Enterprise Sales",
+        "Field Service",
+        "Account Executive",
+        "Remote"
+      ]
+    },
+    "descriptionHash": "7d83eeb851b11814",
+    "updatedAt": "2026-07-21T16:50:06.917Z"
+  },
+  "760558": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join Flow Traders' quantitative trading team in Amsterdam as a Junior Quantitative Researcher. You will design, build, and optimize trading models and algorithms, analyze market data to identify patterns for trading strategies, and collaborate with traders and technologists to move research into production. The role involves monitoring and refining models based on live market performance.",
+      "requirements": [
+        "PhD in Mathematics, Physics, Computer Science, or related quantitative field",
+        "Strong knowledge of statistics and linear algebra",
+        "Proficiency in Python or C++ for implementing models and algorithms",
+        "Experience with Deep Learning"
+      ],
+      "role_category": "Data",
+      "seniority": "Junior",
+      "employment_type": "Full-time",
+      "work_mode": "On-site",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": "Amsterdam",
+      "key_tags": [
+        "quantitative research",
+        "trading",
+        "machine learning",
+        "Python",
+        "C++",
+        "statistical modeling",
+        "algorithms"
+      ]
+    },
+    "descriptionHash": "25ee81987acaa21d",
+    "updatedAt": "2026-07-21T16:50:36.657Z"
+  },
+  "796227": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Develop and execute an integrated communication campaign to increase awareness of national fire service specialisms among regional safety organizations. Translate the existing communication strategy into a comprehensive campaign concept and oversee its implementation across multiple target audiences within the safety regions.",
+      "requirements": [
+        "Experience in communication strategy and campaign development",
+        "Ability to translate strategic communication plans into executable campaigns",
+        "Project management and execution capabilities",
+        "Understanding of public sector communication and stakeholder engagement"
+      ],
+      "role_category": "Marketing",
+      "seniority": "Unknown",
+      "employment_type": "Contract",
+      "work_mode": "Unknown",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Netherlands",
+      "key_tags": [
+        "communication",
+        "campaign",
+        "public sector",
+        "fire service",
+        "detachment"
+      ]
+    },
+    "descriptionHash": "e2ea031fb88d092b",
+    "updatedAt": "2026-07-21T16:48:59.856Z"
+  },
+  "796334": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "ASM is seeking a Senior AI Systems & Applications Engineer to develop reliable, secure, and scalable software applications that leverage advanced AI to solve complex problems for engineers in controlled environments. You will own the application layer that connects AI models, internal data, domain tools, and expert users, transforming AI capabilities into practical software solutions. Responsibilities include building AI-enabled workflow automation and decision-support applications for technical users, designing and deploying secure model orchestration, and grounding AI systems in data schemas.",
+      "requirements": [
+        "Senior-level experience in AI systems and applications engineering",
+        "Expertise in software architecture and applied AI",
+        "Experience building AI-enabled workflow automation and decision-support applications",
+        "Knowledge of model orchestration and secure deployment practices",
+        "Ability to work with data schemas and technical domain tools",
+        "Experience working with expert users in controlled environments"
+      ],
+      "role_category": "Engineer",
+      "seniority": "Senior",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "AI/Machine Learning",
+        "Software Architecture",
+        "Systems Engineering",
+        "Workflow Automation",
+        "Model Orchestration",
+        "Semiconductor Industry"
+      ]
+    },
+    "descriptionHash": "2cb2f543bb68f10d",
+    "updatedAt": "2026-07-21T16:50:06.438Z"
+  },
+  "796336": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "ASM is seeking a Senior Engineer in Product Intelligence focused on Materials Engineering, Chemistry, and Thin Film Design. The role involves developing machine learning and AI solutions tailored to materials science and semiconductor applications. Key responsibilities include designing AI models for chemical systems used in thin film development, incorporating physics-based constraints into models, leveraging modern generative AI frameworks, constructing data pipelines from diverse data sources, and working with software and data science teams to build reproducible systems, dashboards, APIs, and decision-support tools that accelerate research and development workflows.",
+      "requirements": [
+        "Experience developing AI/ML solutions with practical, science-grounded applications",
+        "Knowledge of materials science, chemistry, or thin film physics",
+        "Ability to embed physics and domain mechanisms into machine learning models",
+        "Proficiency with modern generative AI frameworks and ML tools",
+        "Experience building data pipelines from multi-modal data sources",
+        "Capability to collaborate with software and data science engineers",
+        "Experience delivering reproducible systems, dashboards, APIs, and decision-support applications"
+      ],
+      "role_category": "Data",
+      "seniority": "Senior",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "AI/ML",
+        "Materials Science",
+        "Semiconductors",
+        "Thin Film Design",
+        "Chemistry",
+        "Physics-informed ML",
+        "Data Pipelines",
+        "Generative AI"
+      ]
+    },
+    "descriptionHash": "b04d62c5a17f0160",
+    "updatedAt": "2026-07-21T16:50:06.855Z"
+  },
+  "796341": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join Adyen's newly formed GenAI team as a Software Engineer II focused on AI and machine learning for payments. You will design and build intelligent agents capable of handling complex, multi-step payment operations, develop production-grade infrastructure for reliability at scale, and contribute to custom model development for financial data. The role spans the full lifecycle from research through deployed systems, with influence over technical direction across the AI organization.",
+      "requirements": [
+        "Experience designing and implementing AI agents for complex, multi-step tasks",
+        "Expertise in building production-grade AI/ML infrastructure and systems",
+        "Strong software engineering fundamentals with ability to take ownership from research to deployment",
+        "Experience with custom model development, particularly for structured or financial data",
+        "Ability to influence technical direction and collaborate across teams",
+        "Understanding of how to design human-AI collaboration at scale"
+      ],
+      "role_category": "Data",
+      "seniority": "Mid",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "English",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "AI/ML",
+        "GenAI",
+        "Agents",
+        "Payments",
+        "Production Systems",
+        "Financial Data",
+        "Infrastructure"
+      ]
+    },
+    "descriptionHash": "b38c3e39136d15be",
+    "updatedAt": "2026-07-21T16:50:24.534Z"
+  },
+  "796406": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "As a Senior Coordinator for Learning & Development at Coolblue, you serve as the central point of contact for participants, trainers, Learning Specialists, and stakeholders. You manage training schedules, administrative tasks, and learning management system (LMS) operations. Beyond day-to-day execution, you identify opportunities to streamline processes, improve scalability, and enhance user experience. You ensure learning at Coolblue is accessible by handling logistics proactively, transparent through careful tracking of planning and progress, and continuously improving by addressing structural bottlenecks. Key responsibilities include supporting trainers and participants through support channels, coordinating periodic training schedules to balance demand and capacity, managing LMS content and user permissions, extracting and interpreting LMS reports for stakeholders, and driving process improvements including AI-related initiatives.",
+      "requirements": [
+        "Meticulous attention to detail and organizational skills",
+        "Problem-solving ability to support trainers and participants",
+        "Ability to coordinate across multiple departments and stakeholders",
+        "Experience with learning management systems (LMS)",
+        "Capability to create and adjust training schedules",
+        "Data analysis and reporting skills",
+        "Process improvement and project management experience",
+        "Comfort with continuous improvement and change management"
+      ],
+      "role_category": "Other",
+      "seniority": "Senior",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "Learning & Development",
+        "LMS Management",
+        "Training Coordination",
+        "Process Improvement",
+        "Administrative Management"
+      ]
+    },
+    "descriptionHash": "5ede3d1cafdb6a81",
+    "updatedAt": "2026-07-21T16:48:57.256Z"
+  },
+  "796418": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "An entry-level position in performance marketing focused on paid search. You will learn the fundamentals of search engine marketing while supporting account teams with execution and production tasks. Responsibilities include managing paid search campaigns on Google Ads and Microsoft platforms, analyzing performance data, and executing standard account management tasks. This role is designed as a stepping stone toward advanced account management, emphasizing skill development in platform mastery and data quality.",
+      "requirements": [
+        "Foundational understanding of paid search marketing or willingness to learn from training",
+        "Ability to execute standard tasks with accuracy and attention to detail",
+        "Proficiency with Google Ads and Microsoft advertising platforms",
+        "Data analysis and interpretation skills",
+        "Support for campaign launches, optimizations, and ongoing maintenance",
+        "Commitment to maintaining data quality standards"
+      ],
+      "role_category": "Marketing",
+      "seniority": "Junior",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "English",
+      "salary": null,
+      "location": null,
+      "key_tags": [
+        "paid search",
+        "performance marketing",
+        "Google Ads",
+        "Microsoft Ads",
+        "account management",
+        "entry-level"
+      ]
+    },
+    "descriptionHash": "ad606ee759035464",
+    "updatedAt": "2026-07-21T16:49:57.481Z"
+  },
+  "796467": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "GitLab is seeking a Renewals Manager for the Germany region. The role is part of the Renewals job family, which focuses on a critical stage of the customer lifecycle—ensuring continued business relationships and contract extensions. The position requires fluent German language skills. GitLab is a DevSecOps platform trusted by over 50% of Fortune 100 companies, serving more than 50 million registered users.",
+      "requirements": [
+        "Fluent German language proficiency",
+        "Experience in customer renewals or similar account management roles",
+        "Ability to manage critical customer lifecycle moments"
+      ],
+      "role_category": "Sales",
+      "seniority": "Unknown",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "German",
+      "salary": null,
+      "location": "Germany",
+      "key_tags": [
+        "renewals",
+        "account management",
+        "customer success",
+        "DevSecOps",
+        "Germany"
+      ]
+    },
+    "descriptionHash": "4159e783bb4cc0ad",
+    "updatedAt": "2026-07-21T16:50:34.142Z"
+  },
+  "796468": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join GitLab as a Solutions Architect for the MENA region. You will serve as a trusted advisor to prospects and customers, helping organizations leverage GitLab's DevSecOps platform to improve developer productivity, operational efficiency, and security. This role is part of a high-performance team that values innovation, collaboration, and the integration of AI into daily workflows.",
+      "requirements": [
+        "Experience as a Solutions Architect or similar customer-facing technical advisory role",
+        "Understanding of DevSecOps practices and software development workflows",
+        "Ability to translate customer business needs into technical solutions",
+        "Strong communication and presentation skills",
+        "Experience working with enterprise customers"
+      ],
+      "role_category": "Sales",
+      "seniority": "Unknown",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": "MENA",
+      "key_tags": [
+        "Solutions Architecture",
+        "DevSecOps",
+        "Enterprise Sales",
+        "Customer Advisory",
+        "GitLab"
+      ]
+    },
+    "descriptionHash": "d89cd46e34b9a52d",
+    "updatedAt": "2026-07-21T16:50:27.757Z"
+  },
+  "796469": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "GitLab is seeking a Staff Forward Deployed Engineer to work on Agentic SDLC. The role is part of GitLab's Forward Deployed Engineering team, which operates in field-situated positions. GitLab is a DevSecOps orchestration platform used by over 50 million registered users and more than half of the Fortune 100. The company emphasizes AI integration into daily workflows and operates with a high-performance culture centered on collaboration and innovation.",
+      "requirements": [
+        "Staff-level engineering expertise",
+        "Experience with forward-deployed or field-based engineering roles",
+        "Knowledge of SDLC (Software Development Life Cycle) practices",
+        "Ability to work with AI-driven development tools and workflows",
+        "Strong collaboration and communication skills for field-based work"
+      ],
+      "role_category": "Developer",
+      "seniority": "Lead",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": null,
+      "key_tags": [
+        "DevSecOps",
+        "Forward Deployed",
+        "Staff Engineer",
+        "Agentic SDLC",
+        "AI Integration"
+      ]
+    },
+    "descriptionHash": "b321f6007945bf57",
+    "updatedAt": "2026-07-21T16:49:10.689Z"
+  },
+  "796512": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "LearningSpecialist, a sister organization of inBrain, seeks an experienced Senior Learning & Development Specialist to lead strategic projects across various sectors. You will advise clients on forward-thinking learning strategies, guide multidisciplinary teams through complex learning solution implementations, and focus on creating measurable organizational impact. The role emphasizes depth of expertise, challenging assignments aligned with your background, and opportunities for continued professional growth.",
+      "requirements": [
+        "Extensive experience in Learning & Development or educational advisory",
+        "Proven ability to develop and implement strategic learning solutions",
+        "Experience leading multidisciplinary teams on complex projects",
+        "Strong advisory and consulting skills",
+        "Passion for creating effective, impactful learning outcomes",
+        "Ability to work across multiple sectors and organizational contexts"
+      ],
+      "role_category": "Other",
+      "seniority": "Senior",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "Learning & Development",
+        "Educational Advisory",
+        "Strategic Projects",
+        "Organizational Learning",
+        "Team Leadership"
+      ]
+    },
+    "descriptionHash": "01a5a3a47b2ba369",
+    "updatedAt": "2026-07-21T16:49:05.472Z"
+  },
+  "796515": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Lead and develop a team of 40-60 security guards across multiple locations in North Brabant and Limburg. Focus on team management, staff wellbeing, and service quality. Responsibilities include monitoring attendance and absence patterns, conducting monthly development conversations, improving key performance indicators related to absence rates and employee satisfaction, and fostering a positive work environment where guards feel valued and can grow professionally.",
+      "requirements": [
+        "Ability to manage and lead a team of 40-60 security personnel",
+        "Experience with quality assurance and service delivery monitoring",
+        "Skills in absence management and workforce continuity planning",
+        "Capability to conduct regular development conversations and set performance targets",
+        "Focus on improving KPIs including absence rates, staff turnover, and employee satisfaction",
+        "Strong interpersonal and leadership skills to create a positive team culture"
+      ],
+      "role_category": "Other",
+      "seniority": "Lead",
+      "employment_type": "Full-time",
+      "work_mode": "On-site",
+      "language_requirement": "Dutch",
+      "salary": null,
+      "location": "North Brabant and Limburg, Netherlands",
+      "key_tags": [
+        "Team Leadership",
+        "Security",
+        "Guarding",
+        "Supervisor",
+        "Staff Management",
+        "Performance Management"
+      ]
+    },
+    "descriptionHash": "e7963e62e4963717",
+    "updatedAt": "2026-07-21T16:48:59.449Z"
+  },
+  "796547": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join Stripe's Vulnerability Management team as a Security Analyst focused on bug bounty operations. You will manage the complete lifecycle of security vulnerability reports submitted through Stripe's bug bounty program, from initial triage through researcher engagement. The role involves analyzing vulnerabilities to understand root causes, coordinating fixes, and driving continuous improvements to the program's effectiveness. You'll have autonomy to shape researcher campaigns, enhance scoring transparency, and strengthen Stripe's security defenses.",
+      "requirements": [
+        "Highly technical background with strong attention to detail",
+        "Experience with bug bounty program management or vulnerability triage",
+        "Ability to analyze security vulnerabilities and identify root causes",
+        "Skills in coordinating cross-functional teams to resolve security issues",
+        "Capability to engage effectively with external security researchers",
+        "Demonstrated ability to implement process improvements and drive program effectiveness"
+      ],
+      "role_category": "Security",
+      "seniority": "Unknown",
+      "employment_type": "Unknown",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": null,
+      "key_tags": [
+        "bug bounty",
+        "vulnerability management",
+        "security analysis",
+        "triage",
+        "researcher engagement"
+      ]
+    },
+    "descriptionHash": "b2851385009f461a",
+    "updatedAt": "2026-07-21T16:50:01.359Z"
+  },
+  "796550": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Stripe is seeking a Software Engineer to work on their Optimized Checkout & Link products. You will own end-to-end problem solving across multiple systems and technologies, design features serving millions of users globally, and collaborate with product, design, infrastructure, and operations teams. The role involves balancing short and long-term roadmaps while maintaining high engineering standards.",
+      "requirements": [
+        "Bachelor's degree or equivalent foreign qualification"
+      ],
+      "role_category": "Developer",
+      "seniority": "Unknown",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": "South San Francisco, CA",
+      "key_tags": [
+        "payments",
+        "checkout",
+        "full-stack",
+        "product development",
+        "cross-functional collaboration"
+      ]
+    },
+    "descriptionHash": "6fdf03c4c124b7a6",
+    "updatedAt": "2026-07-21T16:49:08.496Z"
+  },
+  "796551": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join Stripe's Deal Pricing team as a Strategy and Operations Lead, serving as a central operational hub for the global deal pricing function. You will support Stripe's Go-to-Market teams by establishing commercial frameworks, enabling large strategic deals, and providing pricing insights to sales, finance, and product leaders. This role acts as a Chief of Staff function to Deal Pricing leadership, owning the global operating model and driving cross-functional process excellence across Operations, Finance, Strategy, and Product teams.",
+      "requirements": [
+        "Experience in strategy and operations or similar central business function roles",
+        "Ability to work cross-functionally with Operations, Finance, Strategy, and Product teams",
+        "Strong project and process management capabilities",
+        "Experience supporting global, scaling organizations",
+        "Demonstrated ability to drive operational excellence and establish frameworks"
+      ],
+      "role_category": "Operations",
+      "seniority": "Mid",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "English",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "Strategy and Operations",
+        "Deal Pricing",
+        "Financial Services",
+        "Go-to-Market",
+        "Cross-functional Leadership",
+        "Global Operations"
+      ]
+    },
+    "descriptionHash": "ecdb4a50716ceb4b",
+    "updatedAt": "2026-07-21T16:49:07.177Z"
+  },
+  "796561": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Lead a hybrid outbound sales development team responsible for acquiring new customers across North America and Latin America. You will guide SDRs in identifying and engaging strategic target accounts, translating Twilio's platform capabilities to address regional and vertical-specific customer needs. The role focuses on building high-quality pipeline and securing new business logos as part of the company's go-to-market strategy.",
+      "requirements": [
+        "Experience leading and managing sales development or outbound sales teams",
+        "Ability to develop and execute strategies for new customer acquisition",
+        "Understanding of sales development best practices and pipeline building",
+        "Capability to work across multiple geographic markets (NAMER and LATAM)",
+        "Strong execution and adaptability in a fast-paced environment"
+      ],
+      "role_category": "Sales",
+      "seniority": "Lead",
+      "employment_type": "Full-time",
+      "work_mode": "Hybrid",
+      "language_requirement": "English",
+      "salary": null,
+      "location": "Unknown",
+      "key_tags": [
+        "Sales Development",
+        "Team Leadership",
+        "New Customer Acquisition",
+        "NAMER",
+        "LATAM",
+        "Pipeline Building",
+        "Remote-first Company"
+      ]
+    },
+    "descriptionHash": "007bac7f6a8a30cc",
+    "updatedAt": "2026-07-21T16:49:53.808Z"
+  },
+  "796563": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Lead design research for Twilio's Emerging Technology and Innovation team, focusing on long-term breakthrough product concepts and future enterprise solutions. You will conduct visionary research to imagine and validate transformative ideas that could reshape the industry over the next 3-5+ years, working beyond incremental improvements to explore possibilities enabled by advances in AI, ML, and related technologies.",
+      "requirements": [
+        "Visionary and entrepreneurial mindset focused on future innovation",
+        "Expertise in design research methodologies",
+        "Ability to lead research initiatives for Horizon 3 (long-term) innovation",
+        "Experience imagining and validating breakthrough product concepts",
+        "Understanding of emerging technologies including AI/ML and AGI",
+        "Capability to think strategically beyond current product lines"
+      ],
+      "role_category": "Design",
+      "seniority": "Lead",
+      "employment_type": "Full-time",
+      "work_mode": "Remote",
+      "language_requirement": "English",
+      "salary": null,
+      "location": null,
+      "key_tags": [
+        "Design Research",
+        "Innovation",
+        "AI/ML",
+        "Product Strategy",
+        "Remote-first",
+        "Enterprise Technology"
+      ]
+    },
+    "descriptionHash": "bbca22a0e5dfda61",
+    "updatedAt": "2026-07-21T16:50:07.730Z"
+  },
+  "796564": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Join Twilio as a Principal Technical Talent Advisor for R&D, responsible for identifying and recruiting top-tier engineering talent across North America, Mexico, and Latin America. This hybrid role combines hands-on recruitment with strategic talent initiatives, requiring you to manage a specialized pipeline while driving operational excellence in hiring. You'll work at a senior individual contributor level within a remote-first, globally distributed organization.",
+      "requirements": [
+        "Proven experience in technical recruiting or talent acquisition, particularly for engineering roles",
+        "Demonstrated ability to identify and attract top-tier engineering talent",
+        "Strategic mindset with capability to lead high-impact talent initiatives",
+        "Strong operational and organizational skills",
+        "Experience working across multiple geographic regions (NAMER and LATAM preferred)",
+        "Ability to balance multiple concurrent recruitment priorities"
+      ],
+      "role_category": "Other",
+      "seniority": "Senior",
+      "employment_type": "Full-time",
+      "work_mode": "Hybrid",
+      "language_requirement": "Unknown",
+      "salary": null,
+      "location": "NAMER and LATAM regions",
+      "key_tags": [
+        "Technical Recruiting",
+        "Talent Acquisition",
+        "Engineering Hiring",
+        "R&D",
+        "Remote-first",
+        "Principal Level"
+      ]
+    },
+    "descriptionHash": "c59fd105c4888391",
+    "updatedAt": "2026-07-21T16:49:12.774Z"
+  },
+  "796566": {
+    "summary": {
+      "is_valid_posting": true,
+      "summary": "Lead a team of senior Customer Success Managers responsible for Wrike's largest North American enterprise accounts. Focus on protecting and growing enterprise revenue through retention strategies, churn reduction, and expansion opportunities. Develop standardized delivery frameworks, mentor experienced CSMs, and serve as a strategic partner and escalation point for complex, high-value clients.",
+      "requirements": [
+        "Experience leading and coaching senior-level Customer Success Managers",
+        "Track record managing net revenue retention (NRR) and gross revenue retention (GRR) metrics",
+        "Ability to develop retention frameworks and proactive intervention strategies for at-risk accounts",
+        "Experience managing complex, high-value enterprise accounts",
+        "Strategic partnership and escalation management skills with large customers",
+        "Capability to standardize enterprise delivery processes and build playbooks"
+      ],
+      "role_category": "Sales",
+      "seniority": "Lead",
+      "employment_type": "Full-time",
+      "work_mode": "Unknown",
+      "language_requirement": "English",
+      "salary": null,
+      "location": "North America",
+      "key_tags": [
+        "Customer Success",
+        "Team Leadership",
+        "Enterprise Accounts",
+        "Revenue Retention",
+        "Churn Reduction"
+      ]
+    },
+    "descriptionHash": "ef43284108a3e9f2",
+    "updatedAt": "2026-07-21T16:50:32.560Z"
   }
 }
