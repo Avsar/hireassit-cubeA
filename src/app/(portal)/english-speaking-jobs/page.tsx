@@ -129,7 +129,13 @@ export default async function EnglishSpeakingHub() {
           <div className="grid gap-3">
             {(() => {
               const summaries = getSummariesBulk(data.jobs.map((j) => j.id));
-              return data.jobs.map((job) => (
+              // Filter out jobs the AI summary identified as Dutch-only — the
+              // backend's english_only flag is company-level and too broad.
+              return data.jobs.filter((job) => {
+                const s = summaries.get(job.id);
+                if (!s) return true; // no summary → benefit of doubt
+                return s.language_requirement !== "Dutch";
+              }).map((job) => (
                 <JobCard key={job.id} job={job} summary={summaries.get(job.id) ?? null} />
               ));
             })()}
