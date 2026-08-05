@@ -3,6 +3,12 @@ import { join } from "path";
 import { createHash } from "crypto";
 import type { JobSummary } from "./job-summariser";
 
+// Import the JSON statically so Next.js output-file-tracing bundles it into
+// every serverless function that uses summary-cache.  readFileSync with
+// process.cwd() works locally but silently returns {} on Vercel because the
+// file isn't traced into the deployment.
+import staticData from "../../data/summaries.json";
+
 const CACHE_DIR = join(process.cwd(), "data");
 const CACHE_FILE = join(CACHE_DIR, "summaries.json");
 
@@ -19,6 +25,12 @@ export function descriptionHash(text: string): string {
 }
 
 function readCache(): CacheData {
+  // In production (Vercel), use the statically-imported data which is bundled
+  // at build time.  Locally, read from disk so the backfill script's writes
+  // are picked up without a rebuild.
+  if (process.env.NODE_ENV === "production") {
+    return staticData as unknown as CacheData;
+  }
   if (!existsSync(CACHE_FILE)) return {};
   try {
     return JSON.parse(readFileSync(CACHE_FILE, "utf-8"));
