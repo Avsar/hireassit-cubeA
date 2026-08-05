@@ -4,8 +4,13 @@ import { fetchCompanies, fetchHiddenSummary, fetchJobs, logoColor, CITY_PAGES, t
 import { getSummariesBulk } from "@/lib/summary-cache";
 import AlertSignup from "@/components/jobs/AlertSignup";
 
-const SHOWCASE_EXCLUDE_PATTERN = /verkoopmedewerker|vakkenvuller|bezorger|schoonmaker|kassamedewerk|winkelmedewerk|orderpicker|inpak|magazijn|horeca|barista|ober|serveerst|afwas|keukenhulp|koerier|postbezorg|krantenbezorg|stagiair|stage|intern(?:ship)?/i;
+const SHOWCASE_EXCLUDE_PATTERN = /verkoopmedewerker|vakkenvuller|bezorger|schoonmaker|kassamedewerk|winkelmedewerk|orderpicker|inpak|magazijn|horeca|barista|ober|serveerst|afwas|keukenhulp|koerier|postbezorg|krantenbezorg|stagiair|stage|intern(?:ship)?|chauffeur|monteur|metselaar|glaszetter|hovenier|timmerman|lasser|schilder|stratenmaker|cnc|frezer|draaier|heftruckchauf/i;
 const SHOWCASE_MAX_PER_COMPANY = 2;
+// Positive allowlist — only show gems whose AI summary matches a knowledge-worker category.
+const SHOWCASE_ALLOWED_CATEGORIES = new Set([
+  "Engineering", "Developer", "Data", "Product", "Design",
+  "DevOps & Cloud", "Security", "Marketing", "Sales", "Finance",
+]);
 
 export const revalidate = 1800;
 
@@ -36,7 +41,9 @@ export default async function HomePage() {
       if (!j.city) return false;
       if (SHOWCASE_EXCLUDE_PATTERN.test(j.title)) return false;
       const s = summaries.get(j.id);
-      if (s && (s.role_category === "Other" || !s.summary)) return false;
+      // Require an AI summary with a knowledge-worker category for the homepage
+      if (!s || !s.summary) return false;
+      if (!SHOWCASE_ALLOWED_CATEGORIES.has(s.role_category)) return false;
       const count = companyCounts.get(j.company) || 0;
       if (count >= SHOWCASE_MAX_PER_COMPANY) return false;
       companyCounts.set(j.company, count + 1);
