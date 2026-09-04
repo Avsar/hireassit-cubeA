@@ -20,7 +20,8 @@ const HOME_CITIES = [
 ];
 
 export default async function HomePage() {
-  const data = await fetchHiddenSummary();
+  let data: Awaited<ReturnType<typeof fetchHiddenSummary>> = null;
+  try { data = await fetchHiddenSummary(); } catch {}
   let verified;
   let allJobs;
   try {

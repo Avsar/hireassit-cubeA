@@ -1,9 +1,34 @@
 // API client for the HireAssist backend (FastAPI on Railway).
+//
+// RESILIENCE: Every fetch uses a short timeout (8s) and AbortController so a
+// Railway outage never causes Vercel serverless functions to hang for minutes,
+// which would spike billed GB-hours.  All public functions either return a
+// safe fallback (null / []) or throw — callers wrap in try/catch.
 
 const API_BASE =
   process.env.HIREASSIST_API_URL ||
   process.env.NEXT_PUBLIC_HIREASSIST_API_URL ||
   "https://hireassist-backend-production.up.railway.app";
+
+/** Max time (ms) to wait for any backend response. Keep this well under
+ *  Vercel's default 10s function timeout to leave room for rendering. */
+const FETCH_TIMEOUT_MS = 8_000;
+
+/** Wrapper around fetch that enforces a hard timeout via AbortController.
+ *  AbortSignal.timeout alone can miss connection-level hangs in some runtimes;
+ *  the manual controller + setTimeout pattern is more reliable on Vercel. */
+async function resilientFetch(url: string, init?: RequestInit): Promise<Response> {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+  try {
+    return await fetch(url, {
+      ...init,
+      signal: controller.signal,
+    });
+  } finally {
+    clearTimeout(timer);
+  }
+}
 
 export interface Job {
   id: number;
@@ -86,18 +111,16 @@ export async function fetchJobs(query: JobsQuery = {}): Promise<JobsResponse> {
   params.set("page", String(query.page || 1));
   params.set("per_page", String(query.per_page || 25));
 
-  const res = await fetch(`${API_BASE}/jobs?${params}`, {
+  const res = await resilientFetch(`${API_BASE}/jobs?${params}`, {
     next: { revalidate: 600 },
-    signal: AbortSignal.timeout(20000),
   });
   if (!res.ok) throw new Error(`Jobs API error: ${res.status}`);
   return res.json();
 }
 
 export async function fetchJobDetail(id: number): Promise<JobDetail | null> {
-  const res = await fetch(`${API_BASE}/jobs/${id}`, {
+  const res = await resilientFetch(`${API_BASE}/jobs/${id}`, {
     next: { revalidate: 3600 },
-    signal: AbortSignal.timeout(20000),
   });
   if (res.status === 404) return null;
   if (!res.ok) throw new Error(`Job detail API error: ${res.status}`);
@@ -107,9 +130,8 @@ export async function fetchJobDetail(id: number): Promise<JobDetail | null> {
 export async function fetchSitemapJobs(): Promise<
   { id: number; slug: string; lastmod: string }[]
 > {
-  const res = await fetch(`${API_BASE}/meta/sitemap-jobs`, {
+  const res = await resilientFetch(`${API_BASE}/meta/sitemap-jobs`, {
     next: { revalidate: 86400 },
-    signal: AbortSignal.timeout(25000),
   });
   if (!res.ok) return [];
   const data = await res.json();
@@ -166,9 +188,8 @@ export interface HiddenSummary {
 }
 
 export async function fetchCompanies(): Promise<CompanySummary[]> {
-  const res = await fetch(`${API_BASE}/companies`, {
+  const res = await resilientFetch(`${API_BASE}/companies`, {
     next: { revalidate: 3600 },
-    signal: AbortSignal.timeout(20000),
   });
   if (!res.ok) throw new Error(`Companies API error: ${res.status}`);
   const data = await res.json();
@@ -176,9 +197,8 @@ export async function fetchCompanies(): Promise<CompanySummary[]> {
 }
 
 export async function fetchCompanyDetail(slug: string): Promise<CompanyDetail | null> {
-  const res = await fetch(`${API_BASE}/companies/${slug}`, {
+  const res = await resilientFetch(`${API_BASE}/companies/${slug}`, {
     next: { revalidate: 3600 },
-    signal: AbortSignal.timeout(20000),
   });
   if (res.status === 404) return null;
   if (!res.ok) throw new Error(`Company API error: ${res.status}`);
@@ -187,9 +207,8 @@ export async function fetchCompanyDetail(slug: string): Promise<CompanyDetail | 
 
 export async function fetchHiddenSummary(): Promise<HiddenSummary | null> {
   try {
-    const res = await fetch(`${API_BASE}/stats/hidden-summary`, {
+    const res = await resilientFetch(`${API_BASE}/stats/hidden-summary`, {
       next: { revalidate: 1800 },
-      signal: AbortSignal.timeout(20000),
     });
     if (!res.ok) return null;
     return res.json();

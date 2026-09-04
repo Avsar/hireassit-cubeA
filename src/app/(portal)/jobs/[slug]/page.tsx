@@ -80,7 +80,11 @@ function regionForCity(city?: string): string | undefined {
 async function getJob(slug: string) {
   const id = idFromSlug(slug);
   if (!id) return null;
-  return fetchJobDetail(id);
+  try {
+    return await fetchJobDetail(id);
+  } catch {
+    return null; // backend unreachable — treat as not found
+  }
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

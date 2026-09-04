@@ -10,7 +10,8 @@ interface Props {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const co = await fetchCompanyDetail(params.slug);
+  let co;
+  try { co = await fetchCompanyDetail(params.slug); } catch { co = null; }
   if (!co) return { title: "Company not found | CubeA" };
   const cityPart = co.cities.length ? ` in ${co.cities.slice(0, 3).join(", ")}` : "";
   // Titles target the queries people actually search for a company:
@@ -48,7 +49,8 @@ function HistoryBars({ history }: { history: { stat_date: string; active_jobs: n
 }
 
 export default async function CompanyPage({ params }: Props) {
-  const co = await fetchCompanyDetail(params.slug);
+  let co;
+  try { co = await fetchCompanyDetail(params.slug); } catch { co = null; }
   if (!co) notFound();
 
   const companyUrl = `https://cubea.nl/companies/${params.slug}`;
