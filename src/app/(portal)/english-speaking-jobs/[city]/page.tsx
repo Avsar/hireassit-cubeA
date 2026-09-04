@@ -126,7 +126,11 @@ export default async function EnglishSpeakingCityPage({ params }: Props) {
           <div className="grid gap-3">
             {(() => {
               const summaries = getSummariesBulk(data.jobs.map((j) => j.id));
-              return data.jobs.map((job) => (
+              return data.jobs.filter((job) => {
+                const s = summaries.get(job.id);
+                if (!s) return true;
+                return s.language_requirement !== "Dutch";
+              }).map((job) => (
                 <JobCard key={job.id} job={job} summary={summaries.get(job.id) ?? null} />
               ));
             })()}

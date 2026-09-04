@@ -84,7 +84,15 @@ export default async function HiddenGemsPage() {
           <div className="grid gap-3">
             {(() => {
               const summaries = getSummariesBulk(data.jobs.map((j) => j.id));
-              return data.jobs.map((job) => (
+              // Cap per company so a single recruiter doesn't dominate the page
+              const MAX_PER_COMPANY = 4;
+              const companyCounts = new Map<string, number>();
+              return data.jobs.filter((job) => {
+                const count = companyCounts.get(job.company) || 0;
+                if (count >= MAX_PER_COMPANY) return false;
+                companyCounts.set(job.company, count + 1);
+                return true;
+              }).map((job) => (
                 <JobCard key={job.id} job={job} summary={summaries.get(job.id) ?? null} />
               ));
             })()}
