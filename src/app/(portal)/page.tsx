@@ -117,28 +117,30 @@ export default async function HomePage() {
             </button>
           </form>
 
-          {(allJobs || data) && (
-            <div className="mt-10 flex justify-center gap-10 text-center">
-              <Link href="/jobs" className="group">
-                <div className="font-display text-2xl font-bold text-neutral-900 group-hover:text-gem">
-                  {(allJobs?.count ?? data?.total_active ?? 0).toLocaleString("en-US")}
-                </div>
-                <div className="text-xs text-neutral-400 font-mono">jobs live now</div>
-              </Link>
-              <Link href="/hidden-gems" className="group">
-                <div className="font-display text-2xl font-bold text-amber-600 group-hover:text-amber-700">
-                  {(verified?.count ?? 0).toLocaleString("en-US")}
-                </div>
-                <div className="text-xs text-neutral-400 font-mono">💎 verified hidden gems</div>
-              </Link>
-              <Link href="/companies" className="group">
-                <div className="font-display text-2xl font-bold text-neutral-900 group-hover:text-gem">
-                  {companyCount ? companyCount.toLocaleString("en-US") : "1,000+"}
-                </div>
-                <div className="text-xs text-neutral-400 font-mono">companies crawled</div>
-              </Link>
-            </div>
-          )}
+          <div className="mt-10 flex justify-center gap-10 text-center">
+            <Link href="/jobs" className="group">
+              <div className="font-display text-2xl font-bold text-neutral-900 group-hover:text-gem">
+                {allJobs?.count
+                  ? allJobs.count.toLocaleString("en-US")
+                  : data?.total_active
+                    ? data.total_active.toLocaleString("en-US")
+                    : "—"}
+              </div>
+              <div className="text-xs text-neutral-400 font-mono">jobs live now</div>
+            </Link>
+            <Link href="/hidden-gems" className="group">
+              <div className="font-display text-2xl font-bold text-amber-600 group-hover:text-amber-700">
+                {verified?.count ? verified.count.toLocaleString("en-US") : "—"}
+              </div>
+              <div className="text-xs text-neutral-400 font-mono">💎 verified hidden gems</div>
+            </Link>
+            <Link href="/companies" className="group">
+              <div className="font-display text-2xl font-bold text-neutral-900 group-hover:text-gem">
+                {companyCount ? companyCount.toLocaleString("en-US") : "1,000+"}
+              </div>
+              <div className="text-xs text-neutral-400 font-mono">companies crawled</div>
+            </Link>
+          </div>
         </div>
       </section>
 
