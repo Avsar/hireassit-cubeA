@@ -14,17 +14,59 @@ const API_BASE =
  *  Vercel's default 10s function timeout to leave room for rendering. */
 const FETCH_TIMEOUT_MS = 8_000;
 
-/** Wrapper around fetch that enforces a hard timeout via AbortController.
+// ---- Circuit breaker ----
+// The 8s timeout bounds *one* request, but under bot traffic against a dead
+// backend thousands of requests each burning 8s still produced a 48× spike in
+// billed GB-hours (Oct 2026).  So after a few consecutive failures we stop
+// calling Railway at all for a cool-down and fail in ~0ms instead.  State is
+// per warm function instance, which is enough: each instance learns within
+// FAILURE_THRESHOLD calls and then stays cheap until the backend recovers.
+const FAILURE_THRESHOLD = 3;
+const COOLDOWN_MS = 60_000;
+let consecutiveFailures = 0;
+let circuitOpenUntil = 0;
+
+export class BackendUnavailableError extends Error {
+  constructor() {
+    super("Backend circuit open — skipping request");
+    this.name = "BackendUnavailableError";
+  }
+}
+
+function recordFailure() {
+  consecutiveFailures++;
+  if (consecutiveFailures >= FAILURE_THRESHOLD) {
+    circuitOpenUntil = Date.now() + COOLDOWN_MS;
+  }
+}
+
+function recordSuccess() {
+  consecutiveFailures = 0;
+  circuitOpenUntil = 0;
+}
+
+/** Wrapper around fetch that enforces a hard timeout via AbortController and
+ *  trips the circuit breaker on timeouts, network errors and 5xx responses.
  *  AbortSignal.timeout alone can miss connection-level hangs in some runtimes;
  *  the manual controller + setTimeout pattern is more reliable on Vercel. */
 async function resilientFetch(url: string, init?: RequestInit): Promise<Response> {
+  if (Date.now() < circuitOpenUntil) {
+    throw new BackendUnavailableError();
+  }
+
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
   try {
-    return await fetch(url, {
+    const res = await fetch(url, {
       ...init,
       signal: controller.signal,
     });
+    if (res.status >= 500) recordFailure();
+    else recordSuccess();
+    return res;
+  } catch (err) {
+    recordFailure();
+    throw err;
   } finally {
     clearTimeout(timer);
   }
