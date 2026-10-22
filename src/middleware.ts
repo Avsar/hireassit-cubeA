@@ -54,17 +54,62 @@ interface RateEntry {
 
 const ipHits = new Map<string, RateEntry>();
 
-function isRateLimited(ip: string): boolean {
-  const now = Date.now();
-  const entry = ipHits.get(ip);
+// Per-route budgets for the expensive / abusable API endpoints.  These are
+// much tighter than the global page limit because each hit costs real money
+// (Anthropic tokens) or sends an email through the backend.
+// key = path prefix, value = [max requests, window ms]
+const API_LIMITS: [string, number, number][] = [
+  ["/api/cv-review", 5, 60_000],    // 5 CV reviews / min / IP
+  ["/api/summarise", 5, 60_000],
+  ["/api/auth/request", 3, 300_000], // 3 magic-link emails / 5 min / IP
+  ["/api/job-alert", 5, 300_000],
+  ["/api/feedback", 5, 300_000],
+  ["/api/lead", 5, 300_000],
+  ["/api/", 20, 60_000],             // everything else under /api
+];
 
-  if (!entry || now - entry.windowStart > RATE_WINDOW_MS) {
-    ipHits.set(ip, { count: 1, windowStart: now });
+function isRateLimited(
+  key: string,
+  limit: number = RATE_LIMIT,
+  windowMs: number = RATE_WINDOW_MS,
+): boolean {
+  const now = Date.now();
+  const entry = ipHits.get(key);
+
+  if (!entry || now - entry.windowStart > windowMs) {
+    ipHits.set(key, { count: 1, windowStart: now });
     return false;
   }
 
   entry.count++;
-  if (entry.count > RATE_LIMIT) return true;
+  if (entry.count > limit) return true;
+  return false;
+}
+
+/** POST/PUT/DELETE to /api must come from our own pages.  Browsers always
+ *  send Origin (or Sec-Fetch-Site) on cross-site and same-site fetches, so a
+ *  missing/mismatched value means a script, not a cubea.nl visitor. */
+function isSameOrigin(request: NextRequest): boolean {
+  const host = request.headers.get("host") || "";
+  const origin = request.headers.get("origin");
+  if (origin) {
+    try {
+      return new URL(origin).host === host;
+    } catch {
+      return false;
+    }
+  }
+  const fetchSite = request.headers.get("sec-fetch-site");
+  if (fetchSite) return fetchSite === "same-origin" || fetchSite === "same-site";
+  // No Origin and no Sec-Fetch-Site: fall back to Referer.
+  const referer = request.headers.get("referer");
+  if (referer) {
+    try {
+      return new URL(referer).host === host;
+    } catch {
+      return false;
+    }
+  }
   return false;
 }
 
@@ -115,6 +160,26 @@ export function middleware(request: NextRequest) {
 
   // 3. Rate limit
   evictStale();
+  const path = request.nextUrl.pathname;
+
+  if (path.startsWith("/api/")) {
+    // 3a. Mutating API calls must originate from our own pages.
+    if (request.method !== "GET" && request.method !== "HEAD" && !isSameOrigin(request)) {
+      return new NextResponse("Forbidden", { status: 403 });
+    }
+    // 3b. Tight per-route budget.
+    const rule = API_LIMITS.find(([prefix]) => path.startsWith(prefix));
+    if (rule) {
+      const [prefix, limit, windowMs] = rule;
+      if (isRateLimited(`${prefix}|${ip}`, limit, windowMs)) {
+        return new NextResponse("Too Many Requests", {
+          status: 429,
+          headers: { "Retry-After": String(Math.ceil(windowMs / 1000)) },
+        });
+      }
+    }
+  }
+
   if (isRateLimited(ip)) {
     return new NextResponse("Too Many Requests", {
       status: 429,
